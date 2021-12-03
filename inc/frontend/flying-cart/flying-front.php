@@ -5,7 +5,7 @@ global $post;
 if(!empty($post)) {
 	$current_page_id = $post->ID;
 	if(class_exists( 'WooCommerce' ) && is_shop()){
-		$current_page_id = woocommerce_get_page_id('shop');
+		$current_page_id = wc_get_page_id('shop');
 	}
 	else if(is_single() || is_front_page()) {
 		$current_page_id = $post->ID;
