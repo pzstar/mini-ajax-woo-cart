@@ -176,27 +176,24 @@ function majc_search_key($array, $key, $value) {
 add_action("wp_ajax_majc_get_google_font_variants", "majc_get_google_font_variants");
 
 function majc_get_google_font_variants() {
-	if ( isset( $_REQUEST['wp_nonce'] ) && wp_verify_nonce($_REQUEST['wp_nonce'], 'majc-backend-ajax-nonce') )  
-	{
-	    $font_list = array_merge(majc_standard_font_array(), majc_google_font_array());
+    if (isset($_REQUEST['wp_nonce']) && wp_verify_nonce($_REQUEST['wp_nonce'], 'majc-backend-ajax-nonce')) {
+        $font_list = array_merge(majc_standard_font_array(), majc_google_font_array());
 
-	    $font_family = sanitize_text_field($_REQUEST['font_family']);
-	    $font_array = majc_search_key($font_list, 'family', $font_family);
+        $font_family = sanitize_text_field($_REQUEST['font_family']);
+        $font_array = majc_search_key($font_list, 'family', $font_family);
 
-	    $variants_array = $font_array['0']['variants'];
-	    $options_array = "";
-	    foreach ($variants_array as $key => $variants) {
-	        $selected = $key == '400' ? 'selected="selected"' : '';
-	        $options_array .= '<option ' . $selected . ' value="' . esc_attr($key) . '">' . esc_html($variants) . '</option>';
-	    }
+        $variants_array = $font_array['0']['variants'];
+        $options_array = "";
+        foreach ($variants_array as $key => $variants) {
+            $selected = $key == '400' ? 'selected="selected"' : '';
+            $options_array .= '<option ' . $selected . ' value="' . esc_attr($key) . '">' . esc_html($variants) . '</option>';
+        }
 
-	    if (!empty($options_array)) {
-	        echo $options_array;
-	    } else {
-	        echo $options_array = '';
-	    }
-	}
+        if (!empty($options_array)) {
+            echo $options_array;
+        } else {
+            echo $options_array = '';
+        }
+    }
     die();
 }
-
-
