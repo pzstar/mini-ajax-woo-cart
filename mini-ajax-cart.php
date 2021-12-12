@@ -20,11 +20,16 @@ if (!class_exists('MAJC_Class')) {
     class MAJC_Class extends MAJC_Library {
 
         function __construct() {
+            if (!function_exists('is_plugin_active')) {
+                require_once ABSPATH . 'wp-admin/includes/plugin.php';
+            }
+
             add_action('plugins_loaded', array($this, 'majc_text_domain'));
 
-            $this->define_constants();
-
-            $this->includes();
+            if (is_plugin_active('woocommerce/woocommerce.php') && !is_plugin_active('ultimate-woocommerce-cart/ultimate-woocommerce-cart.php')) {
+                $this->define_constants();
+                $this->includes();
+            }
         }
 
         public function define_constants() {
@@ -73,12 +78,5 @@ if (!class_exists('MAJC_Class')) {
 
     }
 
-    $woo_plugin_path = trailingslashit(WP_PLUGIN_DIR) . 'woocommerce/woocommerce.php';
-    $uwc_plugin_path = trailingslashit(WP_PLUGIN_DIR) . 'ultimate-woocommerce-cart/ultimate-woocommerce-cart.php';
-
-    if (in_array($woo_plugin_path, wp_get_active_and_valid_plugins()) || in_array($woo_plugin_path, wp_get_active_network_plugins())) {
-        if (!in_array($uwc_plugin_path, wp_get_active_and_valid_plugins()) || !in_array($uwc_plugin_path, wp_get_active_network_plugins())) {
-            new MAJC_Class();
-        }
-    }
+    new MAJC_Class();
 }
