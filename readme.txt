@@ -163,8 +163,8 @@ For premium upgrade, please click below link <br>
 <a href="https://1.envato.market/2rKYB0">WooCommerce Cart</a>&nbsp;&nbsp;<a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-cart/">Demo Site</a>&nbsp;&nbsp;<a href="https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/">Documentation</a>
 
 = 1.0.4 =
-* Plugin issue with mutisite fixed
-* Font Icons to updated to latest version
+* Plugin issue with multisite fixed
+* Font Icons to updated to the latest version
 
 = 1.0.4 =
 * Latest Wp Version Compatibility
