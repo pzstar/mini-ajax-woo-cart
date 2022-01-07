@@ -7,7 +7,7 @@ if (!class_exists('MAJC_Frontend')) {
 
         function __construct() {
 
-            add_action('wp_head', array($this, 'majc_menu'));
+            add_action('wp_footer', array($this, 'majc_menu'));
 
             add_filter('woocommerce_add_to_cart_fragments', array($this, 'add_to_cart_fragments'), 10, 1);
 
