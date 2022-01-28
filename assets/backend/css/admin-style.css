@@ -1,325 +1,75 @@
-.majc-settings-outer-wrap h1,
-.majc-settings-outer-wrap h2,
-.majc-settings-outer-wrap h3,
-.majc-settings-outer-wrap h4,
-.majc-settings-outer-wrap h5,
-.majc-settings-outer-wrap h6 {
-    margin: 0 !important;
-    padding-left: 0 !important; 
-    padding-right: 0 !important; 
-} 
-
-.majc-settings-outer-wrap h2 {
-    font-size: 18px !important;
-    font-weight: 600 !important;
-    padding: 0 !important;
-}
-
-.majc-settings-outer-wrap .majc-settings-content h2,
-.majc-settings-outer-wrap h2 {
-    margin-top: 30px !important;
-}
-.tab-content > h2 {
-    margin-top: 0 !important;
-}
-.majc-settings-outer-wrap ul,
-.majc-settings-outer-wrap ul li {
+#poststuff #majc-settings-metabox .inside{
     margin: 0;
+    padding: 0;
 }
-.majc-settings-outer-wrap ul li {
+
+#majc-settings-metabox .postbox-header{
+    display: none;
+}
+
+.majc-menu-option-wrap{
+    background: #1d2327;
+    padding: 15px 20px;
+}
+
+.majc-menu-option-wrap .majc-side-menus{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
     list-style: none;
 }
 
-.button.majc-custom-img-icon-btn, .majc-settings-outer-wrap .majc-custom-img-icon-btn {
-    width: 100%;
-    margin-bottom: 10px;    
-}
-
-/*checkbox css*/
-.majc-settings-input-field input[type="checkbox"]:focus {
-    outline: none;
-}
-.majc-settings-input-field input[type="checkbox"] {
-    position: relative;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    transition: all 0.15s ease-out 0s;
-    background: #a3f5ed;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    margin-right: 0.5rem;
-    outline: none;
-    position: relative;
-    z-index: 1000;
-}
-
-.majc-settings-input-field input[type="checkbox"]:checked {
-  background: #40e0d0;
-}
-.majc-settings-input-field input[type="checkbox"]:checked::before {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    content: '✔';
-    display: inline-block;
-    font-size: 15px;
-    text-align: center;
-    line-height: 1.5;
-    left: 4px;
-    top: 2px;
-}
-.majc-settings-input-field input[type="checkbox"]:checked::after {
-  background: #40e0d0;
-  content: '';
-  display: block;
-  position: relative;
-  z-index: 100;
-}
-
-/* Icon Chooser */
-.majc-customizer-icon-box .majc-selected-icon {
-    background: #F6F6F6;
-    height: 45px;
-    line-height: 45px;
-    text-align: center;
-    border: 1px solid #EEE;
-    position: relative;
-    margin-right: 44px;
-    cursor: pointer;
-    font-size: 22px;
-    width: 60px;
-}
-
-.majc-customizer-icon-box .majc-selected-icon span {
-    position: absolute;
-    background: #F6F6F6 url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E') center/35% no-repeat;
-    right: -45px;
-    top: -1px;
-    height: 45px;
-    width: 45px;
-    border: 1px solid #EEE;
-    font-size: 16px;
-}
-
-.majc-customizer-icon-box .majc-selected-icon span i {
-    display: none;
-    line-height: 45px;
-}
-
-.majc-customizer-icon-box .majc-icon-box {
-    width: 405px;
-    display: none;
-}
-
-.majc-customizer-icon-box .majc-icon-search {
+.majc-menu-option-wrap .majc-side-menus li{
     padding: 10px;
-    background: #f7f7f7;
-    border: 1px solid #EEE;
-    border-top: 0;
-    display: flex;
-    align-items: center;
-}
-
-.majc-customizer-icon-box .majc-icon-search input {
-    flex-grow: 1;
-}
-
-.majc-customizer-icon-box .majc-icon-list:first-of-type {
-    display: block;
-}
-
-.majc-customizer-icon-box .majc-icon-list {
-    height: 215px;
-    overflow-y: scroll;
-    font-size: 18px;
-    border: 1px solid #EEE;
-    background: #FFF;
-    border-right: 0;
-    border-top: 0;
-    margin: 0;
-    padding: 0;
-    display: none;
-    cursor: pointer;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-}
-
-.majc-customizer-icon-box .majc-icon-list li {
-    float: left;
-    height: 40px;
-    width: 40px;
-    text-align: center;
-    line-height: 40px;
-    border: 1px solid #EEE;
-    border-radius: 3px;
-    font-size: 18px;
-    margin: 4px;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-
-.majc-customizer-icon-box .majc-icon-list li.icon-active {
-    background: #0073aa;
-    border: 1px solid #0073aa;
+    margin: 0 20px 0 0;
+    background: #2b3337;
     color: #FFF;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
 }
-/* End Of CSS for Icon Chooser */
 
-/* Image Upload and Remove Button */
-.majc-icon-image-uploader .majc-image-remove,
-.majc-icon-image-uploader .majc-image-upload {
-    display: inline-block;
-    vertical-align: middle;
-    min-height: 20px;
+.majc-menu-option-wrap .majc-side-menus li.majc-tab-active{
+    background: #2170b1;
+}
+
+.majc-settings-field{
+    position: relative;
+    padding: 15px 0;
     margin: 0;
-    padding: 5px 10px;
-    background: #007cba;
-    border-color: #007cba;
-    color: #fff;
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-}
-.button.majc-custom-img-icon-btn .majc-custom-menu-image-icon {
-    width: 115px;
-}
-.button.majc-custom-img-icon-btn .majc-custom-menu-image-icon img {
-    width: 100%;
-}
-/* End - Image Upload and Remove Button */
-
-.majc-settings-inner-wrap {
+    border-bottom: 1px solid #EEE;
     display: flex;
-    align-items: center;
-    justify-content: center; 
 }
 
-.majc-settings-inner-wrap .majc-menu-option-wrap {
-    flex: 3;
-    align-self: start;
+.majc-settings-field:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 280px;
+    background: #F9F9F9;
+    border-right: 1px solid #E1E1E1;
 }
 
-.majc-settings-inner-wrap .majc-menu-field-wrap {
-    flex: 10;
-    align-self: stretch;
+.majc-settings-field > label{
+    flex: 0 1 240px;
+    padding: 0 20px;
+    position: relative;
+    font-weight: bold;
+}
+
+.majc-settings-input-field{
     padding: 0 20px;
 }
 
-ul.majc-side-menus li {
-    display: block;
-    padding: 15px;
-    background: transparent;
-    color: #000;
-    font-size: 16px;
-    font-weight: 500;
-    text-transform: capitalize;
-    cursor: pointer;
-    border: 1px solid #e17eea;
-}
-
-ul.majc-side-menus li:hover,
-ul.majc-side-menus li.majc-tab-active {
-    background: #9676f8; /* Old browsers */
-    color: #fff;
-    border-color: transparent;
-}
-
-ul.majc-side-menus li:not(:last-child) {
-    /*border-bottom: 1px solid #cecece;*/
-    margin-bottom: 5px;
-}
-
-.majc-settings-field {
-    display: flex;
-    margin-top: 15px;
-}
-
-.majc-settings-field label {
-    align-self: center; 
-    flex-basis: 200px;
-}
-
-.majc-settings-field > *+* {
-    margin-left: 20%;
-    max-width: 250px;
-    width: 100%;
-}
-
-/*kishan css 03/19/2021*/
-#majc-settings-metabox {
-    border: none;
-    box-shadow: none;
-}
-#majc-settings-metabox .inside {
-    display: block !important;
+#poststuff .majc-menu-field-wrap h2{
+    background: #f9f9f9;
+    border-bottom: 1px solid #EEE;
+    padding: 15px 20px;
     margin: 0;
-    padding: 20px;
-}
-
-#majc-settings-metabox .postbox-header .handle-actions {
-    display: none;
-}
-
-#majc-settings-metabox .postbox-header {
-    background: #9676f8; /* Old browsers */
-    background: -moz-linear-gradient(left,  #9676f8 0%, #e17eea 21%, #7db9e8 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  #9676f8 0%,#e17eea 21%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  #9676f8 0%,#e17eea 21%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9676f8', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 */
-    padding: 20px 15px;
-}
-#majc-settings-metabox .postbox-header h2 {
-    font-size: 30px;
-    color: #fff;
-}
-
-.majc-menu-field-wrap input[type=color], 
-.majc-menu-field-wrap input[type=date], 
-.majc-menu-field-wrap input[type=datetime-local],
-.majc-menu-field-wrap input[type=datetime], 
-.majc-menu-field-wrap input[type=email], 
-.majc-menu-field-wrap input[type=month], 
-.majc-menu-field-wrap input[type=number], 
-.majc-menu-field-wrap input[type=password], 
-.majc-menu-field-wrap input[type=search], 
-.majc-menu-field-wrap input[type=tel], 
-.majc-menu-field-wrap input[type=text], 
-.majc-menu-field-wrap input[type=time], 
-.majc-menu-field-wrap input[type=url], 
-.majc-menu-field-wrap input[type=week], 
-.majc-menu-field-wrap select, 
-.majc-menu-field-wrap textarea {
-    box-shadow: 0 0 0 transparent;
-    border-radius: 4px;
-    border: 1px solid #8c8f94;
-    background-color: #fff;
-    color: #2c3338;
-    width: 100%;
-}
-
-.majc-settings-outer-wrap #custom-settings .majc-float-menu-field h2 {
-    margin-top: 0 !important;
-}
-.majc-settings-outer-wrap #custom-settings h2 {
-    margin-top: 20px !important;
-}
-#custom-settings .majc-typography-fields li {
-    margin-top: 15px;
-}
-#custom-settings .chosen-container {
-    width: 100% !important;
-}
-#custom-settings .chosen-container a {
-    background: transparent;
-    box-shadow: none;
-    border: 1px solid #8c8f94;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    height: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
 }

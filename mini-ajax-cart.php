@@ -3,16 +3,17 @@
 defined('ABSPATH') or die('No script please!');
 /*
   Plugin Name: Mini Ajax Cart for WooCommerce
-  Plugin URI:  https://hashthemes.com/
-  Description: Ajax, Floating, Slide In, Popup Cart For WordPress
-  Version:     1.0.6
-  Author:      Hash Themes
+  Plugin URI: https://github.com/pzstar/mini-ajax-woo-cart
+  Description: Ajax, Floating, Slide In, Popup Cart For WordPress with WooCommerce
+  Version:     1.0.7
+  Author:      HashThemes
   Author URI:  http://hashthemes.com
   License:     GPLv2 or later
   License URI: https://www.gnu.org/licenses/gpl-2.0.html
   Domain Path: /languages
   Text Domain: mini-ajax-cart
  */
+
 include( plugin_dir_path(__FILE__) . '/classes/library-class.php');
 
 if (!class_exists('MAJC_Class')) {
@@ -33,7 +34,7 @@ if (!class_exists('MAJC_Class')) {
         }
 
         public function define_constants() {
-            defined('MAJC_VERSION') or define('MAJC_VERSION', '1.0.6'); //plugin version
+            defined('MAJC_VERSION') or define('MAJC_VERSION', '1.0.7'); //plugin version
 
             defined('MAJC_TD') or define('MAJC_TD', 'mini-ajax-cart'); //plugin's text domain
 
