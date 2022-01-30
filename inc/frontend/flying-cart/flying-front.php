@@ -182,7 +182,7 @@ if (!empty($post)) {
                                         <div class="majc-header-icon-wrap"><span class="<?php echo esc_attr($header_available_icon); ?>"></span></div>
                                     <?php } else if (isset($header_icon_type) && $header_icon_type == 'custom_icon') { ?>
                                         <div class="majc-header-icon-wrap"><img src="<?php echo esc_url($header_custom_icon); ?>"></div>
-                                    <?php } else { ?>
+                                    <?php } else if (isset($header_icon_type) && $header_icon_type == 'default_icon'){ ?>
                                         <div class="majc-header-icon-wrap"><span class="fa fa-shopping-cart"></span></div>
                                     <?php } ?>
 

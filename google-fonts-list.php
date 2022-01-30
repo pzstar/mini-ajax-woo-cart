@@ -8,6 +8,19 @@ function majc_google_font_array() {
     return $google_font_array;
 }
 
+function majc_default_font_array() {
+    return array(
+        0 => array(
+            'family' => 'default',
+            'variants' => array(
+                'default' => 'Default',
+                '400' => 'Normal',
+                '700' => 'Bold'
+            )
+        )
+    );
+}
+
 function majc_standard_font_array() {
     return array(
         0 => array(
@@ -125,10 +138,11 @@ function majc_get_standard_font_families() {
 
 function majc_get_font_weight_choices($family) {
     if ($family) {
+        $majc_default_font = majc_default_font_array();
         $majc_standard_font = majc_standard_font_array();
         $majc_google_font = majc_google_font_array();
 
-        $majc_font = array_merge($majc_standard_font, $majc_google_font);
+        $majc_font = array_merge($majc_standard_font, $majc_google_font, $majc_default_font);
 
         $font_array = majc_search_key($majc_font, 'family', $family);
 
@@ -144,6 +158,7 @@ function majc_get_font_weight_choices($family) {
 
 function majc_get_text_transform_choices() {
     return array(
+        'default' => esc_html__('Default', 'mini-ajax-cart'),
         'none' => esc_html__('None', 'mini-ajax-cart'),
         'uppercase' => esc_html__('Uppercase', 'mini-ajax-cart'),
         'lowercase' => esc_html__('Lowercase', 'mini-ajax-cart'),
@@ -153,6 +168,7 @@ function majc_get_text_transform_choices() {
 
 function majc_get_text_decoration_choices() {
     return array(
+        'default' => esc_html__('Default', 'mini-ajax-cart'),
         'none' => esc_html__('None', 'mini-ajax-cart'),
         'underline' => esc_html__('Underline', 'mini-ajax-cart'),
         'line-through' => esc_html__('Line-through', 'mini-ajax-cart'),
@@ -177,7 +193,7 @@ add_action("wp_ajax_majc_get_google_font_variants", "majc_get_google_font_varian
 
 function majc_get_google_font_variants() {
     if (isset($_REQUEST['wp_nonce']) && wp_verify_nonce($_REQUEST['wp_nonce'], 'majc-backend-ajax-nonce')) {
-        $font_list = array_merge(majc_standard_font_array(), majc_google_font_array());
+        $font_list = array_merge(majc_default_font_array(), majc_standard_font_array(), majc_google_font_array());
 
         $font_family = sanitize_text_field($_REQUEST['font_family']);
         $font_array = majc_search_key($font_list, 'family', $font_family);

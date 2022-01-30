@@ -28,7 +28,7 @@ $(document).ready(function() {
     iconPickerFunction();
     function iconPickerFunction() {
         // FontAwesome Icon Control JS
-        $('body').on('click', '.majc-customizer-icon-box .majc-icon-list li', function () {
+        $('body').on('click', '.majc-icon-box-wrap .majc-icon-list li', function () {
             var icon_class = $(this).find('i').attr('class');
             $(this).closest('.majc-icon-box').find('.majc-icon-list li').removeClass('icon-active');
             $(this).addClass('icon-active');
@@ -37,11 +37,11 @@ $(document).ready(function() {
             $(this).closest('.majc-icon-box').slideUp();
         });
 
-        $('body').on('click', '.majc-customizer-icon-box .majc-selected-icon', function () {
+        $('body').on('click', '.majc-icon-box-wrap .majc-selected-icon', function () {
             $(this).next().slideToggle();
         });
 
-        $('body').on('change', '.majc-customizer-icon-box .majc-icon-search select', function () {
+        $('body').on('change', '.majc-icon-box-wrap .majc-icon-search select', function () {
             var selected = $(this).val();
             $(this).closest('.majc-icon-box').find('.majc-icon-search-input').val('');
             $(this).closest('.majc-icon-box').find('.majc-icon-list li').show();
@@ -49,7 +49,7 @@ $(document).ready(function() {
             $(this).closest('.majc-icon-box').find('.' + selected).fadeIn().addClass('active');
         });
 
-        $('body').on('keyup', '.majc-customizer-icon-box .majc-icon-search input', function (e) {
+        $('body').on('keyup', '.majc-icon-box-wrap .majc-icon-search input', function (e) {
             var $input = $(this);
             var keyword = $input.val().toLowerCase();
             var search_criteria = $input.closest('.majc-icon-box').find('.majc-icon-list.active i');
@@ -158,7 +158,7 @@ $(document).ready(function() {
         });
     });
 
-    $('body').find(".typography_face, .typography_font_style, .typography_text_transform, .typography_text_decoration").chosen({ width: "200%" });
+    $('body').find(".typography_face, .typography_font_style, .typography_text_transform, .typography_text_decoration").chosen({ width: "100%" });
 });
 
 })(jQuery);

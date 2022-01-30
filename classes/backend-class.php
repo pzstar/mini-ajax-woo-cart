@@ -58,50 +58,10 @@ if (!class_exists('MAJC_Backend')) {
                 </ul>
 
                 <div class="majc-upgrade-btn-wrap">
-                    <a class="majc-upgrade-btn" href="https://1.envato.market/2rKYB0"><?php _e('Upgrade To Pro', 'mini-ajax-cart'); ?></a>
-                    <a class="majc-demo-view-btn" href="https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-cart/"><?php _e('View Demo', 'mini-ajax-cart'); ?></a>
+                    <a class="button-primary button majc-upgrade-btn" target="_blank" href="https://1.envato.market/2rKYB0"><?php _e('Upgrade To Pro', 'mini-ajax-cart'); ?></a>
+                    <a class="button-primary button majc-demo-view-btn" target="_blank" href="https://demo.hashthemes.com/ultimate-woocommerce-cart/"><?php _e('View Demo', 'mini-ajax-cart'); ?></a>
                 </div>
             </div>
-
-            <style type="text/css">
-                .majc-upgrade-pro-side-meta > ul,
-                .majc-upgrade-pro-side-meta ul.majc-feature-inner-list {
-                    list-style: disc !important;
-                }
-
-                .majc-upgrade-pro-side-meta ul {
-                    padding: revert !important;
-                }
-                .majc-upgrade-pro-side-meta ul:first-of-type {
-                    padding-left: 19px !important;
-                }
-
-                .majc-upgrade-pro-side-meta .majc-upgrade-btn-wrap {
-                    display: flex;
-                    justify-content: space-evenly;
-                }
-
-                .majc-upgrade-pro-side-meta .majc-upgrade-btn-wrap a:nth-child(1) {
-                    background: #dd80ea;
-                }
-                .majc-upgrade-pro-side-meta .majc-upgrade-btn-wrap a:nth-child(2) {
-                    margin-left: 15px;
-                    background-color: #86b3e8;
-                }
-
-                .majc-upgrade-pro-side-meta a {
-                    text-decoration: none;
-                    color: #fff;
-                    padding: 8px 10px;
-                    border-radius: 5px;
-                }
-
-                @media screen and (max-width: 850px) {
-                    .majc-upgrade-pro-side-meta .majc-upgrade-btn-wrap {
-                        justify-content: flex-start;
-                    }
-                }
-            </style>
             <?php
         }
 
@@ -112,10 +72,6 @@ if (!class_exists('MAJC_Backend')) {
         public function save_metabox_settings($post_id) {
             if (isset($_POST['majc_settings_nonce']) && wp_verify_nonce($_POST['majc_settings_nonce'], 'majc-settings-nonce')) {
                 $majc_settings = parent::sanitize_array($_POST['majc_settings']);
-
-                $majc_ajax_atc = isset($majc_settings['enable_ajax_atc']) && $majc_settings['enable_ajax_atc'] == 'on' ? 'yes' : 'no';
-
-                update_option('woocommerce_enable_ajax_add_to_cart', $majc_ajax_atc, 'yes');
 
                 update_post_meta($post_id, 'uwcc_settings', $majc_settings);
             }
@@ -166,10 +122,10 @@ if (!class_exists('MAJC_Backend')) {
             if (!isset($iconName))
                 return;
             ?>
-            <div class="majc-customizer-icon-box" style="color: black;">
+            <div class="majc-icon-box-wrap">
                 <div class="majc-selected-icon">
                     <i class="<?php echo esc_attr($iconName); ?>"></i>
-                    <span><i class="icofont-simple-down"></i></span>
+                    <span><i class="majc-down-icon"></i></span>
                 </div>
 
                 <div class="majc-icon-box">
