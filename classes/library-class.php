@@ -15,11 +15,11 @@ if (!class_exists('MAJC_Library')) {
                 if (!is_array($v)) {
                     $default_sanitize_rule = (is_numeric($k)) ? 'html' : 'text';
                     $sanitize_type = isset($sanitize_rule[$k]) ? $sanitize_rule[$k] : $default_sanitize_rule;
-                    $array[$k] = self:: sanitize_value($v, $sanitize_type);
+                    $array[$k] = self::sanitize_value($v, $sanitize_type);
                 }
 
                 if (is_array($v)) {
-                    $array[$k] = self:: sanitize_array($v, $sanitize_rule);
+                    $array[$k] = self::sanitize_array($v, $sanitize_rule);
                 }
             }
 

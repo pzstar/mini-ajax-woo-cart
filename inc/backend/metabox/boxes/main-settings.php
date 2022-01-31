@@ -8,13 +8,12 @@ $animations = $this->majc_animations();
 ?>
 
 <div id="layout-settings" class="tab-content">
-    <div class="majc-settings-field-wrap majc-settings-content">
+    <div class="majc-settings-field-wrap">
         <h2><?php esc_html_e('Cart Basket/Button Settings', 'mini-ajax-cart'); ?></h2>
-
         <div class="majc-settings-field">
             <label><?php esc_html_e('Open Icon Type', 'mini-ajax-cart'); ?></label>
             <div class="majc-settings-input-field">
-                <select name="majc_settings[cart_basket][open_icon_type]" onchange="hideShow(this)" target="majc-icon-open-option-field">
+                <select name="majc_settings[cart_basket][open_icon_type]" data-condition="toggle" id="majc-open-icon-type">
                     <option value="default_icon" <?php
                     if (isset($cart_basket['open_icon_type'])) {
                         selected($cart_basket['open_icon_type'], 'default_icon');
@@ -34,7 +33,7 @@ $animations = $this->majc_animations();
             </div>
         </div>
 
-        <div class="majc-settings-field majc-icon-open-option-field majc-available_icon" style="<?php echo isset($cart_basket['open_icon_type']) && $cart_basket['open_icon_type'] == 'available_icon' ? 'display: flex;' : 'display: none;'; ?>">
+        <div class="majc-settings-field majc-icon-open-option-field majc-available_icon" data-condition-toggle="majc-open-icon-type" data-condition-val="available_icon">
             <label for="majc_floatmenu_default_icon"><?php esc_html_e('Choose Open Icon', 'mini-ajax-cart'); ?></label>
             <div class="majc-settings-input-field">
                 <?php
@@ -45,7 +44,7 @@ $animations = $this->majc_animations();
             </div>
         </div>
 
-        <div class="majc-settings-field majc-icon-open-option-field majc-custom_icon" style="<?php echo isset($cart_basket['open_icon_type']) && $cart_basket['open_icon_type'] == 'custom_icon' ? 'display: flex;' : 'display: none;'; ?>">
+        <div class="majc-settings-field majc-icon-open-option-field majc-custom_icon" data-condition-toggle="majc-open-icon-type" data-condition-val="custom_icon">
             <label for="majc-header-icon"><?php esc_html_e('Upload Open Icon', 'mini-ajax-cart'); ?></label>
             <div class="majc-settings-input-field">
                 <div class="majc-icon-image-uploader">
@@ -57,7 +56,7 @@ $animations = $this->majc_animations();
                         </div>
                         <div class="majc-image-remove"><?php esc_html_e('Remove', 'mini-ajax-cart'); ?></div>
                     </div>
-                    
+
                     <div class="button majc-image-upload"><?php esc_html_e('Upload', 'mini-ajax-cart') ?></div>
                     <input type="hidden" class="majc-upload-background-url" name="majc_settings[cart_basket][open_custom_icon]" id="majc-header-icon" value="<?php echo isset($cart_basket['open_custom_icon']) ? esc_url($cart_basket['open_custom_icon']) : ''; ?>"/>
                 </div> <!-- majc-icon-image-uploader -->
@@ -67,7 +66,7 @@ $animations = $this->majc_animations();
         <div class="majc-settings-field">
             <label><?php esc_html_e('Close Icon Type', 'mini-ajax-cart'); ?></label>
             <div class="majc-settings-input-field">
-                <select name="majc_settings[cart_basket][close_icon_type]" onchange="hideShow(this)" target="majc-icon-close-option-field">
+                <select name="majc_settings[cart_basket][close_icon_type]" data-condition="toggle" id="majc-close-icon-type">
                     <option value="default_icon" <?php
                     if (isset($cart_basket['close_icon_type'])) {
                         selected($cart_basket['close_icon_type'], 'default_icon');
@@ -87,7 +86,7 @@ $animations = $this->majc_animations();
             </div>
         </div>
 
-        <div class="majc-settings-field majc-icon-close-option-field majc-available_icon" style="<?php echo isset($cart_basket['close_icon_type']) && $cart_basket['close_icon_type'] == 'available_icon' ? 'display: flex;' : 'display: none;'; ?>">
+        <div class="majc-settings-field majc-icon-close-option-field majc-available_icon" data-condition-toggle="majc-close-icon-type" data-condition-val="available_icon">
             <label for="majc_floatmenu_default_icon"><?php esc_html_e('Choose Close Icon', 'mini-ajax-cart'); ?></label>
             <div class="majc-settings-input-field">
                 <?php
@@ -98,7 +97,7 @@ $animations = $this->majc_animations();
             </div>
         </div>
 
-        <div class="majc-settings-field majc-icon-close-option-field majc-custom_icon" style="<?php echo isset($cart_basket['close_icon_type']) && $cart_basket['close_icon_type'] == 'custom_icon' ? 'display: flex;' : 'display: none;'; ?>">
+        <div class="majc-settings-field majc-icon-close-option-field majc-custom_icon" data-condition-toggle="majc-close-icon-type" data-condition-val="custom_icon">
             <label for="majc-header-icon"><?php esc_html_e('Upload Close Icon', 'mini-ajax-cart'); ?></label>
             <div class="majc-settings-input-field">
                 <div class="majc-icon-image-uploader">
@@ -313,7 +312,7 @@ $animations = $this->majc_animations();
     <div class="majc-settings-field">
         <label><?php esc_html_e('Header Icon Type', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-input-field">
-            <select name="majc_settings[header][icon_type]" onchange="hideShow(this)" target="majc-icon-option-field">
+            <select name="majc_settings[header][icon_type]" data-condition="toggle" id="majc-header-icon-type">
                 <option value="none" <?php
                 if (isset($header['icon_type'])) {
                     selected($header['icon_type'], 'none');
@@ -338,7 +337,7 @@ $animations = $this->majc_animations();
         </div>
     </div>
 
-    <div class="majc-settings-field majc-icon-option-field majc-available_icon" style="<?php echo isset($header['icon_type']) && $header['icon_type'] == 'available_icon' ? 'display: flex;' : 'display: none;'; ?>">
+    <div class="majc-settings-field majc-icon-option-field majc-available_icon" data-condition-toggle="majc-header-icon-type" data-condition-val="available_icon">
         <label for="majc_floatmenu_default_icon"><?php esc_html_e('Default menu icon', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-input-field">
             <?php
@@ -349,7 +348,7 @@ $animations = $this->majc_animations();
         </div>
     </div>
 
-    <div class="majc-settings-field majc-icon-option-field majc-custom_icon" style="<?php echo isset($header['icon_type']) && $header['icon_type'] == 'custom_icon' ? 'display: flex;' : 'display: none;'; ?>">
+    <div class="majc-settings-field majc-icon-option-field majc-custom_icon" data-condition-toggle="majc-header-icon-type" data-condition-val="custom_icon">
         <label for="majc-header-icon"><?php esc_html_e('Upload Custom Icon', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-input-field">
             <div class="majc-icon-image-uploader">
@@ -389,11 +388,11 @@ $animations = $this->majc_animations();
             if (isset($coupon['enable'])) {
                 checked($coupon['enable'], 'on', true);
             }
-            ?>>
+            ?> data-condition="toggle" id="majc-enable-coupon">
         </div>
     </div>
 
-    <div class="majc-settings-field">
+    <div class="majc-settings-field" data-condition-toggle="majc-enable-coupon">
         <label><?php esc_html_e('Apply Coupon Button Label', 'mini-ajax-cart'); ?></label>
 
         <div class="majc-settings-input-field">
@@ -401,7 +400,7 @@ $animations = $this->majc_animations();
         </div>
     </div>
 
-    <div class="majc-settings-field">
+    <div class="majc-settings-field" data-condition-toggle="majc-enable-coupon">
         <label><?php esc_html_e('Promo Code Placeholder', 'mini-ajax-cart'); ?></label>
 
         <div class="majc-settings-input-field">
@@ -416,11 +415,11 @@ $animations = $this->majc_animations();
             if (isset($buttons['show_view_cart'])) {
                 checked($buttons['show_view_cart'], 'on', true);
             }
-            ?>>
+            ?> data-condition="toggle" id="majc-show-cart-button">
         </div>
     </div>
-    
-    <div class="majc-settings-field">
+
+    <div class="majc-settings-field" data-condition-toggle="majc-show-cart-button">
         <label><?php esc_html_e('View Cart Label', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-input-field">
             <input type="text" name="majc_settings[buttons][view_cart_label]" value="<?php echo isset($buttons['view_cart_label']) ? esc_html($buttons['view_cart_label']) : esc_html__('View Cart', 'mini-ajax-cart'); ?>">
@@ -434,11 +433,11 @@ $animations = $this->majc_animations();
             if (isset($buttons['show_checkout'])) {
                 checked($buttons['show_checkout'], 'on', true);
             }
-            ?>>
+            ?> data-condition="toggle" id="majc-show-checkout-button">
         </div>
     </div>
-    
-    <div class="majc-settings-field">
+
+    <div class="majc-settings-field" data-condition-toggle="majc-show-checkout-button">
         <label><?php esc_html_e('View Checkout Label', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-input-field">
             <input type="text" name="majc_settings[buttons][checkout_label]" value="<?php echo isset($buttons['checkout_label']) ? esc_html($buttons['checkout_label']) : esc_html__('View Checkout', 'mini-ajax-cart'); ?>">
@@ -452,18 +451,18 @@ $animations = $this->majc_animations();
             if (isset($buttons['show_continue_shopping'])) {
                 checked($buttons['show_continue_shopping'], 'on', true);
             }
-            ?>>
+            ?> data-condition="toggle" id="majc-show-shopping-button">
         </div>
     </div>
-    
-    <div class="majc-settings-field">
+
+    <div class="majc-settings-field" data-condition-toggle="majc-show-shopping-button">
         <label><?php esc_html_e('View Continue Shopping Label', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-input-field">
             <input type="text" name="majc_settings[buttons][continue_shopping_label]" value="<?php echo isset($buttons['continue_shopping_label']) ? esc_html($buttons['continue_shopping_label']) : esc_html__('Continue Shopping', 'mini-ajax-cart'); ?>">
         </div>
     </div>
 
-    <div class="majc-settings-field">
+    <div class="majc-settings-field" data-condition-toggle="majc-show-shopping-button">
         <label><?php esc_html_e('Continue Shopping Link', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-input-field">
             <input type="url" name="majc_settings[buttons][continue_shopping_link]" value="<?php echo isset($buttons['continue_shopping_link']) ? esc_url($buttons['continue_shopping_link']) : ""; ?>">
@@ -476,8 +475,8 @@ $animations = $this->majc_animations();
             <input type="text" name="majc_settings[buttons][shipping_text]" value="<?php echo isset($buttons['shipping_text']) ? esc_html($buttons['shipping_text']) : null; ?>">
         </div>
     </div>
-    
-     <div class="majc-settings-field">
+
+    <div class="majc-settings-field">
         <label><?php esc_html_e('Hide Cart Total', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-input-field majc-toggle-input-field">
             <input type="checkbox" name="majc_settings[summary][hide_cart_total]" <?php

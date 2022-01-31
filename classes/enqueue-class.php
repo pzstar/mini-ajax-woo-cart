@@ -32,11 +32,14 @@ if (!class_exists('MAJC_Enqueue')) {
             wp_enqueue_style('jquery-mCustomScrollbar', MAJC_BACKEND_CSS_DIR . '../../mcscrollbar/jquery.mCustomScrollbar.css', array(), MAJC_VERSION);
             wp_enqueue_script('jquery-mCustomScrollbar-style', MAJC_BACKEND_JS_DIR . '../../mcscrollbar/jquery.mCustomScrollbar.js', array('jquery'), MAJC_VERSION);
 
+            /* Register condition Script */
+            wp_enqueue_script('jquery-condition', MAJC_BACKEND_JS_DIR . 'jquery-condition.js', array('jquery'), MAJC_VERSION, true);
+
             /* Register Backend Script */
             wp_enqueue_script('majc-admin-script', MAJC_BACKEND_JS_DIR . 'admin-script.js', array('jquery', 'jquery-ui-sortable', 'chosen-script'), MAJC_VERSION, true);
 
             /* Register Backend Style */
-            wp_enqueue_style('majc-admin-style', MAJC_BACKEND_CSS_DIR . 'admin-style.css', '', time());
+            wp_enqueue_style('majc-admin-style', MAJC_BACKEND_CSS_DIR . 'admin-style.css', '', MAJC_VERSION);
 
             /* Send php values to JS script */
             wp_localize_script('majc-admin-script', 'majc_admin_js_obj', array(
@@ -72,7 +75,6 @@ if (!class_exists('MAJC_Enqueue')) {
 
             // Plugins Frontend Styles
             wp_enqueue_style('majc-frontend-flymenu-style', MAJC_FRONTEND_CSS_DIR . 'frontend.css', false, MAJC_VERSION);
-            wp_enqueue_style('majc-responsive', MAJC_FRONTEND_CSS_DIR . 'responsive.css', false, MAJC_VERSION);
 
             // Plugins Frontend Scripts
             wp_enqueue_script('majc-frontend-script', MAJC_FRONTEND_JS_DIR . 'frontend.js', array('jquery-effects-shake', 'jquery-effects-slide', 'jquery-ui-core', 'jquery', 'jquery-ui-draggable'), MAJC_VERSION);

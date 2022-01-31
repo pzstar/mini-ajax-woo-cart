@@ -6,20 +6,20 @@ $text_transforms = majc_get_text_transform_choices();
 $text_decorations = majc_get_text_decoration_choices();
 ?>
 
-<div id="custom-settings" class="tab-content majc-settings-content" style="display: none;">
+<div id="custom-settings" class="tab-content" style="display: none;">
 
     <div class="majc-settings-field">
         <label><?php esc_html_e('Enable Customizations', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-input-field majc-toggle-input-field">
-            <input type="checkbox" name="majc_settings[custom][enable]" onchange="hideShow(this)" target="majc-custom-fields" <?php
+            <input type="checkbox" name="majc_settings[custom][enable]" <?php
             if (isset($custom['enable'])) {
                 checked($custom['enable'], 'on', true);
             }
-            ?>>
+            ?> data-condition="toggle" id="majc-enable-customization">
         </div>
     </div>
 
-    <div class="majc-custom-fields majc-on" style="<?php echo isset($custom['enable']) ? 'display: block;' : 'display: none;'; ?>">
+    <div class="majc-custom-fields" data-condition-toggle="majc-enable-customization">
         <h2><?php esc_html_e('Cart Basket/Button', 'mini-ajax-cart'); ?></h2>
         <div class="majc-settings-field">
             <label><?php esc_html_e('Cart Basket/Button Colors', 'mini-ajax-cart'); ?></label>
@@ -239,16 +239,18 @@ $text_decorations = majc_get_text_decoration_choices();
                 <li class="majc-typography-font-size">
                     <label><?php esc_html_e('Font Size', 'mini-ajax-cart'); ?></label>
 
-                    <div class="majc-typography-input-field">
-                        <input min="0" max="60" type="number" value="<?php echo isset($custom['header_title_font_size']) ? intval($custom['header_title_font_size']) : null; ?>" name="majc_settings[custom][header_title_font_size]"/>
+                    <div class="majc-typography-input-field majc-range-slider-wrap">
+                        <div class="majc-range-slider"></div>
+                        <input class="majc-range-input-selector" type="number" min="0" max="100" step="1" value="<?php echo esc_attr($custom['header_title_font_size']); ?>" name="majc_settings[custom][header_title_font_size]"/> px
                     </div>
                 </li>
 
                 <li class="majc-typography-line-height">
                     <label><?php esc_html_e('Line Height', 'mini-ajax-cart'); ?></label>
 
-                    <div class="majc-typography-input-field">
-                        <input class="range-input-selector" type="number" min="0" max="2" step="0.1" value="<?php echo isset($custom['header_title_line_height']) ? floatval($custom['header_title_line_height']) : null; ?>" name="majc_settings[custom][header_title_line_height]"/>
+                    <div class="majc-typography-input-field majc-range-slider-wrap">
+                        <div class="majc-range-slider"></div>
+                        <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($custom['header_title_line_height']); ?>" name="majc_settings[custom][header_title_line_height]"/>  px
                     </div>         
                 </li>
 
@@ -256,8 +258,9 @@ $text_decorations = majc_get_text_decoration_choices();
                 <li class="majc-typography-letter-spacing">
                     <label><?php esc_html_e('Letter Spacing', 'mini-ajax-cart'); ?></label>
 
-                    <div class="majc-typography-input-field">
-                        <input class="majc-range-input-selector" type="number" min="0" max="9" step="1" value="<?php echo isset($custom['header_title_letter_spacing']) ? esc_attr($custom['header_title_letter_spacing']) : null; ?>" name="majc_settings[custom][header_title_letter_spacing]"/>
+                    <div class="majc-typography-input-field majc-range-slider-wrap">
+                        <div class="majc-range-slider"></div>
+                        <input class="majc-range-input-selector" type="number" min="-5" max="5" step="0.1" value="<?php echo esc_attr($custom['header_title_letter_spacing']); ?>" name="majc_settings[custom][header_title_letter_spacing]"/>  px
                     </div>           
                 </li>
 
@@ -391,8 +394,9 @@ $text_decorations = majc_get_text_decoration_choices();
                 <li class="majc-typography-font-size">
                     <label><?php esc_html_e('Font Size', 'mini-ajax-cart'); ?></label>
 
-                    <div class="majc-typography-input-field">
-                        <input min="0" max="60" type="number" value="<?php echo isset($custom['content_font_size']) ? intval($custom['content_font_size']) : null; ?>" name="majc_settings[custom][content_font_size]"/>
+                    <div class="majc-typography-input-field majc-range-slider-wrap">
+                        <div class="majc-range-slider"></div>
+                        <input class="majc-range-input-selector" type="number" min="0" max="100" step="1" value="<?php echo esc_attr($custom['content_font_size']); ?>" name="majc_settings[custom][content_font_size]"/> px
                     </div>
                 </li>
 
@@ -400,8 +404,9 @@ $text_decorations = majc_get_text_decoration_choices();
                 <li class="majc-typography-line-height">
                     <label><?php esc_html_e('Line Height', 'mini-ajax-cart'); ?></label>
 
-                    <div class="majc-typography-input-field">
-                        <input class="range-input-selector" type="number" min="0" max="2" step="0.1" value="<?php echo isset($custom['content_line_height']) ? floatval($custom['content_line_height']) : null; ?>" name="majc_settings[custom][content_line_height]"/>
+                    <div class="majc-typography-input-field majc-range-slider-wrap">
+                        <div class="majc-range-slider"></div>
+                        <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($custom['content_line_height']); ?>" name="majc_settings[custom][content_line_height]"/> px
                     </div>         
                 </li>
 
@@ -409,8 +414,9 @@ $text_decorations = majc_get_text_decoration_choices();
                 <li class="majc-typography-letter-spacing">
                     <label><?php esc_html_e('Letter Spacing', 'mini-ajax-cart'); ?></label>
 
-                    <div class="majc-typography-input-field">
-                        <input class="majc-range-input-selector" type="number" min="0" max="9" step="1" value="<?php echo isset($custom['content_letter_spacing']) ? esc_attr($custom['content_letter_spacing']) : null; ?>" name="majc_settings[custom][content_letter_spacing]"/>
+                    <div class="majc-typography-input-field majc-range-slider-wrap">
+                        <div class="majc-range-slider"></div>
+                        <input class="majc-range-input-selector" type="number" min="-5" max="5" step="0.1" value="<?php echo esc_attr($custom['content_letter_spacing']); ?>" name="majc_settings[custom][content_letter_spacing]"/> px
                     </div>           
                 </li>
 
@@ -545,8 +551,9 @@ $text_decorations = majc_get_text_decoration_choices();
                 <li class="majc-typography-font-size">
                     <label><?php esc_html_e('Font Size', 'mini-ajax-cart'); ?></label>
 
-                    <div class="majc-typography-input-field">
-                        <input min="0" max="60" type="number" value="<?php echo isset($custom['product_title_font_size']) ? intval($custom['product_title_font_size']) : null; ?>" name="majc_settings[custom][product_title_font_size]"/>
+                    <div class="majc-typography-input-field majc-range-slider-wrap">
+                        <div class="majc-range-slider"></div>
+                        <input class="majc-range-input-selector" type="number" min="0" max="100" step="1" value="<?php echo esc_attr($custom['product_title_font_size']); ?>" name="majc_settings[custom][product_title_font_size]"/> px
                     </div>
                 </li>
 
@@ -554,8 +561,9 @@ $text_decorations = majc_get_text_decoration_choices();
                 <li class="majc-typography-line-height">
                     <label><?php esc_html_e('Line Height', 'mini-ajax-cart'); ?></label>
 
-                    <div class="majc-typography-input-field">
-                        <input class="range-input-selector" type="number" min="0" max="2" step="0.1" value="<?php echo isset($custom['product_title_line_height']) ? floatval($custom['product_title_line_height']) : null; ?>" name="majc_settings[custom][product_title_line_height]"/>
+                    <div class="majc-typography-input-field majc-range-slider-wrap">
+                        <div class="majc-range-slider"></div>
+                        <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($custom['product_title_line_height']); ?>" name="majc_settings[custom][product_title_line_height]"/> px
                     </div>         
                 </li>
 
@@ -563,8 +571,9 @@ $text_decorations = majc_get_text_decoration_choices();
                 <li class="majc-typography-letter-spacing">
                     <label><?php esc_html_e('Letter Spacing', 'mini-ajax-cart'); ?></label>
 
-                    <div class="majc-typography-input-field">
-                        <input class="majc-range-input-selector" type="number" min="0" max="9" step="1" value="<?php echo isset($custom['product_title_letter_spacing']) ? esc_attr($custom['product_title_letter_spacing']) : null; ?>" name="majc_settings[custom][product_title_letter_spacing]"/>
+                    <div class="majc-typography-input-field majc-range-slider-wrap">
+                        <div class="majc-range-slider"></div>
+                        <input class="majc-range-input-selector" type="number" min="-5" max="5" step="0.1" value="<?php echo esc_attr($custom['product_title_letter_spacing']); ?>" name="majc_settings[custom][product_title_letter_spacing]"/> px
                     </div>           
                 </li>
 
@@ -696,8 +705,9 @@ $text_decorations = majc_get_text_decoration_choices();
                 <li class="majc-typography-font-size">
                     <label><?php esc_html_e('Font Size', 'mini-ajax-cart'); ?></label>
 
-                    <div class="majc-typography-input-field">
-                        <input min="0" max="60" type="number" value="<?php echo isset($custom['button_text_font_size']) ? intval($custom['button_text_font_size']) : null; ?>" name="majc_settings[custom][button_text_font_size]"/>
+                    <div class="majc-typography-input- majc-range-slider-wrap">
+                        <div class="majc-range-slider"></div>
+                        <input class="majc-range-input-selector" type="number" min="0" max="100" step="1" value="<?php echo esc_attr($custom['button_text_font_size']); ?>" name="majc_settings[custom][button_text_font_size]"/> px
                     </div>
                 </li>
 
@@ -705,8 +715,9 @@ $text_decorations = majc_get_text_decoration_choices();
                 <li class="majc-typography-line-height">
                     <label><?php esc_html_e('Line Height', 'mini-ajax-cart'); ?></label>
 
-                    <div class="majc-typography-input-field">
-                        <input class="range-input-selector" type="number" min="0" max="2" step="0.1" value="<?php echo isset($custom['button_text_line_height']) ? floatval($custom['button_text_line_height']) : null; ?>" name="majc_settings[custom][button_text_line_height]"/>
+                    <div class="majc-typography-input-field majc-range-slider-wrap">
+                        <div class="majc-range-slider"></div>
+                        <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($custom['button_text_line_height']); ?>" name="majc_settings[custom][button_text_line_height]"/> px
                     </div>         
                 </li>
 
@@ -714,8 +725,9 @@ $text_decorations = majc_get_text_decoration_choices();
                 <li class="majc-typography-letter-spacing">
                     <label><?php esc_html_e('Letter Spacing', 'mini-ajax-cart'); ?></label>
 
-                    <div class="majc-typography-input-field">
-                        <input class="majc-range-input-selector" type="number" min="0" max="9" step="1" value="<?php echo isset($custom['button_text_letter_spacing']) ? esc_attr($custom['button_text_letter_spacing']) : null; ?>" name="majc_settings[custom][button_text_letter_spacing]"/>
+                    <div class="majc-typography-input-field majc-range-slider-wrap">
+                        <div class="majc-range-slider"></div>
+                        <input class="majc-range-input-selector" type="number" min="-5" max="5" step="0.1" value="<?php echo esc_attr($custom['button_text_letter_spacing']); ?>" name="majc_settings[custom][button_text_letter_spacing]"/> px
                     </div>           
                 </li>
 
