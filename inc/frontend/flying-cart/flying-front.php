@@ -140,7 +140,9 @@ if (!empty($post)) {
                                 <?php if (isset($cart_basket_open_icon_type) && $cart_basket_open_icon_type == 'available_icon') { ?>
                                     <span class="majc-cartbasket-icon majc-cartbasket-open-icon <?php echo esc_attr($cart_basket_open_available_icon); ?>"></span>
                                 <?php } else if (isset($cart_basket_open_icon_type) && $cart_basket_open_icon_type == 'custom_icon') { ?>
-                                    <img class="majc-cartbasket-icon majc-cartbasket-open-icon" src="<?php echo esc_url($cart_basket_open_custom_icon); ?>">
+                                    <div class="majc-cartbasket-img majc-cartbasket-icon majc-cartbasket-open-icon">
+                                        <img src="<?php echo esc_url($cart_basket_open_custom_icon); ?>">
+                                    </div>
                                 <?php } else if (isset($cart_basket_open_icon_type) && $cart_basket_open_icon_type == 'default_icon') { ?>
                                     <span class="majc-cartbasket-icon majc-cartbaskefat-open-icon fa fa-shopping-cart"></span>
                                 <?php } ?>
@@ -148,9 +150,11 @@ if (!empty($post)) {
                                 <?php if (isset($cart_basket_close_icon_type) && $cart_basket_close_icon_type == 'available_icon') { ?>
                                     <span class="majc-cartbasket-icon majc-cartbasket-close-icon <?php echo esc_attr($cart_basket_close_available_icon); ?>"></span>
                                 <?php } else if (isset($cart_basket_close_icon_type) && $cart_basket_close_icon_type == 'custom_icon') { ?>
-                                    <img class="majc-cartbasket-icon majc-cartbasket-close-icon" src="<?php echo esc_url($cart_basket_close_custom_icon); ?>">
+                                    <div class="majc-cartbasket-img majc-cartbasket-icon majc-cartbasket-close-icon">
+                                        <img src="<?php echo esc_url($cart_basket_close_custom_icon); ?>">
+                                    </div>
                                 <?php } else if (isset($cart_basket_close_icon_type) && $cart_basket_close_icon_type == 'default_icon') { ?>
-                                    <span class="majc-cartbasket-icon majc-cartbasket-close-icon fa fa-times" style="display: none;"></span>
+                                    <span class="majc-cartbasket-icon majc-cartbasket-close-icon fa fa-times"></span>
                                 <?php } ?>
 
                                 <?php if (isset($cart_basket_product_count)) { ?>
@@ -161,11 +165,15 @@ if (!empty($post)) {
                             </div>
                         </div>
 
-                        <div class="majc-cart-popup <?php echo!empty($show_animation) && !empty($hide_animation) ? 'majc-cartpop-animation-enabled animate__animated' : ''; ?>" 
-                        <?php if (!empty($hide_animation) && !empty($show_animation)) { ?>
-                                 data-showanimation="<?php echo 'animate__' . esc_attr($show_animation); ?>" data-hideanimation="<?php echo 'animate__' . esc_attr($hide_animation); ?>"
-                             <?php } ?>
-                             >
+                        <div class="majc-cart-popup <?php echo (!empty($show_animation) || !empty($hide_animation) ? 'majc-cartpop-animation-enabled animate__animated' : ''); ?>" 
+                        <?php if (!empty($show_animation)) { ?>
+                                 data-showanimation="<?php echo 'animate__' . esc_attr($show_animation); ?>" 
+                                 <?php
+                             }
+                             if (!empty($hide_animation)) {
+                                 ?>
+                                 data-hideanimation="<?php echo 'animate__' . esc_attr($hide_animation); ?>"
+                             <?php } ?>>
                             <div class="majc-cart-popup-inner" <?php
                             if ($content_bg_type == 'choose_color') {
                                 echo 'style="background-color:' . $content_bg_color . ';"';

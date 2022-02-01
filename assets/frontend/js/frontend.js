@@ -7,12 +7,12 @@
         var wpNonce = majc_frontend_js_obj.ajax_nonce;
 
         $('body').addClass($('.majc-main-wrapper').data('overlayenable'));
-
+        /*
         $('.majc-cart-popup').draggable({
             axis: "y",
             containment: 'body',
             cursor: 'crosshair'
-        });
+        });*/
 
         $(document.body).trigger('wc_fragment_refresh');
 
