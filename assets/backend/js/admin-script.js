@@ -172,6 +172,11 @@
         });
 
         $('body').find(".typography_face, .typography_font_style, .typography_text_transform, .typography_text_decoration").chosen({width: "100%"});
+        
+        $(".majc-toggle-tab-body").mCustomScrollbar({
+            theme: 'dark-thin',
+            scrollbarPosition: 'outside'
+        });
     });
 
 })(jQuery);

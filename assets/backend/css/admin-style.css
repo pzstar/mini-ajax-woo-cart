@@ -67,6 +67,12 @@
     width: calc(100% - 2800px);
 }
 
+.majc-settings-input-field p.majc-desc{
+    margin: 8px 0 0;
+    font-size: 13px;
+    font-style: italic;
+}
+
 #poststuff .majc-menu-field-wrap h2{
     background: #f9f9f9;
     border-bottom: 1px solid #EEE;
@@ -283,7 +289,8 @@
 .majc-toggle-tab-body{
     max-height: 300px;
     overflow-y: scroll;
-    padding: 15px;
+    padding: 15px 0 15px 15px;
+    margin-right: 19px;
 }
 
 .majc-toggle-tab-body p{

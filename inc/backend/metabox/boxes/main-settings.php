@@ -279,17 +279,6 @@ $animations = $this->majc_animations();
     </div>
 
     <div class="majc-settings-field">
-        <label><?php esc_html_e('Enable Ajax Add To Cart', 'mini-ajax-cart'); ?></label>
-        <div class="majc-settings-input-field majc-toggle-input-field">
-            <input type="checkbox" name="majc_settings[enable_ajax_atc]" <?php
-            if (isset($majc_settings['enable_ajax_atc'])) {
-                checked($majc_settings['enable_ajax_atc'], 'on', true);
-            }
-            ?>>
-        </div>
-    </div>
-
-    <div class="majc-settings-field">
         <label><?php esc_html_e('Enable Overlay', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-input-field majc-toggle-input-field">
             <input type="checkbox" name="majc_settings[enable_overlay]" <?php
@@ -362,7 +351,7 @@ $animations = $this->majc_animations();
                 </div>
 
                 <div class="button majc-image-upload"><?php esc_html_e('Upload', 'mini-ajax-cart') ?></div>
-                <input type="hidden" class="majc-upload-background-url" name="majc_settings[header][custom_icon]" id="majc-header-icon" value="<?php echo isset($header['floatmenu_img_icon']) ? esc_url($header['floatmenu_img_icon']) : ''; ?>"/>
+                <input type="hidden" class="majc-upload-background-url" name="majc_settings[header][custom_icon]" id="majc-header-icon" value="<?php echo isset($header['custom_icon']) ? esc_url($header['custom_icon']) : ''; ?>"/>
             </div> <!-- majc-icon-image-uploader -->
         </div>
     </div>
@@ -473,6 +462,7 @@ $animations = $this->majc_animations();
         <label><?php esc_html_e('Shipping Text Label', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-input-field">
             <input type="text" name="majc_settings[buttons][shipping_text]" value="<?php echo isset($buttons['shipping_text']) ? esc_html($buttons['shipping_text']) : null; ?>">
+            <p class="majc-desc"><?php esc_html_e('It will appear just above buttons.', 'mini-ajax-cart'); ?></p>
         </div>
     </div>
 

@@ -91,7 +91,6 @@ if (!class_exists('MAJC_Library')) {
                 'cart_item_layout' => 'list',
                 'content_width' => '400',
                 'enable_overlay' => 'on',
-                'enable_ajax_atc' => 'on',
                 'header' =>
                 array(
                     'title_text' => 'Your Product Basket',
@@ -128,7 +127,6 @@ if (!class_exists('MAJC_Library')) {
                     'view_cart_label' => 'View Cart',
                     'checkout_label' => 'View Checkout',
                     'continue_shopping_label' => 'Continue Shopping',
-                    'shipping_text' => 'Shipping',
                 ),
                 'custom' =>
                 array(

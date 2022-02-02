@@ -591,12 +591,8 @@ $qty_change_icon_color = isset($custom['qty_change_icon_color']) ? $custom['qty_
 <?php } ?>
 
 <?php if (isset($majc_settings['content_width']) && !empty($majc_settings['content_width'])) { ?>
-        .majc-layout-slidein .majc-cart-popup,
-        .majc-layout-floating .majc-cart-popup {
+        .majc-layout-slidein .majc-cart-popup{
             width: <?php echo isset($majc_settings['content_width']) && $majc_settings['content_width'] != 0 ? intval($majc_settings['content_width']) . 'px' : '400px'; ?>;
-        }
-        .majc-layout-popup .majc-cart-popup {
-            max-width: <?php echo isset($majc_settings['content_width']) && $majc_settings['content_width'] != 0 ? intval($majc_settings['content_width']) . 'px' : '700px'; ?>;
         }
 <?php } ?>
 </style>

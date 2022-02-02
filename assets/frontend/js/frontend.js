@@ -42,14 +42,14 @@
                             sessionStorage.setItem('wc_cart_created', (new Date()).getTime());
                         }
                     }
-
-                    $('body').find(".majc-body").mCustomScrollbar({
-                        autoDraggerLength: true,
-                    });
-
                     $(document.body).trigger('wc_fragments_refreshed');
                 }
             }
+        });
+
+        $('body').find(".majc-body").mCustomScrollbar({
+            theme: 'dark-thin',
+            scrollbarPosition: 'outside'
         });
 
         $('body').find(".majc-cartbasket-toggle-btn").on('click', function () {
@@ -202,6 +202,8 @@
         $('body').find('.majc-coupon-submit').on('click', function (e) {
             e.preventDefault();
             var couponCode = jQuery("#majc-coupon-code").val();
+            var $button = $(this);
+            $button.addClass('majc-button-loading');
             $.ajax({
                 url: ajaxUrl,
                 type: 'POST',
@@ -219,6 +221,7 @@
                     }
                     $(".majc-cpn-resp").fadeIn().delay(2000).fadeOut();
                     $(document.body).trigger('wc_fragment_refresh');
+                    $button.removeClass('majc-button-loading');
                 }
             });
         });
@@ -227,7 +230,7 @@
         $('body').on('click', '.majc-remove-cpn', function () {
 
             var couponCode = $(this).parent('li').attr('cpcode');
-
+            
             $.ajax({
                 url: ajaxUrl,
                 type: 'POST',
@@ -256,6 +259,7 @@
                 input.val(pre + 1);
                 input.trigger("change");
             }
+
         });
 
         /* Decrement Cart Item Quantity */
@@ -277,6 +281,7 @@
         // Quantity change 
         $('body').on('change', 'input[name="majc-qty-input"]', function () {
 
+            $('.majc-body').addClass('majc-loader');
             var item_id = $(this).closest('.majc-cart-items').data('itemid');
             var qty = $(this).val();
             var ckey = $(this).closest('.majc-cart-items').data('ckey');
@@ -290,12 +295,9 @@
                 success: function (response) {
                     $(this).prop('disabled', false);
                     $(document.body).trigger('wc_fragment_refresh');
+                    $('.majc-body').removeClass('majc-loader');
                 }
             });
-        });
-
-        $('body').find('.majc-coupons-lists-wrap h2').on('click', function () {
-            $(this).parent().find('.majc-coupons-lists').slideToggle();
         });
     });
 

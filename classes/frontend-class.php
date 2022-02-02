@@ -178,7 +178,7 @@ if (!class_exists('MAJC_Frontend')) {
                                     <div class="majc-item-desc">
                                         <div class="majc-item-remove">
                                             <?php
-                                            echo apply_filters('woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="majc-remove"  aria-label="%s" data-cart_item_id="%s" data-cart_item_sku="%s" data-cart_item_key="%s"><span class="icofont-close-line"></span></a>', esc_url(wc_get_cart_remove_url($itemKey)), esc_html__('Remove this item', 'mini-ajax-cart'), esc_attr($product_id), esc_attr($product->get_sku()), esc_attr($itemKey)
+                                            echo apply_filters('woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="majc-remove"  aria-label="%s" data-cart_item_id="%s" data-cart_item_sku="%s" data-cart_item_key="%s"><span class="icon_trash_alt"></span></a>', esc_url(wc_get_cart_remove_url($itemKey)), esc_html__('Remove this item', 'mini-ajax-cart'), esc_attr($product_id), esc_attr($product->get_sku()), esc_attr($itemKey)
                                                     ), $itemKey);
                                             ?>
                                         </div>
@@ -187,19 +187,19 @@ if (!class_exists('MAJC_Frontend')) {
                                             <?php echo esc_html($product->get_name()); ?>
                                         </div>
 
-                                        <div class="majc-item-qty">
-                                            <span class="majc-qty-minus majc-qty-chng">-</span>
-
-                                            <input type="number" name="majc-qty-input" class="majc-qty" step="1" min="0" max="14" value="<?php echo intval($itemVal['quantity']); ?>" placeholder="" inputmode="numeric">
-
-                                            <span class="majc-qty-plus majc-qty-chng">+</span>
-                                        </div>  
-
                                         <div class="majc-item-price">
                                             <?php
                                             $wc_product = $itemVal['data'];
                                             echo WC()->cart->get_product_subtotal($wc_product, $itemVal['quantity']);
                                             ?>
+                                        </div>
+
+                                        <div class="majc-item-qty">
+                                            <span class="majc-qty-minus majc-qty-chng icon_minus-06"></span>
+
+                                            <input type="number" name="majc-qty-input" class="majc-qty" step="1" min="0" max="14" value="<?php echo intval($itemVal['quantity']); ?>" placeholder="" inputmode="numeric">
+
+                                            <span class="majc-qty-plus majc-qty-chng icon_plus"></span>
                                         </div>
                                     </div> <!-- majc-item-desc -->
                                 </div> <!-- majc-cart-items-inner -->
@@ -209,11 +209,11 @@ if (!class_exists('MAJC_Frontend')) {
                         ?>
                     </div> 
                 <?php } else { ?>
-                    <h3 class="majc-empty-cart">
+                    <div class="majc-empty-cart">
                         <?php esc_html_e('The Cart is Empty', 'mini-ajax-cart'); ?>
-                    </h3>
+                    </div>
                 <?php } ?>
-            </div> <!-- majc-cart-item-wrap -->
+            </div>
             <?php
             $cart_body_contents = ob_get_clean();
             $fragments['div.majc-cart-item-wrap'] = $cart_body_contents;
