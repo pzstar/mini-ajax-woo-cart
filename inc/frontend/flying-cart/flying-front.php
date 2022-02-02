@@ -144,7 +144,7 @@ if (!empty($post)) {
                                         <img src="<?php echo esc_url($cart_basket_open_custom_icon); ?>">
                                     </div>
                                 <?php } else if (isset($cart_basket_open_icon_type) && $cart_basket_open_icon_type == 'default_icon') { ?>
-                                    <span class="majc-cartbasket-icon majc-cartbaskefat-open-icon fa fa-shopping-cart"></span>
+                                    <span class="majc-cartbasket-icon majc-cartbasket-open-icon icon_cart_alt"></span>
                                 <?php } ?>
 
                                 <?php if (isset($cart_basket_close_icon_type) && $cart_basket_close_icon_type == 'available_icon') { ?>
@@ -154,7 +154,7 @@ if (!empty($post)) {
                                         <img src="<?php echo esc_url($cart_basket_close_custom_icon); ?>">
                                     </div>
                                 <?php } else if (isset($cart_basket_close_icon_type) && $cart_basket_close_icon_type == 'default_icon') { ?>
-                                    <span class="majc-cartbasket-icon majc-cartbasket-close-icon fa fa-times"></span>
+                                    <span class="majc-cartbasket-icon majc-cartbasket-close-icon icon_close"></span>
                                 <?php } ?>
 
                                 <?php if (isset($cart_basket_product_count)) { ?>
@@ -165,7 +165,18 @@ if (!empty($post)) {
                             </div>
                         </div>
 
-                        <div class="majc-cart-popup <?php echo (!empty($show_animation) || !empty($hide_animation) ? 'majc-cartpop-animation-enabled animate__animated' : ''); ?>" 
+                        <?php
+                        if (!empty($show_animation) && !empty($hide_animation)) {
+                            $majc_popup_class = 'majc-cartpop-animation-enabled majc-cartpop-both-animation-enabled animate__animated';
+                        } elseif (!empty($show_animation)) {
+                            $majc_popup_class = 'majc-cartpop-animation-enabled majc-cartpop-show-animation-enabled animate__animated';
+                        } elseif (!empty($hide_animation)) {
+                            $majc_popup_class = 'majc-cartpop-animation-enabled majc-cartpop-hide-animation-enabled animate__animated';
+                        } else {
+                            $majc_popup_class = '';
+                        }
+                        ?>
+                        <div class="majc-cart-popup <?php echo esc_attr($majc_popup_class); ?>" 
                         <?php if (!empty($show_animation)) { ?>
                                  data-showanimation="<?php echo 'animate__' . esc_attr($show_animation); ?>" 
                                  <?php

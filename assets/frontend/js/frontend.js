@@ -8,11 +8,11 @@
 
         $('body').addClass($('.majc-main-wrapper').data('overlayenable'));
         /*
-        $('.majc-cart-popup').draggable({
-            axis: "y",
-            containment: 'body',
-            cursor: 'crosshair'
-        });*/
+         $('.majc-cart-popup').draggable({
+         axis: "y",
+         containment: 'body',
+         cursor: 'crosshair'
+         });*/
 
         $(document.body).trigger('wc_fragment_refresh');
 
@@ -61,22 +61,42 @@
                 // Add Toggle class on buton toggle
                 $('body').toggleClass('majc-cartbasket-open');
                 $(this).parent('.majc-toggle-button').toggleClass('majc-toggle-btn-open');
-
-                if ($popup.hasClass(showAnimation)) {
-                    $popup.removeClass(showAnimation + ' ' + hideAnimation);
-                    $popup.addClass(hideAnimation);
-                    $popup.removeClass('majc-cart-anim-show');
-                    $popup.addClass('majc-cart-anim-hide');
-                } else if ($popup.hasClass(hideAnimation)) {
-                    $popup.removeClass(showAnimation + ' ' + hideAnimation);
-                    $popup.addClass(showAnimation);
-                    $popup.removeClass('majc-cart-anim-hide');
-                    $popup.addClass('majc-cart-anim-show');
-                } else if (!$popup.hasClass(showAnimation) || !$popup.hasClass(hideAnimation)) {
-                    $popup.addClass(showAnimation);
-                    $popup.addClass('majc-cart-anim-show');
+                if ($popup.attr('data-showanimation') && $popup.attr('data-hideanimation')) {
+                    if ($popup.hasClass(showAnimation)) {
+                        $popup.removeClass(showAnimation);
+                        $popup.addClass(hideAnimation);
+                        $popup.removeClass('majc-cart-anim-show');
+                        $popup.addClass('majc-cart-anim-hide');
+                    } else if ($popup.hasClass(hideAnimation)) {
+                        $popup.removeClass(hideAnimation);
+                        $popup.addClass(showAnimation);
+                        $popup.removeClass('majc-cart-anim-hide');
+                        $popup.addClass('majc-cart-anim-show');
+                    } else {
+                        $popup.addClass(showAnimation);
+                        $popup.addClass('majc-cart-anim-show');
+                    }
+                } else if ($popup.attr('data-showanimation')) {
+                    if ($popup.hasClass('majc-cart-anim-show')) {
+                        $popup.removeClass(showAnimation);
+                        $popup.removeClass('majc-cart-anim-show');
+                        $popup.addClass('majc-cart-anim-hide');
+                    } else {
+                        $popup.addClass(showAnimation);
+                        $popup.removeClass('majc-cart-anim-hide');
+                        $popup.addClass('majc-cart-anim-show');
+                    }
+                } else if ($popup.attr('data-hideanimation')) {
+                    if ($popup.hasClass('majc-cart-anim-show')) {
+                        $popup.addClass(hideAnimation);
+                        $popup.addClass('majc-cart-anim-hide');
+                        $popup.removeClass('majc-cart-anim-show');
+                    } else {
+                        $popup.removeClass(hideAnimation);
+                        $popup.addClass('majc-cart-anim-show');
+                        $popup.removeClass('majc-cart-anim-hide');
+                    }
                 }
-
             } else {
                 $(this).toggleClass('active');
                 $('body').toggleClass('majc-cartbasket-open');
