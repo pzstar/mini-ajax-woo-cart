@@ -150,7 +150,7 @@
             }
         });
 
-        $(document).on('change', '.typography_face', function () {
+        $(document).on('change', '.majc-typography-font-family', function () {
 
             var font_family = $(this).val();
             var $this = $(this);
@@ -162,17 +162,17 @@
                     wp_nonce: adminNonce
                 },
                 beforeSend: function () {
-                    $this.closest('.typography-font-family').next('.typography-font-style').addClass('typography-loading');
+                    $this.closest('.majc-typography-font-family-field').next('.majc-typography-font-style-field').addClass('majc-typography-loading');
                 },
                 success: function (response) {
-                    $this.closest('.typography-font-family').next('.typography-font-style').removeClass('typography-loading');
-                    $this.closest('.typography-font-family').next('.typography-font-style').find('select').html(response).trigger("chosen:updated").trigger('change');
+                    $this.closest('.majc-typography-font-family-field').next('.majc-typography-font-style-field').removeClass('majc-typography-loading');
+                    $this.closest('.majc-typography-font-family-field').next('.majc-typography-font-style-field').find('select').html(response).trigger("chosen:updated").trigger('change');
                 }
             });
         });
 
-        $('body').find(".typography_face, .typography_font_style, .typography_text_transform, .typography_text_decoration").chosen({width: "100%"});
-        
+        $('body').find(".majc-typography-fields select").chosen({width: "100%"});
+
         $(".majc-toggle-tab-body").mCustomScrollbar({
             theme: 'dark-thin',
             scrollbarPosition: 'outside'

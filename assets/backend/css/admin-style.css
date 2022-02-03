@@ -475,3 +475,8 @@
 .majc-upgrade-pro-side-meta .majc-upgrade-btn-wrap a{
     margin-right: 10px;
 }
+
+.majc-typography-loading{
+    opacity: 0.4;
+    pointer-events: none
+}

@@ -96,9 +96,6 @@ if (!empty($post)) {
 
                 // Custom Settings
                 $custom = isset($majc_settings['custom']) ? $majc_settings['custom'] : null;
-                $content_bg_type = isset($custom['drawer_content_bg_type']) && $custom['drawer_content_bg_type'] != 'none' ? $custom['drawer_content_bg_type'] : null;
-                $content_bg_color = isset($custom['drawer_content_bg_color']) ? $custom['drawer_content_bg_color'] : null;
-                $content_bg_image = isset($custom['drawer_content_bg_image']) ? $custom['drawer_content_bg_image'] : null;
 
                 // Display Settings
                 $detect = new MAJC_MobileDetect();
@@ -131,7 +128,7 @@ if (!empty($post)) {
                 }
                 ?>
 
-                <div class="majc-main-wrapper <?php echo esc_attr('majc-layout-' . $layout_type) . esc_attr(' majc-' . $basket_position) . esc_attr(' majc-cartitem-' . $cart_item_layout) . ' ' . esc_attr($basket_position_class); ?>" data-overlayenable="<?php echo isset($enable_overlay) ? 'majc-overlay-enabled' : ''; ?>" data-pageid="<?php echo esc_attr($current_page_id); ?>">
+                <div id="majc-main-wrapper-<?php echo esc_attr($current_page_id); ?>" class="majc-main-wrapper <?php echo esc_attr('majc-layout-' . $layout_type) . esc_attr(' majc-' . $basket_position) . esc_attr(' majc-cartitem-' . $cart_item_layout) . ' ' . esc_attr($basket_position_class); ?>" data-overlayenable="<?php echo isset($enable_overlay) ? 'majc-overlay-enabled' : ''; ?>" data-pageid="<?php echo esc_attr($current_page_id); ?>">
 
                     <div class="majc-main-inner-wrapper">
                         <div class="majc-toggle-button <?php echo esc_attr('majc-' . $cart_basket_shape); ?>">
@@ -184,15 +181,7 @@ if (!empty($post)) {
                                  ?>
                                  data-hideanimation="<?php echo 'animate__' . esc_attr($hide_animation); ?>"
                              <?php } ?>>
-                            <div class="majc-cart-popup-inner" <?php
-                            if ($content_bg_type == 'choose_color') {
-                                echo 'style="background-color:' . $content_bg_color . ';"';
-                            }
-                            ?> <?php
-                            if ($content_bg_type == 'custom_image_bg') {
-                                echo 'style="background: url(' . $content_bg_image . ';"';
-                            }
-                            ?>>
+                            <div class="majc-cart-popup-inner">
 
                                 <div class="majc-header">
                                     <h2>

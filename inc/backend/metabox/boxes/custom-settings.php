@@ -73,7 +73,7 @@ $text_decorations = majc_get_text_decoration_choices();
         <div class="majc-settings-field">
             <label><?php esc_html_e('Background Type', 'mini-ajax-cart'); ?></label>
             <div class="majc-settings-input-field">
-                <select name="majc_settings[custom][drawer_content_bg_type]" onchange="hideShow(this)" target="majc-content-bg-option-field">
+                <select name="majc_settings[custom][drawer_content_bg_type]" data-condition="toggle" id="majc-drawer-content_bg-type">
                     <option value="none" <?php
                     if (isset($custom['drawer_content_bg_type'])) {
                         selected($custom['drawer_content_bg_type'], 'none');
@@ -93,14 +93,14 @@ $text_decorations = majc_get_text_decoration_choices();
             </div>
         </div>
 
-        <div class="majc-settings-field majc-content-bg-option-field majc-choose_color" style="<?php echo isset($custom['drawer_content_bg_type']) && $custom['drawer_content_bg_type'] == 'choose_color' ? 'display: flex;' : 'display: none;'; ?>">
+        <div class="majc-settings-field majc-content-bg-option-field majc-choose_color" data-condition-toggle="majc-drawer-content_bg-type" data-condition-val="choose_color">
             <label><?php esc_html_e('Background Color', 'mini-ajax-cart'); ?></label>
             <div class="majc-settings-input-field">
                 <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][drawer_content_bg_color]" value="<?php echo isset($custom['drawer_content_bg_color']) ? esc_attr($custom['drawer_content_bg_color']) : ''; ?>">
             </div>
         </div>
 
-        <div class="majc-settings-field majc-content-bg-option-field majc-custom_image_bg" style="<?php echo isset($custom['drawer_content_bg_type']) && $custom['drawer_content_bg_type'] == 'custom_image_bg' ? 'display: flex;' : 'display: none;'; ?>">
+        <div class="majc-settings-field majc-content-bg-option-field majc-custom_image_bg" data-condition-toggle="majc-drawer-content_bg-type" data-condition-val="custom_image_bg">
             <label for="majc-header-icon"><?php esc_html_e('Upload Custom Icon', 'mini-ajax-cart'); ?></label>
             <div class="majc-settings-input-field">
                 <div class="majc-icon-image-uploader">
@@ -120,12 +120,67 @@ $text_decorations = majc_get_text_decoration_choices();
         </div>
 
         <div class="majc-settings-field">
+            <label><?php esc_html_e('Color Settings', 'mini-ajax-cart'); ?></label>
+            <ul class="majc-color-fields">
+
+                <li class="majc-color-settings-field">
+                    <label><?php esc_html_e('Text Color', 'mini-ajax-cart'); ?></label>
+                    <div class="majc-color-input-field">
+                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][default_text_color]" value="<?php echo isset($custom['default_text_color']) ? esc_attr($custom['default_text_color']) : null; ?>">
+                    </div>
+                </li>
+
+                <li class="majc-color-settings-field">
+                    <label><?php esc_html_e('Border Color', 'mini-ajax-cart'); ?></label>
+                    <div class="majc-color-input-field">
+                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][default_border_color]" value="<?php echo isset($custom['default_border_color']) ? esc_attr($custom['default_border_color']) : null; ?>">
+                    </div>
+                </li>
+
+                <li class="majc-color-settings-field">
+                    <label><?php esc_html_e('Close Icon Color', 'mini-ajax-cart'); ?></label>
+                    <div class="majc-color-input-field">
+                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][close_icon_color]" value="<?php echo isset($custom['close_icon_color']) ? esc_attr($custom['close_icon_color']) : null; ?>">
+                    </div>
+                </li>
+
+                <li class="majc-color-settings-field">
+                    <label><?php esc_html_e('Close Background Color', 'mini-ajax-cart'); ?></label>
+                    <div class="majc-color-input-field">
+                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][close_bg_color]" value="<?php echo isset($custom['close_bg_color']) ? esc_attr($custom['close_bg_color']) : null; ?>">
+                    </div>
+                </li>
+
+                <li class="majc-color-settings-field">
+                    <label><?php esc_html_e('Quantity Button Background Color', 'mini-ajax-cart'); ?></label>
+                    <div class="majc-color-input-field">
+                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][qty_change_btn_bg_color]" value="<?php echo isset($custom['qty_change_btn_bg_color']) ? esc_attr($custom['qty_change_btn_bg_color']) : null; ?>">
+                    </div>
+                </li>
+
+                <li class="majc-color-settings-field">
+                    <label><?php esc_html_e('Quantity Button Icon Color', 'mini-ajax-cart'); ?></label>
+                    <div class="majc-color-input-field">
+                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][qty_change_icon_color]" value="<?php echo isset($custom['qty_change_icon_color']) ? esc_attr($custom['qty_change_icon_color']) : null; ?>">
+                    </div>
+                </li>
+                
+                <li class="majc-color-settings-field">
+                    <label><?php esc_html_e('Quantity Button Border Color', 'mini-ajax-cart'); ?></label>
+                    <div class="majc-color-input-field">
+                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][qty_change_border_color]" value="<?php echo isset($custom['qty_change_icon_color']) ? esc_attr($custom['qty_change_icon_color']) : null; ?>">
+                    </div>
+                </li>
+            </ul>
+        </div> <!-- majc-custom-fields -->
+
+        <div class="majc-settings-field">
             <label><?php esc_html_e('Header Title Typography', 'mini-ajax-cart'); ?></label>
             <ul class="majc-typography-fields">
-                <li class="majc-typography-font-family">
+                <li class="majc-typography-font-family-field">
                     <label><?php esc_html_e('Font Family', 'mini-ajax-cart'); ?></label>
                     <div class="majc-typography-input-field">
-                        <select name="majc_settings[custom][header_title_font_family]" class="typography_face">
+                        <select name="majc_settings[custom][header_title_font_family]" class="majc-typography-font-family">
                             <option value="default" <?php
                             if (isset($custom['header_title_font_family'])) {
                                 selected($custom['header_title_font_family'], 'default');
@@ -164,7 +219,7 @@ $text_decorations = majc_get_text_decoration_choices();
                     </div>
                 </li>
 
-                <li class="majc-typography-font-style">
+                <li class="majc-typography-font-style-field">
                     <label><?php esc_html_e('Font Style', 'mini-ajax-cart'); ?></label>
 
                     <?php
@@ -173,7 +228,7 @@ $text_decorations = majc_get_text_decoration_choices();
                     if ($font_weights) {
                         ?>
                         <div class="majc-typography-input-field">
-                            <select name="majc_settings[custom][header_title_font_style]" class="typography_font_style">
+                            <select name="majc_settings[custom][header_title_font_style]" class="majc-typography-font-style">
 
                                 <?php foreach ($font_weights as $font_weight => $font_weight_label) { ?>
 
@@ -190,14 +245,14 @@ $text_decorations = majc_get_text_decoration_choices();
                     <?php } ?>
                 </li>
 
-                <li class="majc-typography-text-transform">
+                <li class="majc-typography-text-transform-field">
                     <label><?php esc_html_e('Text Transform', 'mini-ajax-cart'); ?></label>
 
                     <?php
                     if ($text_transforms) {
                         ?>
                         <div class="majc-typography-input-field">
-                            <select name="majc_settings[custom][header_title_text_transform]" class="typography_text_transform">
+                            <select name="majc_settings[custom][header_title_text_transform]" class="majc-typography-text-transform">
 
                                 <?php foreach ($text_transforms as $key => $value) { ?>
 
@@ -213,14 +268,14 @@ $text_decorations = majc_get_text_decoration_choices();
                     <?php } ?>
                 </li>
 
-                <li class="majc-typography-text-decoration">
+                <li class="majc-typography-text-decoration-field">
                     <label><?php esc_html_e('Text Decoration', 'mini-ajax-cart'); ?></label>
 
                     <?php
                     if ($text_decorations) {
                         ?>
                         <div class="majc-typography-input-field">
-                            <select name="majc_settings[custom][header_title_text_decoration]" class="typography_text_decoration">
+                            <select name="majc_settings[custom][header_title_text_decoration]" class="majc-typography-text-decoration">
 
                                 <?php foreach ($text_decorations as $key => $value) { ?>
 
@@ -236,7 +291,7 @@ $text_decorations = majc_get_text_decoration_choices();
                     <?php } ?>
                 </li>
 
-                <li class="majc-typography-font-size">
+                <li class="majc-typography-font-size-field">
                     <label><?php esc_html_e('Font Size', 'mini-ajax-cart'); ?></label>
 
                     <div class="majc-typography-input-field majc-range-slider-wrap">
@@ -245,7 +300,7 @@ $text_decorations = majc_get_text_decoration_choices();
                     </div>
                 </li>
 
-                <li class="majc-typography-line-height">
+                <li class="majc-typography-line-height-field">
                     <label><?php esc_html_e('Line Height', 'mini-ajax-cart'); ?></label>
 
                     <div class="majc-typography-input-field majc-range-slider-wrap">
@@ -255,7 +310,7 @@ $text_decorations = majc_get_text_decoration_choices();
                 </li>
 
 
-                <li class="majc-typography-letter-spacing">
+                <li class="majc-typography-letter-spacing-field">
                     <label><?php esc_html_e('Letter Spacing', 'mini-ajax-cart'); ?></label>
 
                     <div class="majc-typography-input-field majc-range-slider-wrap">
@@ -264,7 +319,7 @@ $text_decorations = majc_get_text_decoration_choices();
                     </div>           
                 </li>
 
-                <li class="majc-typography-color">
+                <li class="majc-typography-color-field">
                     <label><?php esc_html_e('Text Color', 'mini-ajax-cart'); ?></label>
                     <div class="majc-typography-input-field">
                         <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][header_title_font_color]" value="<?php echo isset($custom['header_title_font_color']) ? esc_attr($custom['header_title_font_color']) : null; ?>">
@@ -277,10 +332,10 @@ $text_decorations = majc_get_text_decoration_choices();
         <div class="majc-settings-field">
             <label><?php esc_html_e('Content Typography', 'mini-ajax-cart'); ?></label>
             <ul class="majc-typography-fields">
-                <li class="majc-typography-font-family">
+                <li class="majc-typography-font-family-field">
                     <label><?php esc_html_e('Font Family', 'mini-ajax-cart'); ?></label>
                     <div class="majc-typography-input-field">
-                        <select name="majc_settings[custom][content_font_family]" class="typography_face">
+                        <select name="majc_settings[custom][content_font_family]" class="majc-typography-font-family">
                             <option value="default" <?php
                             if (isset($custom['content_font_family'])) {
                                 selected($custom['content_font_family'], 'default');
@@ -319,7 +374,7 @@ $text_decorations = majc_get_text_decoration_choices();
                     </div>
                 </li>
 
-                <li class="majc-typography-font-style">
+                <li class="majc-typography-font-style-field">
                     <label><?php esc_html_e('Font Style', 'mini-ajax-cart'); ?></label>
 
                     <?php
@@ -328,7 +383,7 @@ $text_decorations = majc_get_text_decoration_choices();
                     if ($font_weights) {
                         ?>
                         <div class="majc-typography-input-field">
-                            <select name="majc_settings[custom][content_font_style]" class="typography_font_style">
+                            <select name="majc_settings[custom][content_font_style]" class="majc-typography-font-style">
 
                                 <?php foreach ($font_weights as $font_weight => $font_weight_label) { ?>
 
@@ -345,14 +400,14 @@ $text_decorations = majc_get_text_decoration_choices();
                     <?php } ?>
                 </li>
 
-                <li class="majc-typography-text-transform">
+                <li class="majc-typography-text-transform-field">
                     <label><?php esc_html_e('Text Transform', 'mini-ajax-cart'); ?></label>
 
                     <?php
                     if ($text_transforms) {
                         ?>
                         <div class="majc-typography-input-field">
-                            <select name="majc_settings[custom][content_text_transform]" class="typography_text_transform">
+                            <select name="majc_settings[custom][content_text_transform]" class="majc-typography-text-transform">
 
                                 <?php foreach ($text_transforms as $key => $value) { ?>
 
@@ -368,14 +423,14 @@ $text_decorations = majc_get_text_decoration_choices();
                     <?php } ?>
                 </li>
 
-                <li class="majc-typography-text-decoration">
+                <li class="majc-typography-text-decoration-field">
                     <label><?php esc_html_e('Text Decoration', 'mini-ajax-cart'); ?></label>
 
                     <?php
                     if ($text_decorations) {
                         ?>
                         <div class="majc-typography-input-field">
-                            <select name="majc_settings[custom][content_text_decoration]" class="typography_text_decoration">
+                            <select name="majc_settings[custom][content_text_decoration]" class="majc-typography-text-decoration">
 
                                 <?php foreach ($text_decorations as $key => $value) { ?>
 
@@ -391,7 +446,7 @@ $text_decorations = majc_get_text_decoration_choices();
                     <?php } ?>
                 </li>
 
-                <li class="majc-typography-font-size">
+                <li class="majc-typography-font-size-field">
                     <label><?php esc_html_e('Font Size', 'mini-ajax-cart'); ?></label>
 
                     <div class="majc-typography-input-field majc-range-slider-wrap">
@@ -401,7 +456,7 @@ $text_decorations = majc_get_text_decoration_choices();
                 </li>
 
 
-                <li class="majc-typography-line-height">
+                <li class="majc-typography-line-height-field">
                     <label><?php esc_html_e('Line Height', 'mini-ajax-cart'); ?></label>
 
                     <div class="majc-typography-input-field majc-range-slider-wrap">
@@ -411,7 +466,7 @@ $text_decorations = majc_get_text_decoration_choices();
                 </li>
 
 
-                <li class="majc-typography-letter-spacing">
+                <li class="majc-typography-letter-spacing-field">
                     <label><?php esc_html_e('Letter Spacing', 'mini-ajax-cart'); ?></label>
 
                     <div class="majc-typography-input-field majc-range-slider-wrap">
@@ -420,7 +475,7 @@ $text_decorations = majc_get_text_decoration_choices();
                     </div>           
                 </li>
 
-                <li class="majc-typography-color">
+                <li class="majc-typography-color-field">
                     <label><?php esc_html_e('Text Color', 'mini-ajax-cart'); ?></label>
                     <div class="majc-typography-input-field">
                         <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][content_font_color]" value="<?php echo isset($custom['content_font_color']) ? esc_attr($custom['content_font_color']) : null; ?>">
@@ -433,10 +488,10 @@ $text_decorations = majc_get_text_decoration_choices();
         <div class="majc-settings-field">
             <label><?php esc_html_e('Product Title Typography', 'mini-ajax-cart'); ?></label>
             <ul class="majc-typography-fields">
-                <li class="majc-typography-font-family">
+                <li class="majc-typography-font-family-field">
                     <label><?php esc_html_e('Font Family', 'mini-ajax-cart'); ?></label>
                     <div class="majc-typography-input-field">
-                        <select name="majc_settings[custom][product_title_font_family]" class="typography_face">
+                        <select name="majc_settings[custom][product_title_font_family]" class="majc-typography-font-family">
                             <option value="default" <?php
                             if (isset($custom['product_title_font_family'])) {
                                 selected($custom['product_title_font_family'], 'default');
@@ -475,7 +530,7 @@ $text_decorations = majc_get_text_decoration_choices();
                     </div>
                 </li>
 
-                <li class="majc-typography-font-style">
+                <li class="majc-typography-font-style-field">
                     <label><?php esc_html_e('Font Style', 'mini-ajax-cart'); ?></label>
 
                     <?php
@@ -484,7 +539,7 @@ $text_decorations = majc_get_text_decoration_choices();
                     if ($font_weights) {
                         ?>
                         <div class="majc-typography-input-field">
-                            <select name="majc_settings[custom][product_title_font_style]" class="typography_font_style">
+                            <select name="majc_settings[custom][product_title_font_style]" class="majc-typography-font-style">
 
                                 <?php foreach ($font_weights as $font_weight => $font_weight_label) { ?>
 
@@ -501,14 +556,14 @@ $text_decorations = majc_get_text_decoration_choices();
                     <?php } ?>
                 </li>
 
-                <li class="majc-typography-text-transform">
+                <li class="majc-typography-text-transform-field">
                     <label><?php esc_html_e('Text Transform', 'mini-ajax-cart'); ?></label>
 
                     <?php
                     if ($text_transforms) {
                         ?>
                         <div class="majc-typography-input-field">
-                            <select name="majc_settings[custom][product_title_text_transform]" class="typography_text_transform">
+                            <select name="majc_settings[custom][product_title_text_transform]" class="majc-typography-text-transform">
 
                                 <?php foreach ($text_transforms as $key => $value) { ?>
 
@@ -524,14 +579,14 @@ $text_decorations = majc_get_text_decoration_choices();
                     <?php } ?>
                 </li>
 
-                <li class="majc-typography-text-decoration">
+                <li class="majc-typography-text-decoration-field">
                     <label><?php esc_html_e('Text Decoration', 'mini-ajax-cart'); ?></label>
 
                     <?php
                     if ($text_decorations) {
                         ?>
                         <div class="majc-typography-input-field">
-                            <select name="majc_settings[custom][product_title_text_decoration]" class="typography_text_decoration">
+                            <select name="majc_settings[custom][product_title_text_decoration]" class="majc-typography-text-decoration">
 
                                 <?php foreach ($text_decorations as $key => $value) { ?>
 
@@ -548,7 +603,7 @@ $text_decorations = majc_get_text_decoration_choices();
                 </li>
 
 
-                <li class="majc-typography-font-size">
+                <li class="majc-typography-font-size-field">
                     <label><?php esc_html_e('Font Size', 'mini-ajax-cart'); ?></label>
 
                     <div class="majc-typography-input-field majc-range-slider-wrap">
@@ -558,7 +613,7 @@ $text_decorations = majc_get_text_decoration_choices();
                 </li>
 
 
-                <li class="majc-typography-line-height">
+                <li class="majc-typography-line-height-field">
                     <label><?php esc_html_e('Line Height', 'mini-ajax-cart'); ?></label>
 
                     <div class="majc-typography-input-field majc-range-slider-wrap">
@@ -568,7 +623,7 @@ $text_decorations = majc_get_text_decoration_choices();
                 </li>
 
 
-                <li class="majc-typography-letter-spacing">
+                <li class="majc-typography-letter-spacing-field">
                     <label><?php esc_html_e('Letter Spacing', 'mini-ajax-cart'); ?></label>
 
                     <div class="majc-typography-input-field majc-range-slider-wrap">
@@ -577,7 +632,7 @@ $text_decorations = majc_get_text_decoration_choices();
                     </div>           
                 </li>
 
-                <li class="majc-typography-color">
+                <li class="majc-typography-color-field">
                     <label><?php esc_html_e('Text Color', 'mini-ajax-cart'); ?></label>
                     <div class="majc-typography-input-field">
                         <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][product_title_font_color]" value="<?php echo isset($custom['product_title_font_color']) ? esc_attr($custom['product_title_font_color']) : null; ?>">
@@ -591,10 +646,10 @@ $text_decorations = majc_get_text_decoration_choices();
             <label><?php esc_html_e('Button Typography', 'mini-ajax-cart'); ?></label>
 
             <ul class="majc-typography-fields">
-                <li class="majc-typography-font-family">
+                <li class="majc-typography-font-family-field">
                     <label><?php esc_html_e('Font Family', 'mini-ajax-cart'); ?></label>
                     <div class="majc-typography-input-field">
-                        <select name="majc_settings[custom][button_text_font_family]" class="typography_face">
+                        <select name="majc_settings[custom][button_text_font_family]" class="majc-typography-font-family">
 
                             <option value="default" <?php
                             if (isset($custom['header_title_font_family'])) {
@@ -634,7 +689,7 @@ $text_decorations = majc_get_text_decoration_choices();
                     </div>
                 </li>
 
-                <li class="majc-typography-font-style">
+                <li class="majc-typography-font-style-field">
                     <label><?php esc_html_e('Font Style', 'mini-ajax-cart'); ?></label>
 
                     <?php
@@ -643,7 +698,7 @@ $text_decorations = majc_get_text_decoration_choices();
                     if ($font_weights) {
                         ?>
                         <div class="majc-typography-input-field">
-                            <select name="majc_settings[custom][button_text_font_style]" class="typography_font_style">
+                            <select name="majc_settings[custom][button_text_font_style]" class="majc-typography-font-style">
                                 <?php foreach ($font_weights as $font_weight => $font_weight_label) { ?>
                                     <option value="<?php echo esc_attr($font_weight); ?>" <?php
                                     if (isset($custom['button_text_font_style'])) {
@@ -656,14 +711,14 @@ $text_decorations = majc_get_text_decoration_choices();
                     <?php } ?>
                 </li>
 
-                <li class="majc-typography-text-transform">
+                <li class="majc-typography-text-transform-field">
                     <label><?php esc_html_e('Text Transform', 'mini-ajax-cart'); ?></label>
 
                     <?php
                     if ($text_transforms) {
                         ?>
                         <div class="majc-typography-input-field">
-                            <select name="majc_settings[custom][button_text_text_transform]" class="typography_text_transform">
+                            <select name="majc_settings[custom][button_text_text_transform]" class="majc-typography-text-transform">
 
                                 <?php foreach ($text_transforms as $key => $value) { ?>
 
@@ -679,14 +734,14 @@ $text_decorations = majc_get_text_decoration_choices();
                     <?php } ?>
                 </li>
 
-                <li class="majc-typography-text-decoration">
+                <li class="majc-typography-text-decoration-field">
                     <label><?php esc_html_e('Text Decoration', 'mini-ajax-cart'); ?></label>
 
                     <?php
                     if ($text_decorations) {
                         ?>
                         <div class="majc-typography-input-field">
-                            <select name="majc_settings[custom][button_text_text_decoration]" class="typography_text_decoration">
+                            <select name="majc_settings[custom][button_text_text_decoration]" class="majc-typography-text-decoration">
 
                                 <?php foreach ($text_decorations as $key => $value) { ?>
 
@@ -702,7 +757,7 @@ $text_decorations = majc_get_text_decoration_choices();
                     <?php } ?>
                 </li>
 
-                <li class="majc-typography-font-size">
+                <li class="majc-typography-font-size-field">
                     <label><?php esc_html_e('Font Size', 'mini-ajax-cart'); ?></label>
 
                     <div class="majc-typography-input- majc-range-slider-wrap">
@@ -712,7 +767,7 @@ $text_decorations = majc_get_text_decoration_choices();
                 </li>
 
 
-                <li class="majc-typography-line-height">
+                <li class="majc-typography-line-height-field">
                     <label><?php esc_html_e('Line Height', 'mini-ajax-cart'); ?></label>
 
                     <div class="majc-typography-input-field majc-range-slider-wrap">
@@ -722,7 +777,7 @@ $text_decorations = majc_get_text_decoration_choices();
                 </li>
 
 
-                <li class="majc-typography-letter-spacing">
+                <li class="majc-typography-letter-spacing-field">
                     <label><?php esc_html_e('Letter Spacing', 'mini-ajax-cart'); ?></label>
 
                     <div class="majc-typography-input-field majc-range-slider-wrap">
@@ -823,7 +878,7 @@ $text_decorations = majc_get_text_decoration_choices();
         <!-- ** View Cart Button Text ** -->
         <!-- ***************** -->
         <div class="majc-settings-field">
-            <label><?php esc_html_e('View Cart Button', 'mini-ajax-cart'); ?></label>
+            <label><?php esc_html_e('Cart/CheckOut Button', 'mini-ajax-cart'); ?></label>
             <ul class="majc-color-fields">
                 <li class="majc-color-settings-field">
                     <label><?php esc_html_e('Background Color', 'mini-ajax-cart'); ?></label>
@@ -868,55 +923,7 @@ $text_decorations = majc_get_text_decoration_choices();
                 </li>
             </ul>
         </div>
-        <!-- ***************** -->
-        <!-- ** Checkout Button Text ** -->
-        <!-- ***************** -->
-        <div class="majc-settings-field">
-            <label><?php esc_html_e('Checkout Button', 'mini-ajax-cart'); ?></label>
-            <ul class="majc-color-fields">
-                <li class="majc-color-settings-field">
-                    <label><?php esc_html_e('Background Color', 'mini-ajax-cart'); ?></label>
-                    <div class="majc-color-input-field">
-                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][checkout_btn_bg_color]" value="<?php echo isset($custom['checkout_btn_bg_color']) ? esc_attr($custom['checkout_btn_bg_color']) : null; ?>">
-                    </div>
-                </li>
-
-                <li class="majc-color-settings-field">
-                    <label><?php esc_html_e('Background Color (Hover)', 'mini-ajax-cart'); ?></label>
-                    <div class="majc-color-input-field">
-                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][checkout_btn_hover_bg_color]" value="<?php echo isset($custom['checkout_btn_hover_bg_color']) ? esc_attr($custom['checkout_btn_hover_bg_color']) : null; ?>">
-                    </div>
-                </li>
-
-                <li class="majc-color-settings-field">
-                    <label><?php esc_html_e('Text Color', 'mini-ajax-cart'); ?></label>
-                    <div class="majc-color-input-field">
-                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][checkout_btn_font_color]" value="<?php echo isset($custom['checkout_btn_font_color']) ? esc_attr($custom['checkout_btn_font_color']) : null; ?>">
-                    </div>
-                </li>
-
-                <li class="majc-color-settings-field">
-                    <label><?php esc_html_e('Text Color (Hover)', 'mini-ajax-cart'); ?></label>
-                    <div class="majc-color-input-field">
-                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][checkout_btn_hover_font_color]" value="<?php echo isset($custom['checkout_btn_hover_font_color']) ? esc_attr($custom['checkout_btn_hover_font_color']) : null; ?>">
-                    </div>
-                </li>	
-
-                <li class="majc-color-settings-field">
-                    <label><?php esc_html_e('Border Color', 'mini-ajax-cart'); ?></label>
-                    <div class="majc-color-input-field">
-                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][checkout_btn_normal_border_color]" value="<?php echo isset($custom['checkout_btn_normal_border_color']) ? esc_attr($custom['checkout_btn_normal_border_color']) : null; ?>">
-                    </div>
-                </li>
-
-                <li class="majc-color-settings-field">
-                    <label><?php esc_html_e('Border Color (Hover)', 'mini-ajax-cart'); ?></label>
-                    <div class="majc-color-input-field">
-                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][checkout_btn_hover_border_color]" value="<?php echo isset($custom['checkout_btn_hover_border_color']) ? esc_attr($custom['checkout_btn_hover_border_color']) : null; ?>">
-                    </div>
-                </li>
-            </ul>
-        </div>
+        
         <!-- ***************** -->
         <!-- ** Remove Product Button ** -->
         <!-- ***************** -->
@@ -939,41 +946,5 @@ $text_decorations = majc_get_text_decoration_choices();
             </ul>
         </div>
 
-
-        <!-- ***************** -->
-        <!-- ** Extras ** -->
-        <!-- ***************** -->
-        <div class="majc-settings-field">
-            <label><?php esc_html_e('Extra Custom Settings', 'mini-ajax-cart'); ?></label>
-            <ul class="majc-color-fields">
-                <li class="majc-color-settings-field">
-                    <label><?php esc_html_e('Close Icon Color', 'mini-ajax-cart'); ?></label>
-                    <div class="majc-color-input-field">
-                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][close_icon_color]" value="<?php echo isset($custom['close_icon_color']) ? esc_attr($custom['close_icon_color']) : null; ?>">
-                    </div>
-                </li>
-
-                <li class="majc-color-settings-field">
-                    <label><?php esc_html_e('Default Border Color', 'mini-ajax-cart'); ?></label>
-                    <div class="majc-color-input-field">
-                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][default_border_color]" value="<?php echo isset($custom['default_border_color']) ? esc_attr($custom['default_border_color']) : null; ?>">
-                    </div>
-                </li>
-
-                <li class="majc-color-settings-field">
-                    <label><?php esc_html_e('Quantity Change Button Background Color', 'mini-ajax-cart'); ?></label>
-                    <div class="majc-color-input-field">
-                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][qty_change_btn_bg_color]" value="<?php echo isset($custom['qty_change_btn_bg_color']) ? esc_attr($custom['qty_change_btn_bg_color']) : null; ?>">
-                    </div>
-                </li>
-
-                <li class="majc-color-settings-field">
-                    <label><?php esc_html_e('Quantity Change Icon Color', 'mini-ajax-cart'); ?></label>
-                    <div class="majc-color-input-field">
-                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][qty_change_icon_color]" value="<?php echo isset($custom['qty_change_icon_color']) ? esc_attr($custom['qty_change_icon_color']) : null; ?>">
-                    </div>
-                </li>
-            </ul>
-        </div> <!-- majc-custom-fields -->
     </div>
 </div>

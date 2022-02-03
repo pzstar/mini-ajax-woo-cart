@@ -201,7 +201,11 @@ function majc_get_google_font_variants() {
         $variants_array = $font_array['0']['variants'];
         $options_array = "";
         foreach ($variants_array as $key => $variants) {
-            $selected = $key == '400' ? 'selected="selected"' : '';
+            if ($font_family == 'default') {
+                $selected = $key == 'default' ? 'selected="selected"' : '';
+            } else {
+                $selected = $key == '400' ? 'selected="selected"' : '';
+            }
             $options_array .= '<option ' . $selected . ' value="' . esc_attr($key) . '">' . esc_html($variants) . '</option>';
         }
 
@@ -212,4 +216,125 @@ function majc_get_google_font_variants() {
         }
     }
     die();
+}
+
+function majc_typography_css($meta, $key, $selector) {
+    if (!$key || !$selector) {
+        return;
+    }
+    $css = array();
+
+    $family = $meta[$key . '_font_family'];
+    $style = $meta[$key . '_font_style'];
+    $text_decoration = $meta[$key . '_text_decoration'];
+    $text_transform = $meta[$key . '_text_transform'];
+    $size = $meta[$key . '_font_size'];
+    $line_height = $meta[$key . '_line_height'];
+    $letter_spacing = $meta[$key . '_letter_spacing'];
+    $color = $meta[$key . '_font_color'];
+
+    if (strpos($style, 'italic')) {
+        $italic = 'italic';
+    }
+
+    $weight = absint($style);
+
+    $css[] = (!empty($family) && $family != 'default') ? "font-family: '{$family}', serif" : NULL;
+    $css[] = (!empty($weight) && $style != 'default') ? "font-weight: {$weight}" : NULL;
+    $css[] = (!empty($italic) && $style != 'default') ? "font-style: {$italic}" : NULL;
+    $css[] = (!empty($text_transform) && $text_transform != 'default') ? "text-transform: {$text_transform}" : NULL;
+    $css[] = (!empty($text_decoration) && $text_decoration != 'default') ? "text-decoration: {$text_decoration}" : NULL;
+    $css[] = !empty($size) ? "font-size: {$size}px" : NULL;
+    $css[] = !empty($line_height) ? "line-height: {$line_height}" : NULL;
+    $css[] = !empty($letter_spacing) ? "letter-spacing: {$letter_spacing}px" : NULL;
+    $css[] = !empty($color) ? "color: {$color}" : NULL;
+
+    $css = array_filter($css);
+
+    return $selector . '{' . implode(';', $css) . '}';
+}
+
+function majc_custom_fonts() {
+    $font_family_array = array();
+    $args = array(
+        'post_type' => 'ultimate-woo-cart',
+        'posts_per_page' => -1
+    );
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) :
+        while ($query->have_posts()) :
+            $query->the_post();
+            $majc_settings = get_post_meta(get_the_ID(), 'uwcc_settings', true);
+            var_dump($majc_settings);
+
+            $enable_flying_cart = $majc_settings['display']['enable_flying_cart'];
+            $enable = $majc_settings['custom']['enable'];
+
+            if ($enable_flying_cart && $enable) {
+                $font_family_array = array(
+                    $majc_settings['custom']['header_title_font_family'],
+                    $majc_settings['custom']['content_font_family'],
+                    $majc_settings['custom']['product_title_font_family'],
+                    $majc_settings['custom']['button_text_font_family']
+                );
+            }
+
+        endwhile;
+        wp_reset_postdata();
+    endif;
+
+    //return $font_family_array;
+}
+
+function majc_fonts_url() {
+    $fonts_url = '';
+    $subsets = 'latin,latin-ext';
+    $fonts = $font_family_array = $variants_array = $font_array = array();
+    $standard_fonts = ['default', 'Helvetica', 'Verdana', 'Arial', 'Times', 'Georgia', 'Courier', 'Trebuchet', 'Tahoma', 'Palatino'];
+
+    $custom_fonts = majc_custom_fonts();
+
+    $font_family_array = array_unique($custom_fonts);
+    $font_family_array = array_diff($font_family_array, $standard_fonts);
+
+    foreach ($font_family_array as $font_family) {
+        $font_array = majc_search_key($google_font_list, 'family', $font_family);
+        $variants_array = $font_array['0']['variants'];
+        $variants_keys = array_keys($variants_array);
+        $variants = implode(',', $variants_keys);
+
+        $fonts[] = $font_family . ':' . str_replace('italic', 'i', $variants);
+    }
+    /*
+     * Translators: To add an additional character subset specific to your language,
+     * translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
+     */
+    $subset = _x('no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'total');
+
+    if ('cyrillic' == $subset) {
+        $subsets .= ',cyrillic,cyrillic-ext';
+    } elseif ('greek' == $subset) {
+        $subsets .= ',greek,greek-ext';
+    } elseif ('devanagari' == $subset) {
+        $subsets .= ',devanagari';
+    } elseif ('vietnamese' == $subset) {
+        $subsets .= ',vietnamese';
+    }
+
+    if ($fonts) {
+        $fonts_url = add_query_arg(array(
+            'family' => urlencode(implode('|', $fonts)),
+            'subset' => urlencode($subsets),
+            'display' => 'swap',
+                ), '//fonts.googleapis.com/css');
+    }
+
+    return $fonts_url;
+}
+
+function majc_verify_settings($setting) {
+    if (isset($setting) && !empty($setting)) {
+        return $setting;
+    }
 }
