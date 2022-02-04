@@ -6,17 +6,6 @@ $display = isset($majc_settings['display']) ? $majc_settings['display'] : null;
     <h2><?php esc_html_e('Display Settings', 'mini-ajax-cart'); ?></h2>
 
     <div class="majc-settings-field">
-        <label><?php esc_html_e('Enable Flying Cart', 'mini-ajax-cart'); ?></label>
-        <div class="majc-settings-input-field  majc-toggle-input-field">
-            <input type="checkbox" name="majc_settings[display][enable_flying_cart]" <?php
-            if (isset($display['enable_flying_cart'])) {
-                checked($display['enable_flying_cart'], 'on', true);
-            }
-            ?>>
-        </div>
-    </div>
-
-    <div class="majc-settings-field">
         <label><?php esc_html_e('Hide On Mobile', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-input-field majc-toggle-input-field">
             <input type="checkbox" name="majc_settings[display][mobile_hide]" <?php

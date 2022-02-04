@@ -9,6 +9,17 @@ $animations = $this->majc_animations();
 
 <div id="layout-settings" class="tab-content">
     <div class="majc-settings-field-wrap">
+        <div class="majc-settings-field">
+            <label><?php esc_html_e('Enable Mini Ajax Cart', 'mini-ajax-cart'); ?></label>
+            <div class="majc-settings-input-field  majc-toggle-input-field">
+                <input type="checkbox" name="majc_settings[display][enable_flying_cart]" <?php
+                if (isset($display['enable_flying_cart'])) {
+                    checked($display['enable_flying_cart'], 'on', true);
+                }
+                ?>>
+                <p class="majc-desc"><?php esc_html_e('Display Ajax Cart?', 'mini-ajax-cart'); ?></p>
+            </div>
+        </div>
         <h2><?php esc_html_e('Cart Basket/Button Settings', 'mini-ajax-cart'); ?></h2>
         <div class="majc-settings-field">
             <label><?php esc_html_e('Open Icon Type', 'mini-ajax-cart'); ?></label>
