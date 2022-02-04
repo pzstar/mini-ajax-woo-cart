@@ -334,9 +334,3 @@ function majc_fonts_url() {
 
     return $fonts_url;
 }
-
-function majc_verify_settings($setting) {
-    if (isset($setting) && !empty($setting)) {
-        return $setting;
-    }
-}

@@ -5,7 +5,7 @@ defined('ABSPATH') or die('No script please!');
   Plugin Name: Mini Ajax Cart for WooCommerce
   Plugin URI: https://github.com/pzstar/mini-ajax-woo-cart
   Description: Ajax, Floating, Slide In, Popup Cart For WordPress with WooCommerce
-  Version:     1.0.8
+  Version:     1.1.0
   Author:      HashThemes
   Author URI:  http://hashthemes.com
   License:     GPLv2 or later
@@ -34,7 +34,7 @@ if (!class_exists('MAJC_Class')) {
         }
 
         public function define_constants() {
-            defined('MAJC_VERSION') or define('MAJC_VERSION', '1.0.8'); //plugin version
+            defined('MAJC_VERSION') or define('MAJC_VERSION', '1.1.0'); //plugin version
 
             defined('MAJC_TD') or define('MAJC_TD', 'mini-ajax-cart'); //plugin's text domain
 

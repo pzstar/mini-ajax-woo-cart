@@ -123,17 +123,20 @@
 
         // Update slider if the input field loses focus as it's most likely changed
         $('.majc-range-input-selector').blur(function () {
-            var resetValue = Number($(this).val());
-            var sliderMinValue = parseFloat($(this).attr('min'));
-            var sliderMaxValue = parseFloat($(this).attr('max'));
-            // Make sure our manual input value doesn't exceed the minimum & maxmium values
-            if (resetValue < sliderMinValue) {
-                resetValue = sliderMinValue;
-                $(this).val(resetValue);
-            }
-            if (resetValue > sliderMaxValue) {
-                resetValue = sliderMaxValue;
-                $(this).val(resetValue);
+            var resetValue = isNaN($(this).val()) ? '' : $(this).val();
+
+            if (resetValue) {
+                var sliderMinValue = parseFloat($(this).attr('min'));
+                var sliderMaxValue = parseFloat($(this).attr('max'));
+                // Make sure our manual input value doesn't exceed the minimum & maxmium values
+                if (resetValue < sliderMinValue) {
+                    resetValue = sliderMinValue;
+                    $(this).val(resetValue);
+                }
+                if (resetValue > sliderMaxValue) {
+                    resetValue = sliderMaxValue;
+                    $(this).val(resetValue);
+                }
             }
             $(this).val(resetValue);
             $(this).prev('.majc-range-slider').slider('value', resetValue);

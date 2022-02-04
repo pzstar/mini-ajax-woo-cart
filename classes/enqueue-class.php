@@ -65,7 +65,7 @@ if (!class_exists('MAJC_Enqueue')) {
             wp_enqueue_script('jquery-effects-shake');
 
             // Animate CSS
-            wp_enqueue_style('animate', MAJC_FRONTEND_CSS_DIR . 'animate.min.css', false, MAJC_VERSION);
+            wp_enqueue_style('animate', MAJC_FRONTEND_CSS_DIR . 'animate.css', false, MAJC_VERSION);
 
             wp_enqueue_style('hover', MAJC_FRONTEND_CSS_DIR . 'hover-min.css', false, MAJC_VERSION);
 

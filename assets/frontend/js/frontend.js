@@ -53,7 +53,7 @@
         });
 
         $('body').find(".majc-cartbasket-toggle-btn").on('click', function () {
-            if ($(this).parent().next('.majc-cart-popup').hasClass('animate__animated')) {
+            if ($(this).parent().next('.majc-cart-popup').hasClass('animate--animated')) {
                 var $popup = $(this).parent().next('.majc-cart-popup');
                 var showAnimation = $popup.data('showanimation');
                 var hideAnimation = $popup.data('hideanimation');

@@ -166,23 +166,23 @@ if (!empty($post)) {
 
                         <?php
                         if (!empty($show_animation) && !empty($hide_animation)) {
-                            $majc_popup_class = 'majc-cartpop-animation-enabled majc-cartpop-both-animation-enabled animate__animated';
+                            $majc_popup_class = 'majc-cartpop-animation-enabled majc-cartpop-both-animation-enabled animate--animated';
                         } elseif (!empty($show_animation)) {
-                            $majc_popup_class = 'majc-cartpop-animation-enabled majc-cartpop-show-animation-enabled animate__animated';
+                            $majc_popup_class = 'majc-cartpop-animation-enabled majc-cartpop-show-animation-enabled animate--animated';
                         } elseif (!empty($hide_animation)) {
-                            $majc_popup_class = 'majc-cartpop-animation-enabled majc-cartpop-hide-animation-enabled animate__animated';
+                            $majc_popup_class = 'majc-cartpop-animation-enabled majc-cartpop-hide-animation-enabled animate--animated';
                         } else {
                             $majc_popup_class = '';
                         }
                         ?>
                         <div class="majc-cart-popup <?php echo esc_attr($majc_popup_class); ?>" 
                         <?php if (!empty($show_animation)) { ?>
-                                 data-showanimation="<?php echo 'animate__' . esc_attr($show_animation); ?>" 
+                                 data-showanimation="<?php echo 'animate--' . esc_attr($show_animation); ?>" 
                                  <?php
                              }
                              if (!empty($hide_animation)) {
                                  ?>
-                                 data-hideanimation="<?php echo 'animate__' . esc_attr($hide_animation); ?>"
+                                 data-hideanimation="<?php echo 'animate--' . esc_attr($hide_animation); ?>"
                              <?php } ?>
                              style="width:<?php echo $content_width ?>px">
                             <div class="majc-cart-popup-inner">
