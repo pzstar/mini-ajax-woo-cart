@@ -211,7 +211,7 @@
 }
 
 .majc-header .majc-sub-header {
-    font-size: 14px;
+    font-size: 0.8em;
     padding: 10px 20px;
     border-bottom: 1px solid #EEE;
     text-align: center;
@@ -320,6 +320,7 @@
     font-size: 16px;
     cursor: pointer;
     background: #f1f1f1;
+    color: #333;
 }
 
 .majc-item-qty .majc-qty-minus:hover,
@@ -558,4 +559,10 @@
 .majc-cart-action-btn-wrap .majc-button.majc-continue-shoping-btn:hover {
     color: #737373;
     background: transparent;
+}
+
+@media screen and (max-width: 768px){
+    .majc-layout-slidein .majc-cart-popup{
+        width: 100% !important;
+    }
 }

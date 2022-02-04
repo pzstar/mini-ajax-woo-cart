@@ -126,9 +126,12 @@ if (!empty($post)) {
                 if (isset($hideOnScreenTypes) && $hideOnScreenTypes == '1') {
                     continue;
                 }
+                $content_width = isset($majc_settings['content_width']) ? $majc_settings['content_width'] : 400;
                 ?>
 
-                <div id="majc-main-wrapper-<?php echo esc_attr($current_page_id); ?>" class="majc-main-wrapper <?php echo esc_attr('majc-layout-' . $layout_type) . esc_attr(' majc-' . $basket_position) . esc_attr(' majc-cartitem-' . $cart_item_layout) . ' ' . esc_attr($basket_position_class); ?>" data-overlayenable="<?php echo isset($enable_overlay) ? 'majc-overlay-enabled' : ''; ?>" data-pageid="<?php echo esc_attr($current_page_id); ?>">
+                <div id="majc-main-wrapper-<?php echo esc_attr($post->ID); ?>" 
+                     class="majc-main-wrapper <?php echo esc_attr('majc-layout-' . $layout_type) . esc_attr(' majc-' . $basket_position) . esc_attr(' majc-cartitem-' . $cart_item_layout) . ' ' . esc_attr($basket_position_class); ?>" 
+                     data-overlayenable="<?php echo isset($enable_overlay) ? 'majc-overlay-enabled' : ''; ?>" data-pageid="<?php echo esc_attr($current_page_id); ?>">
 
                     <div class="majc-main-inner-wrapper">
                         <div class="majc-toggle-button <?php echo esc_attr('majc-' . $cart_basket_shape); ?>">
@@ -180,7 +183,8 @@ if (!empty($post)) {
                              if (!empty($hide_animation)) {
                                  ?>
                                  data-hideanimation="<?php echo 'animate__' . esc_attr($hide_animation); ?>"
-                             <?php } ?>>
+                             <?php } ?>
+                             style="width:<?php echo $content_width ?>px">
                             <div class="majc-cart-popup-inner">
 
                                 <div class="majc-header">

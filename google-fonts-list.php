@@ -224,14 +224,14 @@ function majc_typography_css($meta, $key, $selector) {
     }
     $css = array();
 
-    $family = $meta[$key . '_font_family'];
-    $style = $meta[$key . '_font_style'];
-    $text_decoration = $meta[$key . '_text_decoration'];
-    $text_transform = $meta[$key . '_text_transform'];
-    $size = $meta[$key . '_font_size'];
-    $line_height = $meta[$key . '_line_height'];
-    $letter_spacing = $meta[$key . '_letter_spacing'];
-    $color = $meta[$key . '_font_color'];
+    $family = isset($meta[$key . '_font_family']) ? $meta[$key . '_font_family'] : NULL;
+    $style = isset($meta[$key . '_font_style']) ? $meta[$key . '_font_style'] : NULL;
+    $text_decoration = isset($meta[$key . '_text_decoration']) ? $meta[$key . '_text_decoration'] : NULL;
+    $text_transform = isset($meta[$key . '_text_transform']) ? $meta[$key . '_text_transform'] : NULL;
+    $size = isset($meta[$key . '_font_size']) ? $meta[$key . '_font_size'] : NULL;
+    $line_height = isset($meta[$key . '_line_height']) ? $meta[$key . '_line_height'] : NULL;
+    $letter_spacing = isset($meta[$key . '_letter_spacing']) ? $meta[$key . '_letter_spacing'] : NULL;
+    $color = isset($meta[$key . '_font_color']) ? $meta[$key . '_font_color'] : NULL;
 
     if (strpos($style, 'italic')) {
         $italic = 'italic';
@@ -266,25 +266,27 @@ function majc_custom_fonts() {
         while ($query->have_posts()) :
             $query->the_post();
             $majc_settings = get_post_meta(get_the_ID(), 'uwcc_settings', true);
-            var_dump($majc_settings);
 
-            $enable_flying_cart = $majc_settings['display']['enable_flying_cart'];
-            $enable = $majc_settings['custom']['enable'];
-
-            if ($enable_flying_cart && $enable) {
-                $font_family_array = array(
-                    $majc_settings['custom']['header_title_font_family'],
-                    $majc_settings['custom']['content_font_family'],
-                    $majc_settings['custom']['product_title_font_family'],
-                    $majc_settings['custom']['button_text_font_family']
-                );
+            if (isset($majc_settings['display']['enable_flying_cart']) && isset($majc_settings['custom']['enable'])) {
+                if (isset($majc_settings['custom']['header_title_font_family'])) {
+                    $font_family_array[] = $majc_settings['custom']['header_title_font_family'];
+                }
+                if (isset($majc_settings['custom']['content_font_family'])) {
+                    $font_family_array[] = $majc_settings['custom']['content_font_family'];
+                }
+                if (isset($majc_settings['custom']['product_title_font_family'])) {
+                    $font_family_array[] = $majc_settings['custom']['product_title_font_family'];
+                }
+                if (isset($majc_settings['custom']['button_text_font_family'])) {
+                    $font_family_array[] = $majc_settings['custom']['button_text_font_family'];
+                }
             }
 
         endwhile;
         wp_reset_postdata();
     endif;
 
-    //return $font_family_array;
+    return $font_family_array;
 }
 
 function majc_fonts_url() {
@@ -299,7 +301,7 @@ function majc_fonts_url() {
     $font_family_array = array_diff($font_family_array, $standard_fonts);
 
     foreach ($font_family_array as $font_family) {
-        $font_array = majc_search_key($google_font_list, 'family', $font_family);
+        $font_array = majc_search_key(majc_google_font_array(), 'family', $font_family);
         $variants_array = $font_array['0']['variants'];
         $variants_keys = array_keys($variants_array);
         $variants = implode(',', $variants_keys);

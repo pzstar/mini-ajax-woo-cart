@@ -101,7 +101,7 @@ $text_decorations = majc_get_text_decoration_choices();
         </div>
 
         <div class="majc-settings-field majc-content-bg-option-field majc-custom_image_bg" data-condition-toggle="majc-drawer-content_bg-type" data-condition-val="custom_image_bg">
-            <label for="majc-header-icon"><?php esc_html_e('Upload Custom Icon', 'mini-ajax-cart'); ?></label>
+            <label for="majc-header-icon"><?php esc_html_e('Upload Background Image', 'mini-ajax-cart'); ?></label>
             <div class="majc-settings-input-field">
                 <div class="majc-icon-image-uploader">
                     <div class="majc-custom-img-icon-btn">
@@ -928,7 +928,7 @@ $text_decorations = majc_get_text_decoration_choices();
         <!-- ** Remove Product Button ** -->
         <!-- ***************** -->
         <div class="majc-settings-field">
-            <label><?php esc_html_e('Remove Product Button', 'mini-ajax-cart'); ?></label>
+            <label><?php esc_html_e('Remove Product Button (Grid Layout)', 'mini-ajax-cart'); ?></label>
             <ul class="majc-color-fields">
                 <li class="majc-color-settings-field">
                     <label><?php esc_html_e('Background Color', 'mini-ajax-cart'); ?></label>

@@ -1,8 +1,7 @@
 <style type="text/css">
 <?php
 $custom_css = '';
-$custom_id = '#majc-main-wrapper-' . $current_page_id;
-// Custom Settings
+$custom_id = '#majc-main-wrapper-' . $post->ID;
 $custom = isset($majc_settings['custom']) ? $majc_settings['custom'] : null;
 
 if (majc_verify_settings($custom['trigger_btn_bg_color'])) {
@@ -140,7 +139,10 @@ if (majc_verify_settings($custom['remove_product_btn_font_color'])) {
     $custom_css .= "{$custom_id}.majc-cartitem-grid .majc-cart-items-inner .majc-item-remove a{color:{$custom['remove_product_btn_font_color']}}";
 }
 
-$custom_css .= majc_typography_css($custom, 'header_title', '.majc-header h2');
+$custom_css .= majc_typography_css($custom, 'header_title', $custom_id . ' .majc-header h2');
+$custom_css .= majc_typography_css($custom, 'content', $custom_id . '.majc-layout-slidein .majc-cart-popup');
+$custom_css .= majc_typography_css($custom, 'product_title', $custom_id . ' .majc-cart-items-inner .majc-item-name');
+$custom_css .= majc_typography_css($custom, 'button_text', $custom_id . ' .majc-cart-action-btn-wrap .majc-button');
 echo $custom_css;
 ?>
 </style>

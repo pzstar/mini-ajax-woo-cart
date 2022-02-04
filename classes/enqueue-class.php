@@ -74,6 +74,7 @@ if (!class_exists('MAJC_Enqueue')) {
             wp_enqueue_script('jquery-mCustomScrollbar-script', MAJC_FRONTEND_JS_DIR . '../../mcscrollbar/jquery.mCustomScrollbar.js', array('jquery'), MAJC_VERSION);
 
             // Plugins Frontend Styles
+            wp_enqueue_style('majc-fonts', majc_fonts_url(), array(), NULL);
             wp_enqueue_style('majc-frontend-flymenu-style', MAJC_FRONTEND_CSS_DIR . 'frontend.css', false, MAJC_VERSION);
 
             // Plugins Frontend Scripts

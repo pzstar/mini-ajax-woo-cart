@@ -1,4 +1,5 @@
 <?php
+
 if (!function_exists('majc_font_awesome_icon_array')) {
 
     function majc_font_awesome_icon_array() {
