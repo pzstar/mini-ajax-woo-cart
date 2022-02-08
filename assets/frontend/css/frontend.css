@@ -3,6 +3,7 @@
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 999;
 }
 
 .majc-toggle-button .majc-cartbasket-toggle-btn {
@@ -17,7 +18,6 @@
     font-size: 32px;
     cursor: pointer;
     box-shadow: 1px 2px 3px rgba(0,0,0,0.1);
-    z-index: 999;
 }
 
 .majc-left-middle .majc-toggle-button{
