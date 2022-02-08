@@ -1,4 +1,5 @@
 <?php
+$display = isset($majc_settings['display']) ? $majc_settings['display'] : null;
 $header = isset($majc_settings['header']) ? $majc_settings['header'] : null;
 $buttons = isset($majc_settings['buttons']) ? $majc_settings['buttons'] : null;
 $coupon = isset($majc_settings['coupon']) ? $majc_settings['coupon'] : null;
