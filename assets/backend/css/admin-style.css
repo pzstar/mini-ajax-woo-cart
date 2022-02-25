@@ -410,6 +410,7 @@
 /* Range Slider */
 .majc-range-slider-wrap {
     width: 100%;
+    max-width: 320px;
     display: flex;
     align-items: center;
 }
@@ -456,7 +457,7 @@
 .majc-range-slider + .majc-range-input-selector {
     margin-left: 10px;
     margin-right: 5px;
-    width: 50px;
+    width: 50px !important;
     height: 28px;
     text-align: center;
     border-radius: 4px;
