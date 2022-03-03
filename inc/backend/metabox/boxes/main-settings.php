@@ -164,6 +164,31 @@ $animations = $this->majc_animations();
                         selected($majc_settings['basket_position'], 'right-middle');
                     }
                     ?>><?php esc_html_e('Right Middle', 'mini-ajax-cart'); ?></option>
+                    <option disabled value="" <?php
+                    if (isset($majc_settings['basket_position'])) {
+                        selected($majc_settings['basket_position'], 'left-top');
+                    }
+                    ?>><?php esc_html_e('Left Top (Pro)', 'mini-ajax-cart'); ?></option>
+                    <option disabled value="" <?php
+                    if (isset($majc_settings['basket_position'])) {
+                        selected($majc_settings['basket_position'], 'left-bottom');
+                    }
+                    ?>><?php esc_html_e('Left Bottom (Pro)', 'mini-ajax-cart'); ?></option>
+                    <option disabled value="" <?php
+                    if (isset($majc_settings['basket_position'])) {
+                        selected($majc_settings['basket_position'], 'right-top');
+                    }
+                    ?>><?php esc_html_e('Right Top (Pro)', 'mini-ajax-cart'); ?></option>
+                    <option disabled value="" <?php
+                    if (isset($majc_settings['basket_position'])) {
+                        selected($majc_settings['basket_position'], 'right-bottom');
+                    }
+                    ?>><?php esc_html_e('Right Bottom (Pro)', 'mini-ajax-cart'); ?></option>
+                    <option disabled value="" <?php
+                    if (isset($majc_settings['basket_position'])) {
+                        selected($majc_settings['basket_position'], 'center-bottom');
+                    }
+                    ?>><?php esc_html_e('Center Bottom (Pro)', 'mini-ajax-cart'); ?></option>
                 </select>
             </div>
         </div>

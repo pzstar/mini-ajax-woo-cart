@@ -78,15 +78,6 @@ if (!empty($post)) {
                 $cart_basket_shape = isset($cart_basket['shape']) ? $cart_basket['shape'] : null;
                 $cart_basket_product_count = isset($cart_basket['product_count']) ? $cart_basket['product_count'] : null;
                 $cart_basket_hover_animation = isset($cart_basket['hover_animation']) && $cart_basket['hover_animation'] != 'none' ? $cart_basket['hover_animation'] : null;
-                $idle_animation = isset($cart_basket['idle_animation']) && $cart_basket['idle_animation'] != 'none' ? $cart_basket['idle_animation'] : null;
-
-                // Slider Settings
-                $slider = isset($majc_settings['slider']) ? $majc_settings['slider'] : null;
-                $enable_slider = isset($slider['enable']) ? true : null;
-                $display_product_type = isset($slider['display_product_type']) ? $slider['display_product_type'] : null;
-                $selected_product_ids = isset($slider['selected_product_ids']) ? $slider['selected_product_ids'] : null;
-                $slider_title_text = isset($slider['title_text']) ? $slider['title_text'] : esc_html__('Products You Might Like.', 'mini-ajax-cart');
-                $number_products_display = isset($slider['number_products_display']) ? $slider['number_products_display'] : 1;
 
                 // Summary Settings
                 $summary = isset($majc_settings['summary']) ? $majc_settings['summary'] : null;
@@ -238,19 +229,19 @@ if (!empty($post)) {
                                                                     <?php echo esc_html($product->get_name()); ?>
                                                                 </div>
 
-                                                                <div class="majc-item-price">
-                                                                    <?php
-                                                                    $wc_product = $itemVal['data'];
-                                                                    echo WC()->cart->get_product_subtotal($wc_product, $itemVal['quantity']);
-                                                                    ?>
-                                                                </div>
-
                                                                 <div class="majc-item-qty">
                                                                     <span class="majc-qty-minus majc-qty-chng icon_minus-06"></span>
 
                                                                     <input type="number" class="majc-qty" step="1" min="0" max="14" value="<?php echo intval($itemVal['quantity']); ?>" placeholder="" inputmode="numeric">
 
                                                                     <span class="majc-qty-plus majc-qty-chng icon_plus"></span>
+                                                                </div>
+
+                                                                <div class="majc-item-price">
+                                                                    <?php
+                                                                    $wc_product = $itemVal['data'];
+                                                                    echo WC()->cart->get_product_subtotal($wc_product, $itemVal['quantity']);
+                                                                    ?>
                                                                 </div>
                                                             </div> <!-- majc-item-desc -->
                                                         </div> <!-- majc-cart-items-inner -->
