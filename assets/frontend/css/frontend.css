@@ -68,11 +68,11 @@
     display: none;
 }
 
-.majc-toggle-open-btn.active .majc-cartbasket-icon.majc-cartbasket-open-icon{
+.majc-toggle-btn-open .majc-cartbasket-icon.majc-cartbasket-open-icon{
     display: none;
 }
 
-.majc-toggle-open-btn.active .majc-cartbasket-icon.majc-cartbasket-close-icon{
+.majc-toggle-btn-open .majc-cartbasket-icon.majc-cartbasket-close-icon{
     display: flex;
 }
 

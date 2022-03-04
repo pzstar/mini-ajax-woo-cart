@@ -53,14 +53,15 @@
         });
 
         $('body').find(".majc-cartbasket-toggle-btn").on('click', function () {
+            // Add Toggle class on buton toggle
+            $('body').toggleClass('majc-cartbasket-open');
+            $(this).parent('.majc-toggle-button').toggleClass('majc-toggle-btn-open');
+
             if ($(this).parent().next('.majc-cart-popup').hasClass('animate--animated')) {
                 var $popup = $(this).parent().next('.majc-cart-popup');
                 var showAnimation = $popup.data('showanimation');
                 var hideAnimation = $popup.data('hideanimation');
 
-                // Add Toggle class on buton toggle
-                $('body').toggleClass('majc-cartbasket-open');
-                $(this).parent('.majc-toggle-button').toggleClass('majc-toggle-btn-open');
                 if ($popup.attr('data-showanimation') && $popup.attr('data-hideanimation')) {
                     if ($popup.hasClass(showAnimation)) {
                         $popup.removeClass(showAnimation);
@@ -98,8 +99,6 @@
                     }
                 }
             } else {
-                $(this).toggleClass('active');
-                $('body').toggleClass('majc-cartbasket-open');
                 $('.majc-cart-popup').toggleClass('active');
             }
 
@@ -107,14 +106,15 @@
 
         $('body').find(".majc-cart-close").on('click', function () {
 
-            var $popup = $(this).closest('.majc-main-inner-wrapper').find('.majc-cart-popup');
+            var $popup = $(this).closest('.majc-main-inner-wrapper');
 
-            $(this).closest('.majc-cart-popup').removeClass('active');
-            $(this).closest('.majc-main-inner-wrapper').find(".majc-cartbasket-toggle-btn").removeClass('active');
-            if ($popup.hasClass('majc-cartpop-animation-enabled')) {
-                $('body').find(".majc-cartbasket-toggle-btn").trigger('click');
-            }
-            $('body').removeClass('majc-cartbasket-open');
+            //$(this).closest('.majc-cart-popup').removeClass('active');
+            //$(this).closest('.majc-main-inner-wrapper').find('.majc-toggle-button').removeClass('majc-toggle-btn-open');
+
+            //if ($popup.hasClass('majc-cartpop-animation-enabled')) {
+                $popup.find(".majc-cartbasket-toggle-btn").trigger('click');
+            //}
+            //$('body').removeClass('majc-cartbasket-open');
         });
 
         $(document).on('click', '.add_to_cart_button', function () {
@@ -230,7 +230,7 @@
         $('body').on('click', '.majc-remove-cpn', function () {
 
             var couponCode = $(this).parent('li').attr('cpcode');
-            
+
             $.ajax({
                 url: ajaxUrl,
                 type: 'POST',
