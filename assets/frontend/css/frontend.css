@@ -208,6 +208,7 @@
 .majc-header h2 .majc-header-icon{
     font-size: inherit;
     margin-right: 10px;
+    width: 1em;
 }
 
 .majc-header h2 .majc-header-icon img{
