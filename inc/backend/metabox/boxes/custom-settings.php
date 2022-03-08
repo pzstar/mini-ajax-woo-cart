@@ -168,7 +168,7 @@ $text_decorations = majc_get_text_decoration_choices();
                 <li class="majc-color-settings-field">
                     <label><?php esc_html_e('Quantity Button Border Color', 'mini-ajax-cart'); ?></label>
                     <div class="majc-color-input-field">
-                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][qty_change_border_color]" value="<?php echo isset($custom['qty_change_icon_color']) ? esc_attr($custom['qty_change_icon_color']) : null; ?>">
+                        <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][qty_change_border_color]" value="<?php echo isset($custom['qty_change_border_color']) ? esc_attr($custom['qty_change_border_color']) : null; ?>">
                     </div>
                 </li>
             </ul>

@@ -364,7 +364,7 @@ $animations = $this->majc_animations();
     </div>
 
     <div class="majc-settings-field majc-icon-option-field majc-available_icon" data-condition-toggle="majc-header-icon-type" data-condition-val="available_icon">
-        <label for="majc_floatmenu_default_icon"><?php esc_html_e('Default menu icon', 'mini-ajax-cart'); ?></label>
+        <label for="majc_floatmenu_default_icon"><?php esc_html_e('Choose Header Icon', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-input-field">
             <?php
             $inputName = 'majc_settings[header][available_icon]';
@@ -375,7 +375,7 @@ $animations = $this->majc_animations();
     </div>
 
     <div class="majc-settings-field majc-icon-option-field majc-custom_icon" data-condition-toggle="majc-header-icon-type" data-condition-val="custom_icon">
-        <label for="majc-header-icon"><?php esc_html_e('Upload Custom Icon', 'mini-ajax-cart'); ?></label>
+        <label for="majc-header-icon"><?php esc_html_e('Upload Header Icon', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-input-field">
             <div class="majc-icon-image-uploader">
                 <div class="majc-custom-img-icon-btn">
