@@ -18,6 +18,8 @@ Mini Ajax Cart is an advanced WooCommerce cart extension packed with tons of fea
 
 Mini Ajax Cart is a highly customizable extension that allows you to personalize each and every elements present in your cart basket. You will be able to configure the font, color, typography and many more as per your preference.
 
+Want to test the dashboard settings without installing on your website? <a href="https://demo.tastewp.com/mini-ajax-woo-cart" target="_blank">Test Dashboard Settings Here</a>
+
 <a href="https://1.envato.market/2rKYB0">Buy Pro Version</a>&nbsp;&nbsp;<a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-cart/">Demo Site</a>&nbsp;&nbsp;<a href="https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/">Documentation</a>
 
 <h3>Main features</h3>
