@@ -18,17 +18,21 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .majc-menu-option-wrap .majc-side-menus li{
-    padding: 10px 20px;
-    margin: 0 20px 0 0;
+    text-align: center;
+    padding: 14px 20px;
+    margin: 0;
     background: #2b3337;
     color: #FFF;
     cursor: pointer;
     text-transform: uppercase;
     font-weight: bold;
-    border-radius: 40px;
+    font-size: 13px;
+    border-radius: 4px;
 }
 
 .majc-menu-option-wrap .majc-side-menus li.majc-tab-active{

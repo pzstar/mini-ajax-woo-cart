@@ -6,7 +6,7 @@ $text_transforms = majc_get_text_transform_choices();
 $text_decorations = majc_get_text_decoration_choices();
 ?>
 
-<div id="custom-settings" class="tab-content" style="display: none;">
+<div id="design-settings" class="tab-content" style="display: none;">
 
     <div class="majc-settings-field">
         <label><?php esc_html_e('Enable Customizations', 'mini-ajax-cart'); ?></label>
@@ -164,7 +164,7 @@ $text_decorations = majc_get_text_decoration_choices();
                         <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][qty_change_icon_color]" value="<?php echo isset($custom['qty_change_icon_color']) ? esc_attr($custom['qty_change_icon_color']) : null; ?>">
                     </div>
                 </li>
-                
+
                 <li class="majc-color-settings-field">
                     <label><?php esc_html_e('Quantity Button Border Color', 'mini-ajax-cart'); ?></label>
                     <div class="majc-color-input-field">
@@ -923,7 +923,7 @@ $text_decorations = majc_get_text_decoration_choices();
                 </li>
             </ul>
         </div>
-        
+
         <!-- ***************** -->
         <!-- ** Remove Product Button ** -->
         <!-- ***************** -->
