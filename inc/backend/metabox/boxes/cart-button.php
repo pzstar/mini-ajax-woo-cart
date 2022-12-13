@@ -2,106 +2,99 @@
     <h2><?php esc_html_e('Cart Basket/Button Settings', 'mini-ajax-cart'); ?></h2>
     <div class="majc-settings-field">
         <label><?php esc_html_e('Open Icon Type', 'mini-ajax-cart'); ?></label>
-        <div class="majc-settings-input-field">
-            <select name="majc_settings[cart_basket][open_icon_type]" data-condition="toggle" id="majc-open-icon-type">
-                <option value="default_icon" <?php
-                if (isset($cart_basket['open_icon_type'])) {
-                    selected($cart_basket['open_icon_type'], 'default_icon');
-                }
-                ?>><?php esc_html_e('Default Icon', 'mini-ajax-cart'); ?></option>
-                <option value="available_icon" <?php
-                if (isset($cart_basket['open_icon_type'])) {
-                    selected($cart_basket['open_icon_type'], 'available_icon');
-                }
-                ?>><?php esc_html_e('Available Icon', 'mini-ajax-cart'); ?></option>
-                <option value="custom_icon" <?php
-                if (isset($cart_basket['open_icon_type'])) {
-                    selected($cart_basket['open_icon_type'], 'custom_icon');
-                }
-                ?>><?php esc_html_e('Custom Icon', 'mini-ajax-cart'); ?></option>
-            </select>
-        </div>
-    </div>
 
-    <div class="majc-settings-field majc-icon-open-option-field majc-available_icon" data-condition-toggle="majc-open-icon-type" data-condition-val="available_icon">
-        <label for="majc_floatmenu_default_icon"><?php esc_html_e('Choose Open Icon', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-input-field">
-            <?php
-            $inputName = 'majc_settings[cart_basket][open_available_icon]';
-            $iconName = isset($cart_basket['open_available_icon']) ? $cart_basket['open_available_icon'] : null; //icon value from db
-            $this->icon_field($inputName, $iconName);
-            ?>
-        </div>
-    </div>
+            <div class="">
+                <select name="majc_settings[cart_basket][open_icon_type]" data-condition="toggle" id="majc-open-icon-type">
+                    <option value="default_icon" <?php
+                    if (isset($cart_basket['open_icon_type'])) {
+                        selected($cart_basket['open_icon_type'], 'default_icon');
+                    }
+                    ?>><?php esc_html_e('Default Icon', 'mini-ajax-cart'); ?></option>
+                    <option value="available_icon" <?php
+                    if (isset($cart_basket['open_icon_type'])) {
+                        selected($cart_basket['open_icon_type'], 'available_icon');
+                    }
+                    ?>><?php esc_html_e('Available Icon', 'mini-ajax-cart'); ?></option>
+                    <option value="custom_icon" <?php
+                    if (isset($cart_basket['open_icon_type'])) {
+                        selected($cart_basket['open_icon_type'], 'custom_icon');
+                    }
+                    ?>><?php esc_html_e('Custom Icon', 'mini-ajax-cart'); ?></option>
+                </select>
+            </div>
 
-    <div class="majc-settings-field majc-icon-open-option-field majc-custom_icon" data-condition-toggle="majc-open-icon-type" data-condition-val="custom_icon">
-        <label for="majc-header-icon"><?php esc_html_e('Upload Open Icon', 'mini-ajax-cart'); ?></label>
-        <div class="majc-settings-input-field">
-            <div class="majc-icon-image-uploader">
-                <div class="majc-custom-img-icon-btn">
-                    <div class="majc-custom-menu-image-icon current-bg-image" >
-                        <?php if (isset($cart_basket['open_custom_icon']) && !empty($cart_basket['open_custom_icon'])) { ?>
-                            <img src="<?php echo isset($cart_basket['open_custom_icon']) ? esc_url($cart_basket['open_custom_icon']) : ''; ?>"/>
-                        <?php } ?>
-                    </div>
-                    <div class="majc-image-remove"><?php esc_html_e('Remove', 'mini-ajax-cart'); ?></div>
-                </div>
+            <div class="" data-condition-toggle="majc-open-icon-type" data-condition-val="available_icon">
+                <ul>
+                    <li>
+                        <label for="majc_floatmenu_default_icon"><?php esc_html_e('Choose Open Icon', 'mini-ajax-cart'); ?></label>
+                        <div class="majc-settings-input-field">
+                            <?php
+                            $inputName = 'majc_settings[cart_basket][open_available_icon]';
+                            $iconName = isset($cart_basket['open_available_icon']) ? $cart_basket['open_available_icon'] : null; //icon value from db
+                            $this->icon_field($inputName, $iconName);
+                            ?>
+                        </div>
+                    </li>
+                    <li>
 
-                <div class="button majc-image-upload"><?php esc_html_e('Upload', 'mini-ajax-cart') ?></div>
-                <input type="hidden" class="majc-upload-background-url" name="majc_settings[cart_basket][open_custom_icon]" id="majc-header-icon" value="<?php echo isset($cart_basket['open_custom_icon']) ? esc_url($cart_basket['open_custom_icon']) : ''; ?>"/>
-            </div> <!-- majc-icon-image-uploader -->
-        </div>
-    </div>
+                    </li>
+                </ul>
 
-    <div class="majc-settings-field">
-        <label><?php esc_html_e('Close Icon Type', 'mini-ajax-cart'); ?></label>
-        <div class="majc-settings-input-field">
-            <select name="majc_settings[cart_basket][close_icon_type]" data-condition="toggle" id="majc-close-icon-type">
-                <option value="default_icon" <?php
-                if (isset($cart_basket['close_icon_type'])) {
-                    selected($cart_basket['close_icon_type'], 'default_icon');
-                }
-                ?>><?php esc_html_e('Default Icon', 'mini-ajax-cart'); ?></option>
-                <option value="available_icon" <?php
-                if (isset($cart_basket['close_icon_type'])) {
-                    selected($cart_basket['close_icon_type'], 'available_icon');
-                }
-                ?>><?php esc_html_e('Available Icon', 'mini-ajax-cart'); ?></option>
-                <option value="custom_icon" <?php
-                if (isset($cart_basket['close_icon_type'])) {
-                    selected($cart_basket['close_icon_type'], 'custom_icon');
-                }
-                ?>><?php esc_html_e('Custom Icon', 'mini-ajax-cart'); ?></option>
-            </select>
-        </div>
-    </div>
+                <ul>
+                    <li>
+                        <label for="majc-header-icon"><?php esc_html_e('Upload Open Icon', 'mini-ajax-cart'); ?></label>
+                        <div class="majc-settings-input-field">
+                            <div class="majc-icon-image-uploader">
+                                <div class="majc-custom-img-icon-btn">
+                                    <div class="majc-custom-menu-image-icon current-bg-image" >
+                                        <?php if (isset($cart_basket['open_custom_icon']) && !empty($cart_basket['open_custom_icon'])) { ?>
+                                            <img src="<?php echo isset($cart_basket['open_custom_icon']) ? esc_url($cart_basket['open_custom_icon']) : ''; ?>"/>
+                                        <?php } ?>
+                                    </div>
+                                    <div class="majc-image-remove"><?php esc_html_e('Remove', 'mini-ajax-cart'); ?></div>
+                                </div>
 
-    <div class="majc-settings-field majc-icon-close-option-field majc-available_icon" data-condition-toggle="majc-close-icon-type" data-condition-val="available_icon">
-        <label for="majc_floatmenu_default_icon"><?php esc_html_e('Choose Close Icon', 'mini-ajax-cart'); ?></label>
-        <div class="majc-settings-input-field">
-            <?php
-            $inputName = 'majc_settings[cart_basket][close_available_icon]';
-            $iconName = isset($cart_basket['close_available_icon']) ? $cart_basket['close_available_icon'] : null; //icon value from db
-            $this->icon_field($inputName, $iconName);
-            ?>
-        </div>
-    </div>
+                                <div class="button majc-image-upload"><?php esc_html_e('Upload', 'mini-ajax-cart') ?></div>
+                                <input type="hidden" class="majc-upload-background-url" name="majc_settings[cart_basket][open_custom_icon]" id="majc-header-icon" value="<?php echo isset($cart_basket['open_custom_icon']) ? esc_url($cart_basket['open_custom_icon']) : ''; ?>"/>
+                            </div> <!-- majc-icon-image-uploader -->
+                        </div>
+                    </li>
+                    <li></li>
+                </ul>
+            </div>
 
-    <div class="majc-settings-field majc-icon-close-option-field majc-custom_icon" data-condition-toggle="majc-close-icon-type" data-condition-val="custom_icon">
-        <label for="majc-header-icon"><?php esc_html_e('Upload Close Icon', 'mini-ajax-cart'); ?></label>
-        <div class="majc-settings-input-field">
-            <div class="majc-icon-image-uploader">
-                <div class="majc-custom-img-icon-btn">
-                    <div class="majc-custom-menu-image-icon current-bg-image" >
-                        <?php if (isset($cart_basket['close_custom_icon']) && !empty($cart_basket['close_custom_icon'])) { ?>
-                            <img src="<?php echo isset($cart_basket['close_custom_icon']) ? esc_url($cart_basket['close_custom_icon']) : ''; ?>"/>
-                        <?php } ?>
-                    </div>
-                    <div class="majc-image-remove"><?php esc_html_e('Remove', 'mini-ajax-cart'); ?></div>
-                </div>
-                <div class="button majc-image-upload"><?php esc_html_e('Upload', 'mini-ajax-cart') ?></div>
-                <input type="hidden" class="majc-upload-background-url" name="majc_settings[cart_basket][close_custom_icon]" id="majc-header-icon" value="<?php echo isset($cart_basket['close_custom_icon']) ? esc_url($cart_basket['close_custom_icon']) : ''; ?>"/>
-            </div> <!-- majc-icon-image-uploader -->
+            <div class="" data-condition-toggle="majc-open-icon-type" data-condition-val="available_icon">
+                <ul>
+                    <li>
+                        <label for="majc_floatmenu_default_icon"><?php esc_html_e('Choose Close Icon', 'mini-ajax-cart'); ?></label>
+                        <div class="majc-settings-input-field">
+                            <?php
+                            $inputName = 'majc_settings[cart_basket][close_available_icon]';
+                            $iconName = isset($cart_basket['close_available_icon']) ? $cart_basket['close_available_icon'] : null; //icon value from db
+                            $this->icon_field($inputName, $iconName);
+                            ?>
+                        </div>
+                    </li>
+                    <li>
+                        <label for="majc-header-icon"><?php esc_html_e('Upload Close Icon', 'mini-ajax-cart'); ?></label>
+                        <div class="majc-settings-input-field">
+                            <div class="majc-icon-image-uploader">
+                                <div class="majc-custom-img-icon-btn">
+                                    <div class="majc-custom-menu-image-icon current-bg-image" >
+                                        <?php if (isset($cart_basket['close_custom_icon']) && !empty($cart_basket['close_custom_icon'])) { ?>
+                                            <img src="<?php echo isset($cart_basket['close_custom_icon']) ? esc_url($cart_basket['close_custom_icon']) : ''; ?>"/>
+                                        <?php } ?>
+                                    </div>
+                                    <div class="majc-image-remove"><?php esc_html_e('Remove', 'mini-ajax-cart'); ?></div>
+                                </div>
+                                <div class="button majc-image-upload"><?php esc_html_e('Upload', 'mini-ajax-cart') ?></div>
+                                <input type="hidden" class="majc-upload-background-url" name="majc_settings[cart_basket][close_custom_icon]" id="majc-header-icon" value="<?php echo isset($cart_basket['close_custom_icon']) ? esc_url($cart_basket['close_custom_icon']) : ''; ?>"/>
+                            </div> <!-- majc-icon-image-uploader -->
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 
