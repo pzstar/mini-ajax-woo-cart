@@ -8,18 +8,28 @@ jQuery(function ($) {
 
     $('body').on('click', '.majc-tab', function () {
         var selected_menu = $(this).data('tab');
-        var hideDivs = $(this).data('tohide');
+
+        $('.majc-menu-field-wrap .tab-content').hide();
 
         // Display The Clicked Tab Content
-        $('body').find('.' + hideDivs).hide();
-        $('body').find('#' + selected_menu).show();
+        $('#' + selected_menu).show();
 
         // Add and remove the class for active tab
         $(this).parent().find('.majc-tab').removeClass('majc-tab-active');
         $(this).addClass('majc-tab-active');
+    });
 
-        if ($(this).find('input'))
-            $(this).find('input').prop('checked', true);
+    $('body').on('click', '.majc-submenu-tab', function () {
+        var selected_menu = $(this).data('tab');
+
+        $(this).parent('.majc-submenu').next('.majc-submenu-content').find('.majc-submenu-section').hide();
+
+        // Display The Clicked Tab Content
+        $(this).parent('.majc-submenu').next('.majc-submenu-content').find('#' + selected_menu).show();
+
+        // Add and remove the class for active tab
+        $(this).parent('.majc-submenu').find('.majc-submenu-tab').removeClass('majc-tab-active');
+        $(this).addClass('majc-tab-active');
     });
 
     // Call all the necessary functions for Icon Picker
@@ -173,5 +183,4 @@ jQuery(function ($) {
         theme: 'dark-thin',
         scrollbarPosition: 'outside'
     });
-
 });

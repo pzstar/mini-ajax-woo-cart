@@ -3,7 +3,9 @@ global $post;
 $post_id = $post->ID;
 $majc_settings = get_post_meta($post_id, 'uwcc_settings', true);
 if (!$majc_settings) {
-    $majc_settings = wp_parse_args($majc_settings, parent::default_values());
+    $majc_settings = parent::default_values();
+} else {
+    $majc_settings = parent::recursive_parse_args($majc_settings, parent::default_values());
 }
 
 wp_nonce_field('majc-settings-nonce', 'majc_settings_nonce');

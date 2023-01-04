@@ -60,8 +60,6 @@ if (!class_exists('MAJC_Class')) {
         }
 
         public function includes() {
-            include MAJC_PATH . '/Mobile_Detect.php';
-
             include plugin_dir_path(__FILE__) . '/font-icons.php';
 
             include plugin_dir_path(__FILE__) . '/google-fonts-list.php';

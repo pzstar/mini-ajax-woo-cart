@@ -114,9 +114,8 @@ if (!class_exists('MAJC_Library')) {
                 'display' =>
                 array(
                     'enable_flying_cart' => 'on',
-                    'hide_show_pages' => 'hide_in_pages',
-                    'mobile_hide' => '',
-                    'desktop_hide' => ''
+                    'hide_screen' => array(),
+                    'display_condition' => 'show_all'
                 ),
                 'buttons' =>
                 array(
@@ -201,6 +200,21 @@ if (!class_exists('MAJC_Library')) {
                     'qty_change_icon_color' => '',
                 ),
             );
+        }
+        
+        public static function recursive_parse_args($args, $defaults) {
+
+            $new_args = (array) $defaults;
+
+            foreach ($args as $key => $value) {
+                if (is_array($value) && isset($new_args[$key])) {
+                    $new_args[$key] = self::recursive_parse_args($value, $new_args[$key]);
+                } else {
+                    $new_args[$key] = $value;
+                }
+            }
+
+            return $new_args;
         }
 
     }

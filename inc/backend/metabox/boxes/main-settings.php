@@ -11,10 +11,10 @@ $display = isset($majc_settings['display']) ? $majc_settings['display'] : null;
 
 <div id="layout-settings" class="tab-content">
     <h2><?php esc_html_e('General Settings', 'mini-ajax-cart'); ?></h2>
-    
-    <div class="majc-settings-field">
+
+    <div class="majc-settings-row">
         <label><?php esc_html_e('Enable Mini Ajax Cart', 'mini-ajax-cart'); ?></label>
-        <div class="majc-settings-input-field  majc-toggle-input-field">
+        <div class="majc-settings-fields  majc-toggle-input-field">
             <input type="checkbox" name="majc_settings[display][enable_flying_cart]" <?php
             if (isset($display['enable_flying_cart'])) {
                 checked($display['enable_flying_cart'], 'on', true);
@@ -25,51 +25,40 @@ $display = isset($majc_settings['display']) ? $majc_settings['display'] : null;
     </div>
 
     <h2><?php esc_html_e('Display Settings', 'mini-ajax-cart'); ?></h2>
-
-    <div class="majc-settings-field">
-        <label><?php esc_html_e('Hide On Mobile', 'mini-ajax-cart'); ?></label>
-        <div class="majc-settings-input-field majc-toggle-input-field">
-            <input type="checkbox" name="majc_settings[display][mobile_hide]" <?php
-            if (isset($display['mobile_hide'])) {
-                checked($display['mobile_hide'], 'on', true);
-            }
-            ?>>
+    
+    <div class="majc-settings-row">
+        <label><?php esc_html_e('Hide in Screens', 'mini-ajax-cart'); ?></label>
+        <div class="majc-settings-fields">
+            <div class="majc-text-check-box">
+                <label>
+                    <input type="checkbox" value="desktop" name="majc_settings[display][hide_screen][]" <?php echo in_array('desktop', $display['hide_screen']) ? 'checked' : ''; ?> />
+                    <span><i class="icon_desktop"></i><?php esc_html_e('Desktop', 'mini-ajax-cart'); ?></span>
+                </label>
+                <label>
+                    <input type="checkbox" value="tablet" name="majc_settings[display][hide_screen][]" <?php echo in_array('tablet', $display['hide_screen']) ? 'checked' : ''; ?> />
+                    <span><i class="icon_tablet"></i><?php esc_html_e('Tablet', 'mini-ajax-cart'); ?></span>
+                </label>
+                <label>
+                    <input type="checkbox" value="mobile" name="majc_settings[display][hide_screen][]" <?php echo in_array('mobile', $display['hide_screen']) ? 'checked' : ''; ?> />
+                    <span><i class="icon_mobile"></i><?php esc_html_e('Mobile', 'mini-ajax-cart'); ?></span>
+                </label>
+            </div>
         </div>
     </div>
 
-    <div class="majc-settings-field">
-        <label><?php esc_html_e('Hide On Desktop', 'mini-ajax-cart'); ?></label>
-        <div class="majc-settings-input-field majc-toggle-input-field">
-            <input type="checkbox" name="majc_settings[display][desktop_hide]" <?php
-            if (isset($display['desktop_hide'])) {
-                checked($display['desktop_hide'], 'on', true);
-            }
-            ?>>
-        </div>
-    </div>
-
-    <div class="majc-settings-field">
+    <div class="majc-settings-row">
         <label><?php esc_html_e('Show/Hide in Pages', 'mini-ajax-cart') ?></label>
-        <div class="majc-settings-input-field">
-            <label class="majc-raido-field">
-                <input type="radio" name="majc_settings[display][hide_show_pages]" value="show_in_pages" <?php
-                if (isset($display['hide_show_pages'])) {
-                    checked($display['hide_show_pages'], 'show_in_pages');
-                }
-                ?>>
-                       <?php esc_html_e('Show in Pages', 'mini-ajax-cart'); ?>
-            </label>
-            &nbsp;&nbsp;
-            <label class="majc-raido-field">
-                <input type="radio" name="majc_settings[display][hide_show_pages]" value="hide_in_pages" <?php
-                if (isset($display['hide_show_pages'])) {
-                    checked($display['hide_show_pages'], 'hide_in_pages');
-                }
-                ?>>
-                       <?php esc_html_e('Hide in Pages', 'mini-ajax-cart'); ?>
-            </label>
-
-            <div class="majc-display-lists">
+        <div class="majc-settings-fields">
+            <div class="majc-settings-list">
+                <select name="majc_settings[display][display_condition]" data-condition="toggle" id="majc-display-condition-show-hide">
+                    <option value="show_all" <?php selected($display['display_condition'], 'show_all'); ?>><?php esc_html_e('Show in All Pages', 'mini-ajax-cart'); ?></option>
+                    <option value="hide_all" <?php selected($display['display_condition'], 'hide_all'); ?>><?php esc_html_e('Hide in All Pages', 'mini-ajax-cart'); ?></option>
+                    <option value="show_selected" <?php selected($display['display_condition'], 'show_selected'); ?>><?php esc_html_e('Show in Selected Pages', 'mini-ajax-cart'); ?></option>
+                    <option value="hide_selected" <?php selected($display['display_condition'], 'hide_selected'); ?>><?php esc_html_e('Hide in Selected Pages', 'mini-ajax-cart'); ?></option>
+                </select>
+            </div>
+            
+            <div class="majc-display-lists" data-condition-toggle="majc-display-condition-show-hide" data-condition-val="show_selected,hide_selected">
                 <div class="majc-postbox-fields">
                     <h4><?php esc_html_e('Default WordPress Pages', 'mini-ajax-cart'); ?><!-- <span class="toggle-indicator" aria-hidden="true"></span> --></h4>
 
