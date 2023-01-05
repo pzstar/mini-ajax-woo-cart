@@ -49,14 +49,14 @@ $text_decorations = majc_get_text_decoration_choices();
                         </li>
 
                         <li class="majc-color-settings-field">
-                            <label><?php esc_html_e('Cart Total Box Background Color', 'mini-ajax-cart'); ?></label>
+                            <label><?php esc_html_e('Counter Background Color', 'mini-ajax-cart'); ?></label>
                             <div class="majc-color-input-field">
                                 <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][cart_total_box_bg_color]" value="<?php echo isset($custom['cart_total_box_bg_color']) ? esc_attr($custom['cart_total_box_bg_color']) : null; ?>">
                             </div>
                         </li>
 
                         <li class="majc-color-settings-field">
-                            <label><?php esc_html_e('Cart Total Box Text Color', 'mini-ajax-cart'); ?></label>
+                            <label><?php esc_html_e('Counter Text Color', 'mini-ajax-cart'); ?></label>
                             <div class="majc-color-input-field">
                                 <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][cart_total_box_text_color]" value="<?php echo isset($custom['cart_total_box_text_color']) ? esc_attr($custom['cart_total_box_text_color']) : null; ?>">
                             </div>
@@ -73,11 +73,6 @@ $text_decorations = majc_get_text_decoration_choices();
                 <label><?php esc_html_e('Background Type', 'mini-ajax-cart'); ?></label>
                 <div class="majc-settings-fields">
                     <select name="majc_settings[custom][drawer_content_bg_type]" data-condition="toggle" id="majc-drawer-content_bg-type">
-                        <option value="none" <?php
-                        if (isset($custom['drawer_content_bg_type'])) {
-                            selected($custom['drawer_content_bg_type'], 'none');
-                        }
-                        ?>><?php esc_html_e('None', 'mini-ajax-cart'); ?></option>
                         <option value="choose_color" <?php
                         if (isset($custom['drawer_content_bg_type'])) {
                             selected($custom['drawer_content_bg_type'], 'choose_color');
@@ -87,19 +82,19 @@ $text_decorations = majc_get_text_decoration_choices();
                         if (isset($custom['drawer_content_bg_type'])) {
                             selected($custom['drawer_content_bg_type'], 'custom_image_bg');
                         }
-                        ?>><?php esc_html_e('Custom Image', 'mini-ajax-cart'); ?></option>
+                        ?>><?php esc_html_e('Custom Image Background', 'mini-ajax-cart'); ?></option>
                     </select>
                 </div>
             </div>
 
-            <div class="majc-settings-fields majc-content-bg-option-field majc-choose_color" data-condition-toggle="majc-drawer-content_bg-type" data-condition-val="choose_color">
+            <div class="majc-settings-row" data-condition-toggle="majc-drawer-content_bg-type" data-condition-val="choose_color">
                 <label><?php esc_html_e('Background Color', 'mini-ajax-cart'); ?></label>
                 <div class="majc-settings-fields">
                     <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][drawer_content_bg_color]" value="<?php echo isset($custom['drawer_content_bg_color']) ? esc_attr($custom['drawer_content_bg_color']) : ''; ?>">
                 </div>
             </div>
 
-            <div class="majc-settings-fields majc-content-bg-option-field majc-custom_image_bg" data-condition-toggle="majc-drawer-content_bg-type" data-condition-val="custom_image_bg">
+            <div class="majc-settings-row" data-condition-toggle="majc-drawer-content_bg-type" data-condition-val="custom_image_bg">
                 <label for="majc-header-icon"><?php esc_html_e('Upload Background Image', 'mini-ajax-cart'); ?></label>
                 <div class="majc-settings-fields">
                     <div class="majc-icon-image-uploader">
@@ -152,21 +147,21 @@ $text_decorations = majc_get_text_decoration_choices();
                         </li>
 
                         <li class="majc-color-settings-field">
-                            <label><?php esc_html_e('Quantity Button Background Color', 'mini-ajax-cart'); ?></label>
+                            <label><?php esc_html_e('Quantity +/- Background Color', 'mini-ajax-cart'); ?></label>
                             <div class="majc-color-input-field">
                                 <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][qty_change_btn_bg_color]" value="<?php echo isset($custom['qty_change_btn_bg_color']) ? esc_attr($custom['qty_change_btn_bg_color']) : null; ?>">
                             </div>
                         </li>
 
                         <li class="majc-color-settings-field">
-                            <label><?php esc_html_e('Quantity Button Icon Color', 'mini-ajax-cart'); ?></label>
+                            <label><?php esc_html_e('Quantity +/- Icon Color', 'mini-ajax-cart'); ?></label>
                             <div class="majc-color-input-field">
                                 <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][qty_change_icon_color]" value="<?php echo isset($custom['qty_change_icon_color']) ? esc_attr($custom['qty_change_icon_color']) : null; ?>">
                             </div>
                         </li>
 
                         <li class="majc-color-settings-field">
-                            <label><?php esc_html_e('Quantity Button Border Color', 'mini-ajax-cart'); ?></label>
+                            <label><?php esc_html_e('Quantity +/- Border Color', 'mini-ajax-cart'); ?></label>
                             <div class="majc-color-input-field">
                                 <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][qty_change_border_color]" value="<?php echo isset($custom['qty_change_border_color']) ? esc_attr($custom['qty_change_border_color']) : null; ?>">
                             </div>
