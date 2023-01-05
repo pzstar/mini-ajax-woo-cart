@@ -103,7 +103,7 @@ if (!empty($post)) {
                 $enable_flymenu = isset($majc_settings['display']['enable_flying_cart']) ? $majc_settings['display']['enable_flying_cart'] : 'off';
                 $cpt_pages = !empty($majc_settings['display']['cpt_pages']) ? $majc_settings['display']['cpt_pages'] : array();
                 $specific_archive = !empty($majc_settings['display']['specific_archive']) ? $majc_settings['display']['specific_archive'] : array();
-                $hide_screen = $majc_settings['display']['hide_screen'];
+                $hide_screen = !empty($majc_settings['display']['hide_screen']) ? $majc_settings['display']['hide_screen'] : array();
 
                 if ($enable_flymenu != 'on') {
                     continue;
