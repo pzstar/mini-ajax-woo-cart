@@ -566,6 +566,26 @@
     background: transparent;
 }
 
+.majc-empty-cart{
+    text-align: center;
+    padding: 100px 0;
+    display: none;
+}
+
+.majc-empty-cart .majc-empty-cart-icon{
+    font-size: 30px;
+}
+
+.majc-check-cart.majc-hide-cart-items + .majc-main-inner-wrapper .majc-empty-cart{
+    display: block;
+}
+
+.majc-check-cart.majc-hide-cart-items + .majc-main-inner-wrapper .majc-coupon,
+.majc-check-cart.majc-hide-cart-items + .majc-main-inner-wrapper .majc-buy-summary,
+.majc-check-cart.majc-hide-cart-items + .majc-main-inner-wrapper .majc-cart-action-btn-wrap{
+    display: none;
+}
+
 @media screen and (max-width: 768px){
     .majc-layout-slidein .majc-cart-popup{
         width: 100% !important;

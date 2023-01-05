@@ -237,11 +237,11 @@ function majc_typography_css($meta, $key, $selector) {
 
     $weight = absint($style);
 
-    $css[] = (!empty($family) && $family != 'Default') ? "font-family: '{$family}', serif" : NULL;
-    $css[] = (!empty($weight) && $style != 'Default') ? "font-weight: {$weight}" : NULL;
-    $css[] = (!empty($italic) && $style != 'Default') ? "font-style: {$italic}" : NULL;
-    $css[] = (!empty($text_transform)) ? "text-transform: {$text_transform}" : NULL;
-    $css[] = (!empty($text_decoration)) ? "text-decoration: {$text_decoration}" : NULL;
+    $css[] = (!empty($family) && $family != 'Default' && $family != 'default') ? "font-family: '{$family}', serif" : NULL;
+    $css[] = (!empty($weight) && $style != 'Default' && $style != 'default') ? "font-weight: {$weight}" : NULL;
+    $css[] = (!empty($italic) && $style != 'Default' && $style != 'default') ? "font-style: {$italic}" : NULL;
+    $css[] = (!empty($text_transform) && $text_transform != 'none') ? "text-transform: {$text_transform}" : NULL;
+    $css[] = (!empty($text_decoration) && $text_decoration != 'none') ? "text-decoration: {$text_decoration}" : NULL;
     $css[] = !empty($size) ? "font-size: {$size}px" : NULL;
     $css[] = !empty($line_height) ? "line-height: {$line_height}" : NULL;
     $css[] = !empty($letter_spacing) ? "letter-spacing: {$letter_spacing}px" : NULL;

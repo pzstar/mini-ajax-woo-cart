@@ -22,7 +22,7 @@ if (!empty($post)) {
 
             $postid = get_the_ID();
             $majc_settings = get_post_meta($postid, 'uwcc_settings', true);
-
+            
             if (!empty($majc_settings)) {
 
                 WC()->cart->calculate_totals();
@@ -40,7 +40,7 @@ if (!empty($post)) {
                 $cart_item_layout = isset($majc_settings['cart_item_layout']) ? $majc_settings['cart_item_layout'] : 'layout-1';
                 $show_animation = isset($majc_settings['show_animation']) && $majc_settings['show_animation'] != 'none' ? $majc_settings['show_animation'] : '';
                 $hide_animation = isset($majc_settings['hide_animation']) && $majc_settings['hide_animation'] != 'none' ? $majc_settings['hide_animation'] : '';
-                $enable_overlay = isset($majc_settings['enable_overlay']) ? true : null;
+                $enable_overlay = isset($majc_settings['enable_overlay']) ? $majc_settings['enable_overlay'] : 'off';
 
                 // Header Settings
                 $header = isset($majc_settings['header']) ? $majc_settings['header'] : null;
@@ -48,13 +48,13 @@ if (!empty($post)) {
                 $header_icon_type = isset($header['icon_type']) ? $header['icon_type'] : 'default_icon';
                 $header_available_icon = isset($header['available_icon']) ? $header['available_icon'] : null;
                 $header_custom_icon = isset($header['custom_icon']) ? $header['custom_icon'] : null;
-                $header_show_total_items = isset($header['show_cart_item_count']) ? $header['show_cart_item_count'] : null;
+                $header_show_total_items = isset($header['show_cart_item_count']) ? $header['show_cart_item_count'] : 'off';
 
                 // Buttons Settings
                 $buttons = isset($majc_settings['buttons']) ? $majc_settings['buttons'] : null;
-                $show_view_cart = isset($buttons['show_view_cart']) ? $buttons['show_view_cart'] : null;
-                $show_checkout = isset($buttons['show_checkout']) ? $buttons['show_checkout'] : null;
-                $show_continue_shopping = isset($buttons['show_continue_shopping']) ? $buttons['show_continue_shopping'] : null;
+                $show_view_cart = isset($buttons['show_view_cart']) ? $buttons['show_view_cart'] : 'off';
+                $show_checkout = isset($buttons['show_checkout']) ? $buttons['show_checkout'] : 'off';
+                $show_continue_shopping = isset($buttons['show_continue_shopping']) ? $buttons['show_continue_shopping'] : 'off';
                 $continue_shopping_link = isset($buttons['continue_shopping_link']) ? $buttons['continue_shopping_link'] : '#';
                 $view_cart_text = isset($buttons['view_cart_label']) ? $buttons['view_cart_label'] : esc_html__('View Cart', 'mini-ajax-cart');
                 $checkout_text = isset($buttons['checkout_label']) ? $buttons['checkout_label'] : esc_html__('View Checkout', 'mini-ajax-cart');
@@ -63,46 +63,44 @@ if (!empty($post)) {
 
                 // Coupon Settings
                 $coupon = isset($majc_settings['coupon']) ? $majc_settings['coupon'] : null;
-                $enable_coupon = isset($coupon['enable']) ? true : null;
+                $enable_coupon = isset($coupon['enable']) ? $coupon['enable'] : 'off';
                 $apply_coupon_btn_text = isset($coupon['button_text']) ? $coupon['button_text'] : esc_html__('Apply Coupon', 'mini-ajax-cart');
                 $promocode_placeholder = isset($coupon['promocode_placeholder']) ? $coupon['promocode_placeholder'] : esc_html__('Enter your promo code', 'mini-ajax-cart');
 
                 // Cart Basket Settings
                 $cart_basket = isset($majc_settings['cart_basket']) ? $majc_settings['cart_basket'] : null;
-                $cart_basket_open_icon_type = isset($cart_basket['open_icon_type']) ? $cart_basket['open_icon_type'] : 'default_icon';
+                $cart_basket_icon_type = isset($cart_basket['icon_type']) ? $cart_basket['icon_type'] : 'default_icon';
                 $cart_basket_open_available_icon = isset($cart_basket['open_available_icon']) ? $cart_basket['open_available_icon'] : null;
                 $cart_basket_open_custom_icon = isset($cart_basket['open_custom_icon']) ? $cart_basket['open_custom_icon'] : null;
-                $cart_basket_close_icon_type = isset($cart_basket['close_icon_type']) ? $cart_basket['close_icon_type'] : 'default_icon';
                 $cart_basket_close_available_icon = isset($cart_basket['close_available_icon']) ? $cart_basket['close_available_icon'] : null;
                 $cart_basket_close_custom_icon = isset($cart_basket['close_custom_icon']) ? $cart_basket['close_custom_icon'] : null;
                 $cart_basket_shape = isset($cart_basket['shape']) ? $cart_basket['shape'] : null;
-                $cart_basket_product_count = isset($cart_basket['product_count']) ? $cart_basket['product_count'] : null;
+                $cart_basket_product_count = isset($cart_basket['product_count']) ? $cart_basket['product_count'] : 'off';
                 $cart_basket_hover_animation = isset($cart_basket['hover_animation']) && $cart_basket['hover_animation'] != 'none' ? $cart_basket['hover_animation'] : null;
 
                 // Summary Settings
                 $summary = isset($majc_settings['summary']) ? $majc_settings['summary'] : null;
-                $hide_cart_total = isset($summary['hide_cart_total']) ? true : null;
-                $hide_discount = isset($summary['hide_discount']) ? true : null;
-                $hide_subtotal = isset($summary['hide_subtotal']) ? true : null;
+                $hide_cart_total = isset($summary['hide_cart_total']) ? $summary['hide_cart_total'] : 'off';
+                $hide_discount = isset($summary['hide_discount']) ? $summary['hide_discount'] : 'off';
+                $hide_subtotal = isset($summary['hide_subtotal']) ? $summary['hide_subtotal'] : 'off';
 
                 // Custom Settings
                 $custom = isset($majc_settings['custom']) ? $majc_settings['custom'] : null;
 
                 // Display Settings
-                $detect = new MAJC_MobileDetect();
                 $specific_pages = isset($majc_settings['display']['specific_pages']) && !empty($majc_settings['display']['specific_pages']) ? $majc_settings['display']['specific_pages'] : array();
                 $hide_show_pages = isset($majc_settings['display']['hide_show_pages']) ? $majc_settings['display']['hide_show_pages'] : null;
-                $front_pages = isset($majc_settings['display']['front_pages']) ? $majc_settings['display']['front_pages'] : null;
-                $blog_pages = isset($majc_settings['display']['blog_pages']) ? $majc_settings['display']['blog_pages'] : null;
-                $single_pages = isset($majc_settings['display']['single_pages']) ? $majc_settings['display']['single_pages'] : null;
-                $error_pages = isset($majc_settings['display']['error_pages']) ? $majc_settings['display']['error_pages'] : null;
-                $search_pages = isset($majc_settings['display']['search_pages']) ? $majc_settings['display']['search_pages'] : null;
-                $archive_pages = isset($majc_settings['display']['archive_pages']) ? $majc_settings['display']['archive_pages'] : null;
-                $enable_flymenu = isset($majc_settings['display']['enable_flying_cart']) ? $majc_settings['display']['enable_flying_cart'] : null;
+                $front_pages = isset($majc_settings['display']['front_pages']) ? $majc_settings['display']['front_pages'] : 'off';
+                $blog_pages = isset($majc_settings['display']['blog_pages']) ? $majc_settings['display']['blog_pages'] : 'off';
+                $single_pages = isset($majc_settings['display']['single_pages']) ? $majc_settings['display']['single_pages'] : 'off';
+                $error_pages = isset($majc_settings['display']['error_pages']) ? $majc_settings['display']['error_pages'] : 'off';
+                $search_pages = isset($majc_settings['display']['search_pages']) ? $majc_settings['display']['search_pages'] : 'off';
+                $archive_pages = isset($majc_settings['display']['archive_pages']) ? $majc_settings['display']['archive_pages'] : 'off';
+                $enable_flymenu = isset($majc_settings['display']['enable_flying_cart']) ? $majc_settings['display']['enable_flying_cart'] : 'off';
                 $mobile_hide = isset($majc_settings['display']['mobile_hide']) ? $majc_settings['display']['mobile_hide'] : null;
                 $desktop_hide = isset($majc_settings['display']['desktop_hide']) ? $majc_settings['display']['desktop_hide'] : null;
 
-                if (!isset($enable_flymenu)) {
+                if ($enable_flymenu != 'on') {
                     continue;
                 }
 
@@ -113,41 +111,39 @@ if (!empty($post)) {
                     continue;
                 }
 
-                $hideOnScreenTypes = $this->hideOnScreenTypes($mobile_hide, $desktop_hide, $detect);
-                if (isset($hideOnScreenTypes) && $hideOnScreenTypes == '1') {
-                    continue;
-                }
                 $content_width = isset($majc_settings['content_width']) ? $majc_settings['content_width'] : 400;
                 ?>
 
                 <div id="majc-main-wrapper-<?php echo esc_attr($post->ID); ?>" 
                      class="majc-main-wrapper <?php echo esc_attr('majc-layout-' . $layout_type) . esc_attr(' majc-' . $basket_position) . esc_attr(' majc-cartitem-' . $cart_item_layout) . ' ' . esc_attr($basket_position_class); ?>" 
-                     data-overlayenable="<?php echo isset($enable_overlay) ? 'majc-overlay-enabled' : ''; ?>" data-pageid="<?php echo esc_attr($current_page_id); ?>">
-
+                     data-overlayenable="<?php echo ($enable_overlay == 'on') ? 'majc-overlay-enabled' : ''; ?>" data-pageid="<?php echo esc_attr($current_page_id); ?>">
+                    <div class="majc-check-cart <?php echo esc_attr(WC()->cart->is_empty() ? 'majc-hide-cart-items' : ''); ?>"></div>
                     <div class="majc-main-inner-wrapper">
                         <div class="majc-toggle-button <?php echo esc_attr('majc-' . $cart_basket_shape); ?>">
                             <div class="majc-toggle-open-btn majc-cartbasket-toggle-btn <?php echo esc_attr($cart_basket_hover_animation); ?>">
-                                <?php if (isset($cart_basket_open_icon_type) && $cart_basket_open_icon_type == 'available_icon') { ?>
+
+
+                                <?php if (isset($cart_basket_icon_type) && $cart_basket_icon_type == 'available_icon') { ?>
                                     <span class="majc-cartbasket-icon majc-cartbasket-open-icon <?php echo esc_attr($cart_basket_open_available_icon); ?>"></span>
-                                <?php } else if (isset($cart_basket_open_icon_type) && $cart_basket_open_icon_type == 'custom_icon') { ?>
+                                <?php } else if (isset($cart_basket_icon_type) && $cart_basket_icon_type == 'custom_icon') { ?>
                                     <div class="majc-cartbasket-img majc-cartbasket-icon majc-cartbasket-open-icon">
                                         <img src="<?php echo esc_url($cart_basket_open_custom_icon); ?>">
                                     </div>
-                                <?php } else if (isset($cart_basket_open_icon_type) && $cart_basket_open_icon_type == 'default_icon') { ?>
+                                <?php } else if (isset($cart_basket_icon_type) && $cart_basket_icon_type == 'default_icon') { ?>
                                     <span class="majc-cartbasket-icon majc-cartbasket-open-icon icon_cart_alt"></span>
                                 <?php } ?>
 
-                                <?php if (isset($cart_basket_close_icon_type) && $cart_basket_close_icon_type == 'available_icon') { ?>
+                                <?php if (isset($cart_basket_icon_type) && $cart_basket_icon_type == 'available_icon') { ?>
                                     <span class="majc-cartbasket-icon majc-cartbasket-close-icon <?php echo esc_attr($cart_basket_close_available_icon); ?>"></span>
-                                <?php } else if (isset($cart_basket_close_icon_type) && $cart_basket_close_icon_type == 'custom_icon') { ?>
+                                <?php } else if (isset($cart_basket_icon_type) && $cart_basket_icon_type == 'custom_icon') { ?>
                                     <div class="majc-cartbasket-img majc-cartbasket-icon majc-cartbasket-close-icon">
                                         <img src="<?php echo esc_url($cart_basket_close_custom_icon); ?>">
                                     </div>
-                                <?php } else if (isset($cart_basket_close_icon_type) && $cart_basket_close_icon_type == 'default_icon') { ?>
+                                <?php } else if (isset($cart_basket_icon_type) && $cart_basket_icon_type == 'default_icon') { ?>
                                     <span class="majc-cartbasket-icon majc-cartbasket-close-icon icon_close"></span>
                                 <?php } ?>
 
-                                <?php if (isset($cart_basket_product_count)) { ?>
+                                <?php if ($cart_basket_product_count == 'on') { ?>
                                     <div class="majc-item-count-wrap">
                                         <span class="majc-cart-item-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
                                     </div>
@@ -189,7 +185,7 @@ if (!empty($post)) {
                                         <?php } ?>
                                         <?php echo esc_html($header_title); ?>
                                     </h2>
-                                    <?php if ($header_show_total_items) { ?>
+                                    <?php if ($header_show_total_items == 'on') { ?>
                                         <div class="majc-sub-header">
                                             <span class="majc-cart-qty-count"><?php esc_html_e('Quantity: ', 'mini-ajax-cart'); ?><?php echo WC()->cart->get_cart_contents_count(); ?></span>
                                             <span class="majc-cart-items-count"><?php esc_html_e('Items: ', 'mini-ajax-cart'); ?><?php echo sizeof(WC()->cart->get_cart()); ?></span>
@@ -257,8 +253,15 @@ if (!empty($post)) {
                                         <?php } ?>
                                     </div>
 
+                                    <div class="majc-empty-cart">
+                                        <div class="majc-empty-cart-icon">
+                                            <span class="mdi mdi-cart-arrow-down"></span>
+                                        </div>
+                                        <?php esc_html_e('No Porduct in the Cart!', 'mini-ajax-cart'); ?>
+                                    </div>
+
                                     <!-- Coupons -->
-                                    <?php if (isset($enable_coupon)) { ?>
+                                    <?php if ($enable_coupon == 'on') { ?>
                                         <div class='majc-coupon'>
 
                                             <div class="majc-cpn-resp" style="display: none;"></div>
@@ -291,21 +294,21 @@ if (!empty($post)) {
                                     <!-- Summary -->
                                     <div class="majc-buy-summary">
 
-                                        <?php if (!isset($hide_cart_total)) { ?>
+                                        <?php if ($hide_cart_total != 'on') { ?>
                                             <div class="majc-cart-total-wrap">
                                                 <label><?php echo esc_html__('Cart Total', 'mini-ajax-cart'); ?></label>
                                                 <div class="majc-cart-total-amount"><?php echo wc_price(WC()->cart->get_subtotal() + WC()->cart->get_subtotal_tax()); ?></div>
                                             </div>
                                         <?php } ?>
 
-                                        <?php if (!isset($hide_discount)) { ?>
+                                        <?php if ($hide_discount != 'on') { ?>
                                             <div class="majc-cart-discount-wrap">
                                                 <label><?php echo esc_html__('Discount', 'mini-ajax-cart'); ?></label>
                                                 <div class="majc-cart-discount-amount"><?php echo wc_price(WC()->cart->get_cart_discount_total() + WC()->cart->get_cart_discount_tax_total()); ?></div>
                                             </div>
                                         <?php } ?>
 
-                                        <?php if (!isset($hide_subtotal)) { ?>
+                                        <?php if ($hide_subtotal != 'on') { ?>
                                             <div class='majc-cart-subtotal-wrap'>
                                                 <?php
                                                 $get_totals = WC()->cart->get_totals();
@@ -323,22 +326,24 @@ if (!empty($post)) {
                                     </div>
 
                                     <div class="majc-cart-action-btn-wrap">
-                                        <p><?php echo esc_html($shipping_text); ?></p>
+                                        <?php if (trim($shipping_text)) { ?>
+                                            <p><?php echo esc_html($shipping_text); ?></p>
+                                        <?php } ?>
 
-                                        <?php if (isset($show_continue_shopping)) { ?>
+                                        <?php if ($show_continue_shopping == 'on') { ?>
                                             <a class="majc-continue-shoping-btn majc-cart-action-btn majc-button" href="<?php echo esc_url($continue_shopping_link); ?>" >
                                                 <?php echo esc_html($continue_shopping_text); ?>
                                             </a>
                                         <?php } ?>
 
                                         <div class="majc-cart-checkout-btn">
-                                            <?php if (isset($show_view_cart)) { ?>
+                                            <?php if ($show_view_cart == 'on') { ?>
                                                 <a class="majc-view-cart-btn majc-cart-action-btn majc-button" href="<?php echo wc_get_cart_url(); ?>">
                                                     <?php echo esc_html($view_cart_text); ?>
                                                 </a>
                                             <?php } ?>
 
-                                            <?php if (isset($show_checkout)) { ?>
+                                            <?php if ($show_checkout == 'on') { ?>
                                                 <a class="majc-checkout-btn majc-cart-action-btn majc-button" href="<?php echo wc_get_checkout_url(); ?>">
                                                     <?php echo esc_html($checkout_text); ?>
                                                 </a>
@@ -353,14 +358,10 @@ if (!empty($post)) {
                 </div> <!-- majc-main-wrapper -->
                 <?php
                 // Custom CSS
-                if (isset($custom['enable'])) {
-                    include MAJC_PATH . '/inc/frontend/flying-cart/custom-css.php';
-                }
+                include MAJC_PATH . '/inc/frontend/flying-cart/custom-css.php';
             } //Not empty $majc_settings
         endwhile;
         wp_reset_postdata();
-    else :
-        esc_html_e('', 'mini-ajax-cart');
     endif;
 }
 ?>

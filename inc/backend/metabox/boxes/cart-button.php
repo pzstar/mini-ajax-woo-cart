@@ -7,26 +7,26 @@
             <div class="majc-settings-list-row">
                 <div class="majc-settings-list">
                     <label>Choose Icon Type</label>
-                    <select name="majc_settings[cart_basket][open_icon_type]" data-condition="toggle" id="majc-open-icon-type">
+                    <select name="majc_settings[cart_basket][icon_type]" data-condition="toggle" id="majc-icon-type">
                         <option value="default_icon" <?php
-                        if (isset($cart_basket['open_icon_type'])) {
-                            selected($cart_basket['open_icon_type'], 'default_icon');
+                        if (isset($cart_basket['icon_type'])) {
+                            selected($cart_basket['icon_type'], 'default_icon');
                         }
                         ?>><?php esc_html_e('Default Icon', 'mini-ajax-cart'); ?></option>
                         <option value="available_icon" <?php
-                        if (isset($cart_basket['open_icon_type'])) {
-                            selected($cart_basket['open_icon_type'], 'available_icon');
+                        if (isset($cart_basket['icon_type'])) {
+                            selected($cart_basket['icon_type'], 'available_icon');
                         }
                         ?>><?php esc_html_e('Available Icon', 'mini-ajax-cart'); ?></option>
                         <option value="custom_icon" <?php
-                        if (isset($cart_basket['open_icon_type'])) {
-                            selected($cart_basket['open_icon_type'], 'custom_icon');
+                        if (isset($cart_basket['icon_type'])) {
+                            selected($cart_basket['icon_type'], 'custom_icon');
                         }
                         ?>><?php esc_html_e('Custom Icon', 'mini-ajax-cart'); ?></option>
                     </select>
                 </div>
 
-                <div class="majc-settings-list" data-condition-toggle="majc-open-icon-type" data-condition-val="available_icon">
+                <div class="majc-settings-list" data-condition-toggle="majc-icon-type" data-condition-val="available_icon">
                     <ul class="majc-two-column-row">
                         <li class="majc-settings-list">
                             <label for="majc_floatmenu_default_icon"><?php esc_html_e('Choose Open Icon', 'mini-ajax-cart'); ?></label>
@@ -47,7 +47,7 @@
                     </ul>
                 </div>
 
-                <div class="majc-settings-list" data-condition-toggle="majc-open-icon-type" data-condition-val="custom_icon">
+                <div class="majc-settings-list" data-condition-toggle="majc-icon-type" data-condition-val="custom_icon">
                     <ul class="majc-two-column-row">
                         <li class="majc-settings-list">
                             <label for="majc-header-icon"><?php esc_html_e('Upload Open Icon', 'mini-ajax-cart'); ?></label>

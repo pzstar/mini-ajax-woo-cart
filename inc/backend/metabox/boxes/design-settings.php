@@ -178,7 +178,7 @@ $text_decorations = majc_get_text_decoration_choices();
                             <label><?php esc_html_e('Font Family', 'mini-ajax-cart'); ?></label>
                             <div class="majc-typography-input-field">
                                 <select name="majc_settings[custom][header_title_font_family]" class="majc-typography-font-family">
-                                    <option value="default" <?php
+                                    <option value="Default" <?php
                                     if (isset($custom['header_title_font_family'])) {
                                         selected($custom['header_title_font_family'], 'default');
                                     }
@@ -335,7 +335,7 @@ $text_decorations = majc_get_text_decoration_choices();
                             <label><?php esc_html_e('Font Family', 'mini-ajax-cart'); ?></label>
                             <div class="majc-typography-input-field">
                                 <select name="majc_settings[custom][content_font_family]" class="majc-typography-font-family">
-                                    <option value="default" <?php
+                                    <option value="Default" <?php
                                     if (isset($custom['content_font_family'])) {
                                         selected($custom['content_font_family'], 'default');
                                     }
@@ -493,7 +493,7 @@ $text_decorations = majc_get_text_decoration_choices();
                             <label><?php esc_html_e('Font Family', 'mini-ajax-cart'); ?></label>
                             <div class="majc-typography-input-field">
                                 <select name="majc_settings[custom][product_title_font_family]" class="majc-typography-font-family">
-                                    <option value="default" <?php
+                                    <option value="Default" <?php
                                     if (isset($custom['product_title_font_family'])) {
                                         selected($custom['product_title_font_family'], 'default');
                                     }
@@ -655,7 +655,7 @@ $text_decorations = majc_get_text_decoration_choices();
                             <div class="majc-typography-input-field">
                                 <select name="majc_settings[custom][button_text_font_family]" class="majc-typography-font-family">
 
-                                    <option value="default" <?php
+                                    <option value="Default" <?php
                                     if (isset($custom['header_title_font_family'])) {
                                         selected($custom['header_title_font_family'], 'default');
                                     }

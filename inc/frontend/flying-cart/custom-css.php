@@ -30,11 +30,11 @@ if (isset($custom['cart_total_box_text_color']) && !empty($custom['cart_total_bo
 
 $drawer_content_bg_type = isset($custom['drawer_content_bg_type']) && !empty($custom['drawer_content_bg_type']) ? $custom['drawer_content_bg_type'] : null;
 
-if ($drawer_content_bg_type == 'choose_color' && isset($custom['drawer_content_bg_color'])) {
+if ($drawer_content_bg_type == 'choose_color' && isset($custom['drawer_content_bg_color']) && !empty($custom['drawer_content_bg_color'])) {
     $custom_css .= "{$custom_id}.majc-layout-slidein .majc-cart-popup{background-color:{$custom['drawer_content_bg_color']}}";
 }
 
-if ($drawer_content_bg_type == 'custom_image_bg' && isset($custom['drawer_content_bg_image'])) {
+if ($drawer_content_bg_type == 'custom_image_bg' && isset($custom['drawer_content_bg_image']) && !empty($custom['drawer_content_bg_image'])) {
     $custom_css .= "{$custom_id}.majc-layout-slidein .majc-cart-popup{background-image:url({$custom['drawer_content_bg_image']}); background-size: cover;}";
 }
 
