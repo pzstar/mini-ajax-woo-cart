@@ -132,7 +132,15 @@ if (!class_exists('MAJC_Library')) {
                 'display' => array(
                     'enable_flying_cart' => 'on',
                     'hide_screen' => array(),
-                    'display_condition' => 'show_all'
+                    'display_condition' => 'show_all',
+                    'specific_pages' => array(),
+                    'front_pages' => 'off',
+                    'blog_pages' => 'off',
+                    'archive_pages' => 'off',
+                    'error_pages' => 'off',
+                    'search_pages' => 'off',
+                    'cpt_pages' => array(),
+                    'specific_archive' => array()
                 ),
                 'buttons' => array(
                     'show_view_cart' => 'on',

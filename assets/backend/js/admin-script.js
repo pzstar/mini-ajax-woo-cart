@@ -146,14 +146,24 @@ jQuery(function ($) {
     });
 
     /*Show/ Hide Single Page Options*/
-    $('input#majc_single_pages').on('change', function () {
-        var checked_value = $('input#majc_single_pages:checked').val();
+    // $('input#majc_single_pages').on('change', function () {
+    //     var checked_value = $('input#majc_single_pages:checked').val();
 
-        if (checked_value == 'on') {
-            $(this).closest('.majc-display-lists').find('.majc-hide-singular').fadeOut();
-        } else {
-            $(this).closest('.majc-display-lists').find('.majc-hide-singular').fadeIn();
-        }
+    //     if (checked_value == 'on') {
+    //         $(this).closest('.majc-display-lists').find('.majc-hide-singular').fadeOut();
+    //     } else {
+    //         $(this).closest('.majc-display-lists').find('.majc-hide-singular').fadeIn();
+    //     }
+    // });
+
+    $(document).on('click', '.majc-hide-show-cpt-posts', function () {
+        var posttype = '#majc-cpt-' + $(this).data('posttype');
+        $(this).is(':checked') ? $(posttype).hide() : $(posttype).show();
+    });
+
+    $(document).on('click', '.majc-hide-show-archive-list', function () {
+        var arclist = '#majc-show-archive';
+        $(this).is(':checked') ? $(arclist).hide() : $(arclist).show();
     });
 
     $(document).on('change', '.majc-typography-font-family', function () {

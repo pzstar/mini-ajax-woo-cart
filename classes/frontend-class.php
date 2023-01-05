@@ -307,18 +307,25 @@ if (!class_exists('MAJC_Frontend')) {
             die();
         }
 
-        function hide_show_pages($pageid, $specific_page, $hide_show, $front, $blog, $single, $error, $search, $archive) {
-
+        public static function hide_show_pages($pageid, $specific_page, $hide_show, $front, $blog, $cpt, $error, $search, $archive, $posttype, $specific_archive, $current_archive) {
             $hide_flag = 0;
             $show_flag = 1;
 
             switch ($hide_show) {
-                case 'show_in_pages':
-                    if (!in_array($pageid, $specific_page)) {
+                case 'show_all':
+                    $show_flag = 1;
+                    break;
+
+                case 'hide_all':
+                    $hide_flag = 1;
+                    break;
+
+                case 'show_selected':
+                    if (!in_array($posttype, $cpt) && !in_array($pageid, $specific_page)) {
                         $hide_flag = 1;
                     }
 
-                    if ($front || $blog) {
+                    if ($front == 'on' || $blog == 'on') {
                         if (is_front_page() && is_home()) {
                             $hide_flag = 0;
                         } else if (is_front_page()) {
@@ -328,31 +335,32 @@ if (!class_exists('MAJC_Frontend')) {
                         }
                     }
 
-                    if ($single) {
-                        if (is_single() || is_page())
-                            $hide_flag = 0;
-                    }
-
-                    if ($error) {
+                    if ($error == 'on') {
                         if (is_404())
                             $hide_flag = 0;
                     }
-                    if ($search) {
+                    if ($search == 'on') {
                         if (is_search())
                             $hide_flag = 0;
                     }
-                    if ($archive) {
-                        if (is_archive())
+                    if ($archive == 'on') {
+                        if (is_archive() || ('post' == $current_archive && !is_single()))
+                            $hide_flag = 0;
+                    } else {
+                        if (in_array($current_archive, $specific_archive))
                             $hide_flag = 0;
                     }
                     break;
 
-                case 'hide_in_pages':
+                case 'hide_selected':
+                    if (in_array($posttype, $cpt)) {
+                        $hide_flag = 1;
+                    }
                     if (in_array($pageid, $specific_page)) {
                         $hide_flag = 1;
                     }
 
-                    if ($front || $blog) {
+                    if ($front == 'on' || $blog == 'on') {
                         if (is_front_page() && is_home()) {
                             $hide_flag += 1;
                         } else if (is_front_page()) {
@@ -362,21 +370,19 @@ if (!class_exists('MAJC_Frontend')) {
                         }
                     }
 
-                    if ($single) {
-                        if (is_single() || is_page())
-                            $hide_flag += 1;
-                    }
-
-                    if ($error) {
+                    if ($error == 'on') {
                         if (is_404())
                             $hide_flag += 1;
                     }
-                    if ($search) {
+                    if ($search == 'on') {
                         if (is_search())
                             $hide_flag += 1;
                     }
-                    if ($archive) {
-                        if (is_archive())
+                    if ($archive == 'on') {
+                        if (is_archive() || ('post' == $current_archive && !is_single()))
+                            $hide_flag += 1;
+                    } else {
+                        if (in_array($current_archive, $specific_archive))
                             $hide_flag += 1;
                     }
                     break;

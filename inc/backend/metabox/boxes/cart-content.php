@@ -217,7 +217,7 @@
 
                         <div class="majc-settings-list" data-condition-toggle="majc-show-shopping-button">
                             <label><?php esc_html_e('Continue Shopping Link', 'mini-ajax-cart'); ?></label>
-                            <input type="url" name="majc_settings[buttons][continue_shopping_link]" value="<?php echo isset($buttons['continue_shopping_link']) ? esc_url($buttons['continue_shopping_link']) : ""; ?>">
+                            <input type="text" name="majc_settings[buttons][continue_shopping_link]" value="<?php echo isset($buttons['continue_shopping_link']) ? esc_url($buttons['continue_shopping_link']) : ""; ?>">
                         </div>
                     </div>
                 </div>

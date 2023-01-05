@@ -2,7 +2,8 @@
 global $post;
 
 if (!empty($post)) {
-    $current_page_id = $post->ID;
+    $current_page_id = is_front_page() ? null : ($post ? $post->ID : null);
+
     if (class_exists('WooCommerce') && is_shop()) {
         $current_page_id = wc_get_page_id('shop');
     } else if (is_single() || is_front_page()) {
@@ -12,6 +13,9 @@ if (!empty($post)) {
     } else if (is_home()) {
         $current_page_id = get_queried_object_id();
     }
+
+    $current_archive = is_front_page() ? 'front' : ($post ? $post->post_type : get_queried_object()->name);
+    $current_post_type = is_archive() ? null : $current_archive;
 
     $query = new WP_Query(array('post_type' => 'ultimate-woo-cart', 'posts_per_page' => -1));
 
@@ -89,7 +93,7 @@ if (!empty($post)) {
 
                 // Display Settings
                 $specific_pages = isset($majc_settings['display']['specific_pages']) && !empty($majc_settings['display']['specific_pages']) ? $majc_settings['display']['specific_pages'] : array();
-                $hide_show_pages = isset($majc_settings['display']['hide_show_pages']) ? $majc_settings['display']['hide_show_pages'] : null;
+                $display_condition = isset($majc_settings['display']['display_condition']) ? $majc_settings['display']['display_condition'] : null;
                 $front_pages = isset($majc_settings['display']['front_pages']) ? $majc_settings['display']['front_pages'] : 'off';
                 $blog_pages = isset($majc_settings['display']['blog_pages']) ? $majc_settings['display']['blog_pages'] : 'off';
                 $single_pages = isset($majc_settings['display']['single_pages']) ? $majc_settings['display']['single_pages'] : 'off';
@@ -97,14 +101,15 @@ if (!empty($post)) {
                 $search_pages = isset($majc_settings['display']['search_pages']) ? $majc_settings['display']['search_pages'] : 'off';
                 $archive_pages = isset($majc_settings['display']['archive_pages']) ? $majc_settings['display']['archive_pages'] : 'off';
                 $enable_flymenu = isset($majc_settings['display']['enable_flying_cart']) ? $majc_settings['display']['enable_flying_cart'] : 'off';
-                $mobile_hide = isset($majc_settings['display']['mobile_hide']) ? $majc_settings['display']['mobile_hide'] : null;
-                $desktop_hide = isset($majc_settings['display']['desktop_hide']) ? $majc_settings['display']['desktop_hide'] : null;
+                $cpt_pages = !empty($majc_settings['display']['cpt_pages']) ? $majc_settings['display']['cpt_pages'] : array();
+                $specific_archive = !empty($majc_settings['display']['specific_archive']) ? $majc_settings['display']['specific_archive'] : array();
+                $hide_screen = !empty($majc_settings['display']['hide_screen']) ? $majc_settings['display']['hide_screen'] : array();
 
                 if ($enable_flymenu != 'on') {
                     continue;
                 }
 
-                $hide_show = $this->hide_show_pages($current_page_id, $specific_pages, $hide_show_pages, $front_pages, $blog_pages, $single_pages, $error_pages, $search_pages, $archive_pages);
+                $hide_show = $this->hide_show_pages($current_page_id, $specific_pages, $display_condition, $front_pages, $blog_pages, $cpt_pages, $error_pages, $search_pages, $archive_pages, $current_post_type, $specific_archive, $current_archive);
 
                 // Hide the fly menu if return value is 1
                 if ($hide_show == '1') {
@@ -115,7 +120,7 @@ if (!empty($post)) {
                 ?>
 
                 <div id="majc-main-wrapper-<?php echo esc_attr($post->ID); ?>" 
-                     class="majc-main-wrapper <?php echo esc_attr('majc-layout-' . $layout_type) . esc_attr(' majc-' . $basket_position) . esc_attr(' majc-cartitem-' . $cart_item_layout) . ' ' . esc_attr($basket_position_class); ?>" 
+                     class="majc-main-wrapper <?php echo esc_attr('majc-layout-' . $layout_type) . esc_attr(' majc-' . $basket_position) . esc_attr(' majc-cartitem-' . $cart_item_layout) . ' ' . esc_attr($basket_position_class) . ($hide_screen ? ' majc-hide-' . implode(' majc-hide-', $hide_screen) : ''); ?>" 
                      data-overlayenable="<?php echo ($enable_overlay == 'on') ? 'majc-overlay-enabled' : ''; ?>" data-pageid="<?php echo esc_attr($current_page_id); ?>">
                     <div class="majc-check-cart <?php echo esc_attr(WC()->cart->is_empty() ? 'majc-hide-cart-items' : ''); ?>"></div>
                     <div class="majc-main-inner-wrapper">
@@ -164,14 +169,14 @@ if (!empty($post)) {
                         ?>
                         <div class="majc-cart-popup <?php echo esc_attr($majc_popup_class); ?>" 
                         <?php if (!empty($show_animation)) { ?>
-                                 data-showanimation="<?php echo 'animate--' . esc_attr($show_animation); ?>" 
-                                 <?php
-                             }
-                             if (!empty($hide_animation)) {
-                                 ?>
-                                 data-hideanimation="<?php echo 'animate--' . esc_attr($hide_animation); ?>"
-                             <?php } ?>
-                             style="width:<?php echo $content_width ?>px">
+                                data-showanimation="<?php echo 'animate--' . esc_attr($show_animation); ?>" 
+                                <?php
+                            }
+                            if (!empty($hide_animation)) {
+                                ?>
+                                data-hideanimation="<?php echo 'animate--' . esc_attr($hide_animation); ?>"
+                            <?php } ?>
+                            style="width:<?php echo $content_width ?>px">
                             <div class="majc-cart-popup-inner">
 
                                 <div class="majc-header">
