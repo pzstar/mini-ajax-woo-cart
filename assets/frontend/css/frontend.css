@@ -591,3 +591,21 @@
         width: 100% !important;
     }
 }
+
+@media screen and (min-width:769px) {
+    .majc-hide-desktop {
+        display: none;
+    }
+}
+
+@media screen and (min-width:581px) and (max-width:768px) {
+    .majc-hide-tablet {
+        display: none;
+    }
+}
+
+@media screen and (max-width:580px) {
+    .majc-hide-mobile {
+        display: none;
+    }
+}
