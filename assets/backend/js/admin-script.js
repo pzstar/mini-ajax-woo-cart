@@ -145,17 +145,7 @@ jQuery(function ($) {
         $(this).prev('.majc-range-slider').slider('value', resetValue);
     });
 
-    /*Show/ Hide Single Page Options*/
-    // $('input#majc_single_pages').on('change', function () {
-    //     var checked_value = $('input#majc_single_pages:checked').val();
-
-    //     if (checked_value == 'on') {
-    //         $(this).closest('.majc-display-lists').find('.majc-hide-singular').fadeOut();
-    //     } else {
-    //         $(this).closest('.majc-display-lists').find('.majc-hide-singular').fadeIn();
-    //     }
-    // });
-
+    /*Show/ Hide Page Options*/
     $(document).on('click', '.majc-hide-show-cpt-posts', function () {
         var posttype = '#majc-cpt-' + $(this).data('posttype');
         $(this).is(':checked') ? $(posttype).hide() : $(posttype).show();

@@ -116,7 +116,7 @@
 
             var imgtodrag = $(this).closest('.product').find("img").eq(0);
 
-            if (imgtodrag.length) {
+            if (imgtodrag.length && cart.length) {
                 var imgclone = imgtodrag.clone()
                         .offset({
                             top: imgtodrag.offset().top,

@@ -96,7 +96,6 @@ if (!empty($post)) {
                 $display_condition = isset($majc_settings['display']['display_condition']) ? $majc_settings['display']['display_condition'] : null;
                 $front_pages = isset($majc_settings['display']['front_pages']) ? $majc_settings['display']['front_pages'] : 'off';
                 $blog_pages = isset($majc_settings['display']['blog_pages']) ? $majc_settings['display']['blog_pages'] : 'off';
-                $single_pages = isset($majc_settings['display']['single_pages']) ? $majc_settings['display']['single_pages'] : 'off';
                 $error_pages = isset($majc_settings['display']['error_pages']) ? $majc_settings['display']['error_pages'] : 'off';
                 $search_pages = isset($majc_settings['display']['search_pages']) ? $majc_settings['display']['search_pages'] : 'off';
                 $archive_pages = isset($majc_settings['display']['archive_pages']) ? $majc_settings['display']['archive_pages'] : 'off';
