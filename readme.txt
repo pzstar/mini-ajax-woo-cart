@@ -24,51 +24,59 @@ Want to test the dashboard settings without installing on your website? <a href=
 
 <h3>Main features</h3>
 <ul>
-<li>Create Unlimited Shopping Cart</li>
-<li>Display Your Cart Items in a Slidein Format</li>
-<li>2 Different Product Layouts Display Cart Items
-    <ul>
-        <li>Left Side</li>
-        <li>Right Side</li>
-    </ul>
-</li>
-
-<li>Background Overlay While Displaying Cart</li>
-<li>3 Different Shapes of the Cart
-    <ul>
-        <li>Round</li>
-        <li>Square</li>
-        <li>Rounded Square</li>
-    </ul>
-</li>
-<li>Various Animations
-    <ul>
-        <li>Cart Entrance Animations</li>
-        <li>Cart Exit Animations</li>
-        <li>Cart Hover Animations</li>
-    </ul>
-</li>
-<li>Coupon Settings</li>
-<li>Display Settings
-    <ul>
-        <li>Show/Hide Shopping Cart on Mobile</li>
-        <li>Show/Hide Shopping Cart on Desktop</li>
-        <li>Show/Hide Shopping Cart on Specific Page, Post, Library, Products</li>
-    </ul>
-</li>
-<li>Button Settings
-    <ul>
-        <li>Show/Hide View Cart Button</li>
-        <li>Show/Hide Checkout Button</li>
-        <li>Show/Hide Continue Shopping Button</li>
-    </ul>
-</li>
-<li>Customization Option
-    <ul>
-        <li>Typography Options</li>
-        <li>Color Options</li>
-    </ul>
-</li>
+    <li>Create Unlimited Shopping Carts</li>
+    <li>Selectively Display the Cart
+        <ul>
+            <li>Show/Hide on Desktop, Tablet, or Mobile</li>
+            <li>Show/Hide on Selected Pages, Posts, Products, Archive Pages or  Custom Post Types Single/Archive Pages Only</li>
+        </ul>
+    </li>
+    <li>Custom Icon for Cart Basket
+        <ul>
+            <li>Select from 5000+ Icons</li>
+            <li>Upload Custom Image Icons</li>
+        </ul>
+    </li>
+    <li>Cart Animations
+        <ul>
+            <li>Cart Entrance/Exit Animations</li>
+            <li>Cart Hover Animations</li>
+        </ul>
+    </li>
+    <li>Display Coupon Form in the Cart Panel</li>
+    <li>2 Different Positions to Display Cart Panel
+        <ul>
+            <li>Left Side</li>
+            <li>Right Side</li>
+        </ul>
+    </li>
+    <li>3 Different Cart Basket/Button Shape
+        <ul>
+            <li>Round</li>
+            <li>Square</li>
+            <li>Rounded Square</li>
+        </ul>
+    </li>
+    <li>2 Layouts to Display Cart Items
+        <ul>
+            <li>List</li>
+            <li>Grid</li>
+        </ul>
+    </li>
+    <li>Cart Buttons Settings
+        <ul>
+            <li>Show/Hide View Cart Button</li>
+            <li>Show/Hide Checkout Button</li>
+            <li>Show/Hide Continue Shopping Button</li>
+        </ul>
+    </li>
+    <li>Complete Customization Option
+        <ul>
+            <li>Typography Options</li>
+            <li>Color Options</li>
+            <li>Panel Background Options</li>
+        </ul>
+    </li>
 </ul>
 
 <h3>Pro Version Features</h3>
