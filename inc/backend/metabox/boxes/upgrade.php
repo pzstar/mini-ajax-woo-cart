@@ -78,7 +78,7 @@
         <li>More Customization Options</li>
         <li>Custom CSS Option</li>
     </ul>
-    
+
     <a class="majc-upgrade-button" href="https://1.envato.market/2rKYB0" target="_blank"><span class="dashicons dashicons-cart"></span> Upgrade To Pro</a>
 
     <h2>Additional Pro Version Features <a href="https://1.envato.market/2rKYB0" target="_blank"><span class="dashicons dashicons-cart"></span> Upgrade To Pro</a></h2>
@@ -95,7 +95,5 @@
         </li>
         <li>Shipping Bar - Percentage Bar That Displays The Amount Remaining For Free Shipping</li>
     </ul>
-    
-    <a class="majc-upgrade-button" href="https://1.envato.market/2rKYB0" target="_blank"><span class="dashicons dashicons-cart"></span> Upgrade To Pro</a>
 </div>
 
