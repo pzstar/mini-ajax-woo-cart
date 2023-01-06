@@ -973,3 +973,76 @@ h2.majc-main-header{
 .majc-each-elements .switch {
     float: right;
 }
+
+ul.majc-feature-list{
+    margin: 0;
+    padding: 30px;
+    font-size: 15px;
+}
+
+ul.majc-feature-list ul{
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+
+ul.majc-feature-list li{
+    position: relative;
+    padding: 0 0 0 30px;
+    margin: 0 0 10px 0;
+}
+
+ul.majc-feature-list li:before {
+    content: "\f15e";
+    font-family: 'dashicons';
+    font-weight: 900;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 50%;
+    color: #333;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    background: #4bae4f;
+    color: #FFF;
+}
+
+#upgrade-settings h2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px !important;
+}
+
+#upgrade-settings h2 a,
+a.majc-upgrade-button{
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 30px;
+    color: #FFF;
+    background: #2170b1;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#upgrade-settings h2 a span,
+a.majc-upgrade-button span{
+    height: auto;
+    width: auto;
+    font-size: inherit;
+    margin: 0 5px 0 0;
+}
+
+#upgrade-settings h2 a:hover,
+a.majc-upgrade-button:hover{
+    background: #000;
+}
+
+a.majc-upgrade-button{
+    margin: -10px 0 30px 30px;
+}

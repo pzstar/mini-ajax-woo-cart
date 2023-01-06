@@ -1,6 +1,6 @@
-<div id="upgrade-settings" class="tab-content">
-    <h3>Pro Version Features</h3>
-    <ul>
+<div id="upgrade-settings" class="tab-content" style="display: none;">
+    <h2>Pro Version Features <a href="https://1.envato.market/2rKYB0" target="_blank"><span class="dashicons dashicons-cart"></span> Upgrade To Pro</a></h2>
+    <ul class="majc-feature-list">
         <li>15+ Ready Made Templates That Can Be Imported With One Click</li>
         <li>Ajax Checkout Option On Cart Panel Without Having To Go On Checkout Page</li>
         <li>3 Different Layout To Display Cart Panel
@@ -78,9 +78,11 @@
         <li>More Customization Options</li>
         <li>Custom CSS Option</li>
     </ul>
+    
+    <a class="majc-upgrade-button" href="https://1.envato.market/2rKYB0" target="_blank"><span class="dashicons dashicons-cart"></span> Upgrade To Pro</a>
 
-    <h3>Additional Pro Version Features</h3>
-    <ul>
+    <h2>Additional Pro Version Features <a href="https://1.envato.market/2rKYB0" target="_blank"><span class="dashicons dashicons-cart"></span> Upgrade To Pro</a></h2>
+    <ul class="majc-feature-list">
         <li>Added To Cart Popup - Display A Product Added To The Cart In A Popup
             <ul>
                 <li>50+ Show/Hide Animation For Popup</li>
@@ -93,5 +95,7 @@
         </li>
         <li>Shipping Bar - Percentage Bar That Displays The Amount Remaining For Free Shipping</li>
     </ul>
+    
+    <a class="majc-upgrade-button" href="https://1.envato.market/2rKYB0" target="_blank"><span class="dashicons dashicons-cart"></span> Upgrade To Pro</a>
 </div>
 

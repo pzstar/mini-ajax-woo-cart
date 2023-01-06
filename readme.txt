@@ -37,7 +37,7 @@ Want to test the dashboard settings without installing on your website? <a href=
             <li>Upload Custom Image Icons</li>
         </ul>
     </li>
-    <li>Cart Animations
+    <li>Cart Basket/Button Animations
         <ul>
             <li>Cart Entrance/Exit Animations</li>
             <li>Cart Hover Animations</li>
@@ -50,7 +50,7 @@ Want to test the dashboard settings without installing on your website? <a href=
             <li>Right Side</li>
         </ul>
     </li>
-    <li>3 Different Cart Basket/Button Shape
+    <li>3 Different Cart Basket/Button Shapes
         <ul>
             <li>Round</li>
             <li>Square</li>
