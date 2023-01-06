@@ -16,11 +16,12 @@ wp_nonce_field('majc-settings-nonce', 'majc_settings_nonce');
     <div class="majc-settings-inner-wrap">
         <div class="majc-menu-option-wrap">
             <ul class="majc-side-menus">
-                <li class="majc-tab majc-tab-active" data-tab="layout-settings" data-tohide="tab-content"><?php esc_html_e('Main Settings', 'mini-ajax-cart'); ?></li>
-                <li class="majc-tab" data-tab="cart-button" data-tohide="tab-content"><?php esc_html_e('Cart Button', 'mini-ajax-cart'); ?></li>
-                <li class="majc-tab" data-tab="cart-panel" data-tohide="tab-content"><?php esc_html_e('Cart Panel', 'mini-ajax-cart'); ?></li>
-                <li class="majc-tab" data-tab="cart-content" data-tohide="tab-content"><?php esc_html_e('Cart Content', 'mini-ajax-cart'); ?></li>
-                <li class="majc-tab" data-tab="design-settings" data-tohide="tab-content"><?php esc_html_e('Design Settings', 'mini-ajax-cart'); ?></li>
+                <li class="majc-tab majc-tab-active" data-tab="layout-settings"><?php esc_html_e('Main Settings', 'mini-ajax-cart'); ?></li>
+                <li class="majc-tab" data-tab="cart-button"><?php esc_html_e('Cart Button', 'mini-ajax-cart'); ?></li>
+                <li class="majc-tab" data-tab="cart-panel"><?php esc_html_e('Cart Panel', 'mini-ajax-cart'); ?></li>
+                <li class="majc-tab" data-tab="cart-content"><?php esc_html_e('Cart Content', 'mini-ajax-cart'); ?></li>
+                <li class="majc-tab" data-tab="design-settings"><?php esc_html_e('Design', 'mini-ajax-cart'); ?></li>
+                <li class="majc-tab" data-tab="upgrade-settings"><?php esc_html_e('Upgrade To Pro', 'mini-ajax-cart'); ?></li>
             </ul>
         </div>
 
@@ -31,6 +32,7 @@ wp_nonce_field('majc-settings-nonce', 'majc_settings_nonce');
             include MAJC_PATH . 'inc/backend/metabox/boxes/cart-panel.php';
             include MAJC_PATH . 'inc/backend/metabox/boxes/cart-content.php';
             include MAJC_PATH . 'inc/backend/metabox/boxes/design-settings.php';
+            include MAJC_PATH . 'inc/backend/metabox/boxes/upgrade.php';
             ?>
         </div>
     </div>

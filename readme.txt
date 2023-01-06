@@ -3,7 +3,7 @@ Contributors: hashthemes
 Tags: woocommerce cart, cart, woocommerce, slidein cart, floating cart, ajax cart
 Requires at least: 5.0
 Tested up to: 6.1
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 Requires PHP: 5.0 
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -37,7 +37,7 @@ Want to test the dashboard settings without installing on your website? <a href=
             <li>Upload Custom Image Icons</li>
         </ul>
     </li>
-    <li>Cart Animations
+    <li>Cart Basket/Button Animations
         <ul>
             <li>Cart Entrance/Exit Animations</li>
             <li>Cart Hover Animations</li>
@@ -50,7 +50,7 @@ Want to test the dashboard settings without installing on your website? <a href=
             <li>Right Side</li>
         </ul>
     </li>
-    <li>3 Different Cart Basket/Button Shape
+    <li>3 Different Cart Basket/Button Shapes
         <ul>
             <li>Round</li>
             <li>Square</li>
@@ -81,14 +81,59 @@ Want to test the dashboard settings without installing on your website? <a href=
 
 <h3>Pro Version Features</h3>
 <ul>
-    <li>3 Different Layouts to Display Cart Contents
+    <li>15+ Ready Made Templates That Can Be Imported With One Click</li>
+    <li>Ajax Checkout Option On Cart Panel Without Having To Go On Checkout Page</li>
+    <li>3 Different Layout To Display Cart Panel
         <ul>
-            <li>Slide In: Displays Your Cart Items With A Slide In Animation Effects.</li>
-            <li>Floating: Displays Your Cart Items As Floating Side Tab</li>
-            <li>Popup: Displays Your Cart Items In a Stunning Popup</li>
+            <li>Slide In</li>
+            <li>Floating</li>
+            <li>Popup</li>
         </ul>
     </li>
-    <li>6 Different Positions to Display Cart
+    <li>More Elements For Cart Panel With Option To Customize And Reorder It
+        <ul>
+            <li>Header</li>
+            <li>Cart Products</li>
+            <li>Coupon</li>
+            <li>Shipping Bar</li>
+            <li>Buttons</li>
+            <li>Suggested Items</li>
+        </ul>
+    </li>
+    <li>Custom Icons For Cart Basket/Button
+        <ul>
+            <li>Dedicated Cart And Close Icons Along With 5000+ Icons</li>
+            <li>Upload Custom Image Icons</li>
+        </ul>
+    </li>
+    <li>11 Different Cart Basket/Button Shapes
+        <ul>
+            <li>Round</li>
+            <li>Square</li>
+            <li>Rounded Square</li>
+            <li>Triangle</li>
+            <li>Oval</li>
+            <li>Star</li>
+            <li>Rhombus</li>
+            <li>Pentagon</li>
+            <li>Hexagon</li>
+            <li>Rabbet</li>
+            <li>Animating Blob</li>
+        </ul>
+    </li>
+    <li>Cart Basket/Button Animations
+        <ul>
+            <li>30+ Hover Animations</li>
+            <li>30+ Idle State Animations To Grab User Attention</li>
+        </ul>
+    </li>
+    <li>Cart Panel Animation
+        <ul>
+            <li>40+ Panel Entrance Animations</li>
+            <li>40+ Panel Exit Animations</li>
+        </ul>
+    </li>
+    <li>Configure Cart Basket/Button Positions With The Custom Offset Value
         <ul>
             <li>Left Top</li>
             <li>Left Middle</li>
@@ -96,67 +141,37 @@ Want to test the dashboard settings without installing on your website? <a href=
             <li>Right Top</li>
             <li>Right Middle</li>
             <li>Right Bottom</li>
+            <li>Center Bottom</li>
         </ul>
     </li>
-    <li>Background Overlay While Displaying Cart</li>
-    <li>Glass Cart Layout: Transparent Cart Layout for Colored Background Page</li>
-    <li>3 Different Shapes of the Cart
+    <li>Elementor Compatible - Design The Cart Panel With Elementor With 15+ Ajax Cart Elements</li>
+    <li>Import/Export Settings From One Cart To Another Within The Same Website Or Different Websites</li>
+    <li>Option To Trigger/Open Cart Panel From Any Elements(Menu, Widgets, Footer) In The Website By Using The Class Name</li>
+    <li>Option To Hide The Cart Basket If The Cart Is Empty</li>
+    <li>Show/Hide And Customize Fancy Scrollbar</li>
+    <li>Option To Open Cart Panel When Product Is Added To Cart</li>
+    <li>Display Active Coupon Codes Along With Coupon Form</li>
+    <li>Configure Columns For Grid Layout On Cart Items</li>
+    <li>Remove All Button To Remove The Cart Items At Once</li>
+    <li>Custom Icon And Text When There Is No Item On The Cart</li>
+    <li>Glassmorphism Background For Cart Button And Cart Panel</li>
+    <li>More Customization Options</li>
+    <li>Custom CSS Option</li>
+</ul>
+
+<h3>Additional Pro Version Features</h3>
+<ul>
+    <li>Added To Cart Popup - Display A Product Added To The Cart In A Popup
         <ul>
-            <li>Round</li>
-            <li>Square</li>
-            <li>Rounded Square</li>
+            <li>50+ Show/Hide Animation For Popup</li>
+            <li>Display Suggested Products In Carousel Below The Added Product</li>
+            <li>Choose Cross Sells, Up Sells, Related Or Custom Products For Suggested Products </li>
+            <li>Completely Customizable With The Option To Change Typography, Color, Backgrounds</li>
+            <li>Selectively Show/Hide On Desktop, Tablet, Mobile</li>
+            <li>Selectively Display On Different Pages</li>
         </ul>
     </li>
-    <li>2 Different Product Layouts Display Cart Items
-        <ul>
-            <li>Grid</li>
-            <li>List</li>
-        </ul>
-    </li>
-    <li>Various Animations
-        <ul>
-            <li>Cart Entrance Animations</li>
-            <li>Cart Exit Animations</li>
-            <li>Cart Hover Animations</li>
-            <li>Cart Idle State Animations</li>
-        </ul>
-    </li>
-    <li>Suggested Item Settings:
-        <ul>
-            <li>Display Cross Sell Products, Up Sell Products or Related Products in a Slider</li>
-            <li>Set Number of Items to Display</li>
-            <li>Set Number of Visible Items</li>
-            <li>Slider Autoplay Option</li>
-            <li>Enable/Disable Pause Slider on Hover</li>
-            <li>Enable/Disable Dots, Arrows or both in the Slider</li>
-        </ul>
-    </li>
-    <li>Coupon Settings
-        <ul>
-            <li>Display Active Coupon Codes</li>
-            <li>Accept Coupon Code To Trigger Discount</li>
-        </ul>
-    </li>
-    <li>Display Settings
-        <ul>
-            <li>Show/Hide Shopping Cart on Mobile</li>
-            <li>Show/Hide Shopping Cart on Desktop</li>
-            <li>Show/Hide Shopping Cart on Specific Page, Post, Library, Products</li>
-        </ul>
-    </li>
-    <li>Button Settings
-        <ul>
-            <li>Show/Hide View Cart Button</li>
-            <li>Show/Hide Checkout Button</li>
-            <li>Show/Hide Continue Shopping Button</li>
-        </ul>
-    </li>
-    <li>Customization Options
-        <ul>
-            <li>Advanced Typography Option</li>
-            <li>Color Picker to Choose Most Suitable Color</li>
-        </ul>
-    </li>
+    <li>Shipping Bar - Percentage Bar That Displays The Amount Remaining For Free Shipping</li>
 </ul>
 
 == Installation ==
@@ -173,6 +188,10 @@ For premium upgrade, please click below link <br>
 <a href="https://1.envato.market/2rKYB0">WooCommerce Cart</a>&nbsp;&nbsp;<a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-cart/">Demo Site</a>&nbsp;&nbsp;<a href="https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/">Documentation</a>
 
 == Upgrade Notice ==
+= 1.1.3 =
+* Complete admin interface design refinement
+* Google Fonts list updated
+
 = 1.1.2 =
 * Cart button hidden under slider issue fixed
 
