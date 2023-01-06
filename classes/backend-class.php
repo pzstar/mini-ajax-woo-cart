@@ -14,55 +14,6 @@ if (!class_exists('MAJC_Backend')) {
 
         public function settings_metabox() {
             add_meta_box('majc-settings-metabox', esc_html__('Mini Ajax Cart', 'mini-ajax-cart'), array($this, 'settings_metabox_callback'), 'ultimate-woo-cart', 'normal', 'high');
-            add_meta_box('majc-upgrade-pro', esc_html__('Extra Features In Pro', 'mini-ajax-cart'), [$this, 'pro_upgrade_metabox'], 'ultimate-woo-cart', 'side');
-        }
-
-        public function pro_upgrade_metabox() {
-            ?>
-            <div class="majc-upgrade-pro-side-meta">
-                <ul>
-                    <li><?php esc_html_e('2 Extra Layouts to Display Cart Contents', 'mini-ajax-cart'); ?>
-                        <ul class="majc-feature-inner-list">
-                            <li><?php esc_html_e('Floating: Displays Your Cart Items As Floating Side Tab', 'mini-ajax-cart'); ?></li>
-                            <li><?php esc_html_e('Popup: Displays Your Cart Items In a Stunning Popup', 'mini-ajax-cart'); ?></li>
-                        </ul>
-                    </li>
-                    <li><?php esc_html_e('4 Extra Positions to Display Cart', 'mini-ajax-cart'); ?>
-                        <ul class="majc-feature-inner-list">
-                            <li><?php esc_html_e('Left Top', 'mini-ajax-cart'); ?></li>
-                            <li><?php esc_html_e('Left Bottom', 'mini-ajax-cart'); ?></li>
-                            <li><?php esc_html_e('Right Top', 'mini-ajax-cart'); ?></li>
-                            <li><?php esc_html_e('Right Bottom', 'mini-ajax-cart'); ?></li>
-                        </ul>
-                    </li>
-                    <li><?php esc_html_e('Various Animations', 'mini-ajax-cart'); ?>
-                        <ul class="majc-feature-inner-list">
-                            <li><?php esc_html_e('30+ Cart Entrance Animations', 'mini-ajax-cart'); ?></li>
-                            <li><?php esc_html_e('30+ Cart Exit Animations', 'mini-ajax-cart'); ?></li>
-                            <li><?php esc_html_e('30+ Cart Hover Animations', 'mini-ajax-cart'); ?></li>
-                            <li><?php esc_html_e('8 Cart Idle State Animations', 'mini-ajax-cart'); ?></li>
-                        </ul>
-                    </li>
-                    <li><?php esc_html_e('Suggested Item Settings:', 'mini-ajax-cart'); ?>
-                        <ul class="majc-feature-inner-list">
-                            <li><?php esc_html_e('Display Cross Sell Products, Up Sell Products or Related Products in a Slider', 'mini-ajax-cart'); ?></li>
-                            <li><?php esc_html_e('Set Number of Items to Display', 'mini-ajax-cart'); ?></li>
-                            <li><?php esc_html_e('Set Number of Visible Items', 'mini-ajax-cart'); ?></li>
-                            <li><?php esc_html_e('Slider Autoplay Option', 'mini-ajax-cart'); ?></li>
-                            <li><?php esc_html_e('Enable/Disable Pause Slider on Hover', 'mini-ajax-cart'); ?></li>
-                            <li><?php esc_html_e('Enable/Disable Dots, Arrows or both in the Slider', 'mini-ajax-cart'); ?></li>
-                        </ul>
-                    </li>
-                    <li><?php esc_html_e('Display Active Coupon Codes', 'mini-ajax-cart'); ?></li>
-                    <li><?php esc_html_e('Glass Cart Layout: Transparent Cart Layout for Colored Background Page', 'mini-ajax-cart'); ?></li>
-                </ul>
-
-                <div class="majc-upgrade-btn-wrap">
-                    <a class="button-primary button majc-upgrade-btn" target="_blank" href="https://1.envato.market/2rKYB0"><?php _e('Upgrade To Pro', 'mini-ajax-cart'); ?></a>
-                    <a class="button-primary button majc-demo-view-btn" target="_blank" href="https://demo.hashthemes.com/ultimate-woocommerce-cart/"><?php _e('View Demo', 'mini-ajax-cart'); ?></a>
-                </div>
-            </div>
-            <?php
         }
 
         public function settings_metabox_callback() {
