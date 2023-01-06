@@ -82,7 +82,7 @@ $display = isset($majc_settings['display']) ? $majc_settings['display'] : null;
                         </p>
 
                         <p>
-                            <input type="checkbox" name="majc_settings[display][archive_pages]" id="majc_archive_pages" <?php
+                            <input type="checkbox" class="majc-hide-show-archive-list" name="majc_settings[display][archive_pages]" id="majc_archive_pages" <?php
                             if (isset($display['archive_pages'])) {
                                 checked($display['archive_pages'], 'on', true);
                             }

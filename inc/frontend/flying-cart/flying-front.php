@@ -108,10 +108,10 @@ if (!empty($post)) {
                     continue;
                 }
 
-                $hide_show = $this->hide_show_pages($current_page_id, $specific_pages, $display_condition, $front_pages, $blog_pages, $cpt_pages, $error_pages, $search_pages, $archive_pages, $current_post_type, $specific_archive, $current_archive);
+                $show = $this->hide_show_pages($current_page_id, $specific_pages, $display_condition, $front_pages, $blog_pages, $cpt_pages, $error_pages, $search_pages, $archive_pages, $current_post_type, $specific_archive, $current_archive);
 
-                // Hide the fly menu if return value is 1
-                if ($hide_show == '1') {
+                // Hide the fly menu if false
+                if (!$show) {
                     continue;
                 }
 
