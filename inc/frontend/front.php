@@ -26,7 +26,7 @@ if (!empty($post)) {
 
             $postid = get_the_ID();
             $majc_settings = get_post_meta($postid, 'uwcc_settings', true);
-            
+
             if (!empty($majc_settings)) {
 
                 WC()->cart->calculate_totals();
@@ -168,14 +168,14 @@ if (!empty($post)) {
                         ?>
                         <div class="majc-cart-popup <?php echo esc_attr($majc_popup_class); ?>" 
                         <?php if (!empty($show_animation)) { ?>
-                                data-showanimation="<?php echo 'animate--' . esc_attr($show_animation); ?>" 
-                                <?php
-                            }
-                            if (!empty($hide_animation)) {
-                                ?>
-                                data-hideanimation="<?php echo 'animate--' . esc_attr($hide_animation); ?>"
-                            <?php } ?>
-                            style="width:<?php echo $content_width ?>px">
+                                 data-showanimation="<?php echo 'animate--' . esc_attr($show_animation); ?>" 
+                                 <?php
+                             }
+                             if (!empty($hide_animation)) {
+                                 ?>
+                                 data-hideanimation="<?php echo 'animate--' . esc_attr($hide_animation); ?>"
+                             <?php } ?>
+                             style="width:<?php echo $content_width ?>px">
                             <div class="majc-cart-popup-inner">
 
                                 <div class="majc-header">
@@ -362,7 +362,7 @@ if (!empty($post)) {
                 </div> <!-- majc-main-wrapper -->
                 <?php
                 // Custom CSS
-                include MAJC_PATH . '/inc/frontend/flying-cart/custom-css.php';
+                include MAJC_PATH . '/inc/frontend/custom-css.php';
             } //Not empty $majc_settings
         endwhile;
         wp_reset_postdata();

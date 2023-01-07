@@ -3,7 +3,7 @@ Contributors: hashthemes
 Tags: woocommerce cart, cart, woocommerce, slidein cart, floating cart, ajax cart
 Requires at least: 5.0
 Tested up to: 6.1
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 Requires PHP: 5.0 
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -80,14 +80,14 @@ Want to test the dashboard settings without installing on your website? <a href=
 </ul>
 
 <h3>Pro Version Features</h3>
-<ul>
+ <ul>
     <li>15+ Ready Made Templates That Can Be Imported With One Click</li>
     <li>Ajax Checkout Option On Cart Panel Without Having To Go On Checkout Page</li>
     <li>3 Different Layout To Display Cart Panel
         <ul>
-            <li>Slide In</li>
-            <li>Floating</li>
-            <li>Popup</li>
+            <li>Slide In <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-cart/" target="_blank">View Slide In Demo</a></li>
+            <li>Floating <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/floating-cart/" target="_blank">View Floating Demo</a></li>
+            <li>Popup <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/popup-cart/" target="_blank">View Popup Demo</a></li>
         </ul>
     </li>
     <li>More Elements For Cart Panel With Option To Customize And Reorder It
@@ -127,7 +127,7 @@ Want to test the dashboard settings without installing on your website? <a href=
             <li>30+ Idle State Animations To Grab User Attention</li>
         </ul>
     </li>
-    <li>Cart Panel Animation
+    <li>Cart Panel Animation <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/added-to-cart-popup-animations/" target="_blank">View Demo</a>
         <ul>
             <li>40+ Panel Entrance Animations</li>
             <li>40+ Panel Exit Animations</li>
@@ -144,26 +144,26 @@ Want to test the dashboard settings without installing on your website? <a href=
             <li>Center Bottom</li>
         </ul>
     </li>
-    <li>Elementor Compatible - Design The Cart Panel With Elementor With 15+ Ajax Cart Elements</li>
+    <li>Elementor Compatible - Design The Cart Panel With Elementor With 15+ Ajax Cart Elements <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-elementor/" target="_blank">View Demo</a></li>
     <li>Import/Export Settings From One Cart To Another Within The Same Website Or Different Websites</li>
     <li>Option To Trigger/Open Cart Panel From Any Elements(Menu, Widgets, Footer) In The Website By Using The Class Name</li>
     <li>Option To Hide The Cart Basket If The Cart Is Empty</li>
     <li>Show/Hide And Customize Fancy Scrollbar</li>
-    <li>Option To Open Cart Panel When Product Is Added To Cart</li>
+    <li>Option To Open Cart Panel When Product Is Added To Cart <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/open-cart-on-add-to-cart/" target="_blank">View Demo</a></li>
     <li>Display Active Coupon Codes Along With Coupon Form</li>
-    <li>Configure Columns For Grid Layout On Cart Items</li>
+    <li>Configure Columns For Grid Layout On Cart Items <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/templates/template-12/" target="_blank">View Demo</a></li>
     <li>Remove All Button To Remove The Cart Items At Once</li>
     <li>Custom Icon And Text When There Is No Item On The Cart</li>
-    <li>Glassmorphism Background For Cart Button And Cart Panel</li>
+    <li>Glassmorphism Background For Cart Button And Cart Panel <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/glassmorphism/" target="_blank">View Demo</a></li>
     <li>More Customization Options</li>
     <li>Custom CSS Option</li>
 </ul>
 
 <h3>Additional Pro Version Features</h3>
 <ul>
-    <li>Added To Cart Popup - Display A Product Added To The Cart In A Popup
+    <li>Added To Cart Popup - Display A Product Added To The Cart In A Popup <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/added-to-cart-popup/" target="_blank">View Demo</a>
         <ul>
-            <li>50+ Show/Hide Animation For Popup</li>
+            <li>50+ Entrance/Exit Animation For Popup <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/added-to-cart-popup-animations/" target="_blank">View Demo</a></li>
             <li>Display Suggested Products In Carousel Below The Added Product</li>
             <li>Choose Cross Sells, Up Sells, Related Or Custom Products For Suggested Products </li>
             <li>Completely Customizable With The Option To Change Typography, Color, Backgrounds</li>
@@ -188,6 +188,9 @@ For premium upgrade, please click below link <br>
 <a href="https://1.envato.market/2rKYB0">WooCommerce Cart</a>&nbsp;&nbsp;<a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-cart/">Demo Site</a>&nbsp;&nbsp;<a href="https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/">Documentation</a>
 
 == Upgrade Notice ==
+= 1.1.4 =
+* Display settings issue fixed
+
 = 1.1.3 =
 * Complete admin interface design refinement
 * Google Fonts list updated

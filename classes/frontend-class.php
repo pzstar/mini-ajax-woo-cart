@@ -261,7 +261,7 @@ if (!class_exists('MAJC_Frontend')) {
         }
 
         public function majc_menu() {
-            include MAJC_PATH . '/inc/frontend/flying-cart/flying-front.php';
+            include MAJC_PATH . '/inc/frontend/front.php';
         }
 
         public function get_refreshed_fragments() {

@@ -27,12 +27,12 @@ wp_nonce_field('majc-settings-nonce', 'majc_settings_nonce');
 
         <div class="majc-menu-field-wrap">
             <?php
-            include MAJC_PATH . 'inc/backend/metabox/boxes/main-settings.php';
-            include MAJC_PATH . 'inc/backend/metabox/boxes/cart-button.php';
-            include MAJC_PATH . 'inc/backend/metabox/boxes/cart-panel.php';
-            include MAJC_PATH . 'inc/backend/metabox/boxes/cart-content.php';
-            include MAJC_PATH . 'inc/backend/metabox/boxes/design-settings.php';
-            include MAJC_PATH . 'inc/backend/metabox/boxes/upgrade.php';
+            include MAJC_PATH . 'inc/backend/settings/main-settings.php';
+            include MAJC_PATH . 'inc/backend/settings/cart-button.php';
+            include MAJC_PATH . 'inc/backend/settings/cart-panel.php';
+            include MAJC_PATH . 'inc/backend/settings/cart-content.php';
+            include MAJC_PATH . 'inc/backend/settings/design-settings.php';
+            include MAJC_PATH . 'inc/backend/settings/upgrade.php';
             ?>
         </div>
     </div>

@@ -17,7 +17,7 @@ if (!class_exists('MAJC_Backend')) {
         }
 
         public function settings_metabox_callback() {
-            include MAJC_PATH . 'inc/backend/metabox/settings-metabox.php';
+            include MAJC_PATH . 'inc/backend/settings.php';
         }
 
         public function save_metabox_settings($post_id) {
