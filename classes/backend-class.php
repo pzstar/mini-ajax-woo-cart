@@ -82,16 +82,16 @@ if (!class_exists('MAJC_Backend')) {
                 <div class="majc-icon-box">
                     <div class="majc-icon-search">
                         <select>
-                            <option value="icofont-list"><?php esc_html_e('Ico Font', 'mini-ajax-cart'); ?> </option>
-                            <option value="fontawesome-list"><?php esc_html_e('Font Awesome', 'mini-ajax-cart'); ?> </option>
-                            <option value="essentialicon-list"><?php esc_html_e('Essential Icon', 'mini-ajax-cart'); ?> </option>
-                            <option value="material-icon-list"><?php esc_html_e('Material Icon', 'mini-ajax-cart'); ?> </option>
-                            <option value="elegant-icon-list"><?php esc_html_e('Elegant Icon', 'mini-ajax-cart'); ?> </option>
+                            <option value="majc-icofont-list"><?php esc_html_e('Ico Font', 'mini-ajax-cart'); ?> </option>
+                            <option value="majc-fontawesome-list"><?php esc_html_e('Font Awesome', 'mini-ajax-cart'); ?> </option>
+                            <option value="majc-essentialicon-list"><?php esc_html_e('Essential Icon', 'mini-ajax-cart'); ?> </option>
+                            <option value="majc-material-icon-list"><?php esc_html_e('Material Icon', 'mini-ajax-cart'); ?> </option>
+                            <option value="majc-elegant-icon-list"><?php esc_html_e('Elegant Icon', 'mini-ajax-cart'); ?> </option>
                         </select>
                         <input type="text" class="majc-icon-search-input" placeholder="<?php esc_html_e('Type to filter', 'mini-ajax-cart'); ?>" />
                     </div>
                     <?php
-                    echo '<ul class="majc-icon-list icofont-list clearfix active">';
+                    echo '<ul class="majc-icon-list majc-icofont-list clearfix active">';
                     $majc_icofont_icon_array = majc_icofont_icon_array();
                     foreach ($majc_icofont_icon_array as $majc_icofont_icon) {
                         $icon_class = $iconName == $majc_icofont_icon ? 'icon-active' : '';
@@ -100,7 +100,7 @@ if (!class_exists('MAJC_Backend')) {
                     echo '</ul>';
 
 
-                    echo '<ul class="majc-icon-list fontawesome-list clearfix">';
+                    echo '<ul class="majc-icon-list majc-fontawesome-list clearfix">';
                     $majc_font_awesome_icon_array = majc_font_awesome_icon_array();
                     foreach ($majc_font_awesome_icon_array as $majc_font_awesome_icon) {
                         $icon_class = $iconName == $majc_font_awesome_icon ? 'icon-active' : '';
@@ -109,7 +109,7 @@ if (!class_exists('MAJC_Backend')) {
                     echo '</ul>';
 
 
-                    echo '<ul class="majc-icon-list essentialicon-list clearfix">';
+                    echo '<ul class="majc-icon-list majc-essentialicon-list clearfix">';
                     $majc_essential_icon_array = majc_essential_icon_array();
                     foreach ($majc_essential_icon_array as $majc_essential_icon) {
                         $icon_class = $iconName == $majc_essential_icon ? 'icon-active' : '';
@@ -118,7 +118,7 @@ if (!class_exists('MAJC_Backend')) {
                     echo '</ul>';
 
 
-                    echo '<ul class="majc-icon-list material-icon-list clearfix">';
+                    echo '<ul class="majc-icon-list majc-material-icon-list clearfix">';
                     $majc_materialdesignicons_icon_array = majc_materialdesignicons_array();
                     foreach ($majc_materialdesignicons_icon_array as $majc_materialdesignicons_icon) {
                         $icon_class = $iconName == $majc_materialdesignicons_icon ? 'icon-active' : '';
@@ -127,7 +127,7 @@ if (!class_exists('MAJC_Backend')) {
                     echo '</ul>';
 
 
-                    echo '<ul class="majc-icon-list elegant-icon-list clearfix">';
+                    echo '<ul class="majc-icon-list majc-elegant-icon-list clearfix">';
                     $majc_eleganticons_icon_array = majc_eleganticons_array();
                     foreach ($majc_eleganticons_icon_array as $majc_eleganticons_icon) {
                         $icon_class = $iconName == $majc_eleganticons_icon ? 'icon-active' : '';
