@@ -26,7 +26,7 @@
                 <li>Upload Custom Image Icons</li>
             </ul>
         </li>
-        <li>11 Different Cart Basket/Button Shapes
+        <li>11 Different Cart Basket/Button Shapes <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/add-to-cart-animations/" target="_blank">View Demo</a>
             <ul>
                 <li>Round</li>
                 <li>Square</li>
@@ -43,17 +43,17 @@
         </li>
         <li>Cart Basket/Button Animations
             <ul>
-                <li>30+ Hover Animations</li>
-                <li>30+ Idle State Animations To Grab User Attention</li>
+                <li>30+ Hover Animations <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/add-to-cart-animations/" target="_blank">View Demo</a></li>
+                <li>9 Idle State Animations To Grab User Attention <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/add-to-cart-animations/" target="_blank">View Demo</a></li>
             </ul>
         </li>
         <li>Cart Panel Animation <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/added-to-cart-popup-animations/" target="_blank">View Demo</a>
             <ul>
-                <li>40+ Panel Entrance Animations</li>
-                <li>40+ Panel Exit Animations</li>
+                <li>40+ Panel Entrance Animations <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/add-to-cart-animations/" target="_blank">View Demo</a></li>
+                <li>40+ Panel Exit Animations <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/add-to-cart-animations/" target="_blank">View Demo</a></li>
             </ul>
         </li>
-        <li>Configure Cart Basket/Button Positions With The Custom Offset Value
+        <li>Configure Cart Basket/Button Positions With The Custom Offset Value <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/add-to-cart-animations/" target="_blank">View Demo</a>
             <ul>
                 <li>Left Top</li>
                 <li>Left Middle</li>
@@ -66,10 +66,10 @@
         </li>
         <li>Elementor Compatible - Design The Cart Panel With Elementor With 15+ Ajax Cart Elements <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-elementor/" target="_blank">View Demo</a></li>
         <li>Import/Export Settings From One Cart To Another Within The Same Website Or Different Websites</li>
-        <li>Option To Trigger/Open Cart Panel From Any Elements(Menu, Widgets, Footer) In The Website By Using The Class Name</li>
+        <li>Option To Trigger/Open Cart Panel From Any Elements(Menu, Widgets, Footer) In The Website By Using The Class Name <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/open-add-to-cart-panel/" target="_blank">View Demo</a></li>
         <li>Option To Hide The Cart Basket If The Cart Is Empty</li>
-        <li>Show/Hide And Customize Fancy Scrollbar</li>
         <li>Option To Open Cart Panel When Product Is Added To Cart <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/open-cart-on-add-to-cart/" target="_blank">View Demo</a></li>
+        <li>Show/Hide And Customize Fancy Scrollbar</li>
         <li>Display Active Coupon Codes Along With Coupon Form</li>
         <li>Configure Columns For Grid Layout On Cart Items <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/templates/template-12/" target="_blank">View Demo</a></li>
         <li>Remove All Button To Remove The Cart Items At Once</li>
