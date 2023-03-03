@@ -3,7 +3,7 @@ Contributors: hashthemes
 Tags: woocommerce cart, cart, woocommerce, slidein cart, floating cart, ajax cart
 Requires at least: 5.0
 Tested up to: 6.1
-Stable tag: 1.1.6
+Stable tag: 1.1.7
 Requires PHP: 5.0 
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -188,6 +188,9 @@ For premium upgrade, please click below link <br>
 <a href="https://1.envato.market/2rKYB0">WooCommerce Cart</a>&nbsp;&nbsp;<a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-cart/">Demo Site</a>&nbsp;&nbsp;<a href="https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/">Documentation</a>
 
 == Upgrade Notice ==
+= 1.1.7 - 2 Mar, 2023  =
+* Review Notice - Added
+
 = 1.1.6 - 1 Mar, 2023  =
 * Font Icons updated to latest version
 

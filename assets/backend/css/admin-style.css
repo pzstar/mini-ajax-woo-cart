@@ -1046,3 +1046,40 @@ a.majc-upgrade-button:hover{
 a.majc-upgrade-button{
     margin: -10px 0 30px 30px;
 }
+
+/** Admin Notice **/
+.majc-notice.notice {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 40px 20px 20px !important;
+    position: relative;
+}
+
+.majc-notice.notice .majc-notice-logo{
+    width: 84px;
+    flex: 84px 0 0;
+}
+
+.majc-notice.notice .majc-notice-logo svg{
+    fill: #72aee6;
+    display: block;
+}
+
+.majc-notice.notice p{
+    padding: 0;
+    margin: 0 0 15px;
+    font-size: 16px;
+}
+
+.majc-notice.notice .button .dashicons{
+    height: auto;
+    width: auto;
+    margin: 0 6px 0 0;
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+.majc-notice a.notice-dismiss {
+    text-decoration: none;
+}
