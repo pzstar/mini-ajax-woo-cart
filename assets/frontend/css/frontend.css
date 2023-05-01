@@ -109,24 +109,6 @@
     left: -10px;
 }
 
-/*overlay css*/
-.majc-overlay-enabled:before {
-    content: '';
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    z-index: 9999;
-    transition: all ease 0.4s;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.majc-overlay-enabled.majc-cartbasket-open:before {
-    opacity: 1;
-    visibility: visible;
-}
-
 /*cart popup css*/
 .majc-layout-slidein .majc-cart-popup {
     position: fixed;
@@ -139,23 +121,76 @@
     z-index: 99999;
 }
 
-/* Animations */
-.majc-layout-slidein.majc-position-left .majc-cart-popup:not(.animate--animated) {
-    left: -100%;
+/*overlay css*/
+.majc-main-wrapper-bg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    transition: all ease 0.4s;
+    opacity: 0;
+    visibility: hidden;
+    left: 0;
+    top: 0;
 }
 
-.majc-layout-slidein.majc-position-left .majc-cart-popup.active:not(.animate--animated) {
+[data-overlayenable="majc-overlay-enabled"].majc-cartbasket-open .majc-main-wrapper-bg {
+    opacity: 0.9;
+    visibility: visible;
+}
+
+.majc-main-inner-wrapper{
+    position: relative;
+}
+
+/* ====Animations==== */
+.majc-cartpop-animation-enabled{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.majc-cartpop-animation-enabled.animate--animated,
+.majc-cartpop-animation-enabled.majc-popup-in-view{
+    visibility: visible;
+    opacity: 1;
+}
+
+.majc-cart-popup *{
+    box-sizing: border-box;
+}
+
+.majc-cart-popup a{
+    color: inherit;
+}
+
+/*Slide In*/
+.majc-layout-slidein .majc-cart-popup {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 400px;
+    z-index: calc(var(--majc-basket-z-index, 99999) + 2);
+    background-size: cover;
+    background-position: center;
+}
+
+.majc-layout-slidein.majc-position-left .majc-cart-popup:not(.majc-cartpop-animation-enabled) {
+    left: -100%;
+    transition: all 0.3s ease;
+}
+
+.majc-layout-slidein.majc-position-left .majc-cart-popup.majc-active:not(.majc-cartpop-animation-enabled) {
     left: 0;
 }
 
-.majc-layout-slidein.majc-position-right .majc-cart-popup:not(.animate--animated) {
+.majc-layout-slidein.majc-position-right .majc-cart-popup:not(.majc-cartpop-animation-enabled) {
     right: -100%;
+    transition: all 0.3s ease;
 }
 
-.majc-layout-slidein.majc-position-right .majc-cart-popup.active:not(.animate--animated) {
+.majc-layout-slidein.majc-position-right .majc-cart-popup.majc-active:not(.majc-cartpop-animation-enabled) {
     right: 0;
 }
-
 
 .majc-layout-slidein.majc-position-left .majc-cart-popup.majc-cartpop-animation-enabled {
     left: 0; 
@@ -163,21 +198,6 @@
 
 .majc-layout-slidein.majc-position-right .majc-cart-popup.majc-cartpop-animation-enabled {
     right: 0; 
-}
-
-.majc-layout-slidein .majc-cart-popup.animate--animated{
-    visibility: hidden;
-}
-
-.majc-layout-slidein .majc-cart-popup.majc-cartpop-animation-enabled.majc-cart-anim-show,
-.majc-layout-slidein .majc-cart-popup.majc-cartpop-animation-enabled.majc-cart-anim-hide.majc-cartpop-hide-animation-enabled,
-.majc-layout-slidein .majc-cart-popup.majc-cartpop-animation-enabled.majc-cart-anim-hide.majc-cartpop-both-animation-enabled{
-    visibility: visible;
-}
-
-.majc-layout-slidein .majc-cart-popup.majc-cartpop-animation-enabled.majc-cart-anim-hide.majc-cartpop-show-animation-enabled{
-    visibility: hidden;
-    opacity: 0;
 }
 
 /* Inside Content */
@@ -272,6 +292,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    font-size: 0.8em;
 }
 
 .majc-cart-items-inner .majc-item-remove a {
@@ -456,13 +477,34 @@
     color: inherit;
 }
 
-
 .majc-coupon .majc-coupon-field input:focus,
 .majc-coupon .majc-coupon-field input::-webkit-input-placeholder,
 .majc-coupon .majc-coupon-field input::placeholder{
     color: inherit;
+    opacity: 0.7;
 }
 
+ul.majc-applied-cpns{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    column-gap: 8px;
+}
+
+.majc-applied-cpns li{
+    display: inline-block;
+    line-height: 1;
+    padding: 5px 10px;
+    margin: 8px 0 0;
+    border: 1px dashed #EEE;
+    font-size: 0.9em;
+}
+
+.majc-applied-cpns .majc-remove-cpn{
+    font-size: 12px;
+    cursor: pointer;
+}
 
 .majc-coupon .majc-coupon-field .majc-coupon-submit {
     outline: 0;

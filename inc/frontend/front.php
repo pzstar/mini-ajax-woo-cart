@@ -116,11 +116,19 @@ if (!empty($post)) {
                 }
 
                 $content_width = isset($majc_settings['content_width']) ? $majc_settings['content_width'] : 400;
+
+                $wrapper_class = array(
+                    'majc-main-wrapper',
+                    'majc-main-wrapper-' . $postid,
+                    'majc-layout-' . $layout_type,
+                    'majc-' . $basket_position,
+                    'majc-cartitem-' . $cart_item_layout,
+                    $basket_position_class,
+                    $hide_screen ? 'majc-hide-' . implode(' majc-hide-', $hide_screen) : ''
+                );
                 ?>
 
-                <div id="majc-main-wrapper-<?php echo esc_attr($post->ID); ?>" 
-                     class="majc-main-wrapper <?php echo esc_attr('majc-layout-' . $layout_type) . esc_attr(' majc-' . $basket_position) . esc_attr(' majc-cartitem-' . $cart_item_layout) . ' ' . esc_attr($basket_position_class) . ($hide_screen ? ' majc-hide-' . implode(' majc-hide-', $hide_screen) : ''); ?>" 
-                     data-overlayenable="<?php echo ($enable_overlay == 'on') ? 'majc-overlay-enabled' : ''; ?>" data-pageid="<?php echo esc_attr($current_page_id); ?>">
+                <div id="majc-main-wrapper-<?php echo esc_attr($post->ID); ?>" class="<?php echo implode(' ', $wrapper_class) ?>" data-overlayenable="<?php echo ($enable_overlay == 'on') ? 'majc-overlay-enabled' : ''; ?>" data-pageid="<?php echo esc_attr($current_page_id); ?>">
                     <div class="majc-check-cart <?php echo esc_attr(WC()->cart->is_empty() ? 'majc-hide-cart-items' : ''); ?>"></div>
                     <div class="majc-main-inner-wrapper">
                         <div class="majc-toggle-button <?php echo esc_attr('majc-' . $cart_basket_shape); ?>">
@@ -271,7 +279,7 @@ if (!empty($post)) {
                                             <div class="majc-cpn-resp" style="display: none;"></div>
 
                                             <div class="majc-coupon-field">
-                                                <input type="text" id="majc-coupon-code" placeholder="<?php echo esc_attr($promocode_placeholder); ?>">
+                                                <input type="text" class="majc-coupon-code" placeholder="<?php echo esc_attr($promocode_placeholder); ?>">
                                                 <button class="majc-coupon-submit majc-button"><?php echo esc_html($apply_coupon_btn_text); ?></button>
                                             </div>
 
@@ -282,7 +290,7 @@ if (!empty($post)) {
                                                 ?>
                                                 <ul class='majc-applied-cpns'>
                                                     <?php foreach ($applied_coupons as $cpns) { ?>    
-                                                        <li class='' cpcode='<?php echo esc_attr($cpns); ?>'>
+                                                        <li data-code='<?php echo esc_attr($cpns); ?>'>
                                                             <?php echo esc_html($cpns); ?><span class='majc-remove-cpn icofont-close-line'></span>
                                                         </li>
                                                     <?php } ?>    
@@ -359,6 +367,8 @@ if (!empty($post)) {
                             </div> <!-- majc-cart-popup-inner -->
                         </div> <!-- majc-cart-popup -->
                     </div> <!-- majc-main-inner-wrap -->
+
+                    <div class="majc-main-wrapper-bg"></div>
                 </div> <!-- majc-main-wrapper -->
                 <?php
                 // Custom CSS

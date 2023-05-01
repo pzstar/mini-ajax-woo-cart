@@ -240,7 +240,7 @@ if (!class_exists('MAJC_Frontend')) {
 
                 <ul class='majc-applied-cpns'>
                     <?php foreach ($applied_coupons as $cpns) { ?>
-                        <li class='' cpcode='<?php echo esc_attr($cpns); ?>'><?php echo esc_attr($cpns); ?> <span class='majc-remove-cpn icofont-close-line'></span></li>
+                        <li data-code='<?php echo esc_attr($cpns); ?>'><?php echo esc_attr($cpns); ?> <span class='majc-remove-cpn icofont-close-line'></span></li>
                         <?php } ?>
                 </ul>
                 <?php

@@ -46,69 +46,39 @@
             scrollbarPosition: 'outside'
         });
 
-        $('body').find(".majc-cartbasket-toggle-btn").on('click', function () {
+        $('body').find(".majc-toggle-button").on('click', function () {
             // Add Toggle class on buton toggle
-            $('body').toggleClass('majc-cartbasket-open');
-            $(this).parent('.majc-toggle-button').toggleClass('majc-toggle-btn-open');
+            $(this).closest('.majc-main-wrapper').toggleClass('majc-cartbasket-open');
+            $(this).toggleClass('majc-toggle-btn-open');
+            var $popup = $(this).next('.majc-cart-popup');
 
-            if ($(this).parent().next('.majc-cart-popup').hasClass('animate--animated')) {
-                var $popup = $(this).parent().next('.majc-cart-popup');
+            if ($popup.hasClass('majc-cartpop-animation-enabled')) {
                 var showAnimation = $popup.data('showanimation');
                 var hideAnimation = $popup.data('hideanimation');
 
-                if ($popup.attr('data-showanimation') && $popup.attr('data-hideanimation')) {
-                    if ($popup.hasClass(showAnimation)) {
-                        $popup.removeClass(showAnimation);
-                        $popup.addClass(hideAnimation);
-                        $popup.removeClass('majc-cart-anim-show');
-                        $popup.addClass('majc-cart-anim-hide');
-                    } else if ($popup.hasClass(hideAnimation)) {
-                        $popup.removeClass(hideAnimation);
-                        $popup.addClass(showAnimation);
-                        $popup.removeClass('majc-cart-anim-hide');
-                        $popup.addClass('majc-cart-anim-show');
-                    } else {
-                        $popup.addClass(showAnimation);
-                        $popup.addClass('majc-cart-anim-show');
-                    }
-                } else if ($popup.attr('data-showanimation')) {
-                    if ($popup.hasClass('majc-cart-anim-show')) {
-                        $popup.removeClass(showAnimation);
-                        $popup.removeClass('majc-cart-anim-show');
-                        $popup.addClass('majc-cart-anim-hide');
-                    } else {
-                        $popup.addClass(showAnimation);
-                        $popup.removeClass('majc-cart-anim-hide');
-                        $popup.addClass('majc-cart-anim-show');
-                    }
-                } else if ($popup.attr('data-hideanimation')) {
-                    if ($popup.hasClass('majc-cart-anim-show')) {
-                        $popup.addClass(hideAnimation);
-                        $popup.addClass('majc-cart-anim-hide');
-                        $popup.removeClass('majc-cart-anim-show');
-                    } else {
-                        $popup.removeClass(hideAnimation);
-                        $popup.addClass('majc-cart-anim-show');
-                        $popup.removeClass('majc-cart-anim-hide');
-                    }
+                if ($popup.hasClass('majc-popup-in-view') && hideAnimation) {
+                    $popup.addClass('animate--animated ' + hideAnimation);
+                    $popup.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function (e) {
+                        $popup.removeClass('animate--animated majc-popup-in-view ' + hideAnimation);
+                    });
+                } else if (!$popup.hasClass('majc-popup-in-view') && showAnimation) {
+                    $popup.addClass('animate--animated majc-popup-in-view ' + showAnimation);
+                    $popup.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function (e) {
+                        $popup.removeClass('animate--animated ' + showAnimation);
+                    });
+                } else if ($popup.hasClass('majc-popup-in-view')) {
+                    $popup.removeClass('majc-popup-in-view');
+                } else {
+                    $popup.addClass('majc-popup-in-view');
                 }
             } else {
-                $('.majc-cart-popup').toggleClass('active');
+                $(this).next('.majc-cart-popup').toggleClass('active');
             }
-
         });
 
         $('body').find(".majc-cart-close").on('click', function () {
-
             var $popup = $(this).closest('.majc-main-inner-wrapper');
-
-            //$(this).closest('.majc-cart-popup').removeClass('active');
-            //$(this).closest('.majc-main-inner-wrapper').find('.majc-toggle-button').removeClass('majc-toggle-btn-open');
-
-            //if ($popup.hasClass('majc-cartpop-animation-enabled')) {
-                $popup.find(".majc-cartbasket-toggle-btn").trigger('click');
-            //}
-            //$('body').removeClass('majc-cartbasket-open');
+            $popup.find(".majc-cartbasket-toggle-btn").trigger('click');
         });
 
         $(document).on('click', '.add_to_cart_button', function () {
@@ -156,11 +126,10 @@
         $(document).on('click', '.majc-remove', function (e) {
             e.preventDefault();
 
-            $('.majc-body').addClass('majc-loader');
+            $(this).closest('.majc-body').addClass('majc-loader');
 
             var cart_item_id = $(this).attr("data-cart_item_id"),
-                    cart_item_key = $(this).attr("data-cart_item_key"),
-                    product_container = $(this).parents('.majc-body');
+                    cart_item_key = $(this).attr("data-cart_item_key");
 
             $.ajax({
                 type: 'POST',
@@ -195,8 +164,8 @@
         // Apply Discount Coupons
         $('body').find('.majc-coupon-submit').on('click', function (e) {
             e.preventDefault();
-            var couponCode = jQuery("#majc-coupon-code").val();
             var $button = $(this);
+            var couponCode = $button.prev(".majc-coupon-code").val();
             $button.addClass('majc-button-loading');
             $.ajax({
                 url: ajaxUrl,
@@ -207,13 +176,14 @@
                     wp_nonce: wpNonce
                 },
                 success: function (response) {
-                    $(".majc-cpn-resp").html(response.msg);
+                    var $responseField = $button.closest('.majc-coupon').find('.majc-cpn-resp');
+                    $responseField.html(response.msg);
                     if (response.result == 'not valid' || response.result == 'already applied') {
-                        $(".majc-cpn-resp").css({'background-color': '#e2401c', 'color': '#fff'});
+                        $responseField.css({'background-color': '#e2401c', 'color': '#fff'});
                     } else {
-                        $(".majc-cpn-resp").css({'background-color': '#0f834d', 'color': '#fff'});
+                        $responseField.css({'background-color': '#0f834d', 'color': '#fff'});
                     }
-                    $(".majc-cpn-resp").fadeIn().delay(2000).fadeOut();
+                    $responseField.fadeIn().delay(2000).fadeOut();
                     $(document.body).trigger('wc_fragment_refresh');
                     $button.removeClass('majc-button-loading');
                 }
@@ -223,7 +193,8 @@
         // Remove Applied Discount Coupons
         $('body').on('click', '.majc-remove-cpn', function () {
 
-            var couponCode = $(this).parent('li').attr('cpcode');
+            var couponCode = $(this).parent('li').attr('data-code'),
+                    $removeBtn = $(this);
 
             $.ajax({
                 url: ajaxUrl,
@@ -234,9 +205,10 @@
                     wp_nonce: wpNonce
                 },
                 success: function (response) {
-                    $(".majc-cpn-resp").html(response);
-                    $(".majc-cpn-resp").css({'background-color': '#0f834d', 'color': '#fff'});
-                    $(".majc-cpn-resp").fadeIn().delay(2000).fadeOut();
+                    var $responseField = $removeBtn.closest('.majc-coupon').find('.majc-cpn-resp');
+                    $responseField.html(response);
+                    $responseField.css({'background-color': '#0f834d', 'color': '#fff'});
+                    $responseField.fadeIn().delay(2000).fadeOut();
                     $(document.body).trigger('wc_fragment_refresh');
                 }
             });
@@ -275,8 +247,8 @@
         // Quantity change 
         $('body').on('change', 'input[name="majc-qty-input"]', function () {
 
-            $('.majc-body').addClass('majc-loader');
-            var item_id = $(this).closest('.majc-cart-items').data('itemid');
+            $(this).closest('.majc-body').addClass('majc-loader');
+
             var qty = $(this).val();
             var ckey = $(this).closest('.majc-cart-items').data('ckey');
 
@@ -289,7 +261,9 @@
                 success: function (response) {
                     $(this).prop('disabled', false);
                     $(document.body).trigger('wc_fragment_refresh');
-                    $('.majc-body').removeClass('majc-loader');
+                    setTimeout(function () {
+                        $('.majc-body').removeClass('majc-loader');
+                    }, 1000);
                 }
             });
         });
