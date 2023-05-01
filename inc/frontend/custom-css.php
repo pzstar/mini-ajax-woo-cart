@@ -43,7 +43,7 @@ if (isset($custom['default_text_color']) && !empty($custom['default_text_color']
 }
 
 if (isset($custom['default_border_color']) && !empty($custom['default_border_color'])) {
-    $custom_css .= "{$custom_id} .majc-header .majc-sub-header, {$custom_id} .majc-header h2, {$custom_id}.majc-cartitem-list .majc-cart-items-inner, {$custom_id} .majc-coupon, {$custom_id} .majc-buy-summary, {$custom_id} .majc-buy-summary > div{border-color:{$custom['default_border_color']}}";
+    $custom_css .= "{$custom_id} .majc-header .majc-sub-header, {$custom_id} .majc-header h2, {$custom_id}.majc-cartitem-list .majc-cart-items-inner, {$custom_id} .majc-coupon, {$custom_id} .majc-buy-summary, {$custom_id} .majc-buy-summary > div, {$custom_id} .majc-applied-cpns li, {$custom_id}.majc-cartitem-grid .majc-cart-items-inner, {$custom_id} .majc-coupon .majc-coupon-field{border-color:{$custom['default_border_color']}}";
 }
 
 if (isset($custom['close_icon_color']) && !empty($custom['close_icon_color'])) {

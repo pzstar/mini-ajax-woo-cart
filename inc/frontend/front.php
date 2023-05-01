@@ -165,11 +165,11 @@ if (!empty($post)) {
 
                         <?php
                         if (!empty($show_animation) && !empty($hide_animation)) {
-                            $majc_popup_class = 'majc-cartpop-animation-enabled majc-cartpop-both-animation-enabled animate--animated';
+                            $majc_popup_class = 'majc-cartpop-animation-enabled majc-cartpop-both-animation-enabled';
                         } elseif (!empty($show_animation)) {
-                            $majc_popup_class = 'majc-cartpop-animation-enabled majc-cartpop-show-animation-enabled animate--animated';
+                            $majc_popup_class = 'majc-cartpop-animation-enabled majc-cartpop-show-animation-enabled';
                         } elseif (!empty($hide_animation)) {
-                            $majc_popup_class = 'majc-cartpop-animation-enabled majc-cartpop-hide-animation-enabled animate--animated';
+                            $majc_popup_class = 'majc-cartpop-animation-enabled majc-cartpop-hide-animation-enabled';
                         } else {
                             $majc_popup_class = '';
                         }
