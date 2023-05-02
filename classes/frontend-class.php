@@ -40,16 +40,11 @@ if (!class_exists('MAJC_Frontend')) {
         }
 
         function prevent_add_to_cart_on_redirect($url = false) {
-
-            // If another plugin beats us to the punch, let them have their way with the URL
             if (!empty($url)) {
                 return $url;
             }
 
-            // Redirect back to the original page, without the 'add-to-cart' parameter.
-            // We add the `get_bloginfo` part so it saves a redirect on https:// sites.
             return add_query_arg(array(), remove_query_arg('add-to-cart'));
-            // return get_bloginfo('wpurl').add_query_arg(array(), remove_query_arg('add-to-cart'));
         }
 
         function change_item_qty() {
@@ -229,7 +224,7 @@ if (!class_exists('MAJC_Frontend')) {
             // Update Discount Amount
             $discountTotal = '<div class="majc-cart-discount-amount">' . wc_price(WC()->cart->get_cart_discount_total() + WC()->cart->get_cart_discount_tax_total()) . '</div>';
             $fragments['div.majc-cart-discount-amount'] = $discountTotal;
-            
+
             $fragments['.majc-check-cart'] = WC()->cart->is_empty() ? '<div class="majc-check-cart majc-hide-cart-items"></div>' : '<div class="majc-check-cart"></div>';
 
             // Update Applied Coupon
@@ -261,7 +256,9 @@ if (!class_exists('MAJC_Frontend')) {
         }
 
         public function majc_menu() {
-            include MAJC_PATH . '/inc/frontend/front.php';
+            if (!(defined('REST_REQUEST') && REST_REQUEST)) {
+                include MAJC_PATH . '/inc/frontend/front.php';
+            }
         }
 
         public function get_refreshed_fragments() {
