@@ -508,7 +508,7 @@
 }
 
 /*Choosen Select*/
-.majc-typography-fields .chosen-container-single .chosen-single{
+.majc-typography-fields .chosen-container-single .chosen-single {
     min-height: 30px;
     font-size: 14px;
     line-height: 2;
@@ -520,10 +520,21 @@
     background-size: 16px 16px;
     cursor: pointer;
     vertical-align: middle;
+    padding: 0 0 0 10px;
 }
 
 .majc-typography-fields .chosen-container-single .chosen-single div{
     display: none;
+}
+
+.majc-typography-fields .chosen-container-single .chosen-single span {
+    margin: 0 26px 0 0;
+}
+
+.majc-typography-fields .chosen-container-single .chosen-search input[type="text"]{
+    background: none !important;
+    padding: 5px;
+    box-shadow: none;
 }
 
 /* Range Slider */
@@ -566,8 +577,8 @@
     display: inline-block;
     position: absolute;
     top: 50%;
-    margin: 0;
-    transform: translateY(-50%) translateX(-4px);
+    margin: 0 0 0 -8px;
+    transform: translateY(-50%);
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     border-radius: 50%;
     cursor: pointer;
@@ -770,6 +781,7 @@ body.majc-cart-popup-active{
 }
 
 .majc-text-check-box label span i {
+    display: inline-block;
     margin-right: 4px;
     font-size: 0.9em;
 }
