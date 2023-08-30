@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mini Ajax Cart for WooCommerce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-06 05:38+0000\n"
+"POT-Creation-Date: 2023-08-30 15:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,24 +16,24 @@ msgstr ""
 "X-Loco-Version: 2.6.3; wp-6.1.1\n"
 "X-Domain: mini-ajax-cart"
 
-#: inc/backend/metabox/boxes/main-settings.php:99
+#: inc/backend/settings/main-settings.php:99
 msgid "404 Page"
 msgstr ""
 
-#: classes/backend-class.php:40
+#: classes/backend-class.php:42
 msgid "Add New Mini Ajax Cart"
 msgstr ""
 
-#: classes/backend-class.php:38
+#: classes/backend-class.php:40
 msgctxt "add new on admin bar"
 msgid "Mini Ajax Cart"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:83
+#: inc/backend/settings/cart-content.php:83
 msgid "Added to Cart Product Section"
 msgstr ""
 
-#: classes/backend-class.php:37
+#: classes/backend-class.php:39
 msgctxt "admin menu"
 msgid "Mini Ajax Cart"
 msgstr ""
@@ -42,80 +42,80 @@ msgstr ""
 msgid "Ajax, Floating, Slide In, Popup Cart For WordPress with WooCommerce"
 msgstr ""
 
-#: classes/backend-class.php:44
+#: classes/backend-class.php:46
 msgid "All Cart"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-panel.php:28
+#: inc/backend/settings/cart-panel.php:28
 msgid "Animation"
 msgstr ""
 
-#: inc/frontend/flying-cart/flying-front.php:71
+#: inc/frontend/front.php:71
 msgid "Apply Coupon"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:130
+#: inc/backend/settings/cart-content.php:130
 msgid "Apply Coupon Button Label"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:90
+#: inc/backend/settings/main-settings.php:90
 msgid "Archive Page"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:42
-#: inc/backend/metabox/boxes/cart-button.php:20
+#: inc/backend/settings/cart-content.php:42
+#: inc/backend/settings/cart-button.php:20
 msgid "Available Icon"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-panel.php:85
+#: inc/backend/settings/cart-panel.php:85
 msgid "Background behind the cart panel when it is opened"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:24
-#: inc/backend/metabox/boxes/design-settings.php:91
-#: inc/backend/metabox/boxes/design-settings.php:805
-#: inc/backend/metabox/boxes/design-settings.php:843
-#: inc/backend/metabox/boxes/design-settings.php:894
-#: inc/backend/metabox/boxes/design-settings.php:946
+#: inc/backend/settings/design-settings.php:24
+#: inc/backend/settings/design-settings.php:91
+#: inc/backend/settings/design-settings.php:805
+#: inc/backend/settings/design-settings.php:843
+#: inc/backend/settings/design-settings.php:894
+#: inc/backend/settings/design-settings.php:946
 msgid "Background Color"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:31
-#: inc/backend/metabox/boxes/design-settings.php:812
-#: inc/backend/metabox/boxes/design-settings.php:850
-#: inc/backend/metabox/boxes/design-settings.php:901
+#: inc/backend/settings/design-settings.php:31
+#: inc/backend/settings/design-settings.php:812
+#: inc/backend/settings/design-settings.php:850
+#: inc/backend/settings/design-settings.php:901
 msgid "Background Color (Hover)"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:73
+#: inc/backend/settings/design-settings.php:73
 msgid "Background Type"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:129
-#: inc/backend/metabox/boxes/design-settings.php:871
-#: inc/backend/metabox/boxes/design-settings.php:922
+#: inc/backend/settings/design-settings.php:129
+#: inc/backend/settings/design-settings.php:871
+#: inc/backend/settings/design-settings.php:922
 msgid "Border Color"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:878
-#: inc/backend/metabox/boxes/design-settings.php:929
+#: inc/backend/settings/design-settings.php:878
+#: inc/backend/settings/design-settings.php:929
 msgid "Border Color (Hover)"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:113
+#: inc/backend/settings/cart-button.php:113
 msgid "Button Position"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:90
+#: inc/backend/settings/cart-button.php:90
 msgid "Button Shape"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:650
+#: inc/backend/settings/design-settings.php:650
 msgid "Button Typography"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:13
-#: inc/backend/metabox/boxes/cart-content.php:8
+#: inc/backend/settings/design-settings.php:13
+#: inc/backend/settings/cart-content.php:8
 msgid "Buttons"
 msgstr ""
 
@@ -123,265 +123,274 @@ msgstr ""
 msgid "Capitalize"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:18
+#: inc/backend/settings/design-settings.php:18
 msgid "Cart Basket/Button"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:20
+#: inc/backend/settings/design-settings.php:20
 msgid "Cart Basket/Button Colors"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:2
+#: inc/backend/settings/cart-button.php:2
 msgid "Cart Basket/Button Settings"
 msgstr ""
 
-#: inc/backend/metabox/settings-metabox.php:20
-#: inc/backend/metabox/boxes/design-settings.php:11
-#: inc/backend/metabox/boxes/cart-content.php:150
+#: inc/backend/settings.php:20 inc/backend/settings/design-settings.php:11
+#: inc/backend/settings/cart-content.php:150
 msgid "Cart Button"
 msgstr ""
 
-#: inc/backend/metabox/settings-metabox.php:22
-#: inc/backend/metabox/boxes/design-settings.php:70
+#: inc/backend/settings.php:22 inc/backend/settings/design-settings.php:70
 msgid "Cart Content"
 msgstr ""
 
-#: inc/backend/metabox/settings-metabox.php:21
-#: inc/backend/metabox/boxes/design-settings.php:12
+#: inc/backend/settings.php:21 inc/backend/settings/design-settings.php:12
 msgid "Cart Panel"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-panel.php:2
+#: inc/backend/settings/cart-panel.php:2
 msgid "Cart Panel Settings"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:6
+#: inc/backend/settings/cart-content.php:6
 msgid "Cart Products"
 msgstr ""
 
-#: inc/frontend/flying-cart/flying-front.php:303
+#: inc/frontend/front.php:311
 msgid "Cart Total"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:890
+#: inc/backend/settings/design-settings.php:890
 msgid "Cart/CheckOut Button"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:150
+#: inc/backend/settings/cart-button.php:150
 msgid "Center Bottom (Pro)"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:174
+#: inc/backend/settings/cart-content.php:174
 msgid "Checkout Button"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:40
+#: inc/backend/settings/cart-button.php:40
 msgid "Choose Close Icon"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:80
+#: inc/backend/settings/design-settings.php:80
 msgid "Choose Color"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:52
+#: inc/backend/settings/cart-content.php:52
 msgid "Choose Header Icon"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:32
+#: inc/backend/settings/cart-button.php:32
 msgid "Choose Open Icon"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:143
+#: inc/backend/settings/design-settings.php:143
 msgid "Close Background Color"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:136
+#: inc/backend/settings/design-settings.php:136
 msgid "Close Icon Color"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:117
+#: inc/backend/settings/design-settings.php:117
 msgid "Color Settings"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:2
+#: inc/backend/settings/cart-content.php:2
 msgid "Configure Cart Content"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:331
+#: inc/backend/settings/design-settings.php:331
 msgid "Content Typography"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-panel.php:71
+#: inc/backend/settings/cart-panel.php:71
 msgid "Content Width"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:198
+#: inc/backend/settings/cart-content.php:198
 msgid "Continue Button"
 msgstr ""
 
-#: inc/frontend/flying-cart/flying-front.php:65
-#: inc/backend/metabox/boxes/cart-content.php:215
+#: inc/frontend/front.php:65 inc/backend/settings/cart-content.php:215
 msgid "Continue Shopping"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:839
+#: inc/backend/settings/design-settings.php:839
 msgid "Continue Shopping Button"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:219
+#: inc/backend/settings/cart-content.php:219
 msgid "Continue Shopping Link"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:52
+#: inc/backend/settings/design-settings.php:52
 msgid "Counter Background Color"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:59
+#: inc/backend/settings/design-settings.php:59
 msgid "Counter Text Color"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:7
+#: inc/backend/settings/cart-content.php:7
 msgid "Coupon"
 msgstr ""
 
-#: classes/frontend-class.php:144
+#: classes/frontend-class.php:139
 msgid "Coupon Applied Successfully."
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:801
+#: inc/backend/settings/design-settings.php:801
 msgid "Coupon Button"
 msgstr ""
 
-#: classes/frontend-class.php:126
+#: classes/frontend-class.php:121
 msgid "Coupon Code Already Applied."
 msgstr ""
 
-#: classes/frontend-class.php:110
+#: classes/frontend-class.php:105
 msgid "Coupon Code Field is Empty!"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:115
+#: inc/backend/settings/cart-content.php:115
 msgid "Coupon Code Section"
 msgstr ""
 
-#: classes/frontend-class.php:77
+#: classes/frontend-class.php:72
 msgid "Coupon Removed Successfully."
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:47
-#: inc/backend/metabox/boxes/cart-button.php:25
+#: inc/backend/settings/cart-content.php:47
+#: inc/backend/settings/cart-button.php:25
 msgid "Custom Icon"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:85
+#: inc/backend/settings/design-settings.php:85
 msgid "Custom Image Background"
 msgstr ""
 
 #: google-fonts-list.php:177 google-fonts-list.php:187
-#: inc/backend/metabox/boxes/cart-panel.php:34
-#: inc/backend/metabox/boxes/cart-panel.php:51
+#: inc/backend/settings/cart-panel.php:34
+#: inc/backend/settings/cart-panel.php:51
 msgid "Default"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:37
-#: inc/backend/metabox/boxes/cart-button.php:15
+#: inc/backend/settings/cart-content.php:37
+#: inc/backend/settings/cart-button.php:15
 msgid "Default Icon"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:63
+#: inc/backend/settings/main-settings.php:63
 msgid "Default WordPress Pages"
 msgstr ""
 
-#: inc/backend/metabox/settings-metabox.php:23
+#: inc/backend/settings.php:23
 msgid "Design"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:35
+#: inc/backend/settings/main-settings.php:35
 msgid "Desktop"
 msgstr ""
 
-#: inc/frontend/flying-cart/flying-front.php:310
+#: inc/frontend/front.php:318
 msgid "Discount"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:23
+#: classes/backend-class.php:214
+msgid "Dismiss this notice."
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:23
 msgid "Display Ajax Cart?"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:27
+#: inc/backend/settings/main-settings.php:27
 msgid "Display Settings"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:183
+#: inc/backend/settings/cart-button.php:183
 msgid "Displays at the side of Basket/Button"
 msgstr ""
 
-#: classes/backend-class.php:42
+#: classes/backend-class.php:44
 msgid "Edit Cart"
 msgstr ""
 
-#: classes/backend-class.php:89
+#: classes/backend-class.php:91
 msgid "Elegant Icon"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:118
+#: inc/backend/settings/cart-content.php:118
 msgid "Enable Coupon Field"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:16
+#: inc/backend/settings/main-settings.php:16
 msgid "Enable Mini Ajax Cart"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-panel.php:78
+#: inc/backend/settings/cart-panel.php:78
 msgid "Enable Overlay"
 msgstr ""
 
-#: inc/frontend/flying-cart/flying-front.php:72
+#: inc/frontend/front.php:72
 msgid "Enter your promo code"
 msgstr ""
 
-#: classes/backend-class.php:87
+#: classes/backend-class.php:89
 msgid "Essential Icon"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-panel.php:17
+#: inc/backend/settings/cart-panel.php:17
 msgid "Floating (Available in Pro)"
 msgstr ""
 
-#: classes/backend-class.php:86
+#: classes/backend-class.php:88
 msgid "Font Awesome"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:178
-#: inc/backend/metabox/boxes/design-settings.php:335
-#: inc/backend/metabox/boxes/design-settings.php:493
-#: inc/backend/metabox/boxes/design-settings.php:654
+#: inc/backend/settings/design-settings.php:178
+#: inc/backend/settings/design-settings.php:335
+#: inc/backend/settings/design-settings.php:493
+#: inc/backend/settings/design-settings.php:654
 msgid "Font Family"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:292
-#: inc/backend/metabox/boxes/design-settings.php:449
-#: inc/backend/metabox/boxes/design-settings.php:608
-#: inc/backend/metabox/boxes/design-settings.php:765
+#: inc/backend/settings/design-settings.php:292
+#: inc/backend/settings/design-settings.php:449
+#: inc/backend/settings/design-settings.php:608
+#: inc/backend/settings/design-settings.php:765
 msgid "Font Size"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:220
-#: inc/backend/metabox/boxes/design-settings.php:377
-#: inc/backend/metabox/boxes/design-settings.php:535
-#: inc/backend/metabox/boxes/design-settings.php:697
+#: inc/backend/settings/design-settings.php:220
+#: inc/backend/settings/design-settings.php:377
+#: inc/backend/settings/design-settings.php:535
+#: inc/backend/settings/design-settings.php:697
 msgid "Font Style"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:72
+#: inc/backend/settings/main-settings.php:72
 msgid "Front Page"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:13
+#: inc/backend/settings/main-settings.php:13
 msgid "General Settings"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:97
+#. %1$s is link start tag, %2$s is link end tag.
+#: classes/backend-class.php:188
+#, php-format
+msgid ""
+"Great to see that you have been using Mini Ajax Cart for some time. We hope "
+"you love it, and we would really appreciate it if you would %1$sgive us a 5 "
+"stars rating%2$s and spread your words to the world."
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:97
 msgid "Grid"
 msgstr ""
 
@@ -389,59 +398,59 @@ msgstr ""
 msgid "HashThemes"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:5
+#: inc/backend/settings/cart-content.php:5
 msgid "Header"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:23
+#: inc/backend/settings/cart-content.php:23
 msgid "Header Icon Type"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:13
+#: inc/backend/settings/cart-content.php:13
 msgid "Header Section"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:16
+#: inc/backend/settings/cart-content.php:16
 msgid "Header Title Text"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:174
+#: inc/backend/settings/design-settings.php:174
 msgid "Header Title Typography"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-panel.php:49
+#: inc/backend/settings/cart-panel.php:49
 msgid "Hide Animation"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:235
+#: inc/backend/settings/cart-content.php:235
 msgid "Hide Cart Total"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:246
+#: inc/backend/settings/cart-content.php:246
 msgid "Hide Discount"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:55
+#: inc/backend/settings/main-settings.php:55
 msgid "Hide in All Pages"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:30
+#: inc/backend/settings/main-settings.php:30
 msgid "Hide in Screens"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:57
+#: inc/backend/settings/main-settings.php:57
 msgid "Hide in Selected Pages"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:257
+#: inc/backend/settings/cart-content.php:257
 msgid "Hide Subtotal"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:81
+#: inc/backend/settings/main-settings.php:81
 msgid "Home/Blog Page"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:156
+#: inc/backend/settings/cart-button.php:156
 msgid "Hover Animation"
 msgstr ""
 
@@ -453,61 +462,65 @@ msgstr ""
 msgid "https://github.com/pzstar/mini-ajax-woo-cart"
 msgstr ""
 
-#: classes/backend-class.php:85
+#: classes/backend-class.php:193
+msgid "I have already rated"
+msgstr ""
+
+#: classes/backend-class.php:87
 msgid "Ico Font"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:4
+#: inc/backend/settings/cart-button.php:4
 msgid "Icon"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:38
+#: inc/backend/settings/design-settings.php:38
 msgid "Icon Color"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:45
+#: inc/backend/settings/design-settings.php:45
 msgid "Icon Color (Hover)"
 msgstr ""
 
-#: classes/frontend-class.php:134
+#: classes/frontend-class.php:129
 msgid "Invalid code entered. Please try again."
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:230
+#: inc/backend/settings/cart-content.php:230
 msgid "It will appear just above buttons."
 msgstr ""
 
-#: classes/frontend-class.php:255 inc/frontend/flying-cart/flying-front.php:195
+#: classes/frontend-class.php:250 inc/frontend/front.php:203
 msgid "Items: "
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-panel.php:5
+#: inc/backend/settings/cart-panel.php:5
 msgid "Layout"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:135
+#: inc/backend/settings/cart-button.php:135
 msgid "Left Bottom (Pro)"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:120
+#: inc/backend/settings/cart-button.php:120
 msgid "Left Middle"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:130
+#: inc/backend/settings/cart-button.php:130
 msgid "Left Top (Pro)"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:311
-#: inc/backend/metabox/boxes/design-settings.php:469
-#: inc/backend/metabox/boxes/design-settings.php:628
-#: inc/backend/metabox/boxes/design-settings.php:785
+#: inc/backend/settings/design-settings.php:311
+#: inc/backend/settings/design-settings.php:469
+#: inc/backend/settings/design-settings.php:628
+#: inc/backend/settings/design-settings.php:785
 msgid "Letter Spacing"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:301
-#: inc/backend/metabox/boxes/design-settings.php:459
-#: inc/backend/metabox/boxes/design-settings.php:618
-#: inc/backend/metabox/boxes/design-settings.php:775
+#: inc/backend/settings/design-settings.php:301
+#: inc/backend/settings/design-settings.php:459
+#: inc/backend/settings/design-settings.php:618
+#: inc/backend/settings/design-settings.php:775
 msgid "Line Height"
 msgstr ""
 
@@ -515,7 +528,7 @@ msgstr ""
 msgid "Line-through"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:92
+#: inc/backend/settings/cart-content.php:92
 msgid "List"
 msgstr ""
 
@@ -523,19 +536,19 @@ msgstr ""
 msgid "Lowercase"
 msgstr ""
 
-#: inc/backend/metabox/settings-metabox.php:19
+#: inc/backend/settings.php:19
 msgid "Main Settings"
 msgstr ""
 
-#: classes/backend-class.php:88
+#: classes/backend-class.php:90
 msgid "Material Icon"
 msgstr ""
 
-#: classes/backend-class.php:16
+#: classes/backend-class.php:18
 msgid "Mini Ajax Cart"
 msgstr ""
 
-#: classes/backend-class.php:39
+#: classes/backend-class.php:41
 msgctxt "Mini Ajax Cart"
 msgid "Add New"
 msgstr ""
@@ -544,29 +557,29 @@ msgstr ""
 msgid "Mini Ajax Cart for WooCommerce"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:43
+#: inc/backend/settings/main-settings.php:43
 msgid "Mobile"
 msgstr ""
 
-#: classes/backend-class.php:41
+#: classes/backend-class.php:43
 msgid "New Cart"
 msgstr ""
 
-#: classes/backend-class.php:48
+#: classes/backend-class.php:50
 msgid "No Cart found in Trash."
 msgstr ""
 
-#: classes/backend-class.php:47
+#: classes/backend-class.php:49
 msgid "No Cart found."
 msgstr ""
 
-#: inc/frontend/flying-cart/flying-front.php:264
+#: inc/frontend/front.php:272
 msgid "No Porduct in the Cart!"
 msgstr ""
 
 #: google-fonts-list.php:178 google-fonts-list.php:188
-#: inc/backend/metabox/boxes/cart-content.php:32
-#: inc/backend/metabox/boxes/cart-button.php:159
+#: inc/backend/settings/cart-content.php:32
+#: inc/backend/settings/cart-button.php:159
 msgid "None"
 msgstr ""
 
@@ -574,195 +587,195 @@ msgstr ""
 msgid "Overline"
 msgstr ""
 
-#: classes/backend-class.php:46
+#: classes/backend-class.php:48
 msgid "Parent Cart:"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-panel.php:22
+#: inc/backend/settings/cart-panel.php:22
 msgid "Popup (Available in Pro)"
 msgstr ""
 
-#: classes/backend-class.php:35
+#: classes/backend-class.php:37
 msgctxt "post type general name"
 msgid "Mini Ajax Cart"
 msgstr ""
 
-#: classes/backend-class.php:36
+#: classes/backend-class.php:38
 msgctxt "post type singular name"
 msgid "Mini Ajax Cart"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:489
+#: inc/backend/settings/design-settings.php:489
 msgid "Product Title Typography"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:85
+#: inc/backend/settings/cart-content.php:85
 msgid "Products Layout"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:138
+#: inc/backend/settings/cart-content.php:138
 msgid "Promo Code Placeholder"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:150
+#: inc/backend/settings/design-settings.php:150
 msgid "Quantity +/- Background Color"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:164
+#: inc/backend/settings/design-settings.php:164
 msgid "Quantity +/- Border Color"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:157
+#: inc/backend/settings/design-settings.php:157
 msgid "Quantity +/- Icon Color"
 msgstr ""
 
-#: classes/frontend-class.php:254 inc/frontend/flying-cart/flying-front.php:194
+#: classes/frontend-class.php:249 inc/frontend/front.php:202
 msgid "Quantity: "
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:107
-#: inc/backend/metabox/boxes/cart-content.php:69
-#: inc/backend/metabox/boxes/cart-button.php:61
-#: inc/backend/metabox/boxes/cart-button.php:77
+#: inc/backend/settings/design-settings.php:107
+#: inc/backend/settings/cart-content.php:69
+#: inc/backend/settings/cart-button.php:61
+#: inc/backend/settings/cart-button.php:77
 msgid "Remove"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:942
+#: inc/backend/settings/design-settings.php:942
 msgid "Remove Product Button (Grid Layout)"
 msgstr ""
 
-#: classes/frontend-class.php:181 inc/frontend/flying-cart/flying-front.php:223
+#: classes/frontend-class.php:176 inc/frontend/front.php:231
 msgid "Remove this item"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:145
+#: inc/backend/settings/cart-button.php:145
 msgid "Right Bottom (Pro)"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:125
+#: inc/backend/settings/cart-button.php:125
 msgid "Right Middle"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:140
+#: inc/backend/settings/cart-button.php:140
 msgid "Right Top (Pro)"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:97
+#: inc/backend/settings/cart-button.php:97
 msgid "Round"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:107
+#: inc/backend/settings/cart-button.php:107
 msgid "Rounded Square"
 msgstr ""
 
-#: classes/backend-class.php:45
+#: classes/backend-class.php:47
 msgid "Search Cart"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:108
+#: inc/backend/settings/main-settings.php:108
 msgid "Search Page"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:227
+#: inc/backend/settings/cart-content.php:227
 msgid "Shipping Text Label"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-panel.php:32
+#: inc/backend/settings/cart-panel.php:32
 msgid "Show Animation"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:103
+#: inc/backend/settings/cart-content.php:103
 msgid "Show Cart Quantity & Items"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:179
+#: inc/backend/settings/cart-content.php:179
 msgid "Show Checkout Button"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:203
+#: inc/backend/settings/cart-content.php:203
 msgid "Show Continue Shopping Button"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:54
+#: inc/backend/settings/main-settings.php:54
 msgid "Show in All Pages"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:56
+#: inc/backend/settings/main-settings.php:56
 msgid "Show in Selected Pages"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:176
+#: inc/backend/settings/cart-button.php:176
 msgid "Show Product Counter"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:155
+#: inc/backend/settings/cart-content.php:155
 msgid "Show View Cart Button"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:50
+#: inc/backend/settings/main-settings.php:50
 msgid "Show/Hide in Pages"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-panel.php:12
+#: inc/backend/settings/cart-panel.php:12
 msgid "Slide In"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:172
+#: inc/backend/settings/main-settings.php:172
 msgid "Specific "
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:102
+#: inc/backend/settings/cart-button.php:102
 msgid "Square"
 msgstr ""
 
-#: inc/frontend/flying-cart/flying-front.php:323
+#: inc/frontend/front.php:331
 msgid "Subtotal"
 msgstr ""
 
-#: inc/backend/metabox/boxes/main-settings.php:39
+#: inc/backend/settings/main-settings.php:39
 msgid "Tablet"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:122
-#: inc/backend/metabox/boxes/design-settings.php:320
-#: inc/backend/metabox/boxes/design-settings.php:478
-#: inc/backend/metabox/boxes/design-settings.php:637
-#: inc/backend/metabox/boxes/design-settings.php:819
-#: inc/backend/metabox/boxes/design-settings.php:857
-#: inc/backend/metabox/boxes/design-settings.php:908
-#: inc/backend/metabox/boxes/design-settings.php:953
+#: inc/backend/settings/design-settings.php:122
+#: inc/backend/settings/design-settings.php:320
+#: inc/backend/settings/design-settings.php:478
+#: inc/backend/settings/design-settings.php:637
+#: inc/backend/settings/design-settings.php:819
+#: inc/backend/settings/design-settings.php:857
+#: inc/backend/settings/design-settings.php:908
+#: inc/backend/settings/design-settings.php:953
 msgid "Text Color"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:826
-#: inc/backend/metabox/boxes/design-settings.php:864
-#: inc/backend/metabox/boxes/design-settings.php:915
+#: inc/backend/settings/design-settings.php:826
+#: inc/backend/settings/design-settings.php:864
+#: inc/backend/settings/design-settings.php:915
 msgid "Text Color (Hover)"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:269
-#: inc/backend/metabox/boxes/design-settings.php:426
-#: inc/backend/metabox/boxes/design-settings.php:584
-#: inc/backend/metabox/boxes/design-settings.php:742
+#: inc/backend/settings/design-settings.php:269
+#: inc/backend/settings/design-settings.php:426
+#: inc/backend/settings/design-settings.php:584
+#: inc/backend/settings/design-settings.php:742
 msgid "Text Decoration"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:246
-#: inc/backend/metabox/boxes/design-settings.php:403
-#: inc/backend/metabox/boxes/design-settings.php:561
-#: inc/backend/metabox/boxes/design-settings.php:719
+#: inc/backend/settings/design-settings.php:246
+#: inc/backend/settings/design-settings.php:403
+#: inc/backend/settings/design-settings.php:561
+#: inc/backend/settings/design-settings.php:719
 msgid "Text Transform"
 msgstr ""
 
-#: inc/frontend/flying-cart/flying-front.php:255
+#: inc/frontend/front.php:263
 msgid "The Cart is Empty"
 msgstr ""
 
-#: inc/frontend/flying-cart/flying-front.php:66
+#: inc/frontend/front.php:66
 msgid "To find out your shipping cost , Please proceed to checkout."
 msgstr ""
 
-#: classes/backend-class.php:91
+#: classes/backend-class.php:93
 msgid "Type to filter"
 msgstr ""
 
@@ -770,30 +783,30 @@ msgstr ""
 msgid "Underline"
 msgstr ""
 
-#: inc/backend/metabox/settings-metabox.php:24
+#: inc/backend/settings.php:24
 msgid "Upgrade To Pro"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:110
-#: inc/backend/metabox/boxes/cart-content.php:72
-#: inc/backend/metabox/boxes/cart-button.php:64
-#: inc/backend/metabox/boxes/cart-button.php:79
+#: inc/backend/settings/design-settings.php:110
+#: inc/backend/settings/cart-content.php:72
+#: inc/backend/settings/cart-button.php:64
+#: inc/backend/settings/cart-button.php:79
 msgid "Upload"
 msgstr ""
 
-#: inc/backend/metabox/boxes/design-settings.php:98
+#: inc/backend/settings/design-settings.php:98
 msgid "Upload Background Image"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:69
+#: inc/backend/settings/cart-button.php:69
 msgid "Upload Close Icon"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:61
+#: inc/backend/settings/cart-content.php:61
 msgid "Upload Header Icon"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-button.php:53
+#: inc/backend/settings/cart-button.php:53
 msgid "Upload Open Icon"
 msgstr ""
 
@@ -801,28 +814,31 @@ msgstr ""
 msgid "Uppercase"
 msgstr ""
 
-#: classes/backend-class.php:43 inc/frontend/flying-cart/flying-front.php:63
-#: inc/backend/metabox/boxes/cart-content.php:167
+#: classes/backend-class.php:45 inc/frontend/front.php:63
+#: inc/backend/settings/cart-content.php:167
 msgid "View Cart"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:166
+#: inc/backend/settings/cart-content.php:166
 msgid "View Cart Label"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:147
+#: inc/backend/settings/cart-content.php:147
 msgid "View Cart, Checkout & Continue Shopping Buttons"
 msgstr ""
 
-#: inc/frontend/flying-cart/flying-front.php:64
-#: inc/backend/metabox/boxes/cart-content.php:191
+#: inc/frontend/front.php:64 inc/backend/settings/cart-content.php:191
 msgid "View Checkout"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:190
+#: inc/backend/settings/cart-content.php:190
 msgid "View Checkout Label"
 msgstr ""
 
-#: inc/backend/metabox/boxes/cart-content.php:214
+#: inc/backend/settings/cart-content.php:214
 msgid "View Continue Shopping Label"
+msgstr ""
+
+#: classes/backend-class.php:192
+msgid "Yes, of course"
 msgstr ""
