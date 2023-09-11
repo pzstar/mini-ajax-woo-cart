@@ -192,7 +192,7 @@ if (!class_exists('MAJC_Frontend')) {
                                         <div class="majc-item-qty">
                                             <span class="majc-qty-minus majc-qty-chng icon_minus-06"></span>
 
-                                            <input type="number" name="majc-qty-input" class="majc-qty" step="1" min="0" max="14" value="<?php echo intval($itemVal['quantity']); ?>" placeholder="" inputmode="numeric">
+                                            <input type="number" name="majc-qty-input" class="majc-qty" step="1" min="0" value="<?php echo intval($itemVal['quantity']); ?>" placeholder="" inputmode="numeric">
 
                                             <span class="majc-qty-plus majc-qty-chng icon_plus"></span>
                                         </div>
