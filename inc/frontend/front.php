@@ -269,7 +269,7 @@ if (!empty($post)) {
                                         <div class="majc-empty-cart-icon">
                                             <span class="mdi mdi-cart-arrow-down"></span>
                                         </div>
-                                        <?php esc_html_e('No Porduct in the Cart!', 'mini-ajax-cart'); ?>
+                                        <?php esc_html_e('No Product in the Cart!', 'mini-ajax-cart'); ?>
                                     </div>
 
                                     <!-- Coupons -->

@@ -574,7 +574,7 @@ msgid "No Cart found."
 msgstr ""
 
 #: inc/frontend/front.php:272
-msgid "No Porduct in the Cart!"
+msgid "No Product in the Cart!"
 msgstr ""
 
 #: google-fonts-list.php:178 google-fonts-list.php:188
