@@ -13,16 +13,7 @@ if (!class_exists('MAJC_Backend')) {
             add_action('wp_loaded', array($this, 'admin_notice'), 20);
             add_action('admin_init', array($this, 'welcome_init'));
             add_action('admin_menu', array($this, 'add_external_doc_submenu'));
-        }
-
-        function add_external_doc_submenu() {
-            global $submenu;
-            $permalink = 'https://hashthemes.com/how-to-add-a-mini-floating-cart-to-your-onlinestore/';
-            $submenu['edit.php?post_type=ultimate-woo-cart'][] = array(
-                esc_html__('Documentation', 'mini-ajax-cart'),
-                'edit_posts',
-                esc_url($permalink)
-            );
+            add_action('admin_head', array($this, 'doc_custom_script'));
         }
 
         public function settings_metabox() {
@@ -232,6 +223,26 @@ if (!class_exists('MAJC_Backend')) {
                 $dismissed[] = $notice;
                 update_option('majc_dismissed_notices', array_unique($dismissed));
             }
+        }
+
+        function add_external_doc_submenu() {
+            global $submenu;
+            $permalink = 'https://hashthemes.com/how-to-add-a-mini-floating-cart-to-your-onlinestore/';
+            $submenu['edit.php?post_type=ultimate-woo-cart'][] = array(
+                esc_html__('Documentation', 'mini-ajax-cart'),
+                'edit_posts',
+                esc_url($permalink)
+            );
+        }
+
+        function doc_custom_script() {
+            ?>
+            <script type="text/javascript">
+                jQuery(document).ready(function ($) {
+                    $("ul#adminmenu a[href$='https://hashthemes.com/how-to-add-a-mini-floating-cart-to-your-onlinestore/']").attr('target', '_blank');
+                });
+            </script>
+            <?php
         }
 
     }
