@@ -12,6 +12,17 @@ if (!class_exists('MAJC_Backend')) {
             add_action('save_post', array($this, 'save_metabox_settings'));
             add_action('wp_loaded', array($this, 'admin_notice'), 20);
             add_action('admin_init', array($this, 'welcome_init'));
+            add_action('admin_menu', array($this, 'add_external_doc_submenu'));
+        }
+
+        function add_external_doc_submenu() {
+            global $submenu;
+            $permalink = 'https://hashthemes.com/how-to-add-a-mini-floating-cart-to-your-onlinestore/';
+            $submenu['edit.php?post_type=ultimate-woo-cart'][] = array(
+                esc_html__('Documentation', 'mini-ajax-cart'),
+                'edit_posts',
+                esc_url($permalink)
+            );
         }
 
         public function settings_metabox() {
