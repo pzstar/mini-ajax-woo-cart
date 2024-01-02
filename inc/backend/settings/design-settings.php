@@ -800,35 +800,35 @@ $text_decorations = majc_get_text_decoration_choices();
             <div class="majc-settings-row">
                 <label><?php esc_html_e('Coupon Button', 'mini-ajax-cart'); ?></label>
                 <div class="majc-settings-fields">
-                <ul class="majc-color-fields">
-                    <li class="majc-color-settings-field">
-                        <label><?php esc_html_e('Background Color', 'mini-ajax-cart'); ?></label>
-                        <div class="majc-color-settings-input-field">
-                            <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][coupon_btn_bg_color]" value="<?php echo isset($custom['coupon_btn_bg_color']) ? esc_attr($custom['coupon_btn_bg_color']) : null; ?>">
-                        </div>
-                    </li>
+                    <ul class="majc-color-fields">
+                        <li class="majc-color-settings-field">
+                            <label><?php esc_html_e('Background Color', 'mini-ajax-cart'); ?></label>
+                            <div class="majc-color-settings-input-field">
+                                <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][coupon_btn_bg_color]" value="<?php echo isset($custom['coupon_btn_bg_color']) ? esc_attr($custom['coupon_btn_bg_color']) : null; ?>">
+                            </div>
+                        </li>
 
-                    <li class="majc-color-settings-field">
-                        <label><?php esc_html_e('Background Color (Hover)', 'mini-ajax-cart'); ?></label>
-                        <div class="majc-color-settings-input-field">
-                            <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][coupon_btn_hover_bg_color]" value="<?php echo isset($custom['coupon_btn_hover_bg_color']) ? esc_attr($custom['coupon_btn_hover_bg_color']) : null; ?>">
-                        </div>
-                    </li>
+                        <li class="majc-color-settings-field">
+                            <label><?php esc_html_e('Background Color (Hover)', 'mini-ajax-cart'); ?></label>
+                            <div class="majc-color-settings-input-field">
+                                <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][coupon_btn_hover_bg_color]" value="<?php echo isset($custom['coupon_btn_hover_bg_color']) ? esc_attr($custom['coupon_btn_hover_bg_color']) : null; ?>">
+                            </div>
+                        </li>
 
-                    <li class="majc-color-settings-field">
-                        <label><?php esc_html_e('Text Color', 'mini-ajax-cart'); ?></label>
-                        <div class="majc-color-settings-input-field">
-                            <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][coupon_btn_font_color]" value="<?php echo isset($custom['coupon_btn_font_color']) ? esc_attr($custom['coupon_btn_font_color']) : null; ?>">
-                        </div>
-                    </li>
+                        <li class="majc-color-settings-field">
+                            <label><?php esc_html_e('Text Color', 'mini-ajax-cart'); ?></label>
+                            <div class="majc-color-settings-input-field">
+                                <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][coupon_btn_font_color]" value="<?php echo isset($custom['coupon_btn_font_color']) ? esc_attr($custom['coupon_btn_font_color']) : null; ?>">
+                            </div>
+                        </li>
 
-                    <li class="majc-color-settings-field">
-                        <label><?php esc_html_e('Text Color (Hover)', 'mini-ajax-cart'); ?></label>
-                        <div class="majc-color-settings-input-field">
-                            <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][coupon_btn_hover_font_color]" value="<?php echo isset($custom['coupon_btn_hover_font_color']) ? esc_attr($custom['coupon_btn_hover_font_color']) : null; ?>">
-                        </div>
-                    </li>
-                </ul>
+                        <li class="majc-color-settings-field">
+                            <label><?php esc_html_e('Text Color (Hover)', 'mini-ajax-cart'); ?></label>
+                            <div class="majc-color-settings-input-field">
+                                <input type="text" class="color-picker majc-color-picker" name="majc_settings[custom][coupon_btn_hover_font_color]" value="<?php echo isset($custom['coupon_btn_hover_font_color']) ? esc_attr($custom['coupon_btn_hover_font_color']) : null; ?>">
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
 

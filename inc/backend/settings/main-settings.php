@@ -25,7 +25,7 @@ $display = isset($majc_settings['display']) ? $majc_settings['display'] : null;
     </div>
 
     <h2><?php esc_html_e('Display Settings', 'mini-ajax-cart'); ?></h2>
-    
+
     <div class="majc-settings-row">
         <label><?php esc_html_e('Hide in Screens', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-fields">
@@ -57,7 +57,7 @@ $display = isset($majc_settings['display']) ? $majc_settings['display'] : null;
                     <option value="hide_selected" <?php selected($display['display_condition'], 'hide_selected'); ?>><?php esc_html_e('Hide in Selected Pages', 'mini-ajax-cart'); ?></option>
                 </select>
             </div>
-            
+
             <div class="majc-display-lists" data-condition-toggle="majc-display-condition-show-hide" data-condition-val="show_selected,hide_selected">
                 <div class="majc-postbox-fields">
                     <h4><?php esc_html_e('Default WordPress Pages', 'mini-ajax-cart'); ?><!-- <span class="toggle-indicator" aria-hidden="true"></span> --></h4>
