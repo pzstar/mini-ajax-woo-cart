@@ -85,7 +85,7 @@ if (!class_exists('MAJC_Class')) {
 
         public function majc_woocommerce_install_message() {
             $message = sprintf(/* translators: Placeholders: %1$s and %2$s are <strong> tags. %3$s and %4$s are <a> tags */
-                    esc_html__('%1$sMini Ajax Cart for WooCommerce %2$s requires WooCommerce Plugin. Please install and activate %3$sWooCommerce%4$s.', 'ultimate-woocommerce-cart'), '<strong>', '</strong>', '<a href="' . admin_url('plugin-install.php?s=woocommerce&tab=search&type=term') . '">', '</a>'
+                    esc_html__('%1$sMini Ajax Cart for WooCommerce %2$s requires WooCommerce Plugin. Please install and activate %3$sWooCommerce%4$s.', 'mini-ajax-cart'), '<strong>', '</strong>', '<a href="' . admin_url('plugin-install.php?s=woocommerce&tab=search&type=term') . '">', '</a>'
             );
             echo sprintf('<div class="error"><p>%s</p></div>', $message);
         }
