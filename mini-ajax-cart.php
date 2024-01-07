@@ -14,7 +14,9 @@ defined('ABSPATH') or die('No script please!');
   Text Domain: mini-ajax-cart
  */
 
-include( plugin_dir_path(__FILE__) . '/classes/library-class.php');
+defined('MAJC_FILE') or define('MAJC_FILE', __FILE__);
+
+include(plugin_dir_path(MAJC_FILE) . '/classes/library-class.php');
 
 if (!class_exists('MAJC_Class')) {
 
@@ -27,12 +29,16 @@ if (!class_exists('MAJC_Class')) {
 
             add_action('plugins_loaded', array($this, 'majc_text_domain'));
 
-            if (!is_plugin_active('woocommerce/woocommerce.php')) {
+            if (is_plugin_active('woocommerce/woocommerce.php')) {
+                if (!is_plugin_active('ultimate-woocommerce-cart/ultimate-woocommerce-cart.php')) {
+                    $this->define_constants();
+                    $this->includes();
+                }
+                add_filter('plugin_action_links_' . plugin_basename(MAJC_FILE), array($this, 'add_plugin_action_link'), 10, 1);
+            } else {
                 add_action('admin_notices', array($this, 'majc_woocommerce_install_message'));
-            } else if (!is_plugin_active('ultimate-woocommerce-cart/ultimate-woocommerce-cart.php')) {
-                $this->define_constants();
-                $this->includes();
             }
+
         }
 
         public function define_constants() {
@@ -56,9 +62,9 @@ if (!class_exists('MAJC_Class')) {
 
             defined('MAJC_FRONTEND_CSS_DIR') or define('MAJC_FRONTEND_CSS_DIR', plugin_dir_url(__FILE__) . 'assets/frontend/css/');
 
-            defined('MAJC_PATH') or define('MAJC_PATH', plugin_dir_path(__FILE__));
+            defined('MAJC_PATH') or define('MAJC_PATH', plugin_dir_path(MAJC_FILE));
 
-            defined('MAJC_URL') or define('MAJC_URL', plugin_dir_url(__FILE__));
+            defined('MAJC_URL') or define('MAJC_URL', plugin_dir_url(MAJC_FILE));
         }
 
         public function includes() {
@@ -82,6 +88,14 @@ if (!class_exists('MAJC_Class')) {
                     esc_html__('%1$sMini Ajax Cart for WooCommerce %2$s requires WooCommerce Plugin. Please install and activate %3$sWooCommerce%4$s.', 'ultimate-woocommerce-cart'), '<strong>', '</strong>', '<a href="' . admin_url('plugin-install.php?s=woocommerce&tab=search&type=term') . '">', '</a>'
             );
             echo sprintf('<div class="error"><p>%s</p></div>', $message);
+        }
+
+        public function add_plugin_action_link($links) {
+            $custom['settings'] = sprintf(
+                    '<a href="%s" aria-label="%s">%s</a>', esc_url(add_query_arg('post_type', 'ultimate-woo-cart', admin_url('edit.php'))), esc_attr__('Cart Settings', 'mini-ajax-cart'), esc_html__('Settings', 'mini-ajax-cart')
+            );
+
+            return array_merge($custom, (array) $links);
         }
 
     }
