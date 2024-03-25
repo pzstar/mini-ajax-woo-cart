@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mini Ajax Cart for WooCommerce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-30 15:39+0000\n"
+"POT-Creation-Date: 2024-03-25 05:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,15 +16,23 @@ msgstr ""
 "X-Loco-Version: 2.6.3; wp-6.1.1\n"
 "X-Domain: mini-ajax-cart"
 
+#. Placeholders: %1$s and %2$s are <strong> tags. %3$s and %4$s are <a> tags
+#: mini-ajax-cart.php:87
+#, php-format
+msgid ""
+"%1$sMini Ajax Cart for WooCommerce %2$s requires WooCommerce Plugin. Please "
+"install and activate %3$sWooCommerce%4$s."
+msgstr ""
+
 #: inc/backend/settings/main-settings.php:99
 msgid "404 Page"
 msgstr ""
 
-#: classes/backend-class.php:42
+#: classes/backend-class.php:44
 msgid "Add New Mini Ajax Cart"
 msgstr ""
 
-#: classes/backend-class.php:40
+#: classes/backend-class.php:42
 msgctxt "add new on admin bar"
 msgid "Mini Ajax Cart"
 msgstr ""
@@ -33,7 +41,7 @@ msgstr ""
 msgid "Added to Cart Product Section"
 msgstr ""
 
-#: classes/backend-class.php:39
+#: classes/backend-class.php:41
 msgctxt "admin menu"
 msgid "Mini Ajax Cart"
 msgstr ""
@@ -42,7 +50,7 @@ msgstr ""
 msgid "Ajax, Floating, Slide In, Popup Cart For WordPress with WooCommerce"
 msgstr ""
 
-#: classes/backend-class.php:46
+#: classes/backend-class.php:48
 msgid "All Cart"
 msgstr ""
 
@@ -154,6 +162,10 @@ msgstr ""
 
 #: inc/backend/settings/cart-content.php:6
 msgid "Cart Products"
+msgstr ""
+
+#: mini-ajax-cart.php:94
+msgid "Cart Settings"
 msgstr ""
 
 #: inc/frontend/front.php:311
@@ -300,7 +312,7 @@ msgstr ""
 msgid "Discount"
 msgstr ""
 
-#: classes/backend-class.php:214
+#: classes/backend-class.php:216
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -316,11 +328,15 @@ msgstr ""
 msgid "Displays at the side of Basket/Button"
 msgstr ""
 
-#: classes/backend-class.php:44
+#: classes/backend-class.php:232
+msgid "Documentation"
+msgstr ""
+
+#: classes/backend-class.php:46
 msgid "Edit Cart"
 msgstr ""
 
-#: classes/backend-class.php:91
+#: classes/backend-class.php:93
 msgid "Elegant Icon"
 msgstr ""
 
@@ -340,7 +356,7 @@ msgstr ""
 msgid "Enter your promo code"
 msgstr ""
 
-#: classes/backend-class.php:89
+#: classes/backend-class.php:91
 msgid "Essential Icon"
 msgstr ""
 
@@ -348,7 +364,7 @@ msgstr ""
 msgid "Floating (Available in Pro)"
 msgstr ""
 
-#: classes/backend-class.php:88
+#: classes/backend-class.php:90
 msgid "Font Awesome"
 msgstr ""
 
@@ -382,7 +398,7 @@ msgid "General Settings"
 msgstr ""
 
 #. %1$s is link start tag, %2$s is link end tag.
-#: classes/backend-class.php:188
+#: classes/backend-class.php:190
 #, php-format
 msgid ""
 "Great to see that you have been using Mini Ajax Cart for some time. We hope "
@@ -462,11 +478,11 @@ msgstr ""
 msgid "https://github.com/pzstar/mini-ajax-woo-cart"
 msgstr ""
 
-#: classes/backend-class.php:193
+#: classes/backend-class.php:195
 msgid "I have already rated"
 msgstr ""
 
-#: classes/backend-class.php:87
+#: classes/backend-class.php:89
 msgid "Ico Font"
 msgstr ""
 
@@ -540,15 +556,15 @@ msgstr ""
 msgid "Main Settings"
 msgstr ""
 
-#: classes/backend-class.php:90
+#: classes/backend-class.php:92
 msgid "Material Icon"
 msgstr ""
 
-#: classes/backend-class.php:18
+#: classes/backend-class.php:20
 msgid "Mini Ajax Cart"
 msgstr ""
 
-#: classes/backend-class.php:41
+#: classes/backend-class.php:43
 msgctxt "Mini Ajax Cart"
 msgid "Add New"
 msgstr ""
@@ -561,15 +577,15 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: classes/backend-class.php:43
+#: classes/backend-class.php:45
 msgid "New Cart"
 msgstr ""
 
-#: classes/backend-class.php:50
+#: classes/backend-class.php:52
 msgid "No Cart found in Trash."
 msgstr ""
 
-#: classes/backend-class.php:49
+#: classes/backend-class.php:51
 msgid "No Cart found."
 msgstr ""
 
@@ -587,7 +603,7 @@ msgstr ""
 msgid "Overline"
 msgstr ""
 
-#: classes/backend-class.php:48
+#: classes/backend-class.php:50
 msgid "Parent Cart:"
 msgstr ""
 
@@ -595,12 +611,12 @@ msgstr ""
 msgid "Popup (Available in Pro)"
 msgstr ""
 
-#: classes/backend-class.php:37
+#: classes/backend-class.php:39
 msgctxt "post type general name"
 msgid "Mini Ajax Cart"
 msgstr ""
 
-#: classes/backend-class.php:38
+#: classes/backend-class.php:40
 msgctxt "post type singular name"
 msgid "Mini Ajax Cart"
 msgstr ""
@@ -668,12 +684,16 @@ msgstr ""
 msgid "Rounded Square"
 msgstr ""
 
-#: classes/backend-class.php:47
+#: classes/backend-class.php:49
 msgid "Search Cart"
 msgstr ""
 
 #: inc/backend/settings/main-settings.php:108
 msgid "Search Page"
+msgstr ""
+
+#: mini-ajax-cart.php:94
+msgid "Settings"
 msgstr ""
 
 #: inc/backend/settings/cart-content.php:227
@@ -775,7 +795,7 @@ msgstr ""
 msgid "To find out your shipping cost , Please proceed to checkout."
 msgstr ""
 
-#: classes/backend-class.php:93
+#: classes/backend-class.php:95
 msgid "Type to filter"
 msgstr ""
 
@@ -814,7 +834,7 @@ msgstr ""
 msgid "Uppercase"
 msgstr ""
 
-#: classes/backend-class.php:45 inc/frontend/front.php:63
+#: classes/backend-class.php:47 inc/frontend/front.php:63
 #: inc/backend/settings/cart-content.php:167
 msgid "View Cart"
 msgstr ""
@@ -839,6 +859,6 @@ msgstr ""
 msgid "View Continue Shopping Label"
 msgstr ""
 
-#: classes/backend-class.php:192
+#: classes/backend-class.php:194
 msgid "Yes, of course"
 msgstr ""
