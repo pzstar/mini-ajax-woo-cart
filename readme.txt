@@ -1,6 +1,6 @@
 === Mini Ajax Cart for WooCommerce ===
 Contributors: hashthemes
-Tags: woocommerce cart, cart, woocommerce, slidein cart, floating cart, ajax cart
+Tags: woocommerce cart, cart, slidein cart, floating cart, ajax cart
 Requires at least: 5.0
 Tested up to: 6.4
 Stable tag: 1.2.5
