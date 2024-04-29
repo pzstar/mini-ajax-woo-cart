@@ -55,6 +55,7 @@ if (!class_exists('MAJC_Enqueue')) {
         }
 
         public function majc_register_frontend_assets() {
+            wp_enqueue_script('wc-cart-fragments');
             // Icons Styles
             wp_enqueue_style('fontawesome-6.3.0', MAJC_BACKEND_CSS_DIR . '/icons/fontawesome-6.3.0.css', array(), MAJC_VERSION);
             wp_enqueue_style('eleganticons', MAJC_BACKEND_CSS_DIR . '/icons/eleganticons.css', array(), MAJC_VERSION);
