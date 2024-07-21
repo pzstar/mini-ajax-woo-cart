@@ -16,7 +16,7 @@ defined('ABSPATH') or die('No script please!');
 
 defined('MAJC_FILE') or define('MAJC_FILE', __FILE__);
 
-include(plugin_dir_path(MAJC_FILE) . '/classes/library-class.php');
+include (plugin_dir_path(MAJC_FILE) . '/classes/library-class.php');
 
 if (!class_exists('MAJC_Class')) {
 
@@ -84,14 +84,14 @@ if (!class_exists('MAJC_Class')) {
 
         public function majc_woocommerce_install_message() {
             $message = sprintf(/* translators: Placeholders: %1$s and %2$s are <strong> tags. %3$s and %4$s are <a> tags */
-                    esc_html__('%1$sMini Ajax Cart for WooCommerce %2$s requires WooCommerce Plugin. Please install and activate %3$sWooCommerce%4$s.', 'mini-ajax-cart'), '<strong>', '</strong>', '<a href="' . admin_url('plugin-install.php?s=woocommerce&tab=search&type=term') . '">', '</a>'
+                esc_html__('%1$sMini Ajax Cart for WooCommerce %2$s requires WooCommerce Plugin. Please install and activate %3$sWooCommerce%4$s.', 'mini-ajax-cart'), '<strong>', '</strong>', '<a href="' . admin_url('plugin-install.php?s=woocommerce&tab=search&type=term') . '">', '</a>'
             );
             echo sprintf('<div class="error"><p>%s</p></div>', $message);
         }
 
         public function add_plugin_action_link($links) {
             $custom['settings'] = sprintf(
-                    '<a href="%s" aria-label="%s">%s</a>', esc_url(add_query_arg('post_type', 'ultimate-woo-cart', admin_url('edit.php'))), esc_attr__('Cart Settings', 'mini-ajax-cart'), esc_html__('Settings', 'mini-ajax-cart')
+                '<a href="%s" aria-label="%s">%s</a>', esc_url(add_query_arg('post_type', 'ultimate-woo-cart', admin_url('edit.php'))), esc_attr__('Cart Settings', 'mini-ajax-cart'), esc_html__('Settings', 'mini-ajax-cart')
             );
 
             return array_merge($custom, (array) $links);
