@@ -330,7 +330,9 @@ function majc_fonts_url() {
                 'family' => urlencode(implode('|', $fonts)),
                 'subset' => urlencode($subsets),
                 'display' => 'swap',
-            ), '//fonts.googleapis.com/css');
+            ),
+            '//fonts.googleapis.com/css'
+        );
     }
 
     return $fonts_url;

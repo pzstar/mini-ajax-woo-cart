@@ -46,12 +46,15 @@ if (!class_exists('MAJC_Enqueue')) {
             }
 
             /* Send php values to JS script */
-            wp_localize_script('majc-admin-script', 'majc_admin_js_obj', array(
-                'image_path' => MAJC_BACKEND_IMG_DIR,
-                'js_path' => MAJC_BACKEND_JS_DIR,
-                'ajax_url' => admin_url('admin-ajax.php'),
-                'ajax_nonce' => wp_create_nonce('majc-backend-ajax-nonce')
-            )
+            wp_localize_script(
+                'majc-admin-script',
+                'majc_admin_js_obj',
+                array(
+                    'image_path' => MAJC_BACKEND_IMG_DIR,
+                    'js_path' => MAJC_BACKEND_JS_DIR,
+                    'ajax_url' => admin_url('admin-ajax.php'),
+                    'ajax_nonce' => wp_create_nonce('majc-backend-ajax-nonce')
+                )
             );
         }
 
