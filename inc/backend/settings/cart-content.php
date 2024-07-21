@@ -15,9 +15,9 @@
             <div class="majc-settings-row">
                 <label><?php esc_html_e('Header Title Text', 'mini-ajax-cart'); ?></label>
                 <div class="majc-settings-fields">
-                    <input type="text" name="majc_settings[header][title_text]" value="<?php echo isset($header['title_text']) ? esc_attr($header['title_text']) : NULL; ?>">
-                </div>
-            </div>
+                    <input type="text" name="majc_settings[header][title_text]" value="<?php echo isset($header['title_text']) ? esc_attr($header['title_text']) : null; ?>">
+                </div>	
+            </div>	
 
             <div class="majc-settings-row">
                 <label><?php esc_html_e('Header Icon Type', 'mini-ajax-cart'); ?></label>
@@ -52,7 +52,7 @@
                             <label for="majc_floatmenu_default_icon"><?php esc_html_e('Choose Header Icon', 'mini-ajax-cart'); ?></label>
                             <?php
                             $inputName = 'majc_settings[header][available_icon]';
-                            $iconName = isset($header['available_icon']) ? $header['available_icon'] : NULL; //icon value from db
+                            $iconName = isset($header['available_icon']) ? $header['available_icon'] : null; //icon value from db
                             $this->icon_field($inputName, $iconName);
                             ?>
                         </div>
@@ -61,16 +61,16 @@
                             <label for="majc-header-icon"><?php esc_html_e('Upload Header Icon', 'mini-ajax-cart'); ?></label>
                             <div class="majc-icon-image-uploader">
                                 <div class="majc-custom-img-icon-btn">
-                                    <div class="majc-custom-menu-image-icon current-bg-image">
+                                    <div class="majc-custom-menu-image-icon current-bg-image" >
                                         <?php if (isset($header['custom_icon']) && !empty($header['custom_icon'])) { ?>
-                                            <img src="<?php echo isset($header['custom_icon']) ? esc_url($header['custom_icon']) : ''; ?>" />
+                                            <img src="<?php echo isset($header['custom_icon']) ? esc_url($header['custom_icon']) : ''; ?>"/>
                                         <?php } ?>
                                     </div>
                                     <div class="majc-image-remove"><?php esc_html_e('Remove', 'mini-ajax-cart'); ?></div>
                                 </div>
 
                                 <div class="button majc-image-upload"><?php esc_html_e('Upload', 'mini-ajax-cart') ?></div>
-                                <input type="hidden" class="majc-upload-background-url" name="majc_settings[header][custom_icon]" id="majc-header-icon" value="<?php echo isset($header['custom_icon']) ? esc_url($header['custom_icon']) : ''; ?>" />
+                                <input type="hidden" class="majc-upload-background-url" name="majc_settings[header][custom_icon]" id="majc-header-icon" value="<?php echo isset($header['custom_icon']) ? esc_url($header['custom_icon']) : ''; ?>"/>
                             </div> <!-- majc-icon-image-uploader -->
                         </div>
                     </div>
@@ -130,7 +130,7 @@
                 <label><?php esc_html_e('Apply Coupon Button Label', 'mini-ajax-cart'); ?></label>
 
                 <div class="majc-settings-fields">
-                    <input type="text" name="majc_settings[coupon][button_text]" value="<?php echo isset($coupon['button_text']) ? esc_html($coupon['button_text']) : NULL; ?>">
+                    <input type="text" name="majc_settings[coupon][button_text]" value="<?php echo isset($coupon['button_text']) ? esc_html($coupon['button_text']) : null; ?>">
                 </div>
             </div>
 
@@ -138,7 +138,7 @@
                 <label><?php esc_html_e('Promo Code Placeholder', 'mini-ajax-cart'); ?></label>
 
                 <div class="majc-settings-fields">
-                    <input type="text" name="majc_settings[coupon][promocode_placeholder]" value="<?php echo isset($coupon['promocode_placeholder']) ? esc_html($coupon['promocode_placeholder']) : NULL; ?>">
+                    <input type="text" name="majc_settings[coupon][promocode_placeholder]" value="<?php echo isset($coupon['promocode_placeholder']) ? esc_html($coupon['promocode_placeholder']) : null; ?>">
                 </div>
             </div>
         </div>
@@ -226,7 +226,7 @@
             <div class="majc-settings-row">
                 <label><?php esc_html_e('Shipping Text Label', 'mini-ajax-cart'); ?></label>
                 <div class="majc-settings-fields">
-                    <input type="text" name="majc_settings[buttons][shipping_text]" value="<?php echo isset($buttons['shipping_text']) ? esc_html($buttons['shipping_text']) : NULL; ?>">
+                    <input type="text" name="majc_settings[buttons][shipping_text]" value="<?php echo isset($buttons['shipping_text']) ? esc_html($buttons['shipping_text']) : null; ?>">
                     <p class="majc-desc"><?php esc_html_e('It will appear just above buttons.', 'mini-ajax-cart'); ?></p>
                 </div>
             </div>

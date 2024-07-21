@@ -260,8 +260,8 @@ function majc_custom_fonts() {
     );
     $query = new WP_Query($args);
 
-    if ($query->have_posts()):
-        while ($query->have_posts()):
+    if ($query->have_posts()) :
+        while ($query->have_posts()) :
             $query->the_post();
             $majc_settings = get_post_meta(get_the_ID(), 'uwcc_settings', true);
 
@@ -325,12 +325,11 @@ function majc_fonts_url() {
     }
 
     if ($fonts) {
-        $fonts_url = add_query_arg(
-            array(
-                'family' => urlencode(implode('|', $fonts)),
-                'subset' => urlencode($subsets),
-                'display' => 'swap',
-            ), '//fonts.googleapis.com/css');
+        $fonts_url = add_query_arg(array(
+            'family' => urlencode(implode('|', $fonts)),
+            'subset' => urlencode($subsets),
+            'display' => 'swap',
+                ), '//fonts.googleapis.com/css');
     }
 
     return $fonts_url;

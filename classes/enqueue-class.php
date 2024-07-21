@@ -51,8 +51,7 @@ if (!class_exists('MAJC_Enqueue')) {
                 'js_path' => MAJC_BACKEND_JS_DIR,
                 'ajax_url' => admin_url('admin-ajax.php'),
                 'ajax_nonce' => wp_create_nonce('majc-backend-ajax-nonce')
-            )
-            );
+            ));
         }
 
         public function majc_register_frontend_assets() {

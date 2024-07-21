@@ -53,8 +53,8 @@ if (!class_exists('MAJC_Frontend')) {
                 return false;
             }
 
-            $c_key = isset($_REQUEST['ckey']) ? sanitize_text_field($_REQUEST['ckey']) : NULL;
-            $qty = isset($_REQUEST['qty']) ? sanitize_text_field($_REQUEST['qty']) : NULL;
+            $c_key = isset($_REQUEST['ckey']) ? sanitize_text_field($_REQUEST['ckey']) : null;
+            $qty = isset($_REQUEST['qty']) ? sanitize_text_field($_REQUEST['qty']) : null;
             WC()->cart->set_quantity($c_key, $qty, true);
             WC()->cart->set_session();
             die();
@@ -66,7 +66,7 @@ if (!class_exists('MAJC_Frontend')) {
                 return false;
             }
 
-            $couponCode = isset($_POST['couponCode']) ? sanitize_text_field($_POST['couponCode']) : NULL;
+            $couponCode = isset($_POST['couponCode']) ? sanitize_text_field($_POST['couponCode']) : null;
 
             if (WC()->cart->remove_coupon($couponCode)) {
                 esc_html_e('Coupon Removed Successfully.', 'mini-ajax-cart');
@@ -94,7 +94,7 @@ if (!class_exists('MAJC_Frontend')) {
                 return false;
             }
 
-            $code = isset($_POST['couponCode']) ? sanitize_text_field($_POST['couponCode']) : NULL;
+            $code = isset($_POST['couponCode']) ? sanitize_text_field($_POST['couponCode']) : null;
             $code = strtolower($code);
 
             /* Check if coupon code is empty */
@@ -173,14 +173,8 @@ if (!class_exists('MAJC_Frontend')) {
                                     <div class="majc-item-desc">
                                         <div class="majc-item-remove">
                                             <?php
-                                            echo apply_filters('woocommerce_cart_item_remove_link', sprintf(
-                                                '<a href="%s" class="majc-remove"  aria-label="%s" data-cart_item_id="%s" data-cart_item_sku="%s" data-cart_item_key="%s"><span class="icon_trash_alt"></span></a>',
-                                                esc_url(wc_get_cart_remove_url($itemKey)),
-                                                esc_html__('Remove this item', 'mini-ajax-cart'),
-                                                esc_attr($product_id),
-                                                esc_attr($product->get_sku()),
-                                                esc_attr($itemKey)
-                                            ), $itemKey);
+                                            echo apply_filters('woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="majc-remove"  aria-label="%s" data-cart_item_id="%s" data-cart_item_sku="%s" data-cart_item_key="%s"><span class="icon_trash_alt"></span></a>', esc_url(wc_get_cart_remove_url($itemKey)), esc_html__('Remove this item', 'mini-ajax-cart'), esc_attr($product_id), esc_attr($product->get_sku()), esc_attr($itemKey)
+                                                    ), $itemKey);
                                             ?>
                                         </div>
 
@@ -208,7 +202,7 @@ if (!class_exists('MAJC_Frontend')) {
                             <?php
                         } // product foreach loop ends
                         ?>
-                    </div>
+                    </div> 
                 <?php } ?>
             </div>
             <?php
@@ -242,7 +236,7 @@ if (!class_exists('MAJC_Frontend')) {
                 <ul class='majc-applied-cpns'>
                     <?php foreach ($applied_coupons as $cpns) { ?>
                         <li data-code='<?php echo esc_attr($cpns); ?>'><?php echo esc_attr($cpns); ?> <span class='majc-remove-cpn icofont-close-line'></span></li>
-                    <?php } ?>
+                        <?php } ?>
                 </ul>
                 <?php
             } else {
@@ -298,11 +292,9 @@ if (!class_exists('MAJC_Frontend')) {
 
             // Fragments and mini cart are returned
             $data = array(
-                'fragments' => apply_filters(
-                    'woocommerce_add_to_cart_fragments',
-                    array(
-                        'div.widget_shopping_cart_content' => '<div class="widget_shopping_cart_content">' . $mini_cart . '</div>'
-                    )
+                'fragments' => apply_filters('woocommerce_add_to_cart_fragments', array(
+                    'div.widget_shopping_cart_content' => '<div class="widget_shopping_cart_content">' . $mini_cart . '</div>'
+                        )
                 ),
                 'cart_hash' => apply_filters('woocommerce_add_to_cart_hash', WC()->cart->get_cart_for_session() ? md5(json_encode(WC()->cart->get_cart_for_session())) : '', WC()->cart->get_cart_for_session())
             );

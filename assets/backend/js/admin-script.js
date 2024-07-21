@@ -177,7 +177,7 @@ jQuery(function ($) {
         });
     });
 
-    $('body').find(".majc-typography-fields select").chosen({ width: "100%" });
+    $('body').find(".majc-typography-fields select").chosen({width: "100%"});
 
     $(".majc-toggle-tab-body").mCustomScrollbar({
         theme: 'dark-thin',
