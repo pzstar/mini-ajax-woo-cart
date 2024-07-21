@@ -64,7 +64,7 @@ if (!class_exists('MAJC_Backend')) {
                 'capability_type' => 'post',
                 'has_archive' => false,
                 'hierarchical' => false,
-                'menu_position' => null,
+                'menu_position' => NULL,
                 'supports' => array('title')
             );
 
@@ -140,7 +140,7 @@ if (!class_exists('MAJC_Backend')) {
                     echo '</ul>';
                     ?>
                 </div>
-                <input class="majc-icon" type="hidden" value="<?php echo esc_attr($iconName); ?>" name="<?php echo esc_attr($inputName); ?>"/>
+                <input class="majc-icon" type="hidden" value="<?php echo esc_attr($iconName); ?>" name="<?php echo esc_attr($inputName); ?>" />
             </div>
             <?php
         }
@@ -179,15 +179,20 @@ if (!class_exists('MAJC_Backend')) {
             <div class="majc-notice notice notice-info">
                 <?php $this->dismiss_button('review'); ?>
                 <div class="majc-notice-logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>basket-check</title><path d="M21.63 16.27L17.76 20.17L16.41 18.8L15 20.22L17.75 23L23.03 17.68L21.63 16.27M13 20C13 16.69 15.69 14 19 14C20 14 20.92 14.24 21.74 14.67L22.96 10.29L23 10C23 9.45 22.55 9 22 9H17.42L12.83 2.44C12.65 2.17 12.34 2 12 2S11.36 2.17 11.18 2.43L6.58 9H2C1.45 9 1 9.45 1 10L1.1 10.44L3.71 19.9C4.04 20.55 4.72 21 5.5 21H13.09C13.04 20.67 13 20.34 13 20M12 4.74L15 9H9L12 4.74M10 15C10 13.9 10.9 13 12 13S14 13.9 14 15 13.11 17 12 17 10 16.11 10 15Z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <title>basket-check</title>
+                        <path d="M21.63 16.27L17.76 20.17L16.41 18.8L15 20.22L17.75 23L23.03 17.68L21.63 16.27M13 20C13 16.69 15.69 14 19 14C20 14 20.92 14.24 21.74 14.67L22.96 10.29L23 10C23 9.45 22.55 9 22 9H17.42L12.83 2.44C12.65 2.17 12.34 2 12 2S11.36 2.17 11.18 2.43L6.58 9H2C1.45 9 1 9.45 1 10L1.1 10.44L3.71 19.9C4.04 20.55 4.72 21 5.5 21H13.09C13.04 20.67 13 20.34 13 20M12 4.74L15 9H9L12 4.74M10 15C10 13.9 10.9 13 12 13S14 13.9 14 15 13.11 17 12 17 10 16.11 10 15Z" />
+                    </svg>
                 </div>
 
                 <div class="majc-notice-content">
                     <p>
                         <?php
                         printf(
-                                /* translators: %1$s is link start tag, %2$s is link end tag. */
-                                esc_html__('Great to see that you have been using Mini Ajax Cart for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world.', 'mini-ajax-cart'), '<a target="_blank" href="https://wordpress.org/support/plugin/mini-ajax-woo-cart/reviews/?filter=5">', '</a>'
+                            /* translators: %1$s is link start tag, %2$s is link end tag. */
+                            esc_html__('Great to see that you have been using Mini Ajax Cart for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world.', 'mini-ajax-cart'),
+                            '<a target="_blank" href="https://wordpress.org/support/plugin/mini-ajax-woo-cart/reviews/?filter=5">',
+                            '</a>'
                         );
                         ?>
                     </p>
@@ -201,7 +206,8 @@ if (!class_exists('MAJC_Backend')) {
         public function welcome_init() {
             if (!get_option('majc_first_activation')) {
                 update_option('majc_first_activation', time());
-            };
+            }
+            ;
 
             if (isset($_GET['majc-hide-notice'], $_GET['majc_notice_nonce'])) {
                 $notice = sanitize_key($_GET['majc-hide-notice']);

@@ -4,7 +4,7 @@
     <div class="majc-settings-row">
         <label><?php esc_html_e('Layout', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-fields">
-            <select name="majc_settings[layout_type]" class="layout_type">			
+            <select name="majc_settings[layout_type]" class="layout_type">
                 <option value="slidein" <?php
                 if (isset($majc_settings['layout_type'])) {
                     selected($majc_settings['layout_type'], 'slidein');
@@ -36,11 +36,11 @@
                             <optgroup label="<?php echo esc_attr($key) ?>">
                                 <?php foreach ($key_array as $value): ?>
                                     <option value="<?php echo esc_attr($value) ?>" <?php
-                                    if (isset($majc_settings['show_animation'])) {
-                                        selected($majc_settings['show_animation'], $value);
-                                    }
-                                    ?>><?php echo esc_attr($value) ?></option>
-                                        <?php endforeach ?>
+                                       if (isset($majc_settings['show_animation'])) {
+                                           selected($majc_settings['show_animation'], $value);
+                                       }
+                                       ?>><?php echo esc_attr($value) ?></option>
+                                <?php endforeach ?>
                             </optgroup>
                         <?php endforeach ?>
                     </select>
@@ -53,11 +53,11 @@
                             <optgroup label="<?php echo esc_attr($key) ?>">
                                 <?php foreach ($key_array as $value): ?>
                                     <option value="<?php echo esc_attr($value) ?>" <?php
-                                    if (isset($majc_settings['hide_animation'])) {
-                                        selected($majc_settings['hide_animation'], $value);
-                                    }
-                                    ?>><?php echo esc_attr($value) ?></option>
-                                        <?php endforeach ?>
+                                       if (isset($majc_settings['hide_animation'])) {
+                                           selected($majc_settings['hide_animation'], $value);
+                                       }
+                                       ?>><?php echo esc_attr($value) ?></option>
+                                <?php endforeach ?>
                             </optgroup>
                         <?php endforeach ?>
                     </select>
@@ -70,8 +70,8 @@
     <div class="majc-settings-row">
         <label><?php esc_html_e('Content Width', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-fields">
-            <input type="number" name="majc_settings[content_width]" value="<?php echo isset($majc_settings['content_width']) ? intval($majc_settings['content_width']) : null; ?>"> px
-        </div>	
+            <input type="number" name="majc_settings[content_width]" value="<?php echo isset($majc_settings['content_width']) ? intval($majc_settings['content_width']) : NULL; ?>"> px
+        </div>
     </div>
 
     <div class="majc-settings-row">

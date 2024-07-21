@@ -97,4 +97,3 @@
         <li>Shipping Bar - Percentage Bar That Displays The Amount Remaining For Free Shipping</li>
     </ul>
 </div>
-

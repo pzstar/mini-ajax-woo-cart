@@ -22,8 +22,8 @@
     // element data-value check.
     function checkValue(e) {
         var arrVal = e.data('condition-toggle').split(','),
-                PickVal = e.data('condition-val'),
-                result = false;
+            PickVal = e.data('condition-val'),
+            result = false;
         $.each(arrVal, function (key, value) {
             if (0 > value.indexOf('+')) {
                 result = isToggle(value, PickVal);
@@ -39,7 +39,7 @@
     // combine data check.
     function checkCombine(v, pick) {
         var arrVal = v.split('+'),
-                result = false;
+            result = false;
         $.each(arrVal, function (key, value) {
             result = isToggle(value, pick);
             // if has element not checked return false
@@ -75,7 +75,7 @@
     // has checked?
     function isToggle(e, pick) {
         var element = $('#' + e),
-                tag = element.prop("tagName").toLowerCase();
+            tag = element.prop("tagName").toLowerCase();
         if ('select' == tag) {
             return checkSelect($('#' + e), pick);
         }
