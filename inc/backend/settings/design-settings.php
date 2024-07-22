@@ -99,16 +99,16 @@ $text_decorations = majc_get_text_decoration_choices();
                 <div class="majc-settings-fields">
                     <div class="majc-icon-image-uploader">
                         <div class="majc-custom-img-icon-btn">
-                            <div class="majc-custom-menu-image-icon current-bg-image" >
+                            <div class="majc-custom-menu-image-icon current-bg-image">
                                 <?php if (isset($custom['drawer_content_bg_image']) && !empty($custom['drawer_content_bg_image'])) { ?>
-                                    <img src="<?php echo isset($custom['drawer_content_bg_image']) ? esc_url($custom['drawer_content_bg_image']) : ''; ?>"/>
+                                    <img src="<?php echo isset($custom['drawer_content_bg_image']) ? esc_url($custom['drawer_content_bg_image']) : ''; ?>" />
                                 <?php } ?>
                             </div>
                             <div class="majc-image-remove"><?php esc_html_e('Remove', 'mini-ajax-cart'); ?></div>
                         </div>
 
                         <div class="button majc-image-upload"><?php esc_html_e('Upload', 'mini-ajax-cart') ?></div>
-                        <input type="hidden" class="majc-upload-background-url" name="majc_settings[custom][drawer_content_bg_image]" id="majc-header-icon" value="<?php echo isset($custom['drawer_content_bg_image']) ? esc_url($custom['drawer_content_bg_image']) : ''; ?>"/>
+                        <input type="hidden" class="majc-upload-background-url" name="majc_settings[custom][drawer_content_bg_image]" id="majc-header-icon" value="<?php echo isset($custom['drawer_content_bg_image']) ? esc_url($custom['drawer_content_bg_image']) : ''; ?>" />
                     </div> <!-- majc-icon-image-uploader -->
                 </div>
             </div>
@@ -190,11 +190,11 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <optgroup label="Standard Fonts">
                                             <?php foreach ($standard_fonts as $standard_font) { ?>
                                                 <option value="<?php echo esc_attr($standard_font); ?>" <?php
-                                                if (isset($custom['header_title_font_family'])) {
-                                                    selected($custom['header_title_font_family'], $standard_font);
-                                                }
-                                                ?>><?php echo esc_html($standard_font); ?></option>
-                                                    <?php } ?>
+                                                   if (isset($custom['header_title_font_family'])) {
+                                                       selected($custom['header_title_font_family'], $standard_font);
+                                                   }
+                                                   ?>><?php echo esc_html($standard_font); ?></option>
+                                            <?php } ?>
                                         </optgroup>
                                     <?php } ?>
 
@@ -204,11 +204,11 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <optgroup label="Google Fonts">
                                             <?php foreach ($google_fonts as $google_font) { ?>
                                                 <option value="<?php echo esc_attr($google_font); ?>" <?php
-                                                if (isset($custom['header_title_font_family'])) {
-                                                    selected($custom['header_title_font_family'], $google_font);
-                                                }
-                                                ?>><?php echo esc_html($google_font); ?></option>
-                                                    <?php } ?>
+                                                   if (isset($custom['header_title_font_family'])) {
+                                                       selected($custom['header_title_font_family'], $google_font);
+                                                   }
+                                                   ?>><?php echo esc_html($google_font); ?></option>
+                                            <?php } ?>
                                         </optgroup>
                                     <?php } ?>
 
@@ -230,10 +230,10 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <?php foreach ($font_weights as $font_weight => $font_weight_label) { ?>
 
                                             <option value="<?php echo esc_attr($font_weight); ?>" <?php
-                                            if (isset($custom['header_title_font_style'])) {
-                                                selected($custom['header_title_font_style'], $font_weight);
-                                            }
-                                            ?>><?php echo esc_html($font_weight_label); ?></option>
+                                               if (isset($custom['header_title_font_style'])) {
+                                                   selected($custom['header_title_font_style'], $font_weight);
+                                               }
+                                               ?>><?php echo esc_html($font_weight_label); ?></option>
 
                                         <?php } ?>
 
@@ -254,10 +254,10 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <?php foreach ($text_transforms as $key => $value) { ?>
 
                                             <option value="<?php echo esc_attr($key) ?>" <?php
-                                            if (isset($custom['header_title_text_transform'])) {
-                                                selected($custom['header_title_text_transform'], $key);
-                                            }
-                                            ?>><?php echo esc_html($value); ?></option>
+                                               if (isset($custom['header_title_text_transform'])) {
+                                                   selected($custom['header_title_text_transform'], $key);
+                                               }
+                                               ?>><?php echo esc_html($value); ?></option>
 
                                         <?php } ?>
                                     </select>
@@ -277,10 +277,10 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <?php foreach ($text_decorations as $key => $value) { ?>
 
                                             <option value="<?php echo esc_attr($key) ?>" <?php
-                                            if (isset($custom['header_title_text_decoration'])) {
-                                                selected($custom['header_title_text_decoration'], $key);
-                                            }
-                                            ?>><?php echo esc_html($value); ?></option>
+                                               if (isset($custom['header_title_text_decoration'])) {
+                                                   selected($custom['header_title_text_decoration'], $key);
+                                               }
+                                               ?>><?php echo esc_html($value); ?></option>
 
                                         <?php } ?>
                                     </select>
@@ -293,7 +293,7 @@ $text_decorations = majc_get_text_decoration_choices();
 
                             <div class="majc-typography-input-field majc-range-slider-wrap">
                                 <div class="majc-range-slider"></div>
-                                <input class="majc-range-input-selector" type="number" min="0" max="100" step="1" value="<?php echo esc_attr($custom['header_title_font_size']); ?>" name="majc_settings[custom][header_title_font_size]"/> px
+                                <input class="majc-range-input-selector" type="number" min="0" max="100" step="1" value="<?php echo esc_attr($custom['header_title_font_size']); ?>" name="majc_settings[custom][header_title_font_size]" /> px
                             </div>
                         </li>
 
@@ -302,8 +302,8 @@ $text_decorations = majc_get_text_decoration_choices();
 
                             <div class="majc-typography-input-field majc-range-slider-wrap">
                                 <div class="majc-range-slider"></div>
-                                <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($custom['header_title_line_height']); ?>" name="majc_settings[custom][header_title_line_height]"/>  px
-                            </div>         
+                                <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($custom['header_title_line_height']); ?>" name="majc_settings[custom][header_title_line_height]" /> px
+                            </div>
                         </li>
 
 
@@ -312,8 +312,8 @@ $text_decorations = majc_get_text_decoration_choices();
 
                             <div class="majc-typography-input-field majc-range-slider-wrap">
                                 <div class="majc-range-slider"></div>
-                                <input class="majc-range-input-selector" type="number" min="-5" max="5" step="0.1" value="<?php echo esc_attr($custom['header_title_letter_spacing']); ?>" name="majc_settings[custom][header_title_letter_spacing]"/>  px
-                            </div>           
+                                <input class="majc-range-input-selector" type="number" min="-5" max="5" step="0.1" value="<?php echo esc_attr($custom['header_title_letter_spacing']); ?>" name="majc_settings[custom][header_title_letter_spacing]" /> px
+                            </div>
                         </li>
 
                         <li class="majc-typography-color-field">
@@ -347,11 +347,11 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <optgroup label="Standard Fonts">
                                             <?php foreach ($standard_fonts as $standard_font) { ?>
                                                 <option value="<?php echo esc_attr($standard_font); ?>" <?php
-                                                if (isset($custom['content_font_family'])) {
-                                                    selected($custom['content_font_family'], $standard_font);
-                                                }
-                                                ?>><?php echo esc_html($standard_font); ?></option>
-                                                    <?php } ?>
+                                                   if (isset($custom['content_font_family'])) {
+                                                       selected($custom['content_font_family'], $standard_font);
+                                                   }
+                                                   ?>><?php echo esc_html($standard_font); ?></option>
+                                            <?php } ?>
                                         </optgroup>
                                     <?php } ?>
 
@@ -361,11 +361,11 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <optgroup label="Google Fonts">
                                             <?php foreach ($google_fonts as $google_font) { ?>
                                                 <option value="<?php echo esc_attr($google_font); ?>" <?php
-                                                if (isset($custom['content_font_family'])) {
-                                                    selected($custom['content_font_family'], $google_font);
-                                                }
-                                                ?>><?php echo esc_html($google_font); ?></option>
-                                                    <?php } ?>
+                                                   if (isset($custom['content_font_family'])) {
+                                                       selected($custom['content_font_family'], $google_font);
+                                                   }
+                                                   ?>><?php echo esc_html($google_font); ?></option>
+                                            <?php } ?>
                                         </optgroup>
                                     <?php } ?>
 
@@ -387,10 +387,10 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <?php foreach ($font_weights as $font_weight => $font_weight_label) { ?>
 
                                             <option value="<?php echo esc_attr($font_weight); ?>" <?php
-                                            if (isset($custom['content_font_style'])) {
-                                                selected($custom['content_font_style'], $font_weight);
-                                            }
-                                            ?>><?php echo esc_html($font_weight_label); ?></option>
+                                               if (isset($custom['content_font_style'])) {
+                                                   selected($custom['content_font_style'], $font_weight);
+                                               }
+                                               ?>><?php echo esc_html($font_weight_label); ?></option>
 
                                         <?php } ?>
 
@@ -411,10 +411,10 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <?php foreach ($text_transforms as $key => $value) { ?>
 
                                             <option value="<?php echo esc_attr($key) ?>" <?php
-                                            if (isset($custom['content_text_transform'])) {
-                                                selected($custom['content_text_transform'], $key);
-                                            }
-                                            ?>><?php echo esc_html($value); ?></option>
+                                               if (isset($custom['content_text_transform'])) {
+                                                   selected($custom['content_text_transform'], $key);
+                                               }
+                                               ?>><?php echo esc_html($value); ?></option>
 
                                         <?php } ?>
                                     </select>
@@ -434,10 +434,10 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <?php foreach ($text_decorations as $key => $value) { ?>
 
                                             <option value="<?php echo esc_attr($key) ?>" <?php
-                                            if (isset($custom['content_text_decoration'])) {
-                                                selected($custom['content_text_decoration'], $key);
-                                            }
-                                            ?>><?php echo esc_html($value); ?></option>
+                                               if (isset($custom['content_text_decoration'])) {
+                                                   selected($custom['content_text_decoration'], $key);
+                                               }
+                                               ?>><?php echo esc_html($value); ?></option>
 
                                         <?php } ?>
                                     </select>
@@ -450,7 +450,7 @@ $text_decorations = majc_get_text_decoration_choices();
 
                             <div class="majc-typography-input-field majc-range-slider-wrap">
                                 <div class="majc-range-slider"></div>
-                                <input class="majc-range-input-selector" type="number" min="0" max="100" step="1" value="<?php echo esc_attr($custom['content_font_size']); ?>" name="majc_settings[custom][content_font_size]"/> px
+                                <input class="majc-range-input-selector" type="number" min="0" max="100" step="1" value="<?php echo esc_attr($custom['content_font_size']); ?>" name="majc_settings[custom][content_font_size]" /> px
                             </div>
                         </li>
 
@@ -460,8 +460,8 @@ $text_decorations = majc_get_text_decoration_choices();
 
                             <div class="majc-typography-input-field majc-range-slider-wrap">
                                 <div class="majc-range-slider"></div>
-                                <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($custom['content_line_height']); ?>" name="majc_settings[custom][content_line_height]"/> px
-                            </div>         
+                                <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($custom['content_line_height']); ?>" name="majc_settings[custom][content_line_height]" /> px
+                            </div>
                         </li>
 
 
@@ -470,8 +470,8 @@ $text_decorations = majc_get_text_decoration_choices();
 
                             <div class="majc-typography-input-field majc-range-slider-wrap">
                                 <div class="majc-range-slider"></div>
-                                <input class="majc-range-input-selector" type="number" min="-5" max="5" step="0.1" value="<?php echo esc_attr($custom['content_letter_spacing']); ?>" name="majc_settings[custom][content_letter_spacing]"/> px
-                            </div>           
+                                <input class="majc-range-input-selector" type="number" min="-5" max="5" step="0.1" value="<?php echo esc_attr($custom['content_letter_spacing']); ?>" name="majc_settings[custom][content_letter_spacing]" /> px
+                            </div>
                         </li>
 
                         <li class="majc-typography-color-field">
@@ -505,11 +505,11 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <optgroup label="Standard Fonts">
                                             <?php foreach ($standard_fonts as $standard_font) { ?>
                                                 <option value="<?php echo esc_attr($standard_font); ?>" <?php
-                                                if (isset($custom['product_title_font_family'])) {
-                                                    selected($custom['product_title_font_family'], $standard_font);
-                                                }
-                                                ?>><?php echo esc_html($standard_font); ?></option>
-                                                    <?php } ?>
+                                                   if (isset($custom['product_title_font_family'])) {
+                                                       selected($custom['product_title_font_family'], $standard_font);
+                                                   }
+                                                   ?>><?php echo esc_html($standard_font); ?></option>
+                                            <?php } ?>
                                         </optgroup>
                                     <?php } ?>
 
@@ -519,11 +519,11 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <optgroup label="Google Fonts">
                                             <?php foreach ($google_fonts as $google_font) { ?>
                                                 <option value="<?php echo esc_attr($google_font); ?>" <?php
-                                                if (isset($custom['product_title_font_family'])) {
-                                                    selected($custom['product_title_font_family'], $google_font);
-                                                }
-                                                ?>><?php echo esc_html($google_font); ?></option>
-                                                    <?php } ?>
+                                                   if (isset($custom['product_title_font_family'])) {
+                                                       selected($custom['product_title_font_family'], $google_font);
+                                                   }
+                                                   ?>><?php echo esc_html($google_font); ?></option>
+                                            <?php } ?>
                                         </optgroup>
                                     <?php } ?>
 
@@ -545,10 +545,10 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <?php foreach ($font_weights as $font_weight => $font_weight_label) { ?>
 
                                             <option value="<?php echo esc_attr($font_weight); ?>" <?php
-                                            if (isset($custom['product_title_font_style'])) {
-                                                selected($custom['product_title_font_style'], $font_weight);
-                                            }
-                                            ?>><?php echo esc_html($font_weight_label); ?></option>
+                                               if (isset($custom['product_title_font_style'])) {
+                                                   selected($custom['product_title_font_style'], $font_weight);
+                                               }
+                                               ?>><?php echo esc_html($font_weight_label); ?></option>
 
                                         <?php } ?>
 
@@ -569,10 +569,10 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <?php foreach ($text_transforms as $key => $value) { ?>
 
                                             <option value="<?php echo esc_attr($key) ?>" <?php
-                                            if (isset($custom['product_title_text_transform'])) {
-                                                selected($custom['product_title_text_transform'], $key);
-                                            }
-                                            ?>><?php echo esc_html($value); ?></option>
+                                               if (isset($custom['product_title_text_transform'])) {
+                                                   selected($custom['product_title_text_transform'], $key);
+                                               }
+                                               ?>><?php echo esc_html($value); ?></option>
 
                                         <?php } ?>
                                     </select>
@@ -592,10 +592,10 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <?php foreach ($text_decorations as $key => $value) { ?>
 
                                             <option value="<?php echo esc_attr($key) ?>" <?php
-                                            if (isset($custom['product_title_text_decoration'])) {
-                                                selected($custom['product_title_text_decoration'], $key);
-                                            }
-                                            ?>><?php echo esc_html($value); ?></option>
+                                               if (isset($custom['product_title_text_decoration'])) {
+                                                   selected($custom['product_title_text_decoration'], $key);
+                                               }
+                                               ?>><?php echo esc_html($value); ?></option>
 
                                         <?php } ?>
                                     </select>
@@ -609,7 +609,7 @@ $text_decorations = majc_get_text_decoration_choices();
 
                             <div class="majc-typography-input-field majc-range-slider-wrap">
                                 <div class="majc-range-slider"></div>
-                                <input class="majc-range-input-selector" type="number" min="0" max="100" step="1" value="<?php echo esc_attr($custom['product_title_font_size']); ?>" name="majc_settings[custom][product_title_font_size]"/> px
+                                <input class="majc-range-input-selector" type="number" min="0" max="100" step="1" value="<?php echo esc_attr($custom['product_title_font_size']); ?>" name="majc_settings[custom][product_title_font_size]" /> px
                             </div>
                         </li>
 
@@ -619,8 +619,8 @@ $text_decorations = majc_get_text_decoration_choices();
 
                             <div class="majc-typography-input-field majc-range-slider-wrap">
                                 <div class="majc-range-slider"></div>
-                                <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($custom['product_title_line_height']); ?>" name="majc_settings[custom][product_title_line_height]"/> px
-                            </div>         
+                                <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($custom['product_title_line_height']); ?>" name="majc_settings[custom][product_title_line_height]" /> px
+                            </div>
                         </li>
 
 
@@ -629,8 +629,8 @@ $text_decorations = majc_get_text_decoration_choices();
 
                             <div class="majc-typography-input-field majc-range-slider-wrap">
                                 <div class="majc-range-slider"></div>
-                                <input class="majc-range-input-selector" type="number" min="-5" max="5" step="0.1" value="<?php echo esc_attr($custom['product_title_letter_spacing']); ?>" name="majc_settings[custom][product_title_letter_spacing]"/> px
-                            </div>           
+                                <input class="majc-range-input-selector" type="number" min="-5" max="5" step="0.1" value="<?php echo esc_attr($custom['product_title_letter_spacing']); ?>" name="majc_settings[custom][product_title_letter_spacing]" /> px
+                            </div>
                         </li>
 
                         <li class="majc-typography-color-field">
@@ -667,11 +667,11 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <optgroup label="Standard Fonts">
                                             <?php foreach ($standard_fonts as $standard_font) { ?>
                                                 <option value="<?php echo esc_attr($standard_font); ?>" <?php
-                                                if (isset($custom['button_text_font_family'])) {
-                                                    selected($custom['button_text_font_family'], $standard_font);
-                                                }
-                                                ?>><?php echo esc_attr($standard_font); ?></option>
-                                                    <?php } ?>
+                                                   if (isset($custom['button_text_font_family'])) {
+                                                       selected($custom['button_text_font_family'], $standard_font);
+                                                   }
+                                                   ?>><?php echo esc_attr($standard_font); ?></option>
+                                            <?php } ?>
                                         </optgroup>
                                     <?php } ?>
 
@@ -681,11 +681,11 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <optgroup label="Google Fonts">
                                             <?php foreach ($google_fonts as $google_font) { ?>
                                                 <option value="<?php echo esc_attr($google_font); ?>" <?php
-                                                if (isset($custom['button_text_font_family'])) {
-                                                    selected($custom['button_text_font_family'], $google_font);
-                                                }
-                                                ?>><?php echo esc_attr($google_font); ?></option>
-                                                    <?php } ?>
+                                                   if (isset($custom['button_text_font_family'])) {
+                                                       selected($custom['button_text_font_family'], $google_font);
+                                                   }
+                                                   ?>><?php echo esc_attr($google_font); ?></option>
+                                            <?php } ?>
                                         </optgroup>
                                     <?php } ?>
 
@@ -705,11 +705,11 @@ $text_decorations = majc_get_text_decoration_choices();
                                     <select name="majc_settings[custom][button_text_font_style]" class="majc-typography-font-style">
                                         <?php foreach ($font_weights as $font_weight => $font_weight_label) { ?>
                                             <option value="<?php echo esc_attr($font_weight); ?>" <?php
-                                            if (isset($custom['button_text_font_style'])) {
-                                                selected($custom['button_text_font_style'], $font_weight);
-                                            }
-                                            ?>><?php echo esc_html($font_weight_label); ?></option>
-                                                <?php } ?>
+                                               if (isset($custom['button_text_font_style'])) {
+                                                   selected($custom['button_text_font_style'], $font_weight);
+                                               }
+                                               ?>><?php echo esc_html($font_weight_label); ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                             <?php } ?>
@@ -727,10 +727,10 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <?php foreach ($text_transforms as $key => $value) { ?>
 
                                             <option value="<?php echo esc_attr($key) ?>" <?php
-                                            if (isset($custom['button_text_text_transform'])) {
-                                                selected($custom['button_text_text_transform'], $key);
-                                            }
-                                            ?>><?php echo esc_html($value); ?></option>
+                                               if (isset($custom['button_text_text_transform'])) {
+                                                   selected($custom['button_text_text_transform'], $key);
+                                               }
+                                               ?>><?php echo esc_html($value); ?></option>
 
                                         <?php } ?>
                                     </select>
@@ -750,10 +750,10 @@ $text_decorations = majc_get_text_decoration_choices();
                                         <?php foreach ($text_decorations as $key => $value) { ?>
 
                                             <option value="<?php echo esc_attr($key) ?>" <?php
-                                            if (isset($custom['button_text_text_decoration'])) {
-                                                selected($custom['button_text_text_decoration'], $key);
-                                            }
-                                            ?>><?php echo esc_html($value); ?></option>
+                                               if (isset($custom['button_text_text_decoration'])) {
+                                                   selected($custom['button_text_text_decoration'], $key);
+                                               }
+                                               ?>><?php echo esc_html($value); ?></option>
 
                                         <?php } ?>
                                     </select>
@@ -766,7 +766,7 @@ $text_decorations = majc_get_text_decoration_choices();
 
                             <div class="majc-typography-input- majc-range-slider-wrap">
                                 <div class="majc-range-slider"></div>
-                                <input class="majc-range-input-selector" type="number" min="0" max="100" step="1" value="<?php echo esc_attr($custom['button_text_font_size']); ?>" name="majc_settings[custom][button_text_font_size]"/> px
+                                <input class="majc-range-input-selector" type="number" min="0" max="100" step="1" value="<?php echo esc_attr($custom['button_text_font_size']); ?>" name="majc_settings[custom][button_text_font_size]" /> px
                             </div>
                         </li>
 
@@ -776,8 +776,8 @@ $text_decorations = majc_get_text_decoration_choices();
 
                             <div class="majc-typography-input-field majc-range-slider-wrap">
                                 <div class="majc-range-slider"></div>
-                                <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($custom['button_text_line_height']); ?>" name="majc_settings[custom][button_text_line_height]"/> px
-                            </div>         
+                                <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($custom['button_text_line_height']); ?>" name="majc_settings[custom][button_text_line_height]" /> px
+                            </div>
                         </li>
 
 
@@ -786,8 +786,8 @@ $text_decorations = majc_get_text_decoration_choices();
 
                             <div class="majc-typography-input-field majc-range-slider-wrap">
                                 <div class="majc-range-slider"></div>
-                                <input class="majc-range-input-selector" type="number" min="-5" max="5" step="0.1" value="<?php echo esc_attr($custom['button_text_letter_spacing']); ?>" name="majc_settings[custom][button_text_letter_spacing]"/> px
-                            </div>           
+                                <input class="majc-range-input-selector" type="number" min="-5" max="5" step="0.1" value="<?php echo esc_attr($custom['button_text_letter_spacing']); ?>" name="majc_settings[custom][button_text_letter_spacing]" /> px
+                            </div>
                         </li>
 
                     </ul>

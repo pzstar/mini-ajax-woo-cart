@@ -19,8 +19,8 @@ if (!empty($post)) {
 
     $query = new WP_Query(array('post_type' => 'ultimate-woo-cart', 'posts_per_page' => -1));
 
-    if ($query->have_posts()) :
-        while ($query->have_posts()) :
+    if ($query->have_posts()):
+        while ($query->have_posts()):
 
             $query->the_post();
 
@@ -138,21 +138,21 @@ if (!empty($post)) {
                                 <?php if (isset($cart_basket_icon_type) && $cart_basket_icon_type == 'available_icon') { ?>
                                     <span class="majc-cartbasket-icon majc-cartbasket-open-icon <?php echo esc_attr($cart_basket_open_available_icon); ?>"></span>
                                 <?php } else if (isset($cart_basket_icon_type) && $cart_basket_icon_type == 'custom_icon') { ?>
-                                    <div class="majc-cartbasket-img majc-cartbasket-icon majc-cartbasket-open-icon">
-                                        <img src="<?php echo esc_url($cart_basket_open_custom_icon); ?>">
-                                    </div>
+                                        <div class="majc-cartbasket-img majc-cartbasket-icon majc-cartbasket-open-icon">
+                                            <img src="<?php echo esc_url($cart_basket_open_custom_icon); ?>">
+                                        </div>
                                 <?php } else if (isset($cart_basket_icon_type) && $cart_basket_icon_type == 'default_icon') { ?>
-                                    <span class="majc-cartbasket-icon majc-cartbasket-open-icon icon_cart_alt"></span>
+                                            <span class="majc-cartbasket-icon majc-cartbasket-open-icon icon_cart_alt"></span>
                                 <?php } ?>
 
                                 <?php if (isset($cart_basket_icon_type) && $cart_basket_icon_type == 'available_icon') { ?>
                                     <span class="majc-cartbasket-icon majc-cartbasket-close-icon <?php echo esc_attr($cart_basket_close_available_icon); ?>"></span>
                                 <?php } else if (isset($cart_basket_icon_type) && $cart_basket_icon_type == 'custom_icon') { ?>
-                                    <div class="majc-cartbasket-img majc-cartbasket-icon majc-cartbasket-close-icon">
-                                        <img src="<?php echo esc_url($cart_basket_close_custom_icon); ?>">
-                                    </div>
+                                        <div class="majc-cartbasket-img majc-cartbasket-icon majc-cartbasket-close-icon">
+                                            <img src="<?php echo esc_url($cart_basket_close_custom_icon); ?>">
+                                        </div>
                                 <?php } else if (isset($cart_basket_icon_type) && $cart_basket_icon_type == 'default_icon') { ?>
-                                    <span class="majc-cartbasket-icon majc-cartbasket-close-icon icon_close"></span>
+                                            <span class="majc-cartbasket-icon majc-cartbasket-close-icon icon_close"></span>
                                 <?php } ?>
 
                                 <?php if ($cart_basket_product_count == 'on') { ?>
@@ -174,16 +174,10 @@ if (!empty($post)) {
                             $majc_popup_class = '';
                         }
                         ?>
-                        <div class="majc-cart-popup <?php echo esc_attr($majc_popup_class); ?>" 
-                        <?php if (!empty($show_animation)) { ?>
-                                 data-showanimation="<?php echo 'animate--' . esc_attr($show_animation); ?>" 
-                                 <?php
-                             }
-                             if (!empty($hide_animation)) {
-                                 ?>
-                                 data-hideanimation="<?php echo 'animate--' . esc_attr($hide_animation); ?>"
-                             <?php } ?>
-                             style="width:<?php echo $content_width ?>px">
+                        <div class="majc-cart-popup <?php echo esc_attr($majc_popup_class); ?>" <?php if (!empty($show_animation)) { ?> data-showanimation="<?php echo 'animate--' . esc_attr($show_animation); ?>" <?php
+                           }
+                           if (!empty($hide_animation)) {
+                               ?> data-hideanimation="<?php echo 'animate--' . esc_attr($hide_animation); ?>" <?php } ?> style="width:<?php echo $content_width ?>px">
                             <div class="majc-cart-popup-inner">
 
                                 <div class="majc-header">
@@ -191,9 +185,9 @@ if (!empty($post)) {
                                         <?php if (isset($header_icon_type) && $header_icon_type == 'available_icon') { ?>
                                             <div class="majc-header-icon"><span class="<?php echo esc_attr($header_available_icon); ?>"></span></div>
                                         <?php } else if (isset($header_icon_type) && $header_icon_type == 'custom_icon') { ?>
-                                            <div class="majc-header-icon"><img src="<?php echo esc_url($header_custom_icon); ?>"></div>
+                                                <div class="majc-header-icon"><img src="<?php echo esc_url($header_custom_icon); ?>"></div>
                                         <?php } else if (isset($header_icon_type) && $header_icon_type == 'default_icon') { ?>
-                                            <div class="majc-header-icon"><span class="fa fa-shopping-cart"></span></div>
+                                                    <div class="majc-header-icon"><span class="fa fa-shopping-cart"></span></div>
                                         <?php } ?>
                                         <?php echo esc_html($header_title); ?>
                                     </h2>
@@ -229,7 +223,7 @@ if (!empty($post)) {
                                                                 <div class="majc-item-remove">
                                                                     <?php
                                                                     echo apply_filters('woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="majc-remove"  aria-label="%s" data-cart_item_id="%s" data-cart_item_sku="%s" data-cart_item_key="%s"><span class="icon_trash_alt"></span></a>', esc_url(wc_get_cart_remove_url($itemKey)), esc_html__('Remove this item', 'mini-ajax-cart'), esc_attr($product_id), esc_attr($product->get_sku()), esc_attr($itemKey)
-                                                                            ), $itemKey);
+                                                                    ), $itemKey);
                                                                     ?>
                                                                 </div>
 
@@ -289,11 +283,11 @@ if (!empty($post)) {
                                             if (!empty($applied_coupons)) {
                                                 ?>
                                                 <ul class='majc-applied-cpns'>
-                                                    <?php foreach ($applied_coupons as $cpns) { ?>    
+                                                    <?php foreach ($applied_coupons as $cpns) { ?>
                                                         <li data-code='<?php echo esc_attr($cpns); ?>'>
                                                             <?php echo esc_html($cpns); ?><span class='majc-remove-cpn icofont-close-line'></span>
                                                         </li>
-                                                    <?php } ?>    
+                                                    <?php } ?>
                                                 </ul>
                                                 <?php
                                             } else {
@@ -343,7 +337,7 @@ if (!empty($post)) {
                                         <?php } ?>
 
                                         <?php if ($show_continue_shopping == 'on') { ?>
-                                            <a class="majc-continue-shoping-btn majc-cart-action-btn majc-button" href="<?php echo esc_url($continue_shopping_link); ?>" >
+                                            <a class="majc-continue-shoping-btn majc-cart-action-btn majc-button" href="<?php echo esc_url($continue_shopping_link); ?>">
                                                 <?php echo esc_html($continue_shopping_text); ?>
                                             </a>
                                         <?php } ?>

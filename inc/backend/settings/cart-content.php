@@ -16,8 +16,8 @@
                 <label><?php esc_html_e('Header Title Text', 'mini-ajax-cart'); ?></label>
                 <div class="majc-settings-fields">
                     <input type="text" name="majc_settings[header][title_text]" value="<?php echo isset($header['title_text']) ? esc_attr($header['title_text']) : null; ?>">
-                </div>	
-            </div>	
+                </div>
+            </div>
 
             <div class="majc-settings-row">
                 <label><?php esc_html_e('Header Icon Type', 'mini-ajax-cart'); ?></label>
@@ -61,16 +61,16 @@
                             <label for="majc-header-icon"><?php esc_html_e('Upload Header Icon', 'mini-ajax-cart'); ?></label>
                             <div class="majc-icon-image-uploader">
                                 <div class="majc-custom-img-icon-btn">
-                                    <div class="majc-custom-menu-image-icon current-bg-image" >
+                                    <div class="majc-custom-menu-image-icon current-bg-image">
                                         <?php if (isset($header['custom_icon']) && !empty($header['custom_icon'])) { ?>
-                                            <img src="<?php echo isset($header['custom_icon']) ? esc_url($header['custom_icon']) : ''; ?>"/>
+                                            <img src="<?php echo isset($header['custom_icon']) ? esc_url($header['custom_icon']) : ''; ?>" />
                                         <?php } ?>
                                     </div>
                                     <div class="majc-image-remove"><?php esc_html_e('Remove', 'mini-ajax-cart'); ?></div>
                                 </div>
 
                                 <div class="button majc-image-upload"><?php esc_html_e('Upload', 'mini-ajax-cart') ?></div>
-                                <input type="hidden" class="majc-upload-background-url" name="majc_settings[header][custom_icon]" id="majc-header-icon" value="<?php echo isset($header['custom_icon']) ? esc_url($header['custom_icon']) : ''; ?>"/>
+                                <input type="hidden" class="majc-upload-background-url" name="majc_settings[header][custom_icon]" id="majc-header-icon" value="<?php echo isset($header['custom_icon']) ? esc_url($header['custom_icon']) : ''; ?>" />
                             </div> <!-- majc-icon-image-uploader -->
                         </div>
                     </div>
