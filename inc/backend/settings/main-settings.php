@@ -1,12 +1,12 @@
 <?php
-$display = isset($majc_settings['display']) ? $majc_settings['display'] : NULL;
-$header = isset($majc_settings['header']) ? $majc_settings['header'] : NULL;
-$buttons = isset($majc_settings['buttons']) ? $majc_settings['buttons'] : NULL;
-$coupon = isset($majc_settings['coupon']) ? $majc_settings['coupon'] : NULL;
-$summary = isset($majc_settings['summary']) ? $majc_settings['summary'] : NULL;
-$cart_basket = isset($majc_settings['cart_basket']) ? $majc_settings['cart_basket'] : NULL;
+$display = isset($majc_settings['display']) ? $majc_settings['display'] : null;
+$header = isset($majc_settings['header']) ? $majc_settings['header'] : null;
+$buttons = isset($majc_settings['buttons']) ? $majc_settings['buttons'] : null;
+$coupon = isset($majc_settings['coupon']) ? $majc_settings['coupon'] : null;
+$summary = isset($majc_settings['summary']) ? $majc_settings['summary'] : null;
+$cart_basket = isset($majc_settings['cart_basket']) ? $majc_settings['cart_basket'] : null;
 $animations = $this->majc_animations();
-$display = isset($majc_settings['display']) ? $majc_settings['display'] : NULL;
+$display = isset($majc_settings['display']) ? $majc_settings['display'] : null;
 ?>
 
 <div id="layout-settings" class="tab-content">
@@ -68,7 +68,7 @@ $display = isset($majc_settings['display']) ? $majc_settings['display'] : NULL;
                             if (isset($display['front_pages'])) {
                                 checked($display['front_pages'], 'on', true);
                             }
-                            ?> />
+                            ?>/>
                             <label for="majc_front_pages"><?php esc_html_e('Front Page', 'mini-ajax-cart'); ?></label>
                         </p>
 
@@ -77,7 +77,7 @@ $display = isset($majc_settings['display']) ? $majc_settings['display'] : NULL;
                             if (isset($display['blog_pages'])) {
                                 checked($display['blog_pages'], 'on', true);
                             }
-                            ?> />
+                            ?>/>
                             <label for="majc_blog_pages"><?php esc_html_e('Home/Blog Page', 'mini-ajax-cart'); ?></label>
                         </p>
 
@@ -86,25 +86,25 @@ $display = isset($majc_settings['display']) ? $majc_settings['display'] : NULL;
                             if (isset($display['archive_pages'])) {
                                 checked($display['archive_pages'], 'on', true);
                             }
-                            ?> />
+                            ?>/>
                             <label for="majc_archive_pages"><?php esc_html_e('Archive Page', 'mini-ajax-cart'); ?></label>
                         </p>
 
                         <p>
-                            <input type="checkbox" name="majc_settings[display][error_pages]" id="majc_404_pages" <?php
+                            <input type="checkbox" name="majc_settings[display][error_pages]"  id="majc_404_pages" <?php
                             if (isset($display['error_pages'])) {
                                 checked($display['error_pages'], 'on', true);
                             }
-                            ?> />
+                            ?>/>
                             <label for="majc_404_pages"><?php esc_html_e('404 Page', 'mini-ajax-cart'); ?></label>
                         </p>
 
                         <p>
-                            <input type="checkbox" name="majc_settings[display][search_pages]" id="majc_search_pages" <?php
+                            <input type="checkbox" name="majc_settings[display][search_pages]"  id="majc_search_pages" <?php
                             if (isset($display['search_pages'])) {
                                 checked($display['search_pages'], 'on', true);
                             }
-                            ?> />
+                            ?>/>
                             <label for="majc_search_pages"><?php esc_html_e('Search Page', 'mini-ajax-cart'); ?></label>
                         </p>
 
@@ -115,7 +115,7 @@ $display = isset($majc_settings['display']) ? $majc_settings['display'] : NULL;
                             if (!($post_type == 'attachment') and get_posts(['post_type' => $post_type])) {
                                 ?>
                                 <p>
-                                    <input type="checkbox" name="majc_settings[display][cpt_pages][]" class="majc-hide-show-cpt-posts" id="majc-hscpt-<?php echo esc_attr($post_type); ?>" data-posttype="<?php echo esc_attr($post_type); ?>" value="<?php echo esc_attr($post_type); ?>" <?php echo in_array(esc_attr($post_type), $display['cpt_pages']) ? 'checked="checked"' : '' ?> />
+                                    <input type="checkbox" name="majc_settings[display][cpt_pages][]" class="majc-hide-show-cpt-posts" id="majc-hscpt-<?php echo esc_attr($post_type); ?>" data-posttype="<?php echo esc_attr($post_type); ?>" value="<?php echo esc_attr($post_type); ?>" <?php echo in_array(esc_attr($post_type), $display['cpt_pages']) ? 'checked="checked"' : '' ?>/>
                                     <label for="majc-hscpt-<?php echo esc_attr($post_type); ?>"><?php echo esc_html('All ' . ucwords($post_type)); ?></label>
                                 </p>
                                 <?php
@@ -149,8 +149,7 @@ $display = isset($majc_settings['display']) ? $majc_settings['display'] : NULL;
                             if (!($post_type == 'attachment' || $post_type == 'majc-cart-template')) {
                                 ?>
                                 <p>
-                                    <input type="checkbox" name="majc_settings[display][specific_archive][]" id="majc-archive-<?php echo esc_attr($post_type); ?>" value="<?php echo esc_attr($post_type); ?>" <?php if (in_array($post_type, $display['specific_archive']))
-                                              echo 'checked'; ?> />
+                                    <input type="checkbox" name="majc_settings[display][specific_archive][]" id="majc-archive-<?php echo esc_attr($post_type); ?>" value="<?php echo esc_attr($post_type); ?>" <?php if (in_array($post_type, $display['specific_archive'])) echo 'checked'; ?>  />
                                     <label for="majc-archive-<?php echo esc_attr($post_type); ?>"><?php echo esc_html(ucwords($post_type)); ?></label>
                                 </p>
                                 <?php
@@ -178,13 +177,11 @@ $display = isset($majc_settings['display']) ? $majc_settings['display'] : NULL;
 
                                 <div class="majc-toggle-tab-body">
                                     <?php
-                                    while ($posts_loop->have_posts()):
-                                        $posts_loop->the_post();
+                                    while ($posts_loop->have_posts()) : $posts_loop->the_post();
                                         $postid = get_the_ID();
                                         ?>
                                         <p>
-                                            <input type="checkbox" name="majc_settings[display][specific_pages][]" id="majc-post-<?php echo esc_attr($postid); ?>" value="<?php echo esc_attr($postid); ?>" <?php if (isset($majc_specific_page) && in_array($postid, $majc_specific_page))
-                                                      echo 'checked'; ?> />
+                                            <input type="checkbox" name="majc_settings[display][specific_pages][]" id="majc-post-<?php echo esc_attr($postid); ?>" value="<?php echo esc_attr($postid); ?>" <?php if (isset($majc_specific_page) && in_array($postid, $majc_specific_page)) echo 'checked'; ?>	/>
                                             <label for="majc-post-<?php echo esc_attr($postid); ?>"><?php esc_html(the_title()); ?></label>
                                         </p>
                                         <?php

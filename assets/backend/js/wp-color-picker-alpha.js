@@ -12,11 +12,11 @@
 (function ($) {
     // Variable for some backgrounds ( grid )
     var image = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAAHnlligAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHJJREFUeNpi+P///4EDBxiAGMgCCCAGFB5AADGCRBgYDh48CCRZIJS9vT2QBAggFBkmBiSAogxFBiCAoHogAKIKAlBUYTELAiAmEtABEECk20G6BOmuIl0CIMBQ/IEMkO0myiSSraaaBhZcbkUOs0HuBwDplz5uFJ3Z4gAAAABJRU5ErkJggg==',
-        // html stuff for wpColorPicker copy of the original color-picker.js
-        _before = '<a tabindex="0" class="wp-color-result" />',
-        _after = '<div class="wp-picker-holder" />',
-        _wrap = '<div class="wp-picker-container" />',
-        _button = '<input type="button" class="button button-small hidden" />';
+            // html stuff for wpColorPicker copy of the original color-picker.js
+            _before = '<a tabindex="0" class="wp-color-result" />',
+            _after = '<div class="wp-picker-holder" />',
+            _wrap = '<div class="wp-picker-container" />',
+            _button = '<input type="button" class="button button-small hidden" />';
 
     /**
      * Overwrite Color
@@ -47,7 +47,7 @@
                 return;
 
             var self = this,
-                el = self.element;
+                    el = self.element;
 
             $.extend(self.options, el.data());
 
@@ -183,14 +183,14 @@
 
             if (typeof this.options.alpha !== 'undefined' && this.options.alpha) {
                 var self = this,
-                    el = self.element,
-                    _html = '<div class="iris-strip iris-slider iris-alpha-slider"><div class="iris-slider-offset iris-slider-offset-alpha"></div></div>',
-                    aContainer = $(_html).appendTo(self.picker.find('.iris-picker-inner')),
-                    aSlider = aContainer.find('.iris-slider-offset-alpha'),
-                    controls = {
-                        aContainer: aContainer,
-                        aSlider: aSlider
-                    };
+                        el = self.element,
+                        _html = '<div class="iris-strip iris-slider iris-alpha-slider"><div class="iris-slider-offset iris-slider-offset-alpha"></div></div>',
+                        aContainer = $(_html).appendTo(self.picker.find('.iris-picker-inner')),
+                        aSlider = aContainer.find('.iris-slider-offset-alpha'),
+                        controls = {
+                            aContainer: aContainer,
+                            aSlider: aSlider
+                        };
 
                 if (typeof el.data('custom-width') !== 'undefined') {
                     self.options.customWidth = parseInt(el.data('custom-width')) || 0;
@@ -213,8 +213,8 @@
                 // Change size strip and add margin for sliders
                 self.controls.square.css({'margin-right': '0'});
                 var emptyWidth = (self.picker.width() - self.controls.square.width() - 20),
-                    stripsMargin = (emptyWidth / 6),
-                    stripsWidth = ((emptyWidth / 2) - stripsMargin);
+                        stripsMargin = (emptyWidth / 6),
+                        stripsWidth = ((emptyWidth / 2) - stripsMargin);
 
                 $.each(['aContainer', 'strip'], function (k, v) {
                     self.controls[v].width(stripsWidth).css({'margin-left': stripsMargin + 'px'});
@@ -232,7 +232,7 @@
 
             if (this.options.alpha) {
                 var self = this,
-                    controls = self.controls;
+                        controls = self.controls;
 
                 controls.aSlider.slider({
                     orientation: 'vertical',
@@ -252,19 +252,19 @@
             this._super();
 
             var self = this,
-                el = self.element;
+                    el = self.element;
 
             if (this.options.alpha) {
                 var controls = self.controls,
-                    alpha = parseInt(self._color._alpha * 100),
-                    color = self._color.toRgb(),
-                    gradient = [
-                        'rgb(' + color.r + ',' + color.g + ',' + color.b + ') 0%',
-                        'rgba(' + color.r + ',' + color.g + ',' + color.b + ', 0) 100%'
-                    ],
-                    defaultWidth = self.options.defaultWidth,
-                    customWidth = self.options.customWidth,
-                    target = self.picker.closest('.wp-picker-container').find('.wp-color-result');
+                        alpha = parseInt(self._color._alpha * 100),
+                        color = self._color.toRgb(),
+                        gradient = [
+                            'rgb(' + color.r + ',' + color.g + ',' + color.b + ') 0%',
+                            'rgba(' + color.r + ',' + color.g + ',' + color.b + ', 0) 100%'
+                        ],
+                        defaultWidth = self.options.defaultWidth,
+                        customWidth = self.options.customWidth,
+                        target = self.picker.closest('.wp-picker-container').find('.wp-color-result');
 
                 // Generate background slider alpha, only for CSS3 old browser fuck!! :)
                 controls.aContainer.css({'background': 'linear-gradient(to bottom, ' + gradient.join(', ') + '), url(' + image + ')'});
@@ -298,25 +298,25 @@
         },
         _addInputListeners: function (input) {
             var self = this,
-                debounceTimeout = 100,
-                callback = function (event) {
-                    var color = new Color(input.val()),
-                        val = input.val();
+                    debounceTimeout = 100,
+                    callback = function (event) {
+                        var color = new Color(input.val()),
+                                val = input.val();
 
-                    input.removeClass('iris-error');
-                    // we gave a bad color
-                    if (color.error) {
-                        // don't error on an empty input
-                        if (val !== '')
-                            input.addClass('iris-error');
-                    } else {
-                        if (color.toString() !== self._color.toString()) {
-                            // let's not do this on keyup for hex shortcodes
-                            if (!(event.type === 'keyup' && val.match(/^[0-9a-fA-F]{3}$/)))
-                                self._setOption('color', color.toString());
+                        input.removeClass('iris-error');
+                        // we gave a bad color
+                        if (color.error) {
+                            // don't error on an empty input
+                            if (val !== '')
+                                input.addClass('iris-error');
+                        } else {
+                            if (color.toString() !== self._color.toString()) {
+                                // let's not do this on keyup for hex shortcodes
+                                if (!(event.type === 'keyup' && val.match(/^[0-9a-fA-F]{3}$/)))
+                                    self._setOption('color', color.toString());
+                            }
                         }
-                    }
-                };
+                    };
 
             input.on('change', callback).on('keyup', self._debounce(callback, debounceTimeout));
 
