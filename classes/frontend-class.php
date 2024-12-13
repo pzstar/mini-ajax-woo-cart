@@ -33,9 +33,9 @@ if (!class_exists('MAJC_Frontend')) {
 
         private function checkNonce() {
             if (isset($_POST['wp_nonce']) && wp_verify_nonce($_POST['wp_nonce'], 'majc-frontend-ajax-nonce')) {
-                return 'true';
+                return true;
             } else {
-                return 'false';
+                return false;
             }
         }
 
@@ -49,8 +49,8 @@ if (!class_exists('MAJC_Frontend')) {
 
         function change_item_qty() {
 
-            if ($this->checkNonce() == 'false') {
-                return false;
+            if (!$this->checkNonce()) {
+                return;
             }
 
             $c_key = isset($_REQUEST['ckey']) ? sanitize_text_field($_REQUEST['ckey']) : null;
@@ -62,8 +62,8 @@ if (!class_exists('MAJC_Frontend')) {
 
         public function remove_coupon_code() {
 
-            if ($this->checkNonce() == 'false') {
-                return false;
+            if (!$this->checkNonce()) {
+                return;
             }
 
             $couponCode = isset($_POST['couponCode']) ? sanitize_text_field($_POST['couponCode']) : null;
@@ -90,8 +90,8 @@ if (!class_exists('MAJC_Frontend')) {
 
         public function addCouponCode() {
 
-            if ($this->checkNonce() == 'false') {
-                return false;
+            if (!$this->checkNonce()) {
+                return;
             }
 
             $code = isset($_POST['couponCode']) ? sanitize_text_field($_POST['couponCode']) : null;
@@ -263,8 +263,8 @@ if (!class_exists('MAJC_Frontend')) {
 
         public function get_refreshed_fragments() {
 
-            if ($this->checkNonce() == 'false') {
-                return false;
+            if (!$this->checkNonce()) {
+                return;
             }
 
             WC_AJAX::get_refreshed_fragments();
@@ -272,8 +272,8 @@ if (!class_exists('MAJC_Frontend')) {
 
         public function cart_remove_item() {
 
-            if ($this->checkNonce() == 'false') {
-                return false;
+            if (!$this->checkNonce()) {
+                return;
             }
 
             ob_start();
