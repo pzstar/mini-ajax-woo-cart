@@ -2,8 +2,8 @@
 Contributors: hashthemes
 Tags: woocommerce cart, cart, slidein cart, floating cart, ajax cart
 Requires at least: 5.0
-Tested up to: 6.6
-Stable tag: 1.2.7
+Tested up to: 6.7
+Stable tag: 1.2.8
 Requires PHP: 5.0 
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -188,6 +188,9 @@ For premium upgrade, please click below link <br>
 <a href="https://1.envato.market/2rKYB0">WooCommerce Cart</a>&nbsp;&nbsp;<a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-cart/">Demo Site</a>&nbsp;&nbsp;<a href="https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/">Documentation</a>
 
 == Upgrade Notice ==
+= 1.2.8 - 13 Dec, 2024  =
+* Undefined property: MAJC_Frontend::$checkNonce Error - Fixed
+
 = 1.2.7 - 21 Jul, 2024  =
 * Compatibility test with WordPress 6.6
 
