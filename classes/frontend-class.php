@@ -49,7 +49,7 @@ if (!class_exists('MAJC_Frontend')) {
 
         function change_item_qty() {
 
-            if ($this->checkNonce == 'false') {
+            if ($this->checkNonce() == 'false') {
                 return false;
             }
 
@@ -62,7 +62,7 @@ if (!class_exists('MAJC_Frontend')) {
 
         public function remove_coupon_code() {
 
-            if ($this->checkNonce == 'false') {
+            if ($this->checkNonce() == 'false') {
                 return false;
             }
 
@@ -90,7 +90,7 @@ if (!class_exists('MAJC_Frontend')) {
 
         public function addCouponCode() {
 
-            if ($this->checkNonce == 'false') {
+            if ($this->checkNonce() == 'false') {
                 return false;
             }
 
@@ -263,7 +263,7 @@ if (!class_exists('MAJC_Frontend')) {
 
         public function get_refreshed_fragments() {
 
-            if ($this->checkNonce == 'false') {
+            if ($this->checkNonce() == 'false') {
                 return false;
             }
 
@@ -272,7 +272,7 @@ if (!class_exists('MAJC_Frontend')) {
 
         public function cart_remove_item() {
 
-            if ($this->checkNonce == 'false') {
+            if ($this->checkNonce() == 'false') {
                 return false;
             }
 
