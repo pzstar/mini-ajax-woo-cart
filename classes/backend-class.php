@@ -205,7 +205,6 @@ if (!class_exists('MAJC_Backend')) {
             if (!get_option('majc_first_activation')) {
                 update_option('majc_first_activation', time());
             }
-            ;
 
             if (isset($_GET['majc-hide-notice'], $_GET['majc_notice_nonce'])) {
                 $notice = sanitize_key($_GET['majc-hide-notice']);
