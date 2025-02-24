@@ -187,7 +187,7 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 For premium upgrade, please click below link <br>
 <a href="https://1.envato.market/2rKYB0">WooCommerce Cart</a>&nbsp;&nbsp;<a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-cart/">Demo Site</a>&nbsp;&nbsp;<a href="https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/">Documentation</a>
 
-== Upgrade Notice ==
+== Changelog ==
 = 1.3.0 - 7 Feb, 2025  =
 * Minor Fixes
 
