@@ -12,7 +12,6 @@ defined('ABSPATH') or die('No script please!');
   License URI: https://www.gnu.org/licenses/gpl-2.0.html
   Domain Path: /languages
   Text Domain: mini-ajax-cart
-  Requires Plugins: woocommerce
  */
 
 defined('MAJC_FILE') or define('MAJC_FILE', __FILE__);
