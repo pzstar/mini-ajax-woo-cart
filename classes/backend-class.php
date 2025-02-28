@@ -36,11 +36,11 @@ if (!class_exists('MAJC_Backend')) {
 
         public function register_post_type() {
             $labels = array(
-                'name' => _x('Mini Ajax Cart', 'post type general name', 'mini-ajax-cart'),
-                'singular_name' => _x('Mini Ajax Cart', 'post type singular name', 'mini-ajax-cart'),
-                'menu_name' => _x('Mini Ajax Cart', 'admin menu', 'mini-ajax-cart'),
-                'name_admin_bar' => _x('Mini Ajax Cart', 'add new on admin bar', 'mini-ajax-cart'),
-                'add_new' => _x('Add New', 'Mini Ajax Cart', 'mini-ajax-cart'),
+                'name' => esc_html_x('Mini Ajax Cart', 'post type general name', 'mini-ajax-cart'),
+                'singular_name' => esc_html_x('Mini Ajax Cart', 'post type singular name', 'mini-ajax-cart'),
+                'menu_name' => esc_html_x('Mini Ajax Cart', 'admin menu', 'mini-ajax-cart'),
+                'name_admin_bar' => esc_html_x('Mini Ajax Cart', 'add new on admin bar', 'mini-ajax-cart'),
+                'add_new' => esc_html_x('Add New', 'Mini Ajax Cart', 'mini-ajax-cart'),
                 'add_new_item' => esc_html__('Add New Mini Ajax Cart', 'mini-ajax-cart'),
                 'new_item' => esc_html__('New Cart', 'mini-ajax-cart'),
                 'edit_item' => esc_html__('Edit Cart', 'mini-ajax-cart'),
