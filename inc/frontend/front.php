@@ -207,6 +207,7 @@ if (!empty($post)) {
                                                 <?php
                                                 $items = WC()->cart->get_cart();
                                                 foreach ($items as $itemKey => $itemVal) {
+                                                    $_product = apply_filters('woocommerce_cart_item_product', $itemVal['data'], $itemVal, $itemKey);
                                                     ?>
                                                     <div class="majc-cart-items" data-itemId="<?php echo esc_attr($itemVal['product_id']); ?>" data-cKey="<?php echo esc_attr($itemVal['key']); ?>">
                                                         <div class="majc-cart-items-inner">
@@ -234,7 +235,21 @@ if (!empty($post)) {
                                                                 <div class="majc-item-qty">
                                                                     <span class="majc-qty-minus majc-qty-chng icon_minus-06"></span>
 
-                                                                    <input type="number" class="majc-qty" step="1" min="0" value="<?php echo intval($itemVal['quantity']); ?>" placeholder="" inputmode="numeric">
+                                                                    <?php
+
+                                                                    if ($_product->is_sold_individually()) {
+                                                                        $product_quantity = sprintf('1 <input type="hidden" name="cart[%s][qty]" value="1" />', $itemKey);
+                                                                    } else {
+                                                                        $product_quantity = woocommerce_quantity_input(array(
+                                                                            'input_name' => "majc-qty-input",
+                                                                            'input_value' => $itemVal['quantity'],
+                                                                            'max_value' => $_product->get_max_purchase_quantity(),
+                                                                            'min_value' => '0',
+                                                                            'product_name' => $_product->get_name(),
+                                                                        ), $_product, false);
+                                                                    }
+                                                                    echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $itemKey, $itemVal); // PHPCS: XSS ok.
+                                                                    ?>
 
                                                                     <span class="majc-qty-plus majc-qty-chng icon_plus"></span>
                                                                 </div>

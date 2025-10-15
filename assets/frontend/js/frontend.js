@@ -215,57 +215,116 @@
 
         });
 
-        /* Increment Cart Item Quantity */
-        $("body").on("click", ".majc-qty-plus", function (e) {
+        $(document).on('click', '.majc-qty-plus, .majc-qty-minus', function () {
+            // Get values
+            var $qty = $(this).closest('.majc-item-qty').find('.qty'),
+                currentVal = parseFloat($qty.val()),
+                max = parseFloat($qty.attr('max')),
+                min = parseFloat($qty.attr('min')),
+                step = $qty.attr('step');
 
-            var input = $(this).closest('.majc-cart-items').find("input.majc-qty:not(:disabled)");
+            // Format values
+            if (!currentVal || currentVal === '' || currentVal === 'NaN')
+                currentVal = 0;
+            if (max === '' || max === 'NaN')
+                max = '';
+            if (min === '' || min === 'NaN')
+                min = 0;
+            if (step === 'any' || step === '' || step === undefined || parseFloat(step) === 'NaN')
+                step = 1;
 
-            if (input) {
-                var pre = parseInt(input.val());
-                input.val(pre + 1);
-                input.trigger("change");
-            }
-
-        });
-
-        /* Decrement Cart Item Quantity */
-        $("body").on("click", ".majc-qty-minus", function (e) {
-
-            var input = $(this).closest('.majc-cart-items').find("input.majc-qty:not(:disabled)");
-
-            if (input) {
-                var pre = parseInt(input.val()) - 1;
-
-                // Do Nothing if Only 1 Item Left in Cart
-                if (pre > 0) {
-                    input.val(pre);
-                    input.trigger("change");
+            // Change the value
+            if ($(this).is('.majc-qty-plus')) {
+                if (max && (currentVal >= max)) {
+                    $qty.val(max);
+                } else {
+                    $qty.val(currentVal + parseFloat(step));
+                }
+            } else {
+                if (min && (currentVal <= min)) {
+                    $qty.val(min);
+                } else if (currentVal > 0) {
+                    $qty.val(currentVal - parseFloat(step));
                 }
             }
+
+            // Trigger change event
+            $qty.trigger('change');
         });
 
         // Quantity change 
         $('body').on('change', 'input[name="majc-qty-input"]', function () {
 
             $(this).closest('.majc-body').addClass('majc-loader');
+            // Get values
+            var $qty = $(this),
+                currentVal = parseFloat($qty.val()),
+                max = parseFloat($qty.attr('max')),
+                min = parseFloat($qty.attr('min')),
+                step = $qty.attr('step');
+
+            // Format values
+            if (!currentVal || currentVal === '' || currentVal === 'NaN')
+                currentVal = 0;
+            if (max === '' || max === 'NaN')
+                max = '';
+            if (min === '' || min === 'NaN')
+                min = 0;
+            if (max && (currentVal >= max)) {
+                $qty.val(max);
+            }
+            if (!min === 0 && (min && (currentVal <= min))) {
+                $qty.val(min);
+            }
 
             var qty = $(this).val();
             var ckey = $(this).closest('.majc-cart-items').data('ckey');
+            var itemid = $(this).closest('.majc-cart-items').data('itemid');
 
             $(this).prop('disabled', true);
 
-            $.ajax({
-                url: ajaxUrl,
-                type: 'POST',
-                data: 'action=change_item_qty&ckey=' + ckey + '&qty=' + qty + '&wp_nonce=' + wpNonce,
-                success: function (response) {
-                    $(this).prop('disabled', false);
-                    $(document.body).trigger('wc_fragment_refresh');
-                    setTimeout(function () {
+            if (qty == 0) {
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    url: ajaxUrl,
+                    data: {
+                        action: 'remove_item',
+                        cart_item_id: itemid,
+                        cart_item_key: ckey,
+                        wp_nonce: wpNonce
+                    },
+                    success: function (response) {
+                        if (!response || response.error) {
+                            return;
+                        }
+
+                        var fragments = response.fragments;
+
+                        // Replace fragments
+                        if (fragments) {
+                            $.each(fragments, function (key, value) {
+                                $(key).replaceWith(value);
+                            });
+                        }
+
                         $('.majc-body').removeClass('majc-loader');
-                    }, 1000);
-                }
-            });
+                    }
+                });
+            } else {
+                $.ajax({
+                    url: ajaxUrl,
+                    type: 'POST',
+                    data: 'action=change_item_qty&ckey=' + ckey + '&qty=' + qty + '&wp_nonce=' + wpNonce,
+                    success: function (response) {
+                        $(this).prop('disabled', false);
+                        $(document.body).trigger('wc_fragment_refresh');
+                        setTimeout(function () {
+                            $('.majc-body').removeClass('majc-loader');
+                        }, 1000);
+                    }
+                });
+            }
         });
     });
 
