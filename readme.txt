@@ -3,7 +3,7 @@ Contributors: hashthemes
 Tags: woocommerce cart, cart, slidein cart, floating cart, ajax cart
 Requires at least: 6.3
 Tested up to: 6.7
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 Requires PHP: 7.4 
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -193,6 +193,9 @@ For premium upgrade, please click below link <br>
 You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team help validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/9e5fc0df-7832-4e0d-b8a1-a6a7ef4554a8)
 
 == Changelog ==
+= 1.3.2 - 16 Oct, 2025  =
+* Product count bug fixed
+
 = 1.3.1 - 3 Mar, 2025  =
 * Translation fixes
 

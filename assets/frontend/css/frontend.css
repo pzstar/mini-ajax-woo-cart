@@ -319,7 +319,8 @@
 
 .majc-item-qty .majc-qty-minus,
 .majc-item-qty .majc-qty-plus,
-.majc-item-qty .majc-qty {
+.majc-item-qty .majc-qty,
+.majc-item-qty input[name="majc-qty-input"] {
     background: transparent;
     margin: 0;
     padding: 0;
@@ -347,12 +348,15 @@
 }
 
 .majc-item-qty .majc-qty::-webkit-outer-spin-button,
-.majc-item-qty .majc-qty::-webkit-inner-spin-button {
+.majc-item-qty .majc-qty::-webkit-inner-spin-button,
+.majc-item-qty input[name="majc-qty-input"]::-webkit-outer-spin-button,
+.majc-item-qty input[name="majc-qty-input"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-.majc-item-qty .majc-qty[type=number] {
+.majc-item-qty .majc-qty[type=number],
+.majc-item-qty input[name="majc-qty-input"] {
     -moz-appearance: textfield;
     width: 50px;
     outline: 0;
