@@ -2,7 +2,7 @@
 Contributors: hashthemes
 Tags: woocommerce cart, cart, slidein cart, floating cart, ajax cart
 Requires at least: 6.3
-Tested up to: 6.7
+Tested up to: 6.8
 Stable tag: 1.3.2
 Requires PHP: 7.4 
 License: GPLv2 or later
