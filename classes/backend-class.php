@@ -25,8 +25,8 @@ if (!class_exists('MAJC_Backend')) {
         }
 
         public function save_metabox_settings($post_id) {
-            if (isset($_POST['majc_settings_nonce']) && wp_verify_nonce($_POST['majc_settings_nonce'], 'majc-settings-nonce')) {
-                $majc_settings = parent::recursive_parse_args($_POST['majc_settings'], parent::checkbox_settings());
+            if (wp_verify_nonce(majc_get_post('majc_settings_nonce'), 'majc-settings-nonce')) {
+                $majc_settings = parent::recursive_parse_args(majc_get_post('majc_settings'), parent::checkbox_settings());
                 $majc_settings = parent::sanitize_array($majc_settings);
 
                 update_post_meta($post_id, 'uwcc_settings', $majc_settings);

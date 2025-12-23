@@ -138,7 +138,7 @@ $display = isset($majc_settings['display']) ? $majc_settings['display'] : null;
                 <div class="majc-hide-singular" id="majc-show-archive" <?php echo $display['archive_pages'] == 'on' ? 'style="display:none;"' : '' ?>>
                     <h4>
                         <?php
-                        esc_html_e('Specific Archive Page', 'ultimate-woocommerce-cart');
+                        esc_html_e('Specific Archive Page', 'mini-ajax-cart');
                         ?>
                         <!-- <span class="toggle-indicator" aria-hidden="true"></span> -->
                     </h4>
@@ -189,7 +189,7 @@ $display = isset($majc_settings['display']) ? $majc_settings['display'] : null;
                                         </p>
                                         <?php
                                     endwhile;
-                                    wp_reset_query();
+                                    wp_reset_postdata();
                                     ?>
                                 </div>
                             </div>

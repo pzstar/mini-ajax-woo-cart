@@ -128,12 +128,11 @@ if (!empty($post)) {
                 );
                 ?>
 
-                <div id="majc-main-wrapper-<?php echo esc_attr($post->ID); ?>" class="<?php echo implode(' ', $wrapper_class) ?>" data-overlayenable="<?php echo ($enable_overlay == 'on') ? 'majc-overlay-enabled' : ''; ?>" data-pageid="<?php echo esc_attr($current_page_id); ?>">
+                <div id="majc-main-wrapper-<?php echo esc_attr($post->ID); ?>" class="<?php echo esc_attr(implode(' ', $wrapper_class)); ?>" data-overlayenable="<?php echo ($enable_overlay == 'on') ? 'majc-overlay-enabled' : ''; ?>" data-pageid="<?php echo esc_attr($current_page_id); ?>">
                     <div class="majc-check-cart <?php echo esc_attr(WC()->cart->is_empty() ? 'majc-hide-cart-items' : ''); ?>"></div>
                     <div class="majc-main-inner-wrapper">
                         <div class="majc-toggle-button <?php echo esc_attr('majc-' . $cart_basket_shape); ?>">
                             <div class="majc-toggle-open-btn majc-cartbasket-toggle-btn <?php echo esc_attr($cart_basket_hover_animation); ?>">
-
 
                                 <?php if (isset($cart_basket_icon_type) && $cart_basket_icon_type == 'available_icon') { ?>
                                     <span class="majc-cartbasket-icon majc-cartbasket-open-icon <?php echo esc_attr($cart_basket_open_available_icon); ?>"></span>
@@ -157,7 +156,7 @@ if (!empty($post)) {
 
                                 <?php if ($cart_basket_product_count == 'on') { ?>
                                     <div class="majc-item-count-wrap">
-                                        <span class="majc-cart-item-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                                        <span class="majc-cart-item-count"><?php echo wp_kses_post(WC()->cart->get_cart_contents_count()); ?></span>
                                     </div>
                                 <?php } ?>
                             </div>
@@ -177,7 +176,7 @@ if (!empty($post)) {
                         <div class="majc-cart-popup <?php echo esc_attr($majc_popup_class); ?>" <?php if (!empty($show_animation)) { ?> data-showanimation="<?php echo 'animate--' . esc_attr($show_animation); ?>" <?php
                            }
                            if (!empty($hide_animation)) {
-                               ?> data-hideanimation="<?php echo 'animate--' . esc_attr($hide_animation); ?>" <?php } ?> style="width:<?php echo $content_width ?>px">
+                               ?> data-hideanimation="<?php echo 'animate--' . esc_attr($hide_animation); ?>" <?php } ?> style="width:<?php echo esc_attr($content_width); ?>px">
                             <div class="majc-cart-popup-inner">
 
                                 <div class="majc-header">
@@ -193,8 +192,8 @@ if (!empty($post)) {
                                     </h2>
                                     <?php if ($header_show_total_items == 'on') { ?>
                                         <div class="majc-sub-header">
-                                            <span class="majc-cart-qty-count"><?php esc_html_e('Quantity: ', 'mini-ajax-cart'); ?><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-                                            <span class="majc-cart-items-count"><?php esc_html_e('Items: ', 'mini-ajax-cart'); ?><?php echo sizeof(WC()->cart->get_cart()); ?></span>
+                                            <span class="majc-cart-qty-count"><?php esc_html_e('Quantity: ', 'mini-ajax-cart'); ?><?php echo wp_kses_post(WC()->cart->get_cart_contents_count()); ?></span>
+                                            <span class="majc-cart-items-count"><?php esc_html_e('Items: ', 'mini-ajax-cart'); ?><?php echo wp_kses_post(sizeof(WC()->cart->get_cart())); ?></span>
                                         </div>
                                     <?php } ?>
                                     <span class="majc-cart-close icofont-close-line"></span>
@@ -217,14 +216,13 @@ if (!empty($post)) {
                                                             $getProductDetail = wc_get_product($itemVal['product_id']);
                                                             ?>
                                                             <div class="majc-item-img">
-                                                                <?php echo $getProductDetail->get_image('thumbnail'); ?>
+                                                                <?php echo wp_kses_post($getProductDetail->get_image('thumbnail')); ?>
                                                             </div>
 
                                                             <div class="majc-item-desc">
                                                                 <div class="majc-item-remove">
                                                                     <?php
-                                                                    echo apply_filters('woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="majc-remove"  aria-label="%s" data-cart_item_id="%s" data-cart_item_sku="%s" data-cart_item_key="%s"><span class="icon_trash_alt"></span></a>', esc_url(wc_get_cart_remove_url($itemKey)), esc_html__('Remove this item', 'mini-ajax-cart'), esc_attr($product_id), esc_attr($product->get_sku()), esc_attr($itemKey)
-                                                                    ), $itemKey);
+                                                                    echo wp_kses_post(apply_filters('woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="majc-remove"  aria-label="%s" data-cart_item_id="%s" data-cart_item_sku="%s" data-cart_item_key="%s"><span class="icon_trash_alt"></span></a>', esc_url(wc_get_cart_remove_url($itemKey)), esc_html__('Remove this item', 'mini-ajax-cart'), esc_attr($product_id), esc_attr($product->get_sku()), esc_attr($itemKey)), $itemKey));
                                                                     ?>
                                                                 </div>
 
@@ -236,9 +234,9 @@ if (!empty($post)) {
                                                                     <span class="majc-qty-minus majc-qty-chng icon_minus-06"></span>
 
                                                                     <?php
-
                                                                     if ($_product->is_sold_individually()) {
                                                                         $product_quantity = sprintf('1 <input type="hidden" name="cart[%s][qty]" value="1" />', $itemKey);
+
                                                                     } else {
                                                                         $product_quantity = woocommerce_quantity_input(array(
                                                                             'input_name' => "majc-qty-input",
@@ -257,7 +255,7 @@ if (!empty($post)) {
                                                                 <div class="majc-item-price">
                                                                     <?php
                                                                     $wc_product = $itemVal['data'];
-                                                                    echo WC()->cart->get_product_subtotal($wc_product, $itemVal['quantity']);
+                                                                    echo wp_kses_post(WC()->cart->get_product_subtotal($wc_product, $itemVal['quantity']));
                                                                     ?>
                                                                 </div>
                                                             </div> <!-- majc-item-desc -->
@@ -318,14 +316,14 @@ if (!empty($post)) {
                                         <?php if ($hide_cart_total != 'on') { ?>
                                             <div class="majc-cart-total-wrap">
                                                 <label><?php echo esc_html__('Cart Total', 'mini-ajax-cart'); ?></label>
-                                                <div class="majc-cart-total-amount"><?php echo wc_price(WC()->cart->get_subtotal() + WC()->cart->get_subtotal_tax()); ?></div>
+                                                <div class="majc-cart-total-amount"><?php echo wp_kses_post(wc_price(WC()->cart->get_subtotal() + WC()->cart->get_subtotal_tax())); ?></div>
                                             </div>
                                         <?php } ?>
 
                                         <?php if ($hide_discount != 'on') { ?>
                                             <div class="majc-cart-discount-wrap">
                                                 <label><?php echo esc_html__('Discount', 'mini-ajax-cart'); ?></label>
-                                                <div class="majc-cart-discount-amount"><?php echo wc_price(WC()->cart->get_cart_discount_total() + WC()->cart->get_cart_discount_tax_total()); ?></div>
+                                                <div class="majc-cart-discount-amount"><?php echo wp_kses_post(wc_price(WC()->cart->get_cart_discount_total() + WC()->cart->get_cart_discount_tax_total())); ?></div>
                                             </div>
                                         <?php } ?>
 
@@ -340,7 +338,7 @@ if (!empty($post)) {
                                                 <label class='majc-total-label'><?php echo esc_html__('Subtotal', 'mini-ajax-cart'); ?></label>
 
                                                 <div class='majc-subtotal-amount'>
-                                                    <?php echo get_woocommerce_currency_symbol() . number_format($final_subtotal, 2); ?>
+                                                    <?php echo wp_kses_post(get_woocommerce_currency_symbol() . number_format($final_subtotal, 2)); ?>
                                                 </div>
                                             </div>
                                         <?php } ?>
@@ -359,13 +357,13 @@ if (!empty($post)) {
 
                                         <div class="majc-cart-checkout-btn">
                                             <?php if ($show_view_cart == 'on') { ?>
-                                                <a class="majc-view-cart-btn majc-cart-action-btn majc-button" href="<?php echo wc_get_cart_url(); ?>">
+                                                <a class="majc-view-cart-btn majc-cart-action-btn majc-button" href="<?php echo esc_url(wc_get_cart_url()); ?>">
                                                     <?php echo esc_html($view_cart_text); ?>
                                                 </a>
                                             <?php } ?>
 
                                             <?php if ($show_checkout == 'on') { ?>
-                                                <a class="majc-checkout-btn majc-cart-action-btn majc-button" href="<?php echo wc_get_checkout_url(); ?>">
+                                                <a class="majc-checkout-btn majc-cart-action-btn majc-button" href="<?php echo esc_url(wc_get_checkout_url()); ?>">
                                                     <?php echo esc_html($checkout_text); ?>
                                                 </a>
                                             <?php } ?>

@@ -6,7 +6,6 @@ if (!class_exists('MAJC_Frontend')) {
     class MAJC_Frontend extends MAJC_Library {
 
         function __construct() {
-
             add_action('wp_footer', array($this, 'majc_menu'));
 
             add_filter('woocommerce_add_to_cart_fragments', array($this, 'add_to_cart_fragments'), 10, 1);
@@ -32,7 +31,7 @@ if (!class_exists('MAJC_Frontend')) {
         }
 
         private function checkNonce() {
-            if (isset($_POST['wp_nonce']) && wp_verify_nonce($_POST['wp_nonce'], 'majc-frontend-ajax-nonce')) {
+            if (wp_verify_nonce(majc_get_post('wp_nonce'), 'majc-frontend-ajax-nonce')) {
                 return true;
             } else {
                 return false;
@@ -48,25 +47,23 @@ if (!class_exists('MAJC_Frontend')) {
         }
 
         function change_item_qty() {
-
             if (!$this->checkNonce()) {
                 return false;
             }
 
-            $c_key = isset($_REQUEST['ckey']) ? sanitize_text_field($_REQUEST['ckey']) : null;
-            $qty = isset($_REQUEST['qty']) ? sanitize_text_field($_REQUEST['qty']) : null;
+            $c_key = majc_get_request('ckey', 'sanitize_text_field', null);
+            $qty = majc_get_request('qty', 'sanitize_text_field', null);
             WC()->cart->set_quantity($c_key, $qty, true);
             WC()->cart->set_session();
             die();
         }
 
         public function remove_coupon_code() {
-
             if (!$this->checkNonce()) {
                 return;
             }
 
-            $couponCode = isset($_POST['couponCode']) ? sanitize_text_field($_POST['couponCode']) : null;
+            $couponCode = majc_get_post('couponCode', 'sanitize_text_field', null);
 
             if (WC()->cart->remove_coupon($couponCode)) {
                 esc_html_e('Coupon Removed Successfully.', 'mini-ajax-cart');
@@ -89,12 +86,11 @@ if (!class_exists('MAJC_Frontend')) {
         }
 
         public function addCouponCode() {
-
             if (!$this->checkNonce()) {
                 return;
             }
 
-            $code = isset($_POST['couponCode']) ? sanitize_text_field($_POST['couponCode']) : null;
+            $code = majc_get_post('couponCode', 'sanitize_text_field', null);
             $code = strtolower($code);
 
             /* Check if coupon code is empty */
@@ -168,14 +164,13 @@ if (!class_exists('MAJC_Frontend')) {
                                     $getProductDetail = wc_get_product($itemVal['product_id']);
                                     ?>
                                     <div class="majc-item-img">
-                                        <?php echo $getProductDetail->get_image('thumbnail'); ?>
+                                        <?php echo wp_kses_post($getProductDetail->get_image('thumbnail')); ?>
                                     </div>
 
                                     <div class="majc-item-desc">
                                         <div class="majc-item-remove">
                                             <?php
-                                            echo apply_filters('woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="majc-remove"  aria-label="%s" data-cart_item_id="%s" data-cart_item_sku="%s" data-cart_item_key="%s"><span class="icon_trash_alt"></span></a>', esc_url(wc_get_cart_remove_url($itemKey)), esc_html__('Remove this item', 'mini-ajax-cart'), esc_attr($product_id), esc_attr($product->get_sku()), esc_attr($itemKey)
-                                            ), $itemKey);
+                                            echo wp_kses_post(apply_filters('woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="majc-remove"  aria-label="%s" data-cart_item_id="%s" data-cart_item_sku="%s" data-cart_item_key="%s"><span class="icon_trash_alt"></span></a>', esc_url(wc_get_cart_remove_url($itemKey)), esc_html__('Remove this item', 'mini-ajax-cart'), esc_attr($product_id), esc_attr($product->get_sku()), esc_attr($itemKey)), $itemKey));
                                             ?>
                                         </div>
 
@@ -186,7 +181,7 @@ if (!class_exists('MAJC_Frontend')) {
                                         <div class="majc-item-price">
                                             <?php
                                             $wc_product = $itemVal['data'];
-                                            echo WC()->cart->get_product_subtotal($wc_product, $itemVal['quantity']);
+                                            echo wp_kses_post(WC()->cart->get_product_subtotal($wc_product, $itemVal['quantity']));
                                             ?>
                                         </div>
 
@@ -293,7 +288,7 @@ if (!class_exists('MAJC_Frontend')) {
 
             ob_start();
             foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
-                if ($cart_item['product_id'] == $_POST['cart_item_id'] && $cart_item_key == $_POST['cart_item_key']) {
+                if ($cart_item['product_id'] == majc_get_post('cart_item_id') && $cart_item_key == majc_get_post('cart_item_id')) {
                     WC()->cart->remove_cart_item($cart_item_key);
                 }
             }
@@ -309,13 +304,11 @@ if (!class_exists('MAJC_Frontend')) {
             $data = array(
                 'fragments' => apply_filters('woocommerce_add_to_cart_fragments', array(
                     'div.widget_shopping_cart_content' => '<div class="widget_shopping_cart_content">' . $mini_cart . '</div>'
-                )
-                ),
+                )),
                 'cart_hash' => apply_filters('woocommerce_add_to_cart_hash', WC()->cart->get_cart_for_session() ? md5(json_encode(WC()->cart->get_cart_for_session())) : '', WC()->cart->get_cart_for_session())
             );
 
             wp_send_json($data);
-
             die();
         }
 

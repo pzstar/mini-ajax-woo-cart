@@ -70,20 +70,20 @@ if (!class_exists('MAJC_Enqueue')) {
             wp_enqueue_script('jquery-effects-shake');
 
             // Animate CSS
-            wp_enqueue_style('animate', MAJC_FRONTEND_CSS_DIR . 'animate.css', false, MAJC_VERSION);
+            wp_enqueue_style('animate', MAJC_FRONTEND_CSS_DIR . 'animate.css', array(), MAJC_VERSION);
 
-            wp_enqueue_style('hover', MAJC_FRONTEND_CSS_DIR . 'hover-min.css', false, MAJC_VERSION);
+            wp_enqueue_style('hover', MAJC_FRONTEND_CSS_DIR . 'hover-min.css', array(), MAJC_VERSION);
 
             /* Register Custom Scrollbar */
             wp_enqueue_style('jquery-mCustomScrollbar', MAJC_FRONTEND_CSS_DIR . '../../mcscrollbar/jquery.mCustomScrollbar.css', array(), MAJC_VERSION);
             wp_enqueue_script('jquery-mCustomScrollbar-script', MAJC_FRONTEND_JS_DIR . '../../mcscrollbar/jquery.mCustomScrollbar.js', array('jquery'), MAJC_VERSION);
 
             // Plugins Frontend Styles
-            wp_enqueue_style('majc-fonts', majc_fonts_url(), array(), NULL);
+            wp_enqueue_style('majc-fonts', majc_fonts_url(), array(), MAJC_VERSION);
             if (is_rtl()) {
-                wp_enqueue_style('majc-frontend-flymenu-style', MAJC_FRONTEND_CSS_DIR . 'frontend.rtl.css', false, MAJC_VERSION);
+                wp_enqueue_style('majc-frontend-flymenu-style', MAJC_FRONTEND_CSS_DIR . 'frontend.rtl.css', array(), MAJC_VERSION);
             } else {
-                wp_enqueue_style('majc-frontend-flymenu-style', MAJC_FRONTEND_CSS_DIR . 'frontend.css', false, MAJC_VERSION);
+                wp_enqueue_style('majc-frontend-flymenu-style', MAJC_FRONTEND_CSS_DIR . 'frontend.css', array(), MAJC_VERSION);
             }
 
             // Plugins Frontend Scripts

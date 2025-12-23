@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or die('No script please!');
+
 if (!function_exists('majc_font_awesome_icon_array')) {
 
     function majc_font_awesome_icon_array() {
