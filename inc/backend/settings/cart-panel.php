@@ -32,14 +32,14 @@
                     <label><?php esc_attr_e('Show Animation', 'mini-ajax-cart') ?></label>
                     <select name="majc_settings[show_animation]">
                         <option value="none"><?php esc_html_e('Default', 'mini-ajax-cart'); ?></option>
-                        <?php foreach ($animations['show_animation'] as $key => $key_array): ?>
-                            <optgroup label="<?php echo esc_attr($key) ?>">
-                                <?php foreach ($key_array as $value): ?>
-                                    <option value="<?php echo esc_attr($value) ?>" <?php
+                        <?php foreach ($majc_animations['show_animation'] as $majc_key => $majc_key_array): ?>
+                            <optgroup label="<?php echo esc_attr($majc_key) ?>">
+                                <?php foreach ($majc_key_array as $majc_value): ?>
+                                    <option value="<?php echo esc_attr($majc_value) ?>" <?php
                                        if (isset($majc_settings['show_animation'])) {
-                                           selected($majc_settings['show_animation'], $value);
+                                           selected($majc_settings['show_animation'], $majc_value);
                                        }
-                                       ?>><?php echo esc_attr($value) ?></option>
+                                       ?>><?php echo esc_attr($majc_value) ?></option>
                                 <?php endforeach ?>
                             </optgroup>
                         <?php endforeach ?>
@@ -49,14 +49,14 @@
                     <label><?php esc_attr_e('Hide Animation', 'mini-ajax-cart') ?></label>
                     <select name="majc_settings[hide_animation]">
                         <option value="none"><?php esc_html_e('Default', 'mini-ajax-cart'); ?></option>
-                        <?php foreach ($animations['hide_animation'] as $key => $key_array): ?>
-                            <optgroup label="<?php echo esc_attr($key) ?>">
-                                <?php foreach ($key_array as $value): ?>
-                                    <option value="<?php echo esc_attr($value) ?>" <?php
+                        <?php foreach ($majc_animations['hide_animation'] as $majc_key => $majc_key_array): ?>
+                            <optgroup label="<?php echo esc_attr($majc_key) ?>">
+                                <?php foreach ($majc_key_array as $majc_value): ?>
+                                    <option value="<?php echo esc_attr($majc_value) ?>" <?php
                                        if (isset($majc_settings['hide_animation'])) {
-                                           selected($majc_settings['hide_animation'], $value);
+                                           selected($majc_settings['hide_animation'], $majc_value);
                                        }
-                                       ?>><?php echo esc_attr($value) ?></option>
+                                       ?>><?php echo esc_attr($majc_value) ?></option>
                                 <?php endforeach ?>
                             </optgroup>
                         <?php endforeach ?>

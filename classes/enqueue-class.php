@@ -89,11 +89,11 @@ if (!class_exists('MAJC_Enqueue')) {
             // Plugins Frontend Scripts
             wp_enqueue_script('majc-frontend-script', MAJC_FRONTEND_JS_DIR . 'frontend.js', array('jquery-effects-shake', 'jquery-effects-slide', 'jquery-ui-core', 'jquery', 'jquery-ui-draggable'), MAJC_VERSION);
 
-            $frontend_js_obj = array(
+            $majc_frontend_js_obj = array(
                 'ajax_url' => admin_url('admin-ajax.php'),
                 'ajax_nonce' => wp_create_nonce('majc-frontend-ajax-nonce')
             );
-            wp_localize_script('majc-frontend-script', 'majc_frontend_js_obj', $frontend_js_obj);
+            wp_localize_script('majc-frontend-script', 'majc_frontend_js_obj', $majc_frontend_js_obj);
         }
 
     }

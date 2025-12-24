@@ -63,9 +63,9 @@ if (!class_exists('MAJC_Frontend')) {
                 return;
             }
 
-            $couponCode = majc_get_post('couponCode', 'sanitize_text_field', null);
+            $majc_couponCode = majc_get_post('couponCode', 'sanitize_text_field', null);
 
-            if (WC()->cart->remove_coupon($couponCode)) {
+            if (WC()->cart->remove_coupon($majc_couponCode)) {
                 esc_html_e('Coupon Removed Successfully.', 'mini-ajax-cart');
             }
 
@@ -107,10 +107,10 @@ if (!class_exists('MAJC_Frontend')) {
             }
 
             /* Create an instance of WC_Coupon with our code */
-            $coupon = new WC_Coupon($code);
-            $applied_coupons = WC()->cart->get_applied_coupons();
+            $majc_coupon = new WC_Coupon($code);
+            $majc_applied_coupons = WC()->cart->get_applied_coupons();
 
-            if (in_array($code, $applied_coupons)) {
+            if (in_array($code, $majc_applied_coupons)) {
 
                 $response = array(
                     'result' => 'already applied',
@@ -118,7 +118,7 @@ if (!class_exists('MAJC_Frontend')) {
                 );
 
                 $this->addCouponResponse($response);
-            } else if (!$coupon->is_valid()) {
+            } else if (!$majc_coupon->is_valid()) {
 
                 $response = array(
                     'result' => 'not valid',
@@ -152,36 +152,36 @@ if (!class_exists('MAJC_Frontend')) {
                 <?php if (!WC()->cart->is_empty()) { ?>
                     <div class="majc-mini-cart">
                         <?php
-                        $items = WC()->cart->get_cart();
-                        foreach ($items as $itemKey => $itemVal) {
-                            $_product = apply_filters('woocommerce_cart_item_product', $itemVal['data'], $itemVal, $itemKey);
+                        $majc_items = WC()->cart->get_cart();
+                        foreach ($majc_items as $majc_item_key => $majc_item_val) {
+                            $majc__product = apply_filters('woocommerce_cart_item_product', $majc_item_val['data'], $majc_item_val, $majc_item_key);
                             ?>
-                            <div class="majc-cart-items" data-itemId="<?php echo esc_attr($itemVal['product_id']); ?>" data-cKey="<?php echo esc_attr($itemVal['key']); ?>">
+                            <div class="majc-cart-items" data-itemId="<?php echo esc_attr($majc_item_val['product_id']); ?>" data-cKey="<?php echo esc_attr($majc_item_val['key']); ?>">
                                 <div class="majc-cart-items-inner">
                                     <?php
-                                    $product = wc_get_product($itemVal['data']->get_id());
-                                    $product_id = apply_filters('woocommerce_cart_item_product_id', $itemVal['product_id'], $itemVal, $itemKey);
-                                    $getProductDetail = wc_get_product($itemVal['product_id']);
+                                    $majc_product = wc_get_product($majc_item_val['data']->get_id());
+                                    $majc_product_id = apply_filters('woocommerce_cart_item_product_id', $majc_item_val['product_id'], $majc_item_val, $majc_item_key);
+                                    $majc_product_detail = wc_get_product($majc_item_val['product_id']);
                                     ?>
                                     <div class="majc-item-img">
-                                        <?php echo wp_kses_post($getProductDetail->get_image('thumbnail')); ?>
+                                        <?php echo wp_kses_post($majc_product_detail->get_image('thumbnail')); ?>
                                     </div>
 
                                     <div class="majc-item-desc">
                                         <div class="majc-item-remove">
                                             <?php
-                                            echo wp_kses_post(apply_filters('woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="majc-remove"  aria-label="%s" data-cart_item_id="%s" data-cart_item_sku="%s" data-cart_item_key="%s"><span class="icon_trash_alt"></span></a>', esc_url(wc_get_cart_remove_url($itemKey)), esc_html__('Remove this item', 'mini-ajax-cart'), esc_attr($product_id), esc_attr($product->get_sku()), esc_attr($itemKey)), $itemKey));
+                                            echo wp_kses_post(apply_filters('woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="majc-remove"  aria-label="%s" data-cart_item_id="%s" data-cart_item_sku="%s" data-cart_item_key="%s"><span class="icon_trash_alt"></span></a>', esc_url(wc_get_cart_remove_url($majc_item_key)), esc_html__('Remove this item', 'mini-ajax-cart'), esc_attr($majc_product_id), esc_attr($majc_product->get_sku()), esc_attr($majc_item_key)), $majc_item_key));
                                             ?>
                                         </div>
 
                                         <div class="majc-item-name">
-                                            <?php echo esc_html($product->get_name()); ?>
+                                            <?php echo esc_html($majc_product->get_name()); ?>
                                         </div>
 
                                         <div class="majc-item-price">
                                             <?php
-                                            $wc_product = $itemVal['data'];
-                                            echo wp_kses_post(WC()->cart->get_product_subtotal($wc_product, $itemVal['quantity']));
+                                            $majc_wc_product = $majc_item_val['data'];
+                                            echo wp_kses_post(WC()->cart->get_product_subtotal($majc_wc_product, $majc_item_val['quantity']));
                                             ?>
                                         </div>
 
@@ -190,18 +190,18 @@ if (!class_exists('MAJC_Frontend')) {
 
                                             <?php
 
-                                            if ($_product->is_sold_individually()) {
-                                                $product_quantity = sprintf('1 <input type="hidden" name="cart[%s][qty]" value="1" />', $itemKey);
+                                            if ($majc__product->is_sold_individually()) {
+                                                $majc_product_quantity = sprintf('1 <input type="hidden" name="cart[%s][qty]" value="1" />', $majc_item_key);
                                             } else {
-                                                $product_quantity = woocommerce_quantity_input(array(
+                                                $majc_product_quantity = woocommerce_quantity_input(array(
                                                     'input_name' => "majc-qty-input",
-                                                    'input_value' => $itemVal['quantity'],
-                                                    'max_value' => $_product->get_max_purchase_quantity(),
+                                                    'input_value' => $majc_item_val['quantity'],
+                                                    'max_value' => $majc__product->get_max_purchase_quantity(),
                                                     'min_value' => '0',
-                                                    'product_name' => $_product->get_name(),
-                                                ), $_product, false);
+                                                    'product_name' => $majc__product->get_name(),
+                                                ), $majc__product, false);
                                             }
-                                            echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $itemKey, $itemVal); // PHPCS: XSS ok.
+                                            echo apply_filters('woocommerce_cart_item_quantity', $majc_product_quantity, $majc_item_key, $majc_item_val); // PHPCS: XSS ok.
                                             ?>
 
                                             <span class="majc-qty-plus majc-qty-chng icon_plus"></span>
@@ -216,20 +216,20 @@ if (!class_exists('MAJC_Frontend')) {
                 <?php } ?>
             </div>
             <?php
-            $cart_body_contents = ob_get_clean();
-            $fragments['div.majc-cart-item-wrap'] = $cart_body_contents;
+            $majc_cart_body_contents = ob_get_clean();
+            $fragments['div.majc-cart-item-wrap'] = $majc_cart_body_contents;
 
             // Update subtotal Amount
-            $get_totals = WC()->cart->get_totals();
-            $cart_total = $get_totals['subtotal'];
-            $cart_discount = $get_totals['discount_total'];
-            $final_subtotal = $cart_total - $cart_discount;
-            $subtotal = "<div class='majc-subtotal-amount'>" . get_woocommerce_currency_symbol() . number_format($final_subtotal, 2) . "</div>";
+            $majc_totals = WC()->cart->get_totals();
+            $majc_cart_total = $majc_totals['subtotal'];
+            $majc_cart_discount = $majc_totals['discount_total'];
+            $majc_final_subtotal = $majc_cart_total - $majc_cart_discount;
+            $subtotal = "<div class='majc-subtotal-amount'>" . get_woocommerce_currency_symbol() . number_format($majc_final_subtotal, 2) . "</div>";
             $fragments['div.majc-subtotal-amount'] = $subtotal;
 
             // Update Total Amount
-            $cartTotal = '<div class="majc-cart-total-amount">' . wc_price(WC()->cart->get_subtotal() + WC()->cart->get_subtotal_tax()) . '</div>';
-            $fragments['div.majc-cart-total-amount'] = $cartTotal;
+            $majc_cartTotal = '<div class="majc-cart-total-amount">' . wc_price(WC()->cart->get_subtotal() + WC()->cart->get_subtotal_tax()) . '</div>';
+            $fragments['div.majc-cart-total-amount'] = $majc_cartTotal;
 
             // Update Discount Amount
             $discountTotal = '<div class="majc-cart-discount-amount">' . wc_price(WC()->cart->get_cart_discount_total() + WC()->cart->get_cart_discount_tax_total()) . '</div>';
@@ -238,22 +238,22 @@ if (!class_exists('MAJC_Frontend')) {
             $fragments['.majc-check-cart'] = WC()->cart->is_empty() ? '<div class="majc-check-cart majc-hide-cart-items"></div>' : '<div class="majc-check-cart"></div>';
 
             // Update Applied Coupon
-            $applied_coupons = WC()->cart->get_applied_coupons();
+            $majc_applied_coupons = WC()->cart->get_applied_coupons();
             ob_start();
-            if (!empty($applied_coupons)) {
+            if (!empty($majc_applied_coupons)) {
                 ?>
 
                 <ul class='majc-applied-cpns'>
-                    <?php foreach ($applied_coupons as $cpns) { ?>
-                        <li data-code='<?php echo esc_attr($cpns); ?>'><?php echo esc_attr($cpns); ?> <span class='majc-remove-cpn icofont-close-line'></span></li>
+                    <?php foreach ($majc_applied_coupons as $majc_cpns) { ?>
+                        <li data-code='<?php echo esc_attr($majc_cpns); ?>'><?php echo esc_attr($majc_cpns); ?> <span class='majc-remove-cpn icofont-close-line'></span></li>
                     <?php } ?>
                 </ul>
                 <?php
             } else {
                 echo '<ul class="majc-applied-cpns" style="display: none;"><li></li></ul>';
             }
-            $cart_cpn = ob_get_clean();
-            $fragments['ul.majc-applied-cpns'] = $cart_cpn;
+            $majc_cart_cpn = ob_get_clean();
+            $fragments['ul.majc-applied-cpns'] = $majc_cart_cpn;
 
             // Update the Items Count In the Cart
             $fragments['.majc-cart-qty-count'] = '<span class="majc-cart-qty-count">' . esc_html__('Quantity: ', 'mini-ajax-cart') . WC()->cart->get_cart_contents_count() . '</span>';
@@ -287,9 +287,9 @@ if (!class_exists('MAJC_Frontend')) {
             }
 
             ob_start();
-            foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
-                if ($cart_item['product_id'] == majc_get_post('cart_item_id') && $cart_item_key == majc_get_post('cart_item_id')) {
-                    WC()->cart->remove_cart_item($cart_item_key);
+            foreach (WC()->cart->get_cart() as $majc_cart_item_key => $majc_cart_item) {
+                if ($majc_cart_item['product_id'] == majc_get_post('cart_item_id') && $majc_cart_item_key == majc_get_post('cart_item_key')) {
+                    WC()->cart->remove_cart_item($majc_cart_item_key);
                 }
             }
 
@@ -312,78 +312,78 @@ if (!class_exists('MAJC_Frontend')) {
             die();
         }
 
-        public static function hide_show_pages($pageid, $specific_page, $hide_show, $front, $blog, $cpt, $error, $search, $archive, $posttype, $specific_archive, $current_archive) {
-            $show = true;
+        public static function hide_show_pages($pageid, $majc_specific_page, $majc_hide_show, $majc_front, $majc_blog, $majc_cpt, $majc_error, $majc_search, $majc_archive, $posttype, $majc_specific_archive, $majc_current_archive) {
+            $majc_show = true;
 
-            switch ($hide_show) {
+            switch ($majc_hide_show) {
                 case 'show_all':
-                    $show = true;
+                    $majc_show = true;
                     break;
 
                 case 'hide_all':
-                    $show = false;
+                    $majc_show = false;
                     break;
 
                 case 'show_selected':
-                    $show = false;
-                    if (in_array($pageid, $specific_page)) {
-                        $show = true;
+                    $majc_show = false;
+                    if (in_array($pageid, $majc_specific_page)) {
+                        $majc_show = true;
                     }
-                    if (is_singular() && !is_archive() && in_array($posttype, $cpt)) {
-                        $show = true;
+                    if (is_singular() && !is_archive() && in_array($posttype, $majc_cpt)) {
+                        $majc_show = true;
                     }
-                    if ($front == 'on' && ('front' == $current_archive)) {
-                        $show = true;
+                    if ($majc_front == 'on' && ('front' == $majc_current_archive)) {
+                        $majc_show = true;
                     }
-                    if ($blog == 'on' && ('front' == $current_archive)) {
-                        $show = true;
+                    if ($majc_blog == 'on' && ('front' == $majc_current_archive)) {
+                        $majc_show = true;
                     }
-                    if ($error == 'on' && is_404()) {
-                        $show = true;
+                    if ($majc_error == 'on' && is_404()) {
+                        $majc_show = true;
                     }
-                    if ($search == 'on' && is_search()) {
-                        $show = true;
+                    if ($majc_search == 'on' && is_search()) {
+                        $majc_show = true;
                     }
-                    if ($archive == 'on' && is_archive()) {
-                        $show = true;
+                    if ($majc_archive == 'on' && is_archive()) {
+                        $majc_show = true;
                     }
-                    if ($archive == 'on' && ('post' == $current_archive && !is_singular())) {
-                        $show = true;
+                    if ($majc_archive == 'on' && ('post' == $majc_current_archive && !is_singular())) {
+                        $majc_show = true;
                     }
-                    if (!is_singular() && in_array($current_archive, $specific_archive)) {
-                        $show = true;
+                    if (!is_singular() && in_array($majc_current_archive, $majc_specific_archive)) {
+                        $majc_show = true;
                     }
                     break;
 
                 case 'hide_selected':
-                    $show = true;
-                    if (is_singular() && !is_archive() && in_array($posttype, $cpt)) {
-                        $show = false;
+                    $majc_show = true;
+                    if (is_singular() && !is_archive() && in_array($posttype, $majc_cpt)) {
+                        $majc_show = false;
                     }
-                    if (in_array($pageid, $specific_page)) {
-                        $show = false;
+                    if (in_array($pageid, $majc_specific_page)) {
+                        $majc_show = false;
                     }
-                    if ($front == 'on' && ('front' == $current_archive)) {
-                        $show = false;
+                    if ($majc_front == 'on' && ('front' == $majc_current_archive)) {
+                        $majc_show = false;
                     }
-                    if ($blog == 'on' && ('front' == $current_archive)) {
-                        $show = false;
+                    if ($majc_blog == 'on' && ('front' == $majc_current_archive)) {
+                        $majc_show = false;
                     }
-                    if ($error == 'on' && is_404()) {
-                        $show = false;
+                    if ($majc_error == 'on' && is_404()) {
+                        $majc_show = false;
                     }
-                    if ($search == 'on' && is_search()) {
-                        $show = false;
+                    if ($majc_search == 'on' && is_search()) {
+                        $majc_show = false;
                     }
-                    if ($archive == 'on' && ('post' == $current_archive && !is_singular())) {
-                        $show = false;
+                    if ($majc_archive == 'on' && ('post' == $majc_current_archive && !is_singular())) {
+                        $majc_show = false;
                     }
-                    if (!is_singular() && in_array($current_archive, $specific_archive)) {
-                        $show = false;
+                    if (!is_singular() && in_array($majc_current_archive, $majc_specific_archive)) {
+                        $majc_show = false;
                     }
                     break;
             }
-            return $show;
+            return $majc_show;
         }
 
     }

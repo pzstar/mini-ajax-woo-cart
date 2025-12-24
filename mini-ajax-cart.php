@@ -92,11 +92,11 @@ if (!class_exists('MAJC_Class')) {
         }
 
         public function add_plugin_action_link($links) {
-            $custom['settings'] = sprintf(
+            $majc_custom['settings'] = sprintf(
                 '<a href="%s" aria-label="%s">%s</a>', esc_url(add_query_arg('post_type', 'ultimate-woo-cart', admin_url('edit.php'))), esc_attr__('Cart Settings', 'mini-ajax-cart'), esc_html__('Settings', 'mini-ajax-cart')
             );
 
-            return array_merge($custom, (array) $links);
+            return array_merge($majc_custom, (array) $links);
         }
 
     }

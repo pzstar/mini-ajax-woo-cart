@@ -9,18 +9,18 @@
                     <label>Choose Icon Type</label>
                     <select name="majc_settings[cart_basket][icon_type]" data-condition="toggle" id="majc-icon-type">
                         <option value="default_icon" <?php
-                        if (isset($cart_basket['icon_type'])) {
-                            selected($cart_basket['icon_type'], 'default_icon');
+                        if (isset($majc_cart_basket['icon_type'])) {
+                            selected($majc_cart_basket['icon_type'], 'default_icon');
                         }
                         ?>><?php esc_html_e('Default Icon', 'mini-ajax-cart'); ?></option>
                         <option value="available_icon" <?php
-                        if (isset($cart_basket['icon_type'])) {
-                            selected($cart_basket['icon_type'], 'available_icon');
+                        if (isset($majc_cart_basket['icon_type'])) {
+                            selected($majc_cart_basket['icon_type'], 'available_icon');
                         }
                         ?>><?php esc_html_e('Available Icon', 'mini-ajax-cart'); ?></option>
                         <option value="custom_icon" <?php
-                        if (isset($cart_basket['icon_type'])) {
-                            selected($cart_basket['icon_type'], 'custom_icon');
+                        if (isset($majc_cart_basket['icon_type'])) {
+                            selected($majc_cart_basket['icon_type'], 'custom_icon');
                         }
                         ?>><?php esc_html_e('Custom Icon', 'mini-ajax-cart'); ?></option>
                     </select>
@@ -31,17 +31,17 @@
                         <li class="majc-settings-list">
                             <label for="majc_floatmenu_default_icon"><?php esc_html_e('Choose Open Icon', 'mini-ajax-cart'); ?></label>
                             <?php
-                            $inputName = 'majc_settings[cart_basket][open_available_icon]';
-                            $iconName = isset($cart_basket['open_available_icon']) ? $cart_basket['open_available_icon'] : null; //icon value from db
-                            $this->icon_field($inputName, $iconName);
+                            $majc_input_name = 'majc_settings[cart_basket][open_available_icon]';
+                            $majc_icon_name = isset($majc_cart_basket['open_available_icon']) ? $majc_cart_basket['open_available_icon'] : null; //icon value from db
+                            $this->icon_field($majc_input_name, $majc_icon_name);
                             ?>
                         </li>
                         <li class="majc-settings-list">
                             <label for="majc_floatmenu_default_icon"><?php esc_html_e('Choose Close Icon', 'mini-ajax-cart'); ?></label>
                             <?php
-                            $inputName = 'majc_settings[cart_basket][close_available_icon]';
-                            $iconName = isset($cart_basket['close_available_icon']) ? $cart_basket['close_available_icon'] : null; //icon value from db
-                            $this->icon_field($inputName, $iconName);
+                            $majc_input_name = 'majc_settings[cart_basket][close_available_icon]';
+                            $majc_icon_name = isset($majc_cart_basket['close_available_icon']) ? $majc_cart_basket['close_available_icon'] : null; //icon value from db
+                            $this->icon_field($majc_input_name, $majc_icon_name);
                             ?>
                         </li>
                     </ul>
@@ -54,15 +54,15 @@
                             <div class="majc-icon-image-uploader">
                                 <div class="majc-custom-img-icon-btn">
                                     <div class="majc-custom-menu-image-icon current-bg-image">
-                                        <?php if (isset($cart_basket['open_custom_icon']) && !empty($cart_basket['open_custom_icon'])) { ?>
-                                            <img src="<?php echo isset($cart_basket['open_custom_icon']) ? esc_url($cart_basket['open_custom_icon']) : ''; ?>" />
+                                        <?php if (isset($majc_cart_basket['open_custom_icon']) && !empty($majc_cart_basket['open_custom_icon'])) { ?>
+                                            <img src="<?php echo isset($majc_cart_basket['open_custom_icon']) ? esc_url($majc_cart_basket['open_custom_icon']) : ''; ?>" />
                                         <?php } ?>
                                     </div>
                                     <div class="majc-image-remove"><?php esc_html_e('Remove', 'mini-ajax-cart'); ?></div>
                                 </div>
 
                                 <div class="button majc-image-upload"><?php esc_html_e('Upload', 'mini-ajax-cart') ?></div>
-                                <input type="hidden" class="majc-upload-background-url" name="majc_settings[cart_basket][open_custom_icon]" id="majc-header-icon" value="<?php echo isset($cart_basket['open_custom_icon']) ? esc_url($cart_basket['open_custom_icon']) : ''; ?>" />
+                                <input type="hidden" class="majc-upload-background-url" name="majc_settings[cart_basket][open_custom_icon]" id="majc-header-icon" value="<?php echo isset($majc_cart_basket['open_custom_icon']) ? esc_url($majc_cart_basket['open_custom_icon']) : ''; ?>" />
                             </div> <!-- majc-icon-image-uploader -->
                         </li>
                         <li class="majc-settings-list">
@@ -70,14 +70,14 @@
                             <div class="majc-icon-image-uploader">
                                 <div class="majc-custom-img-icon-btn">
                                     <div class="majc-custom-menu-image-icon current-bg-image">
-                                        <?php if (isset($cart_basket['close_custom_icon']) && !empty($cart_basket['close_custom_icon'])) { ?>
-                                            <img src="<?php echo isset($cart_basket['close_custom_icon']) ? esc_url($cart_basket['close_custom_icon']) : ''; ?>" />
+                                        <?php if (isset($majc_cart_basket['close_custom_icon']) && !empty($majc_cart_basket['close_custom_icon'])) { ?>
+                                            <img src="<?php echo isset($majc_cart_basket['close_custom_icon']) ? esc_url($majc_cart_basket['close_custom_icon']) : ''; ?>" />
                                         <?php } ?>
                                     </div>
                                     <div class="majc-image-remove"><?php esc_html_e('Remove', 'mini-ajax-cart'); ?></div>
                                 </div>
                                 <div class="button majc-image-upload"><?php esc_html_e('Upload', 'mini-ajax-cart') ?></div>
-                                <input type="hidden" class="majc-upload-background-url" name="majc_settings[cart_basket][close_custom_icon]" id="majc-header-icon" value="<?php echo isset($cart_basket['close_custom_icon']) ? esc_url($cart_basket['close_custom_icon']) : ''; ?>" />
+                                <input type="hidden" class="majc-upload-background-url" name="majc_settings[cart_basket][close_custom_icon]" id="majc-header-icon" value="<?php echo isset($majc_cart_basket['close_custom_icon']) ? esc_url($majc_cart_basket['close_custom_icon']) : ''; ?>" />
                             </div> <!-- majc-icon-image-uploader -->
                         </li>
                     </ul>
@@ -91,18 +91,18 @@
         <div class="majc-settings-fields">
             <select name="majc_settings[cart_basket][shape]">
                 <option value="round" <?php
-                if (isset($cart_basket['shape'])) {
-                    selected($cart_basket['shape'], 'round');
+                if (isset($majc_cart_basket['shape'])) {
+                    selected($majc_cart_basket['shape'], 'round');
                 }
                 ?>><?php esc_html_e('Round', 'mini-ajax-cart'); ?></option>
                 <option value="square" <?php
-                if (isset($cart_basket['shape'])) {
-                    selected($cart_basket['shape'], 'square');
+                if (isset($majc_cart_basket['shape'])) {
+                    selected($majc_cart_basket['shape'], 'square');
                 }
                 ?>><?php esc_html_e('Square', 'mini-ajax-cart'); ?></option>
                 <option value="rounded_square" <?php
-                if (isset($cart_basket['shape'])) {
-                    selected($cart_basket['shape'], 'rounded_square');
+                if (isset($majc_cart_basket['shape'])) {
+                    selected($majc_cart_basket['shape'], 'rounded_square');
                 }
                 ?>><?php esc_html_e('Rounded Square', 'mini-ajax-cart'); ?></option>
             </select>
@@ -157,14 +157,14 @@
         <div class="majc-settings-fields">
             <select name="majc_settings[cart_basket][hover_animation]">
                 <option value="none"><?php esc_html_e('None', 'mini-ajax-cart'); ?></option>
-                <?php foreach ($animations['hover_animation'] as $type => $type_array): ?>
-                    <optgroup label="<?php echo esc_attr($type) ?>">
-                        <?php foreach ($type_array as $key => $value): ?>
-                            <option value="<?php echo esc_attr($value) ?>" <?php
+                <?php foreach ($majc_animations['hover_animation'] as $majc_type => $majc_type_array): ?>
+                    <optgroup label="<?php echo esc_attr($majc_type) ?>">
+                        <?php foreach ($majc_type_array as $majc_key => $majc_value): ?>
+                            <option value="<?php echo esc_attr($majc_value) ?>" <?php
                                if (isset($majc_settings['cart_basket']['hover_animation'])) {
-                                   selected($majc_settings['cart_basket']['hover_animation'], $value);
+                                   selected($majc_settings['cart_basket']['hover_animation'], $majc_value);
                                }
-                               ?>><?php echo esc_attr($key) ?></option>
+                               ?>><?php echo esc_attr($majc_key) ?></option>
                         <?php endforeach ?>
                     </optgroup>
                 <?php endforeach ?>
@@ -176,8 +176,8 @@
         <label><?php esc_html_e('Show Product Counter', 'mini-ajax-cart'); ?></label>
         <div class="majc-settings-fields majc-toggle-input-field">
             <input type="checkbox" name="majc_settings[cart_basket][product_count]" <?php
-            if (isset($cart_basket['product_count'])) {
-                checked($cart_basket['product_count'], 'on', true);
+            if (isset($majc_cart_basket['product_count'])) {
+                checked($majc_cart_basket['product_count'], 'on', true);
             }
             ?>>
             <p class="majc-desc"><?php echo esc_html__('Displays at the side of Basket/Button', 'mini-ajax-cart'); ?></p>

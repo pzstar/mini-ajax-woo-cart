@@ -26,20 +26,20 @@ if (!class_exists('MAJC_Library')) {
             return $array;
         }
 
-        static function sanitize_value($value = '', $sanitize_type = 'html') {
+        static function sanitize_value($majc_value = '', $sanitize_type = 'html') {
             switch ($sanitize_type) {
                 case 'text':
                     $allowed_html = wp_kses_allowed_html('post');
-                    return wp_kses($value, $allowed_html);
+                    return wp_kses($majc_value, $allowed_html);
                     break;
                 default:
-                    return sanitize_text_field($value);
+                    return sanitize_text_field($majc_value);
                     break;
             }
         }
 
         public function majc_animations() {
-            $animations = [
+            $majc_animations = [
                 'show_animation' => array(
                     'Fading Entrances' => array('fadeIn', 'fadeInLeft', 'fadeInRight'),
                     'Slide Entrance' => array('slideInLeft', 'slideInRight')
@@ -56,7 +56,7 @@ if (!class_exists('MAJC_Library')) {
                     )
                 ),
             ];
-            return $animations;
+            return $majc_animations;
         }
 
         public static function checkbox_settings() {
@@ -228,11 +228,11 @@ if (!class_exists('MAJC_Library')) {
 
             $new_args = (array) $defaults;
 
-            foreach ($args as $key => $value) {
-                if (is_array($value) && isset($new_args[$key])) {
-                    $new_args[$key] = self::recursive_parse_args($value, $new_args[$key]);
+            foreach ($args as $majc_key => $majc_value) {
+                if (is_array($majc_value) && isset($new_args[$majc_key])) {
+                    $new_args[$majc_key] = self::recursive_parse_args($majc_value, $new_args[$majc_key]);
                 } else {
-                    $new_args[$key] = $value;
+                    $new_args[$majc_key] = $majc_value;
                 }
             }
 

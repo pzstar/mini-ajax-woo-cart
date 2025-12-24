@@ -71,15 +71,15 @@ if (!class_exists('MAJC_Backend')) {
             register_post_type('ultimate-woo-cart', $args);
         }
 
-        public function icon_field($inputName, $iconName) {
-            $inputName = isset($inputName) ? $inputName : '';
-            $iconName = isset($iconName) ? $iconName : '';
-            if (!isset($iconName))
+        public function icon_field($majc_input_name, $majc_icon_name) {
+            $majc_input_name = isset($majc_input_name) ? $majc_input_name : '';
+            $majc_icon_name = isset($majc_icon_name) ? $majc_icon_name : '';
+            if (!isset($majc_icon_name))
                 return;
             ?>
             <div class="majc-icon-box-wrap">
                 <div class="majc-selected-icon">
-                    <i class="<?php echo esc_attr($iconName); ?>"></i>
+                    <i class="<?php echo esc_attr($majc_icon_name); ?>"></i>
                     <span><i class="majc-down-icon"></i></span>
                 </div>
 
@@ -98,7 +98,7 @@ if (!class_exists('MAJC_Backend')) {
                     echo '<ul class="majc-icon-list majc-icofont-list clearfix active">';
                     $majc_icofont_icon_array = majc_icofont_icon_array();
                     foreach ($majc_icofont_icon_array as $majc_icofont_icon) {
-                        $icon_class = $iconName == $majc_icofont_icon ? 'icon-active' : '';
+                        $icon_class = $majc_icon_name == $majc_icofont_icon ? 'icon-active' : '';
                         echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($majc_icofont_icon) . '"></i></li>';
                     }
                     echo '</ul>';
@@ -107,7 +107,7 @@ if (!class_exists('MAJC_Backend')) {
                     echo '<ul class="majc-icon-list majc-fontawesome-list clearfix">';
                     $majc_font_awesome_icon_array = majc_font_awesome_icon_array();
                     foreach ($majc_font_awesome_icon_array as $majc_font_awesome_icon) {
-                        $icon_class = $iconName == $majc_font_awesome_icon ? 'icon-active' : '';
+                        $icon_class = $majc_icon_name == $majc_font_awesome_icon ? 'icon-active' : '';
                         echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($majc_font_awesome_icon) . '"></i></li>';
                     }
                     echo '</ul>';
@@ -116,7 +116,7 @@ if (!class_exists('MAJC_Backend')) {
                     echo '<ul class="majc-icon-list majc-essentialicon-list clearfix">';
                     $majc_essential_icon_array = majc_essential_icon_array();
                     foreach ($majc_essential_icon_array as $majc_essential_icon) {
-                        $icon_class = $iconName == $majc_essential_icon ? 'icon-active' : '';
+                        $icon_class = $majc_icon_name == $majc_essential_icon ? 'icon-active' : '';
                         echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($majc_essential_icon) . '"></i></li>';
                     }
                     echo '</ul>';
@@ -125,7 +125,7 @@ if (!class_exists('MAJC_Backend')) {
                     echo '<ul class="majc-icon-list majc-material-icon-list clearfix">';
                     $majc_materialdesignicons_icon_array = majc_materialdesignicons_array();
                     foreach ($majc_materialdesignicons_icon_array as $majc_materialdesignicons_icon) {
-                        $icon_class = $iconName == $majc_materialdesignicons_icon ? 'icon-active' : '';
+                        $icon_class = $majc_icon_name == $majc_materialdesignicons_icon ? 'icon-active' : '';
                         echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($majc_materialdesignicons_icon) . '"></i></li>';
                     }
                     echo '</ul>';
@@ -134,13 +134,13 @@ if (!class_exists('MAJC_Backend')) {
                     echo '<ul class="majc-icon-list majc-elegant-icon-list clearfix">';
                     $majc_eleganticons_icon_array = majc_eleganticons_array();
                     foreach ($majc_eleganticons_icon_array as $majc_eleganticons_icon) {
-                        $icon_class = $iconName == $majc_eleganticons_icon ? 'icon-active' : '';
+                        $icon_class = $majc_icon_name == $majc_eleganticons_icon ? 'icon-active' : '';
                         echo '<li class=' . esc_attr($icon_class) . '><i class="' . esc_attr($majc_eleganticons_icon) . '"></i></li>';
                     }
                     echo '</ul>';
                     ?>
                 </div>
-                <input class="majc-icon" type="hidden" value="<?php echo esc_attr($iconName); ?>" name="<?php echo esc_attr($inputName); ?>" />
+                <input class="majc-icon" type="hidden" value="<?php echo esc_attr($majc_icon_name); ?>" name="<?php echo esc_attr($majc_input_name); ?>" />
             </div>
             <?php
         }
@@ -250,5 +250,5 @@ if (!class_exists('MAJC_Backend')) {
 
     }
 
-    $menu_class_obj = new MAJC_Backend();
+    new MAJC_Backend();
 }
