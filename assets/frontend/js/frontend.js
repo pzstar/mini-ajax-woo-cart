@@ -81,7 +81,7 @@
             $popup.find(".majc-cartbasket-toggle-btn").trigger('click');
         });
 
-        $(document).on('click', '.add_to_cart_button', function () {
+        $(document).on('click', '.add_to_cart_button:not(.product_type_variable)', function () {
             var cart = $('body').find('.majc-toggle-open-btn');
 
             var imgtodrag = $(this).closest('.product').find("img").eq(0);
