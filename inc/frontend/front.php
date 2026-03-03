@@ -124,7 +124,7 @@ if (!empty($post)) {
                     'majc-' . $majc_basket_position,
                     'majc-cartitem-' . $majc_cart_item_layout,
                     $majc_basket_position_class,
-                    $majc_hide_screen ? 'majc-hide-' . implode(' majc-hide-', $majc_hide_screen) : ''
+                    $majc_hide_screen ? esc_attr('majc-hide-' . implode(' majc-hide-', $majc_hide_screen)) : ''
                 );
                 ?>
 
