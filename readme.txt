@@ -2,8 +2,8 @@
 Contributors: hashthemes
 Tags: woocommerce cart, cart, slidein cart, floating cart, ajax cart
 Requires at least: 6.3
-Tested up to: 6.9
-Stable tag: 1.3.4
+Tested up to: 7.0
+Stable tag: 1.3.5
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -188,65 +188,68 @@ For premium upgrade, please click below link <br>
 <a href="https://1.envato.market/2rKYB0">WooCommerce Cart</a>&nbsp;&nbsp;<a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-cart/">Demo Site</a>&nbsp;&nbsp;<a href="https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/">Documentation</a>
 
 == Changelog ==
+= 1.3.5 - 30 Jul, 2025 =
+* Compatibility test with WordPress version 7.0
+
 = 1.3.4 - 6 Dec, 2025 =
 * Compatibility test with WordPress version 6.9
 
-= 1.3.3 - 26 Nov, 2025  =
+= 1.3.3 - 26 Nov, 2025 =
 * Compatibility test with latest WordPress
 
-= 1.3.2 - 16 Oct, 2025  =
+= 1.3.2 - 16 Oct, 2025 =
 * Product count bug fixed
 
-= 1.3.1 - 3 Mar, 2025  =
+= 1.3.1 - 3 Mar, 2025 =
 * Translation fixes
 
-= 1.3.0 - 7 Feb, 2025  =
+= 1.3.0 - 7 Feb, 2025 =
 * Minor Fixes
 
-= 1.2.9 - 29 Jan, 2025  =
+= 1.2.9 - 29 Jan, 2025 =
 * Conditional logic for Nonce Check - Fixed
 
-= 1.2.8 - 13 Dec, 2024  =
+= 1.2.8 - 13 Dec, 2024 =
 * Undefined property: MAJC_Frontend::$checkNonce Error - Fixed
 
-= 1.2.7 - 21 Jul, 2024  =
+= 1.2.7 - 21 Jul, 2024 =
 * Compatibility test with WordPress 6.6
 
-= 1.2.6 - 13 May, 2024  =
+= 1.2.6 - 13 May, 2024 =
 * wc-cart-fragments enqueued - Added
 
-= 1.2.5 - 25 Mar, 2024  =
+= 1.2.5 - 25 Mar, 2024 =
 * Bug fixes
 
-= 1.2.4 - 25 Mar, 2024  =
+= 1.2.4 - 25 Mar, 2024 =
 * Minor fixes
 
-= 1.2.3 - 02 Jan, 2024  =
+= 1.2.3 - 02 Jan, 2024 =
 * Compatibility test with latest WordPress
 
-= 1.2.2 - 10 Oct, 2023  =
+= 1.2.2 - 10 Oct, 2023 =
 * Documentation link added
 
-= 1.2.1 - 25 Sep, 2023  =
+= 1.2.1 - 25 Sep, 2023 =
 * Spelling Correction
 
-= 1.2.0 - 30 Aug, 2023  =
+= 1.2.0 - 30 Aug, 2023 =
 * Language folder naming issue fixed for translation - Fixed
 
-= 1.1.9 - 9 May, 2023  =
+= 1.1.9 - 9 May, 2023 =
 * RTL ready - Added
 
-= 1.1.8 - 1 May, 2023  =
+= 1.1.8 - 1 May, 2023 =
 * Code refinement
 * Compatibility test with WordPress 6.2
 
-= 1.1.7 - 2 Mar, 2023  =
+= 1.1.7 - 2 Mar, 2023 =
 * Review Notice - Added
 
-= 1.1.6 - 1 Mar, 2023  =
+= 1.1.6 - 1 Mar, 2023 =
 * Font Icons updated to latest version
 
-= 1.1.5 - 11 Jan, 2023  =
+= 1.1.5 - 11 Jan, 2023 =
 * Readme.txt file updated
 
 = 1.1.4 =

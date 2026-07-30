@@ -37,7 +37,7 @@
 }
 
 .majc-menu-option-wrap .majc-side-menus li.majc-tab-active {
-    background: #2170b1;
+    background: var(--wp-admin-theme-color);
 }
 
 .majc-settings-row {
@@ -103,6 +103,7 @@
 
 .majc-settings-fields input[type="number"] {
     width: 80px;
+    padding-right: 0;
 }
 
 .majc-settings-list-row {
@@ -144,7 +145,7 @@
 }
 
 .majc-submenu .majc-submenu-tab.majc-tab-active {
-    background: #2170b1;
+    background: var(--wp-admin-theme-color);
     color: #FFF;
 }
 
@@ -228,7 +229,7 @@
     height: 45px;
     line-height: 45px;
     text-align: center;
-    border: 1px solid #eee;
+    border: 1px solid #949494;
     position: relative;
     margin-right: 44px;
     cursor: pointer;
@@ -246,7 +247,7 @@
     top: -1px;
     height: 45px;
     width: 45px;
-    border: 1px solid #eee;
+    border: 1px solid #949494;
     font-size: 16px;
     display: flex;
     align-items: center;
@@ -267,7 +268,7 @@
     align-items: center;
     padding: 10px;
     background: #f7f7f7;
-    border: 1px solid #eee;
+    border: 1px solid #949494;
     border-top: 0;
 }
 
@@ -280,7 +281,7 @@
     height: 215px;
     overflow-y: scroll;
     font-size: 18px;
-    border: 1px solid #eee;
+    border: 1px solid #949494;
     background: #fff;
     border-top: 0;
     padding: 4px;
@@ -418,21 +419,11 @@
 }
 
 .majc-toggle-tab-body p {
-    margin: 0 0 15px;
+    margin: 0 0 10px;
 }
 
 .majc-toggle-tab-body p:last-child {
     margin-bottom: 0;
-}
-
-.majc-toggle-tab-body input[type="checkbox"] {
-    float: left;
-    margin-top: 2px !important;
-}
-
-.majc-toggle-tab-body input[type="checkbox"] + label {
-    margin-left: 30px;
-    display: block;
 }
 
 /* Typography */
@@ -511,13 +502,12 @@
 
 /*Choosen Select*/
 .majc-typography-fields .chosen-container-single .chosen-single {
-    min-height: 30px;
+    min-height: 40px;
     font-size: 14px;
-    line-height: 2;
-    color: #2c3338;
-    border-color: #8c8f94;
+    line-height: 40px;
+    border-color: #949494;
     box-shadow: none;
-    border-radius: 3px;
+    border-radius: 2px;
     background: #fff url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E) no-repeat right 5px top 55%;
     background-size: 16px 16px;
     cursor: pointer;
@@ -568,7 +558,7 @@
     position: absolute;
     top: 0;
     height: 100%;
-    background: #13a1dc;
+    background: var(--wp-admin-theme-color);
 }
 
 .majc-range-slider .ui-slider-handle {
@@ -589,14 +579,7 @@
 .majc-range-slider + .majc-range-input-selector {
     margin-left: 10px;
     margin-right: 5px;
-    width: 50px !important;
-    height: 28px;
-    text-align: center;
-    border-radius: 4px;
-    padding: 3px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #555;
+    width: 60px !important;
 }
 
 /* Cart Editor Popup */
@@ -1036,7 +1019,7 @@ a.majc-upgrade-button {
     align-items: center;
     padding: 15px 30px;
     color: #FFF;
-    background: #2170b1;
+    background: var(--wp-admin-theme-color);
     text-decoration: none;
     border-radius: 2px;
     font-size: 14px;
