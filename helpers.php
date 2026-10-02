@@ -32,24 +32,6 @@ function majc_get_request($param, $sanitize = 'sanitize_text_field', $default = 
     return majc_sanitize_value($sanitize, $majc_value);
 }
 
-function majc_get_post_data($param) {
-    $post_data = array();
-    if (isset($_POST[$param])) {
-        parse_str($_POST[$param], $post_data);
-    }
-
-    return majc_sanitize_array($post_data);
-}
-
-function majc_get_request_data($param, $sanitize = 'sanitize_text_field', $default = '') {
-    $post_data = array();
-    if (isset($_REQUEST[$param])) {
-        parse_str($_REQUEST[$param], $post_data);
-    }
-
-    return majc_sanitize_array($post_data);
-}
-
 function majc_sanitize_value($sanitize, &$majc_value) {
     if (!empty($sanitize)) {
         if (is_array($majc_value)) {
@@ -64,26 +46,4 @@ function majc_sanitize_value($sanitize, &$majc_value) {
     }
 
     return $majc_value;
-}
-
-
-function majc_sanitize_array($array = array(), $sanitize_rule = array()) {
-    $new_args = (array) $array;
-
-    if ($array) {
-        foreach ($array as $majc_key => $majc_value) {
-            if (is_array($majc_value)) {
-                $new_args[$majc_key] = majc_sanitize_array($majc_value, isset($sanitize_rule[$majc_key]) ? $sanitize_rule[$majc_key] : 'sanitize_text_field');
-            } else {
-                if (isset($sanitize_rule[$majc_key]) && !empty($sanitize_rule[$majc_key]) && function_exists($sanitize_rule[$majc_key])) {
-                    $sanitize_type = $sanitize_rule[$majc_key];
-                    $new_args[$majc_key] = $sanitize_type($majc_value);
-                } else {
-                    $new_args[$majc_key] = $majc_value;
-                }
-            }
-        }
-    }
-
-    return $new_args;
 }

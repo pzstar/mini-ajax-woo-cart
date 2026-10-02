@@ -12,6 +12,9 @@ defined('ABSPATH') or die('No script please!');
   License URI: https://www.gnu.org/licenses/gpl-2.0.html
   Domain Path: /languages
   Text Domain: mini-ajax-cart
+  Requires Plugins: woocommerce
+  WC requires at least: 7.0
+  WC tested up to: 11.1
  */
 
 defined('MAJC_FILE') or define('MAJC_FILE', __FILE__);
@@ -28,6 +31,7 @@ if (!class_exists('MAJC_Class')) {
             }
 
             add_action('plugins_loaded', array($this, 'majc_text_domain'));
+            add_action('before_woocommerce_init', array($this, 'declare_wc_compatibility'));
 
             if (is_plugin_active('woocommerce/woocommerce.php')) {
                 if (!is_plugin_active('ultimate-woocommerce-cart/ultimate-woocommerce-cart.php')) {
@@ -81,7 +85,15 @@ if (!class_exists('MAJC_Class')) {
         }
 
         public function majc_text_domain() {
-            load_plugin_textdomain('mini-ajax-cart', false, plugin_dir_url(__FILE__) . 'languages');
+            load_plugin_textdomain('mini-ajax-cart', false, dirname(plugin_basename(MAJC_FILE)) . '/languages');
+        }
+
+        // The cart never reads or writes orders, so it is safe with HPOS and the block cart/checkout.
+        public function declare_wc_compatibility() {
+            if (class_exists('\\Automattic\\WooCommerce\\Utilities\\FeaturesUtil')) {
+                \Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility('custom_order_tables', MAJC_FILE, true);
+                \Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility('cart_checkout_blocks', MAJC_FILE, true);
+            }
         }
 
         public function majc_woocommerce_install_message() {

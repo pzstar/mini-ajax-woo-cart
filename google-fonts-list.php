@@ -197,11 +197,11 @@ function majc_get_text_decoration_choices() {
 add_action("wp_ajax_majc_get_google_font_variants", "majc_get_google_font_variants");
 
 function majc_get_google_font_variants() {
-    if (wp_verify_nonce(majc_get_request('wp_nonce'), 'majc-backend-ajax-nonce')) {
+    if (wp_verify_nonce(majc_get_request('wp_nonce'), 'majc-backend-ajax-nonce') && current_user_can('manage_woocommerce')) {
         $majc_font_family = majc_get_request('font_family');
         $all_font = majc_font_array();
 
-        $variants_array = $all_font[$majc_font_family]['variants'];
+        $variants_array = isset($all_font[$majc_font_family]['variants']) ? $all_font[$majc_font_family]['variants'] : array();
 
         foreach ($variants_array as $majc_key => $variants) {
             if ($majc_font_family == 'Default') {
@@ -255,35 +255,13 @@ function majc_typography_css($meta, $majc_key, $selector) {
 
 function majc_custom_fonts() {
     $majc_font_family_array = array();
-    $args = array(
-        'post_type' => 'ultimate-woo-cart',
-        'posts_per_page' => -1
-    );
-    $majc_query = new WP_Query($args);
-
-    if ($majc_query->have_posts()):
-        while ($majc_query->have_posts()):
-            $majc_query->the_post();
-            $majc_settings = get_post_meta(get_the_ID(), 'uwcc_settings', true);
-
-            if (isset($majc_settings['display']['enable_flying_cart']) && isset($majc_settings['custom']['enable'])) {
-                if (isset($majc_settings['custom']['header_title_font_family'])) {
-                    $majc_font_family_array[] = $majc_settings['custom']['header_title_font_family'];
-                }
-                if (isset($majc_settings['custom']['content_font_family'])) {
-                    $majc_font_family_array[] = $majc_settings['custom']['content_font_family'];
-                }
-                if (isset($majc_settings['custom']['product_title_font_family'])) {
-                    $majc_font_family_array[] = $majc_settings['custom']['product_title_font_family'];
-                }
-                if (isset($majc_settings['custom']['button_text_font_family'])) {
-                    $majc_font_family_array[] = $majc_settings['custom']['button_text_font_family'];
-                }
+    foreach (MAJC_Enqueue::enabled_carts() as $majc_settings) {
+        foreach (array('header_title', 'content', 'product_title', 'button_text') as $majc_key) {
+            if (isset($majc_settings['custom'][$majc_key . '_font_family'])) {
+                $majc_font_family_array[] = $majc_settings['custom'][$majc_key . '_font_family'];
             }
-
-        endwhile;
-        wp_reset_postdata();
-    endif;
+        }
+    }
 
     return $majc_font_family_array;
 }

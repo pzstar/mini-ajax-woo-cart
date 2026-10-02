@@ -25,13 +25,39 @@ if (!class_exists('MAJC_Backend')) {
         }
 
         public function save_metabox_settings($post_id) {
+            if ((defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) || get_post_type($post_id) !== 'ultimate-woo-cart' || !current_user_can('edit_post', $post_id)) {
+                return;
+            }
+
             if (wp_verify_nonce(majc_get_post('majc_settings_nonce'), 'majc-settings-nonce')) {
                 $majc_settings = parent::recursive_parse_args(majc_get_post('majc_settings'), parent::checkbox_settings());
                 $majc_settings = parent::sanitize_array($majc_settings);
 
+                // Ultimate WooCommerce Cart shares this meta; keep the settings this form has no fields for.
+                $majc_saved = get_post_meta($post_id, 'uwcc_settings', true);
+                if (is_array($majc_saved)) {
+                    $majc_known = parent::recursive_parse_args(parent::checkbox_settings(), parent::default_values());
+                    $majc_settings = array_replace_recursive(self::unknown_settings($majc_saved, $majc_known), $majc_settings);
+                }
+
                 update_post_meta($post_id, 'uwcc_settings', $majc_settings);
             }
             return;
+        }
+
+        // The parts of $saved that this plugin has no setting for.
+        private static function unknown_settings($saved, $known) {
+            foreach ($saved as $key => $value) {
+                if (!array_key_exists($key, $known)) {
+                    continue;
+                }
+                if (is_array($value) && is_array($known[$key]) && $known[$key] && !wp_is_numeric_array($known[$key])) {
+                    $saved[$key] = self::unknown_settings($value, $known[$key]);
+                } else {
+                    unset($saved[$key]);
+                }
+            }
+            return $saved;
         }
 
         public function register_post_type() {
@@ -62,6 +88,9 @@ if (!class_exists('MAJC_Backend')) {
                 'query_var' => true,
                 'rewrite' => array('slug' => 'ultimate-woo-cart'),
                 'capability_type' => 'post',
+                // The cart shows on every storefront page, so only store managers may create or change one.
+                'capabilities' => array_fill_keys(array('edit_posts', 'edit_others_posts', 'edit_private_posts', 'edit_published_posts', 'publish_posts', 'read_private_posts', 'delete_posts', 'delete_others_posts', 'delete_private_posts', 'delete_published_posts', 'create_posts'), 'manage_woocommerce'),
+                'map_meta_cap' => true,
                 'has_archive' => false,
                 'hierarchical' => false,
                 'menu_position' => null,
@@ -150,7 +179,7 @@ if (!class_exists('MAJC_Backend')) {
         }
 
         public function admin_notice_content() {
-            if (!$this->is_dismissed('review') && !empty(get_option('majc_first_activation')) && time() > get_option('majc_first_activation') + 15 * DAY_IN_SECONDS) {
+            if (current_user_can('manage_woocommerce') && !$this->is_dismissed('review') && !empty(get_option('majc_first_activation')) && time() > get_option('majc_first_activation') + 15 * DAY_IN_SECONDS) {
                 $this->review_notice();
             }
         }
@@ -206,7 +235,7 @@ if (!class_exists('MAJC_Backend')) {
                 update_option('majc_first_activation', time());
             }
 
-            if (isset($_GET['majc-hide-notice'], $_GET['majc_notice_nonce'])) {
+            if (isset($_GET['majc-hide-notice'], $_GET['majc_notice_nonce']) && current_user_can('manage_woocommerce')) {
                 $notice = sanitize_key($_GET['majc-hide-notice']);
                 check_admin_referer($notice, 'majc_notice_nonce');
                 self::dismiss($notice);
@@ -233,7 +262,7 @@ if (!class_exists('MAJC_Backend')) {
             $permalink = 'https://hashthemes.com/how-to-add-a-mini-floating-cart-to-your-onlinestore/';
             $submenu['edit.php?post_type=ultimate-woo-cart'][] = array(
                 esc_html__('Documentation', 'mini-ajax-cart'),
-                'edit_posts',
+                'manage_woocommerce',
                 esc_url($permalink)
             );
         }
@@ -241,7 +270,7 @@ if (!class_exists('MAJC_Backend')) {
         function doc_custom_script() {
             ?>
             <script type="text/javascript">
-                jQuery(document).ready(function ($) {
+                jQuery(function ($) {
                     $("ul#adminmenu a[href$='https://hashthemes.com/how-to-add-a-mini-floating-cart-to-your-onlinestore/']").attr('target', '_blank');
                 });
             </script>

@@ -1,0 +1,3 @@
+/dev export-ignore
+/dev/** export-ignore
+/.gitattributes export-ignore

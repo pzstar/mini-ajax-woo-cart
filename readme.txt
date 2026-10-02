@@ -2,7 +2,7 @@
 Contributors: hashthemes
 Tags: woocommerce cart, cart, slidein cart, floating cart, ajax cart
 Requires at least: 6.3
-Tested up to: 7.0
+Tested up to: 7.1
 Stable tag: 1.3.5
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -188,8 +188,21 @@ For premium upgrade, please click below link <br>
 <a href="https://1.envato.market/2rKYB0">WooCommerce Cart</a>&nbsp;&nbsp;<a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-cart/">Demo Site</a>&nbsp;&nbsp;<a href="https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/">Documentation</a>
 
 == Changelog ==
-= 1.3.5 - 30 Jul, 2025 =
-* Compatibility test with WordPress version 7.0
+= 1.3.5 - 2 Oct, 2026 =
+* Compatibility test with WordPress version 7.1 and WooCommerce 11.1
+* Declared compatibility with WooCommerce HPOS and the Cart and Checkout blocks
+* Cart now refreshes when products are added or removed from WooCommerce blocks
+* Translations now load from the plugin's languages folder
+* Replaced deprecated jQuery calls
+* Security: only store managers can create or edit carts, and cart quantity changes now respect stock and "sold individually" limits
+* Coupons are now checked with WooCommerce's full coupon validation
+* Saving a cart no longer erases settings made in Ultimate WooCommerce Cart
+* Prices in the cart follow the store's currency format
+* Selected Google Fonts now load on the front end
+* The cart now shows on 404 and empty search pages when enabled there
+* Admin icon fonts and scripts only load on the cart screens
+* Faster storefront: the cart loads about 11 KB of CSS instead of about 1 MB, and nothing at all when no cart is enabled
+* Fixed cart animations not loading when the theme has its own animate.css
 
 = 1.3.4 - 6 Dec, 2025 =
 * Compatibility test with WordPress version 6.9

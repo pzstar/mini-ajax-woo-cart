@@ -1,0 +1,138 @@
+/* Only the glyphs the cart template always uses. Full icon sets load when a cart picks an icon from them. */
+
+@font-face {
+    font-family: 'ElegantIcons';
+    src: url('fonts/eleganticons/ElegantIcons.woff') format('woff'),
+        url('fonts/eleganticons/ElegantIcons.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon_minus-06,
+.icon_plus,
+.icon_close,
+.icon_cart_alt,
+.icon_trash_alt {
+    font-family: 'ElegantIcons' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-size: inherit;
+    text-rendering: auto;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon_minus-06:before {
+    content: "\4b";
+}
+
+.icon_plus:before {
+    content: "\4c";
+}
+
+.icon_close:before {
+    content: "\4d";
+}
+
+.icon_cart_alt:before {
+    content: "\e015";
+}
+
+.icon_trash_alt:before {
+    content: "\e019";
+}
+
+@font-face {
+    font-family: "IcoFont";
+    src: url("fonts/icofont/icofont.woff2") format("woff2"),
+        url("fonts/icofont/icofont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icofont-"],
+[class*=" icofont-"] {
+    font-family: 'IcoFont' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-size: inherit;
+    text-rendering: auto;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icofont-close-line:before {
+    content: "\eee1";
+}
+
+@font-face {
+    font-family: "Material Design Icons";
+    src: url("fonts/materialdesignicons/materialdesignicons.woff2") format("woff2"),
+        url("fonts/materialdesignicons/materialdesignicons.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="mdi-"],
+[class*=" mdi-"] {
+    font-family: 'Material Design Icons' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-size: inherit;
+    text-rendering: auto;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.mdi-cart-arrow-down::before {
+    content: "\F0D66";
+}
+
+.fa {
+    font-family: var(--fa-style-family, "Font Awesome 6 Free");
+    font-weight: var(--fa-style, 900);
+}
+
+.fa {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+}
+
+.fa-shopping-cart::before {
+    content: "\f07a";
+}
+
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url("fonts/fontawesome/fa-solid-900.woff2") format("woff2"), url("fonts/fontawesome/fa-solid-900.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Font Awesome 5 Free';
+    font-display: block;
+    font-weight: 900;
+    src: url("fonts/fontawesome/fa-solid-900.woff2") format("woff2"), url("fonts/fontawesome/fa-solid-900.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'FontAwesome';
+    font-display: block;
+    src: url("fonts/fontawesome/fa-solid-900.woff2") format("woff2"), url("fonts/fontawesome/fa-solid-900.ttf") format("truetype");
+}

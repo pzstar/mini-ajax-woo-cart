@@ -1,7 +1,7 @@
 (function ($) {
     "use strict";
 
-    $(document).ready(function () {
+    $(function () {
 
         var ajaxUrl = majc_frontend_js_obj.ajax_url;
         var wpNonce = majc_frontend_js_obj.ajax_nonce;
@@ -10,36 +10,43 @@
 
         $(document.body).trigger('wc_fragment_refresh');
 
-        $.ajax({
-            url: ajaxUrl,
-            type: 'POST',
-            data: {
-                action: 'get_refresh_fragments',
-                wp_nonce: wpNonce
-            },
-            success: function (response) {
+        function majcRefreshFragments() {
+            $.ajax({
+                url: ajaxUrl,
+                type: 'POST',
+                data: {
+                    action: 'majc_get_refresh_fragments',
+                    wp_nonce: wpNonce
+                },
+                success: function (response) {
 
-                if (response.fragments) {
+                    if (response.fragments) {
 
-                    //Set fragments
-                    $.each(response.fragments, function (key, value) {
-                        $(key).replaceWith(value);
-                    });
+                        //Set fragments
+                        $.each(response.fragments, function (key, value) {
+                            $(key).replaceWith(value);
+                        });
 
-                    if (('sessionStorage' in window && window.sessionStorage !== null)) {
+                        if (('sessionStorage' in window && window.sessionStorage !== null) && typeof wc_cart_fragments_params !== 'undefined') {
 
-                        sessionStorage.setItem(wc_cart_fragments_params.fragment_name, JSON.stringify(response.fragments));
-                        sessionStorage.setItem(wc_cart_fragments_params.cart_hash_key, response.cart_hash);
-                        localStorage.setItem(wc_cart_fragments_params.cart_hash_key, response.cart_hash);
+                            sessionStorage.setItem(wc_cart_fragments_params.fragment_name, JSON.stringify(response.fragments));
+                            sessionStorage.setItem(wc_cart_fragments_params.cart_hash_key, response.cart_hash);
+                            localStorage.setItem(wc_cart_fragments_params.cart_hash_key, response.cart_hash);
 
-                        if (response.cart_hash) {
-                            sessionStorage.setItem('wc_cart_created', (new Date()).getTime());
+                            if (response.cart_hash) {
+                                sessionStorage.setItem('wc_cart_created', (new Date()).getTime());
+                            }
                         }
+                        $(document.body).trigger('wc_fragments_refreshed');
                     }
-                    $(document.body).trigger('wc_fragments_refreshed');
                 }
-            }
-        });
+            });
+        }
+
+        majcRefreshFragments();
+
+        // Block product grids and the block cart change the cart through the Store API, which skips the classic fragment refresh.
+        $(document.body).on('wc-blocks_added_to_cart wc-blocks_removed_from_cart', majcRefreshFragments);
 
         $('body').find(".majc-body").mCustomScrollbar({
             theme: 'dark-thin',
@@ -123,42 +130,41 @@
             }
         });
 
-        $(document).on('click', '.majc-remove', function (e) {
-            e.preventDefault();
-
-            $(this).closest('.majc-body').addClass('majc-loader');
-
-            var cart_item_id = $(this).attr("data-cart_item_id"),
-                cart_item_key = $(this).attr("data-cart_item_key");
-
+        function majcRemoveItem(cartItemKey) {
             $.ajax({
                 type: 'POST',
                 dataType: 'json',
                 url: ajaxUrl,
                 data: {
-                    action: "remove_item",
-                    cart_item_id: cart_item_id,
-                    cart_item_key: cart_item_key,
+                    action: 'majc_remove_item',
+                    cart_item_key: cartItemKey,
                     wp_nonce: wpNonce
                 },
                 success: function (response) {
-
-                    if (!response || response.error) {
-                        return;
-                    }
-
-                    var fragments = response.fragments;
-
-                    // Replace fragments
-                    if (fragments) {
-                        $.each(fragments, function (key, value) {
+                    if (response && response.fragments) {
+                        $.each(response.fragments, function (key, value) {
                             $(key).replaceWith(value);
                         });
+                        $(document.body).trigger('wc_fragments_refreshed');
                     }
-
+                },
+                complete: function () {
                     $('.majc-body').removeClass('majc-loader');
                 }
             });
+        }
+
+        function majcCouponMessage($wrap, msg, isError) {
+            $wrap.find('.majc-cpn-resp')
+                .text(msg || '')
+                .css({'background-color': isError ? '#e2401c' : '#0f834d', 'color': '#fff'})
+                .fadeIn().delay(2000).fadeOut();
+        }
+
+        $(document).on('click', '.majc-remove', function (e) {
+            e.preventDefault();
+            $(this).closest('.majc-body').addClass('majc-loader');
+            majcRemoveItem($(this).attr('data-cart_item_key'));
         });
 
         // Apply Discount Coupons
@@ -170,20 +176,15 @@
             $.ajax({
                 url: ajaxUrl,
                 type: 'POST',
+                dataType: 'json',
                 data: {
-                    action: "add_coupon_code",
+                    action: 'majc_add_coupon_code',
                     couponCode: couponCode,
                     wp_nonce: wpNonce
                 },
-                success: function (response) {
-                    var $responseField = $button.closest('.majc-coupon').find('.majc-cpn-resp');
-                    $responseField.html(response.msg);
-                    if (response.result == 'not valid' || response.result == 'already applied') {
-                        $responseField.css({'background-color': '#e2401c', 'color': '#fff'});
-                    } else {
-                        $responseField.css({'background-color': '#0f834d', 'color': '#fff'});
-                    }
-                    $responseField.fadeIn().delay(2000).fadeOut();
+                complete: function (xhr) {
+                    var response = xhr.responseJSON || {};
+                    majcCouponMessage($button.closest('.majc-coupon'), response.data && response.data.msg, !response.success);
                     $(document.body).trigger('wc_fragment_refresh');
                     $button.removeClass('majc-button-loading');
                 }
@@ -199,16 +200,17 @@
             $.ajax({
                 url: ajaxUrl,
                 type: 'POST',
+                dataType: 'json',
                 data: {
-                    action: "remove_coupon_code",
+                    action: 'majc_remove_coupon_code',
                     couponCode: couponCode,
                     wp_nonce: wpNonce
                 },
-                success: function (response) {
-                    var $responseField = $removeBtn.closest('.majc-coupon').find('.majc-cpn-resp');
-                    $responseField.html(response);
-                    $responseField.css({'background-color': '#0f834d', 'color': '#fff'});
-                    $responseField.fadeIn().delay(2000).fadeOut();
+                complete: function (xhr) {
+                    var response = xhr.responseJSON || {};
+                    if (response.data && response.data.msg) {
+                        majcCouponMessage($removeBtn.closest('.majc-coupon'), response.data.msg, !response.success);
+                    }
                     $(document.body).trigger('wc_fragment_refresh');
                 }
             });
@@ -277,47 +279,25 @@
                 $qty.val(min);
             }
 
-            var qty = $(this).val();
-            var ckey = $(this).closest('.majc-cart-items').data('ckey');
-            var itemid = $(this).closest('.majc-cart-items').data('itemid');
+            var qty = $qty.val();
+            var ckey = $qty.closest('.majc-cart-items').data('ckey');
 
-            $(this).prop('disabled', true);
+            $qty.prop('disabled', true);
 
             if (qty == 0) {
-                $.ajax({
-                    type: 'POST',
-                    dataType: 'json',
-                    url: ajaxUrl,
-                    data: {
-                        action: 'remove_item',
-                        cart_item_id: itemid,
-                        cart_item_key: ckey,
-                        wp_nonce: wpNonce
-                    },
-                    success: function (response) {
-                        if (!response || response.error) {
-                            return;
-                        }
-
-                        var fragments = response.fragments;
-
-                        // Replace fragments
-                        if (fragments) {
-                            $.each(fragments, function (key, value) {
-                                $(key).replaceWith(value);
-                            });
-                        }
-
-                        $('.majc-body').removeClass('majc-loader');
-                    }
-                });
+                majcRemoveItem(ckey);
             } else {
                 $.ajax({
                     url: ajaxUrl,
                     type: 'POST',
-                    data: 'action=change_item_qty&ckey=' + ckey + '&qty=' + qty + '&wp_nonce=' + wpNonce,
-                    success: function (response) {
-                        $(this).prop('disabled', false);
+                    data: {
+                        action: 'majc_change_item_qty',
+                        ckey: ckey,
+                        qty: qty,
+                        wp_nonce: wpNonce
+                    },
+                    complete: function () {
+                        $qty.prop('disabled', false);
                         $(document.body).trigger('wc_fragment_refresh');
                         setTimeout(function () {
                             $('.majc-body').removeClass('majc-loader');

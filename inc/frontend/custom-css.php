@@ -1,7 +1,7 @@
 <style type="text/css">
     <?php
     $majc_custom_css = '';
-    $majc_custom_id = '#majc-main-wrapper-' . $post->ID;
+    $majc_custom_id = "#majc-main-wrapper-" . $majc_post_id;
     $majc_custom = isset($majc_settings['custom']) ? $majc_settings['custom'] : null;
 
     if (isset($majc_custom['trigger_btn_bg_color']) && !empty($majc_custom['trigger_btn_bg_color'])) {
@@ -143,6 +143,6 @@
     $majc_custom_css .= majc_typography_css($majc_custom, 'content', $majc_custom_id . '.majc-layout-slidein .majc-cart-popup');
     $majc_custom_css .= majc_typography_css($majc_custom, 'product_title', $majc_custom_id . ' .majc-cart-items-inner .majc-item-name');
     $majc_custom_css .= majc_typography_css($majc_custom, 'button_text', $majc_custom_id . ' .majc-cart-action-btn-wrap .majc-button');
-    echo $majc_custom_css;
+    echo wp_strip_all_tags($majc_custom_css);
     ?>
 </style>

@@ -125,7 +125,7 @@ jQuery(function ($) {
     });
 
     // Update slider if the input field loses focus as it's most likely changed
-    $('.majc-range-input-selector').blur(function () {
+    $('.majc-range-input-selector').on('blur', function () {
         var resetValue = isNaN($(this).val()) ? '' : $(this).val();
 
         if (resetValue) {
