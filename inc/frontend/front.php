@@ -1,4 +1,6 @@
 <?php
+defined('ABSPATH') || exit;
+
 global $post;
 
 // 404 and empty search pages have no global $post, but the cart can still be shown there.
@@ -193,7 +195,7 @@ foreach (MAJC_Enqueue::enabled_carts() as $majc_post_id => $majc_settings) {
                         </div>
 
                         <div class="majc-body">
-                            <?php echo MAJC_Frontend::cart_items_html(); // PHPCS: XSS ok. ?>
+                            <?php echo MAJC_Frontend::cart_items_html(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped where built ?>
 
                             <div class="majc-empty-cart">
                                 <div class="majc-empty-cart-icon">
@@ -213,7 +215,7 @@ foreach (MAJC_Enqueue::enabled_carts() as $majc_post_id => $majc_settings) {
                                         <button class="majc-coupon-submit majc-button"><?php echo esc_html($majc_apply_coupon_btn_text); ?></button>
                                     </div>
 
-                                    <?php echo MAJC_Frontend::applied_coupons_html(); // PHPCS: XSS ok. ?>
+                                    <?php echo MAJC_Frontend::applied_coupons_html(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped where built ?>
                                 </div>
                             <?php } ?>
 

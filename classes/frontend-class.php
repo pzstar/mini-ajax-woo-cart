@@ -3,6 +3,7 @@ defined('ABSPATH') or die('No script please!!');
 
 if (!class_exists('MAJC_Frontend')) {
 
+    // Storefront: cart AJAX actions (quantity, coupons, remove), cart fragments and cart item markup.
     class MAJC_Frontend extends MAJC_Library {
 
         function __construct() {
@@ -59,6 +60,11 @@ if (!class_exists('MAJC_Frontend')) {
             $max = $product->is_sold_individually() ? 1 : $product->get_max_purchase_quantity();
             if ($max > 0) {
                 $qty = min($qty, $max);
+            }
+
+            // Lets min/max quantity plugins veto the change, as on the cart page.
+            if (!apply_filters('woocommerce_update_cart_validation', true, $cart_key, $cart_item, $qty)) {
+                wp_send_json_error();
             }
 
             WC()->cart->set_quantity($cart_key, $qty, true);
@@ -153,7 +159,7 @@ if (!class_exists('MAJC_Frontend')) {
                                                     'product_name' => $majc_product->get_name(),
                                                 ), $majc_product, false);
                                             }
-                                            echo apply_filters('woocommerce_cart_item_quantity', $majc_product_quantity, $majc_item_key, $majc_item_val); // PHPCS: XSS ok.
+                                            echo apply_filters('woocommerce_cart_item_quantity', $majc_product_quantity, $majc_item_key, $majc_item_val); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped where built
                                             ?>
                                             <span class="majc-qty-plus majc-qty-chng icon_plus"></span>
                                         </div>

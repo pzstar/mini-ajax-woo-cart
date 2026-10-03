@@ -3,6 +3,7 @@ defined('ABSPATH') or die('No script please!!');
 
 if (!class_exists('MAJC_Backend')) {
 
+    // Admin side: the cart post type and its settings meta box.
     class MAJC_Backend extends MAJC_Library {
 
         function __construct() {

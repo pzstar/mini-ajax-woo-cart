@@ -4,6 +4,7 @@ defined('ABSPATH') or die('No script please!!');
 
 if (!class_exists('MAJC_Enqueue')) {
 
+    // Admin and storefront scripts and styles.
     class MAJC_Enqueue extends MAJC_Library {
 
         function __construct() {

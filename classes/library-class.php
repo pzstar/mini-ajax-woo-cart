@@ -4,6 +4,7 @@ defined('ABSPATH') or die('No Script Found!');
 
 if (!class_exists('MAJC_Library')) {
 
+    // Shared helpers: setting defaults and sanitization.
     class MAJC_Library {
 
         static function sanitize_array($array = array(), $sanitize_rule = array()) {

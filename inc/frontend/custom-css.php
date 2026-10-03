@@ -1,3 +1,6 @@
+<?php
+defined('ABSPATH') || exit;
+?>
 <style type="text/css">
     <?php
     $majc_custom_css = '';

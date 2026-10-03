@@ -1,3 +1,6 @@
+<?php
+defined('ABSPATH') || exit;
+?>
 <div id="cart-content" class="tab-content" style="display:none">
     <h2><?php esc_html_e('Configure Cart Content', 'mini-ajax-cart'); ?></h2>
 
@@ -89,7 +92,7 @@
                         if (isset($majc_settings['cart_item_layout'])) {
                             selected($majc_settings['cart_item_layout'], 'list');
                         }
-                        ?>><?php esc_html_e('List', 'mini-ajax-cart'); ?></option>\
+                        ?>><?php esc_html_e('List', 'mini-ajax-cart'); ?></option>
                         <option value="grid" <?php
                         if (isset($majc_settings['cart_item_layout'])) {
                             selected($majc_settings['cart_item_layout'], 'grid');

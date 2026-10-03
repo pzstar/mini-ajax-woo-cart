@@ -196,6 +196,7 @@ For premium upgrade, please click below link <br>
 * Replaced deprecated jQuery calls
 * Security: only store managers can create or edit carts, and cart quantity changes now respect stock and "sold individually" limits
 * Coupons are now checked with WooCommerce's full coupon validation
+* Security: direct file access is blocked on all plugin files, and cart quantity changes respect minimum and maximum quantity rules
 * Saving a cart no longer erases settings made in Ultimate WooCommerce Cart
 * Prices in the cart follow the store's currency format
 * Selected Google Fonts now load on the front end
@@ -203,6 +204,8 @@ For premium upgrade, please click below link <br>
 * Admin icon fonts and scripts only load on the cart screens
 * Faster storefront: the cart loads about 11 KB of CSS instead of about 1 MB, and nothing at all when no cart is enabled
 * Fixed cart animations not loading when the theme has its own animate.css
+* Fixed the first product added on a slow page load sometimes not showing in the cart
+* New Free vs Pro page under the Mini Ajax Cart menu, comparing every feature with Ultimate WooCommerce Cart. It replaces the Upgrade To Pro tab in each cart's settings
 
 = 1.3.4 - 6 Dec, 2025 =
 * Compatibility test with WordPress version 6.9

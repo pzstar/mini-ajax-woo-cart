@@ -23,6 +23,7 @@ include (plugin_dir_path(MAJC_FILE) . '/classes/library-class.php');
 
 if (!class_exists('MAJC_Class')) {
 
+    // Bootstraps the plugin once WooCommerce is active.
     class MAJC_Class extends MAJC_Library {
 
         function __construct() {
@@ -71,15 +72,17 @@ if (!class_exists('MAJC_Class')) {
         }
 
         public function includes() {
-            include plugin_dir_path(__FILE__) . '/helpers.php';
+            include plugin_dir_path(__FILE__) . 'inc/helpers.php';
 
-            include plugin_dir_path(__FILE__) . '/font-icons.php';
+            include plugin_dir_path(__FILE__) . 'inc/font-icons.php';
 
-            include plugin_dir_path(__FILE__) . '/google-fonts-list.php';
+            include plugin_dir_path(__FILE__) . 'inc/google-fonts-list.php';
 
             include MAJC_PATH . '/classes/enqueue-class.php';
 
             include MAJC_PATH . '/classes/backend-class.php';
+
+            include MAJC_PATH . '/classes/free-vs-pro.php';
 
             include MAJC_PATH . '/classes/frontend-class.php';
         }

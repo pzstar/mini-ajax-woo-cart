@@ -1,3 +1,6 @@
+<?php
+defined('ABSPATH') || exit;
+?>
 <div id="cart-button" class="tab-content" style="display:none">
     <h2><?php esc_html_e('Cart Basket/Button Settings', 'mini-ajax-cart'); ?></h2>
     <div class="majc-settings-row">

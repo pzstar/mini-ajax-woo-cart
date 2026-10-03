@@ -1,4 +1,6 @@
 <?php
+defined('ABSPATH') || exit;
+
 global $post;
 $post_id = $post->ID;
 $majc_settings = get_post_meta($post_id, 'uwcc_settings', true);
@@ -21,7 +23,6 @@ wp_nonce_field('majc-settings-nonce', 'majc_settings_nonce');
                 <li class="majc-tab" data-tab="cart-panel"><?php esc_html_e('Cart Panel', 'mini-ajax-cart'); ?></li>
                 <li class="majc-tab" data-tab="cart-content"><?php esc_html_e('Cart Content', 'mini-ajax-cart'); ?></li>
                 <li class="majc-tab" data-tab="design-settings"><?php esc_html_e('Design', 'mini-ajax-cart'); ?></li>
-                <li class="majc-tab" data-tab="upgrade-settings"><?php esc_html_e('Upgrade To Pro', 'mini-ajax-cart'); ?></li>
             </ul>
         </div>
 
@@ -32,7 +33,6 @@ wp_nonce_field('majc-settings-nonce', 'majc_settings_nonce');
             include MAJC_PATH . 'inc/backend/settings/cart-panel.php';
             include MAJC_PATH . 'inc/backend/settings/cart-content.php';
             include MAJC_PATH . 'inc/backend/settings/design-settings.php';
-            include MAJC_PATH . 'inc/backend/settings/upgrade.php';
             ?>
         </div>
     </div>

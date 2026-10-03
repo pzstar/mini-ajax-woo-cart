@@ -1,3 +1,6 @@
+<?php
+defined('ABSPATH') || exit;
+?>
 <div id="cart-panel" class="tab-content" style="display:none">
     <h2><?php esc_html_e('Cart Panel Settings', 'mini-ajax-cart'); ?></h2>
 

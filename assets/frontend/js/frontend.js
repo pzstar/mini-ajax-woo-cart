@@ -10,7 +10,14 @@
 
         $(document.body).trigger('wc_fragment_refresh');
 
+        // Bumped on every cart change, so a refresh that a newer change overtook is dropped.
+        var majcCartVersion = 0;
+        $(document.body).on('added_to_cart removed_from_cart wc-blocks_added_to_cart wc-blocks_removed_from_cart', function () {
+            majcCartVersion++;
+        });
+
         function majcRefreshFragments() {
+            var startVersion = majcCartVersion;
             $.ajax({
                 url: ajaxUrl,
                 type: 'POST',
@@ -19,6 +26,9 @@
                     wp_nonce: wpNonce
                 },
                 success: function (response) {
+                    if (startVersion !== majcCartVersion) {
+                        return;
+                    }
 
                     if (response.fragments) {
 

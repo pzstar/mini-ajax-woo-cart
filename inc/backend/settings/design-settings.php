@@ -1,4 +1,6 @@
 <?php
+defined('ABSPATH') || exit;
+
 $majc_custom = isset($majc_settings['custom']) ? $majc_settings['custom'] : null;
 $majc_standard_fonts = majc_get_standard_font_families();
 $majc_google_fonts = majc_get_google_font_families();

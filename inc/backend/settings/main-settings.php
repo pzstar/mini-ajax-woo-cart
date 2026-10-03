@@ -1,4 +1,6 @@
 <?php
+defined('ABSPATH') || exit;
+
 $majc_display = isset($majc_settings['display']) ? $majc_settings['display'] : null;
 $majc_header = isset($majc_settings['header']) ? $majc_settings['header'] : null;
 $majc_buttons = isset($majc_settings['buttons']) ? $majc_settings['buttons'] : null;
@@ -60,7 +62,7 @@ $majc_display = isset($majc_settings['display']) ? $majc_settings['display'] : n
 
             <div class="majc-display-lists" data-condition-toggle="majc-display-condition-show-hide" data-condition-val="show_selected,hide_selected">
                 <div class="majc-postbox-fields">
-                    <h4><?php esc_html_e('Default WordPress Pages', 'mini-ajax-cart'); ?><!-- <span class="toggle-indicator" aria-hidden="true"></span> --></h4>
+                    <h4><?php esc_html_e('Default WordPress Pages', 'mini-ajax-cart'); ?></h4>
 
                     <div class="majc-toggle-tab-body">
                         <p>
@@ -140,7 +142,6 @@ $majc_display = isset($majc_settings['display']) ? $majc_settings['display'] : n
                         <?php
                         esc_html_e('Specific Archive Page', 'mini-ajax-cart');
                         ?>
-                        <!-- <span class="toggle-indicator" aria-hidden="true"></span> -->
                     </h4>
 
                     <div class="majc-toggle-tab-body">
@@ -173,7 +174,6 @@ $majc_display = isset($majc_settings['display']) ? $majc_settings['display'] : n
                                     esc_html_e('Specific ', 'mini-ajax-cart');
                                     echo esc_html(ucwords($post_type));
                                     ?>
-                                    <!-- <span class="toggle-indicator" aria-hidden="true"></span> -->
                                 </h4>
 
                                 <div class="majc-toggle-tab-body">
@@ -185,7 +185,7 @@ $majc_display = isset($majc_settings['display']) ? $majc_settings['display'] : n
                                         <p>
                                             <input type="checkbox" name="majc_settings[display][specific_pages][]" id="majc-post-<?php echo esc_attr($majc_post_id); ?>" value="<?php echo esc_attr($majc_post_id); ?>" <?php if (isset($majc_specific_page) && in_array($majc_post_id, $majc_specific_page))
                                                       echo 'checked'; ?> />
-                                            <label for="majc-post-<?php echo esc_attr($majc_post_id); ?>"><?php esc_html(the_title()); ?></label>
+                                            <label for="majc-post-<?php echo esc_attr($majc_post_id); ?>"><?php echo esc_html(get_the_title()); ?></label>
                                         </p>
                                         <?php
                                     endwhile;
