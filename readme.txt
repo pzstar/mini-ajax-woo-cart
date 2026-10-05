@@ -8,184 +8,159 @@ Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Mini Ajax Cart adds a sticky shopping cart on your WooCommerce store.
+A sticky, slide-in Ajax cart for WooCommerce. Shoppers view, update and check out their cart without leaving the page.
 
 == Description ==
 
-Mini Ajax Cart is a free WordPress extension that allows you to add a sticking shopping cart on your WooCommerce powered online store. Through the floating cart your audience can easily add the items they wanted to puchase and revise or remove them without having to go to the cart page.
+**Mini Ajax Cart** adds a sticky cart button to your WooCommerce store. A click on it slides the cart in from the side, so shoppers can change quantities, remove items, apply coupons and head to checkout without loading the cart page.
 
-Mini Ajax Cart is an advanced WooCommerce cart extension packed with tons of features and functionality to display the shopping cart beautifully on your web shop. It comes with 2 different position optons to display the cart items in a beautiful slidein format. Moreover, the addon allows you to display a coupon code section to enable your audience to enter any type of coupons that you are running on your eCommerce shop.
+When a shopper has to load the cart page to see what they picked, some of them never come back. A cart that stays on screen keeps them shopping and moves them toward checkout faster.
 
-Mini Ajax Cart is a highly customizable extension that allows you to personalize each and every elements present in your cart basket. You will be able to configure the font, color, typography and many more as per your preference.
+The cart is fast and light. It loads about 11 KB of CSS on your storefront, and nothing at all on pages where no cart is enabled. It works with WooCommerce HPOS and the Cart and Checkout blocks, updates itself when products are added from WooCommerce blocks, and supports RTL languages.
 
-Want to test the dashboard settings without installing on your website? <a href="https://demo.tastewp.com/mini-ajax-woo-cart" target="_blank">Test Dashboard Settings Here</a>
+👉 [Test the dashboard settings without installing](https://demo.tastewp.com/mini-ajax-woo-cart) | [View Pro demos](https://demo.hashthemes.com/ultimate-woocommerce-cart/) | [Documentation](https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/) | [**Get Pro**](https://1.envato.market/2rKYB0)
 
-<a href="https://1.envato.market/2rKYB0">Buy Pro Version</a>&nbsp;&nbsp;<a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-cart/">Demo Site</a>&nbsp;&nbsp;<a href="https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/">Documentation</a>
+= Free Features =
 
-<h3>Main features</h3>
-<ul>
-    <li>Create Unlimited Shopping Carts</li>
-    <li>Selectively Display the Cart
-        <ul>
-            <li>Show/Hide on Desktop, Tablet, or Mobile</li>
-            <li>Show/Hide on Selected Pages, Posts, Products, Archive Pages or  Custom Post Types Single/Archive Pages Only</li>
-        </ul>
-    </li>
-    <li>Custom Icon for Cart Basket
-        <ul>
-            <li>Select from 5000+ Icons</li>
-            <li>Upload Custom Image Icons</li>
-        </ul>
-    </li>
-    <li>Cart Basket/Button Animations
-        <ul>
-            <li>Cart Entrance/Exit Animations</li>
-            <li>Cart Hover Animations</li>
-        </ul>
-    </li>
-    <li>Display Coupon Form in the Cart Panel</li>
-    <li>2 Different Positions to Display Cart Panel
-        <ul>
-            <li>Left Side</li>
-            <li>Right Side</li>
-        </ul>
-    </li>
-    <li>3 Different Cart Basket/Button Shapes
-        <ul>
-            <li>Round</li>
-            <li>Square</li>
-            <li>Rounded Square</li>
-        </ul>
-    </li>
-    <li>2 Layouts to Display Cart Items
-        <ul>
-            <li>List</li>
-            <li>Grid</li>
-        </ul>
-    </li>
-    <li>Cart Buttons Settings
-        <ul>
-            <li>Show/Hide View Cart Button</li>
-            <li>Show/Hide Checkout Button</li>
-            <li>Show/Hide Continue Shopping Button</li>
-        </ul>
-    </li>
-    <li>Complete Customization Option
-        <ul>
-            <li>Typography Options</li>
-            <li>Color Options</li>
-            <li>Panel Background Options</li>
-        </ul>
-    </li>
-</ul>
+**Carts**
 
-<h3>Pro Version Features</h3>
- <ul>
-    <li>15+ Ready Made Templates That Can Be Imported With One Click</li>
-    <li>Ajax Checkout Option On Cart Panel Without Having To Go On Checkout Page</li>
-    <li>3 Different Layout To Display Cart Panel
-        <ul>
-            <li>Slide In <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-cart/" target="_blank">View Slide In Demo</a></li>
-            <li>Floating <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/floating-cart/" target="_blank">View Floating Demo</a></li>
-            <li>Popup <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/popup-cart/" target="_blank">View Popup Demo</a></li>
-        </ul>
-    </li>
-    <li>More Elements For Cart Panel With Option To Customize And Reorder It
-        <ul>
-            <li>Header</li>
-            <li>Cart Products</li>
-            <li>Coupon</li>
-            <li>Shipping Bar</li>
-            <li>Buttons</li>
-            <li>Suggested Items</li>
-        </ul>
-    </li>
-    <li>Custom Icons For Cart Basket/Button
-        <ul>
-            <li>Dedicated Cart And Close Icons Along With 5000+ Icons</li>
-            <li>Upload Custom Image Icons</li>
-        </ul>
-    </li>
-    <li>11 Different Cart Basket/Button Shapes <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/add-to-cart-animations/" target="_blank">View Demo</a>
-        <ul>
-            <li>Round</li>
-            <li>Square</li>
-            <li>Rounded Square</li>
-            <li>Triangle</li>
-            <li>Oval</li>
-            <li>Star</li>
-            <li>Rhombus</li>
-            <li>Pentagon</li>
-            <li>Hexagon</li>
-            <li>Rabbet</li>
-            <li>Animating Blob</li>
-        </ul>
-    </li>
-    <li>Cart Basket/Button Animations
-        <ul>
-            <li>30+ Hover Animations <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/add-to-cart-animations/" target="_blank">View Demo</a></li>
-            <li>9 Idle State Animations To Grab User Attention <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/add-to-cart-animations/" target="_blank">View Demo</a></li>
-        </ul>
-    </li>
-    <li>Cart Panel Animation <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/added-to-cart-popup-animations/" target="_blank">View Demo</a>
-        <ul>
-            <li>40+ Panel Entrance Animations <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/add-to-cart-animations/" target="_blank">View Demo</a></li>
-            <li>40+ Panel Exit Animations <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/add-to-cart-animations/" target="_blank">View Demo</a></li>
-        </ul>
-    </li>
-    <li>Configure Cart Basket/Button Positions With The Custom Offset Value <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/add-to-cart-animations/" target="_blank">View Demo</a>
-        <ul>
-            <li>Left Top</li>
-            <li>Left Middle</li>
-            <li>Left Bottom</li>
-            <li>Right Top</li>
-            <li>Right Middle</li>
-            <li>Right Bottom</li>
-            <li>Center Bottom</li>
-        </ul>
-    </li>
-    <li>Elementor Compatible - Design The Cart Panel With Elementor With 15+ Ajax Cart Elements <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-elementor/" target="_blank">View Demo</a></li>
-    <li>Import/Export Settings From One Cart To Another Within The Same Website Or Different Websites</li>
-    <li>Option To Trigger/Open Cart Panel From Any Elements(Menu, Widgets, Footer) In The Website By Using The Class Name <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/open-add-to-cart-panel/" target="_blank">View Demo</a></li>
-    <li>Option To Hide The Cart Basket If The Cart Is Empty</li>
-    <li>Option To Open Cart Panel When Product Is Added To Cart <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/open-cart-on-add-to-cart/" target="_blank">View Demo</a></li>
-    <li>Show/Hide And Customize Fancy Scrollbar</li>
-    <li>Display Active Coupon Codes Along With Coupon Form</li>
-    <li>Configure Columns For Grid Layout On Cart Items <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/templates/template-12/" target="_blank">View Demo</a></li>
-    <li>Remove All Button To Remove The Cart Items At Once</li>
-    <li>Custom Icon And Text When There Is No Item On The Cart</li>
-    <li>Glassmorphism Background For Cart Button And Cart Panel <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/glassmorphism/" target="_blank">View Demo</a></li>
-    <li>More Customization Options</li>
-    <li>Custom CSS Option</li>
-</ul>
+* Create as many carts as you need: different carts for different pages or devices
+* Slide In cart panel that opens from the left or the right side
+* Set the panel's content width and turn the background overlay on or off
+* RTL ready
 
-<h3>Additional Pro Version Features</h3>
-<ul>
-    <li>Added To Cart Popup - Display A Product Added To The Cart In A Popup <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/added-to-cart-popup/" target="_blank">View Demo</a>
-        <ul>
-            <li>50+ Entrance/Exit Animation For Popup <a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/added-to-cart-popup-animations/" target="_blank">View Demo</a></li>
-            <li>Display Suggested Products In Carousel Below The Added Product</li>
-            <li>Choose Cross Sells, Up Sells, Related Or Custom Products For Suggested Products </li>
-            <li>Completely Customizable With The Option To Change Typography, Color, Backgrounds</li>
-            <li>Selectively Show/Hide On Desktop, Tablet, Mobile</li>
-            <li>Selectively Display On Different Pages</li>
-        </ul>
-    </li>
-    <li>Shipping Bar - Percentage Bar That Displays The Amount Remaining For Free Shipping</li>
-</ul>
+**Cart Button**
+
+* Default cart icon, 5000+ icons from 5 icon libraries (Font Awesome, Material, Elegant, Essential and IcoFont), or upload your own image
+* 3 button shapes: Round, Square and Rounded Square
+* Place the button in the middle of the left or right side
+* Item count badge on the button
+* 3 hover animations
+* 5 open and 5 close animations for the cart panel
+
+**Cart Content**
+
+* Header with your own title and icon
+* Change quantities and remove items right in the cart. Quantity changes respect stock, "sold individually" and minimum and maximum quantity rules
+* Show products as a List or a Grid
+* Coupon field, checked with WooCommerce's full coupon validation
+* Show or hide the subtotal, discount and total rows
+* Show or hide the View Cart, Checkout and Continue Shopping buttons, with your own labels and Continue Shopping link
+* Prices follow your store's currency format
+
+**Display Settings**
+
+* Hide the cart on desktop, tablet or mobile
+* Show or hide the cart on chosen pages, posts, products, archives, custom post types, the front page, blog, search and 404 pages
+
+**Design**
+
+* Colors for the button, panel, buttons and quantity controls
+* Typography for the header, product titles, content and buttons, with the full Google Fonts library
+* Panel background: color or your own image
+
+**Free vs Pro Page**
+
+Open **Mini Ajax Cart > Free vs Pro** in your dashboard to compare every feature side by side with Ultimate WooCommerce Cart.
+
+= Upgrade to Pro: Ultimate WooCommerce Cart =
+
+Mini Ajax Cart shows the cart. **[Ultimate WooCommerce Cart](https://1.envato.market/2rKYB0)** turns it into a sales tool. Every shopper who opens the cart sees a reason to add one more item: a reward they are close to unlocking, an offer at a special price, or a countdown to complete the order.
+
+Pro uses the same carts, so **the carts you build in the free version carry over when you upgrade**. Nothing to rebuild.
+
+**Sales Tools That Grow Every Order**
+
+* **Cart Rewards**: a tiered progress bar that unlocks free shipping, discounts and free gifts as the cart grows. Shoppers can see how close they are, so they add more. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/cart-rewards/)
+* **Cart Offers**: hand-picked products at a special price inside the cart, added in one click. Show them based on the products, categories or total in the cart. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/cart-offers/)
+* **Cart Timer & Low Stock Notice**: a countdown in the cart and a notice when an item is running low, so shoppers check out sooner. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/cart-timer-low-stock/)
+* **Cart Analytics**: see the revenue your offers bring in, the rewards given away and how order values compare.
+* **Change Options in the Cart**: shoppers switch a product's size, color or other options without removing it. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/change-options-save-for-later/)
+* **Save for Later**: shoppers move items out of the cart and back again. The list stays on the account for logged-in shoppers.
+* **Sticky Add to Cart Bar**: keeps the Add to Cart button in view on product pages.
+* **Shipping Methods & Order Note**: shoppers pick a shipping method and add a note without leaving the cart.
+* **Show to Chosen Users**: show each cart to everyone, logged-in customers, guests or chosen user roles.
+* **Mini-Cart Block Support**: in block themes, the header Mini-Cart block opens this cart and counts stay in step.
+
+**Checkout and Sales Boosters**
+
+* **Checkout Inside the Cart**: shoppers fill in their details and place the order right in the cart panel, with express payment buttons such as Apple Pay and Google Pay. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/checkout-in-cart/)
+* **Added to Cart Popup**: shows the added product with suggested products, rewards and offers, with 37 open and 37 close animations. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/added-to-cart-popup/)
+* **Suggested Products**: a carousel of cross-sells, upsells, related or hand-picked products
+* **Free Shipping Bar**: shows how much more to spend for free shipping
+* **Available Coupons List**: shows the coupons any shopper can use next to the coupon field
+* **Ajax Add to Cart on Product Pages**: add to cart without the page reloading
+* **Open the Cart When a Product Is Added** [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/open-cart-on-add-to-cart/)
+
+**More Layouts and Designs**
+
+* **3 cart layouts**: Slide In, Floating and Popup. [Slide In Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-cart/) | [Floating Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/floating-cart/) | [Popup Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/popup-cart/)
+* **15 ready-made templates**, imported in one click. [View Templates](https://demo.hashthemes.com/ultimate-woocommerce-cart/templates/)
+* **Design the cart with Elementor** using 17 cart widgets, including Rewards Bar, Cart Offers and Cart Timer. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/cart-elementor-widgets/)
+* **Reorder or turn off cart sections** with drag and drop
+* **Grid columns** for the product grid
+* **Glassmorphism**: a frosted glass look for the button and the cart. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/glassmorphism/)
+
+**A Cart Button That Gets Noticed**
+
+* **11 button shapes**: Round, Square, Rounded Square, Triangle, Oval, Star, Rhombus, Pentagon, Hexagon, Rabbet and an Animated Blob. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/add-to-cart-animations/)
+* **7 button positions** with custom offsets: any corner, the middle of either side or the bottom center
+* **29 hover animations** and **9 idle animations** that draw the eye to the button
+* **37 open and 37 close animations** for the cart panel
+* Hide the button when the cart is empty
+* Open the cart from any menu item, button or icon by adding a class. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/open-add-to-cart-panel/)
+
+**More Control**
+
+* Cart shortcode: place the cart anywhere, or only its contents in a sidebar
+* Lock page scroll while the cart is open
+* Remove All button to empty the cart in one click
+* Your own empty cart text and icon
+* Import and export settings between carts or sites
+* Load Google Fonts locally, which helps with GDPR
+* Live font preview for every typography setting
+* Custom CSS
+* One-click updates and direct support from our team
+* One-time payment, no subscription
+
+[**Get Ultimate WooCommerce Cart**](https://1.envato.market/2rKYB0) | [View All Demos](https://demo.hashthemes.com/ultimate-woocommerce-cart/)
 
 == Installation ==
-The easy way to install the plugin is via WordPress.org plugin directory.
 
-<ol>
-<li>Go to WordPress Dashboard > Plugins > Add New</li>
-<li>Search for "Mini Ajax Cart" and install the plugin.</li>
-<li>Activate Plugin from "Plugins" menu in WordPress.</li>
-</ol>
+The easy way to install the plugin is through the WordPress.org plugin directory.
+
+1. Go to WordPress Dashboard > Plugins > Add New.
+2. Search for "Mini Ajax Cart" and install the plugin.
+3. Activate the plugin from the "Plugins" menu in WordPress.
+4. Go to Mini Ajax Cart > Add New to create your first cart.
+
+== Frequently Asked Questions ==
+
+= Does it work with the WooCommerce Cart and Checkout blocks? =
+
+Yes. The plugin works with WooCommerce HPOS and the Cart and Checkout blocks, and the cart updates when products are added or removed from WooCommerce blocks.
+
+= Will it slow down my store? =
+
+No. The cart loads about 11 KB of CSS on your storefront, and nothing at all on pages where no cart is enabled.
+
+= Can I show different carts on different pages? =
+
+Yes. Create as many carts as you need and choose the pages and devices each one shows on.
+
+= What does the Pro version add? =
+
+Pro, Ultimate WooCommerce Cart, adds Floating and Popup layouts, 15 templates, Elementor design, checkout inside the cart, and sales tools: cart rewards, cart offers, a countdown timer, an Added to Cart popup, save for later and analytics. Open Mini Ajax Cart > Free vs Pro in your dashboard for the full comparison, or [get Pro here](https://1.envato.market/2rKYB0).
+
+= Will I lose my carts if I upgrade to Pro? =
+
+No. Pro uses the same carts, so everything you build in the free version carries over.
 
 == Premium Upgrade ==
-For premium upgrade, please click below link <br>
-<a href="https://1.envato.market/2rKYB0">WooCommerce Cart</a>&nbsp;&nbsp;<a href="https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-cart/">Demo Site</a>&nbsp;&nbsp;<a href="https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/">Documentation</a>
+
+Get more sales from every cart with cart rewards, special offers, a countdown timer, checkout inside the cart and much more.
+
+[Get Ultimate WooCommerce Cart](https://1.envato.market/2rKYB0) | [Demo Site](https://demo.hashthemes.com/ultimate-woocommerce-cart/) | [Documentation](https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/)
 
 == Changelog ==
 = 1.3.5 - 2 Oct, 2026 =
