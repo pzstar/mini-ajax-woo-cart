@@ -8,7 +8,7 @@ if (!class_exists('MAJC_Free_Vs_Pro')) {
     class MAJC_Free_Vs_Pro {
 
         const PRO_URL = 'https://1.envato.market/2rKYB0';
-        const DEMO_URL = 'https://demo.hashthemes.com/ultimate-woocommerce-cart/';
+        const DEMO_URL = 'https://demo.hashthemes.com/ultimate-woocommerce-carts/';
 
         private $section_open = false;
 

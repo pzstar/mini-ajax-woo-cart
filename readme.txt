@@ -18,7 +18,7 @@ When a shopper has to load the cart page to see what they picked, some of them n
 
 The cart is fast and light. It loads about 11 KB of CSS on your storefront, and nothing at all on pages where no cart is enabled. It works with WooCommerce HPOS and the Cart and Checkout blocks, updates itself when products are added from WooCommerce blocks, and supports RTL languages.
 
-👉 [Test the dashboard settings without installing](https://demo.tastewp.com/mini-ajax-woo-cart) | [View Pro demos](https://demo.hashthemes.com/ultimate-woocommerce-cart/) | [Documentation](https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/) | [**Get Pro**](https://1.envato.market/2rKYB0)
+👉 [Test the dashboard settings without installing](https://demo.tastewp.com/mini-ajax-woo-cart) | [View Pro demos](https://demo.hashthemes.com/ultimate-woocommerce-carts/) | [Documentation](https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/) | [**Get Pro**](https://1.envato.market/2rKYB0)
 
 = Free Features =
 
@@ -71,11 +71,11 @@ Pro uses the same carts, so **the carts you build in the free version carry over
 
 **Sales Tools That Grow Every Order**
 
-* **Cart Rewards**: a tiered progress bar that unlocks free shipping, discounts and free gifts as the cart grows. Shoppers can see how close they are, so they add more. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/cart-rewards/)
-* **Cart Offers**: hand-picked products at a special price inside the cart, added in one click. Show them based on the products, categories or total in the cart. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/cart-offers/)
-* **Cart Timer & Low Stock Notice**: a countdown in the cart and a notice when an item is running low, so shoppers check out sooner. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/cart-timer-low-stock/)
+* **Cart Rewards**: a tiered progress bar that unlocks free shipping, discounts and free gifts as the cart grows. Shoppers can see how close they are, so they add more. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-carts/cart-rewards/)
+* **Cart Offers**: hand-picked products at a special price inside the cart, added in one click. Show them based on the products, categories or total in the cart. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-carts/cart-offers/)
+* **Cart Timer & Low Stock Notice**: a countdown in the cart and a notice when an item is running low, so shoppers check out sooner. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-carts/cart-timer-low-stock/)
 * **Cart Analytics**: see the revenue your offers bring in, the rewards given away and how order values compare.
-* **Change Options in the Cart**: shoppers switch a product's size, color or other options without removing it. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/change-options-save-for-later/)
+* **Change Options in the Cart**: shoppers switch a product's size, color or other options without removing it. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-carts/change-options-save-for-later/)
 * **Save for Later**: shoppers move items out of the cart and back again. The list stays on the account for logged-in shoppers.
 * **Sticky Add to Cart Bar**: keeps the Add to Cart button in view on product pages.
 * **Shipping Methods & Order Note**: shoppers pick a shipping method and add a note without leaving the cart.
@@ -84,31 +84,31 @@ Pro uses the same carts, so **the carts you build in the free version carry over
 
 **Checkout and Sales Boosters**
 
-* **Checkout Inside the Cart**: shoppers fill in their details and place the order right in the cart panel, with express payment buttons such as Apple Pay and Google Pay. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/checkout-in-cart/)
-* **Added to Cart Popup**: shows the added product with suggested products, rewards and offers, with 37 open and 37 close animations. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/added-to-cart-popup/)
+* **Checkout Inside the Cart**: shoppers fill in their details and place the order right in the cart panel, with express payment buttons such as Apple Pay and Google Pay. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-carts/checkout-in-cart/)
+* **Added to Cart Popup**: shows the added product with suggested products, rewards and offers, with 37 open and 37 close animations. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-carts/added-to-cart-popup/)
 * **Suggested Products**: a carousel of cross-sells, upsells, related or hand-picked products
 * **Free Shipping Bar**: shows how much more to spend for free shipping
 * **Available Coupons List**: shows the coupons any shopper can use next to the coupon field
 * **Ajax Add to Cart on Product Pages**: add to cart without the page reloading
-* **Open the Cart When a Product Is Added** [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/open-cart-on-add-to-cart/)
+* **Open the Cart When a Product Is Added** [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-carts/open-cart-on-add-to-cart/)
 
 **More Layouts and Designs**
 
-* **3 cart layouts**: Slide In, Floating and Popup. [Slide In Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/slide-in-cart/) | [Floating Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/floating-cart/) | [Popup Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/popup-cart/)
-* **15 ready-made templates**, imported in one click. [View Templates](https://demo.hashthemes.com/ultimate-woocommerce-cart/templates/)
-* **Design the cart with Elementor** using 17 cart widgets, including Rewards Bar, Cart Offers and Cart Timer. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/cart-elementor-widgets/)
+* **3 cart layouts**: Slide In, Floating and Popup. [Slide In Demo](https://demo.hashthemes.com/ultimate-woocommerce-carts/slide-in-cart/) | [Floating Demo](https://demo.hashthemes.com/ultimate-woocommerce-carts/floating-cart/) | [Popup Demo](https://demo.hashthemes.com/ultimate-woocommerce-carts/popup-cart/)
+* **15 ready-made templates**, imported in one click. [View Templates](https://demo.hashthemes.com/ultimate-woocommerce-carts/templates/)
+* **Design the cart with Elementor** using 17 cart widgets, including Rewards Bar, Cart Offers and Cart Timer. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-carts/cart-elementor-widgets/)
 * **Reorder or turn off cart sections** with drag and drop
 * **Grid columns** for the product grid
-* **Glassmorphism**: a frosted glass look for the button and the cart. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/glassmorphism/)
+* **Glassmorphism**: a frosted glass look for the button and the cart. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-carts/glassmorphism/)
 
 **A Cart Button That Gets Noticed**
 
-* **11 button shapes**: Round, Square, Rounded Square, Triangle, Oval, Star, Rhombus, Pentagon, Hexagon, Rabbet and an Animated Blob. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/add-to-cart-animations/)
+* **11 button shapes**: Round, Square, Rounded Square, Triangle, Oval, Star, Rhombus, Pentagon, Hexagon, Rabbet and an Animated Blob. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-carts/add-to-cart-animations/)
 * **7 button positions** with custom offsets: any corner, the middle of either side or the bottom center
 * **29 hover animations** and **9 idle animations** that draw the eye to the button
 * **37 open and 37 close animations** for the cart panel
 * Hide the button when the cart is empty
-* Open the cart from any menu item, button or icon by adding a class. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-cart/open-add-to-cart-panel/)
+* Open the cart from any menu item, button or icon by adding a class. [View Demo](https://demo.hashthemes.com/ultimate-woocommerce-carts/open-add-to-cart-panel/)
 
 **More Control**
 
@@ -123,7 +123,7 @@ Pro uses the same carts, so **the carts you build in the free version carry over
 * One-click updates and direct support from our team
 * One-time payment, no subscription
 
-[**Get Ultimate WooCommerce Cart**](https://1.envato.market/2rKYB0) | [View All Demos](https://demo.hashthemes.com/ultimate-woocommerce-cart/)
+[**Get Ultimate WooCommerce Cart**](https://1.envato.market/2rKYB0) | [View All Demos](https://demo.hashthemes.com/ultimate-woocommerce-carts/)
 
 == Installation ==
 
@@ -160,7 +160,7 @@ No. Pro uses the same carts, so everything you build in the free version carries
 
 Get more sales from every cart with cart rewards, special offers, a countdown timer, checkout inside the cart and much more.
 
-[Get Ultimate WooCommerce Cart](https://1.envato.market/2rKYB0) | [Demo Site](https://demo.hashthemes.com/ultimate-woocommerce-cart/) | [Documentation](https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/)
+[Get Ultimate WooCommerce Cart](https://1.envato.market/2rKYB0) | [Demo Site](https://demo.hashthemes.com/ultimate-woocommerce-carts/) | [Documentation](https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/)
 
 == Changelog ==
 = 1.3.5 - 2 Oct, 2026 =
