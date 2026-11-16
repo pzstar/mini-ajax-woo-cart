@@ -136,7 +136,7 @@ foreach (MAJC_Enqueue::enabled_carts() as $majc_post_id => $majc_settings) {
                                     <img src="<?php echo esc_url($majc_cart_basket_open_custom_icon); ?>">
                                 </div>
                         <?php } else if (isset($majc_cart_basket_icon_type) && $majc_cart_basket_icon_type == 'default_icon') { ?>
-                                    <span class="majc-cartbasket-icon majc-cartbasket-open-icon icon_cart_alt"></span>
+                                    <span class="majc-cartbasket-icon majc-cartbasket-open-icon egi-icon-cart-alt"></span>
                         <?php } ?>
 
                         <?php if (isset($majc_cart_basket_icon_type) && $majc_cart_basket_icon_type == 'available_icon') { ?>
@@ -146,7 +146,7 @@ foreach (MAJC_Enqueue::enabled_carts() as $majc_post_id => $majc_settings) {
                                     <img src="<?php echo esc_url($majc_cart_basket_close_custom_icon); ?>">
                                 </div>
                         <?php } else if (isset($majc_cart_basket_icon_type) && $majc_cart_basket_icon_type == 'default_icon') { ?>
-                                    <span class="majc-cartbasket-icon majc-cartbasket-close-icon icon_close"></span>
+                                    <span class="majc-cartbasket-icon majc-cartbasket-close-icon egi-icon-close"></span>
                         <?php } ?>
 
                         <?php if ($majc_cart_basket_product_count == 'on') { ?>

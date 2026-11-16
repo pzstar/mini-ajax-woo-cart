@@ -133,7 +133,7 @@ if (!class_exists('MAJC_Frontend')) {
                                     <div class="majc-item-desc">
                                         <div class="majc-item-remove">
                                             <?php
-                                            echo wp_kses_post(apply_filters('woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="majc-remove" aria-label="%s" data-cart_item_id="%s" data-cart_item_sku="%s" data-cart_item_key="%s"><span class="icon_trash_alt"></span></a>', esc_url(wc_get_cart_remove_url($majc_item_key)), esc_attr__('Remove this item', 'mini-ajax-cart'), esc_attr($majc_product_id), esc_attr($majc_product->get_sku()), esc_attr($majc_item_key)), $majc_item_key));
+                                            echo wp_kses_post(apply_filters('woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="majc-remove" aria-label="%s" data-cart_item_id="%s" data-cart_item_sku="%s" data-cart_item_key="%s"><span class="egi-icon-trash-alt"></span></a>', esc_url(wc_get_cart_remove_url($majc_item_key)), esc_attr__('Remove this item', 'mini-ajax-cart'), esc_attr($majc_product_id), esc_attr($majc_product->get_sku()), esc_attr($majc_item_key)), $majc_item_key));
                                             ?>
                                         </div>
 
@@ -146,7 +146,7 @@ if (!class_exists('MAJC_Frontend')) {
                                         </div>
 
                                         <div class="majc-item-qty">
-                                            <span class="majc-qty-minus majc-qty-chng icon_minus-06"></span>
+                                            <span class="majc-qty-minus majc-qty-chng egi-icon-minus-06"></span>
                                             <?php
                                             if ($majc_product->is_sold_individually()) {
                                                 $majc_product_quantity = sprintf('1 <input type="hidden" name="cart[%s][qty]" value="1" />', esc_attr($majc_item_key));
@@ -161,7 +161,7 @@ if (!class_exists('MAJC_Frontend')) {
                                             }
                                             echo apply_filters('woocommerce_cart_item_quantity', $majc_product_quantity, $majc_item_key, $majc_item_val); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped where built
                                             ?>
-                                            <span class="majc-qty-plus majc-qty-chng icon_plus"></span>
+                                            <span class="majc-qty-plus majc-qty-chng egi-icon-plus"></span>
                                         </div>
                                     </div> <!-- majc-item-desc -->
                                 </div> <!-- majc-cart-items-inner -->

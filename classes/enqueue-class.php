@@ -27,11 +27,11 @@ if (!class_exists('MAJC_Enqueue')) {
 
             wp_enqueue_media();
 
-            wp_enqueue_style('fontawesome-6.3.0', MAJC_BACKEND_CSS_DIR . '/icons/fontawesome-6.3.0.css', array(), MAJC_VERSION);
-            wp_enqueue_style('eleganticons', MAJC_BACKEND_CSS_DIR . '/icons/eleganticons.css', array(), MAJC_VERSION);
-            wp_enqueue_style('essentialicon', MAJC_BACKEND_CSS_DIR . '/icons/essentialicon.css', array(), MAJC_VERSION);
-            wp_enqueue_style('icofont', MAJC_BACKEND_CSS_DIR . '/icons/icofont.css', array(), MAJC_VERSION);
-            wp_enqueue_style('materialdesignicons', MAJC_BACKEND_CSS_DIR . '/icons/materialdesignicons.css', array(), MAJC_VERSION);
+            wp_enqueue_style('fontawesome-7.3.1', MAJC_BACKEND_CSS_DIR . '/icons/fontawesome-6.3.0.css', array(), MAJC_VERSION);
+            wp_enqueue_style('eleganticons-1.0', MAJC_BACKEND_CSS_DIR . '/icons/eleganticons.css', array(), MAJC_VERSION);
+            wp_enqueue_style('essentialicon-1.0', MAJC_BACKEND_CSS_DIR . '/icons/essentialicon.css', array(), MAJC_VERSION);
+            wp_enqueue_style('icofont-1.0.1', MAJC_BACKEND_CSS_DIR . '/icons/icofont.css', array(), MAJC_VERSION);
+            wp_enqueue_style('materialdesignicons-7.4.47', MAJC_BACKEND_CSS_DIR . '/icons/materialdesignicons.css', array(), MAJC_VERSION);
 
             /* Enqueue jQuery Chosen */
             wp_enqueue_style('chosen', MAJC_BACKEND_CSS_DIR . 'chosen.css', '', MAJC_VERSION);
@@ -79,15 +79,15 @@ if (!class_exists('MAJC_Enqueue')) {
         // Which full icon stylesheet an icon class needs.
         private static function icon_set($icon) {
             if (strpos($icon, 'icofont-') === 0) {
-                return 'icofont';
+                return 'icofont-1.0.1';
             } elseif (strpos($icon, 'mdi') === 0) {
-                return 'materialdesignicons';
-            } elseif (strpos($icon, 'essentialicon-') === 0) {
-                return 'essentialicon';
+                return 'materialdesignicons-7.4.47';
+            } elseif (strpos($icon, 'esi-') === 0) {
+                return 'essentialicon-1.0';
             } elseif (strpos($icon, 'fa') === 0) {
-                return 'fontawesome-6.3.0';
+                return 'fontawesome-7.3.1';
             } elseif (in_array($icon, majc_eleganticons_array())) {
-                return 'eleganticons';
+                return 'eleganticons-1.0';
             }
             // e.g. icons saved by Ultimate WooCommerce Cart from sets this plugin does not ship.
             return null;
@@ -124,8 +124,18 @@ if (!class_exists('MAJC_Enqueue')) {
             wp_enqueue_script('wc-cart-fragments');
 
             wp_enqueue_style('majc-cart-icons', MAJC_BACKEND_CSS_DIR . 'icons/majc-cart-icons.css', array(), MAJC_VERSION);
+            // Each icon set loads under its shared, versioned handle (the same in every HashThemes product), so it loads once.
+            $icon_files = array(
+                'icofont-1.0.1' => 'icofont.css',
+                'materialdesignicons-7.4.47' => 'materialdesignicons.css',
+                'essentialicon-1.0' => 'essentialicon.css',
+                'fontawesome-7.3.1' => 'fontawesome-6.3.0.css',
+                'eleganticons-1.0' => 'eleganticons.css',
+            );
             foreach (array_unique(array_filter($icon_sets)) as $icon_set) {
-                wp_enqueue_style('majc-' . $icon_set, MAJC_BACKEND_CSS_DIR . 'icons/' . $icon_set . '.css', array(), MAJC_VERSION);
+                if (isset($icon_files[$icon_set])) {
+                    wp_enqueue_style($icon_set, MAJC_BACKEND_CSS_DIR . 'icons/' . $icon_files[$icon_set], array(), MAJC_VERSION);
+                }
             }
 
             // Effects offered in the settings are in a small subset; anything else (e.g. saved by the Pro plugin) needs the full library.

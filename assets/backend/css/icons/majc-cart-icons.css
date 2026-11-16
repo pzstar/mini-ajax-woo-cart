@@ -8,11 +8,11 @@
     font-style: normal;
 }
 
-.icon_minus-06,
-.icon_plus,
-.icon_close,
-.icon_cart_alt,
-.icon_trash_alt {
+.egi-icon-minus-06,
+.egi-icon-plus,
+.egi-icon-close,
+.egi-icon-cart-alt,
+.egi-icon-trash-alt {
     font-family: 'ElegantIcons' !important;
     font-style: normal;
     font-weight: normal;
@@ -25,23 +25,23 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon_minus-06:before {
+.egi-icon-minus-06:before {
     content: "\4b";
 }
 
-.icon_plus:before {
+.egi-icon-plus:before {
     content: "\4c";
 }
 
-.icon_close:before {
+.egi-icon-close:before {
     content: "\4d";
 }
 
-.icon_cart_alt:before {
+.egi-icon-cart-alt:before {
     content: "\e015";
 }
 
-.icon_trash_alt:before {
+.egi-icon-trash-alt:before {
     content: "\e019";
 }
 
@@ -121,18 +121,18 @@
     font-style: normal;
     font-weight: 900;
     font-display: block;
-    src: url("fonts/fontawesome/fa-solid-900.woff2") format("woff2"), url("fonts/fontawesome/fa-solid-900.ttf") format("truetype");
+    src: url("fonts/fontawesome/fa-solid-900.woff2") format("woff2");
 }
 
 @font-face {
     font-family: 'Font Awesome 5 Free';
     font-display: block;
     font-weight: 900;
-    src: url("fonts/fontawesome/fa-solid-900.woff2") format("woff2"), url("fonts/fontawesome/fa-solid-900.ttf") format("truetype");
+    src: url("fonts/fontawesome/fa-solid-900.woff2") format("woff2");
 }
 
 @font-face {
     font-family: 'FontAwesome';
     font-display: block;
-    src: url("fonts/fontawesome/fa-solid-900.woff2") format("woff2"), url("fonts/fontawesome/fa-solid-900.ttf") format("truetype");
+    src: url("fonts/fontawesome/fa-solid-900.woff2") format("woff2");
 }

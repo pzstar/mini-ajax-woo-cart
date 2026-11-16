@@ -3,7 +3,7 @@ Contributors: hashthemes
 Tags: woocommerce cart, cart, slidein cart, floating cart, ajax cart
 Requires at least: 6.3
 Tested up to: 7.1
-Stable tag: 1.3.5
+Stable tag: 1.4.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -163,6 +163,13 @@ Get more sales from every cart with cart rewards, special offers, a countdown ti
 [Get Ultimate WooCommerce Cart](https://1.envato.market/2rKYB0) | [Demo Site](https://demo.hashthemes.com/ultimate-woocommerce-carts/) | [Documentation](https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/)
 
 == Changelog ==
+= 1.4.0 - 16 Nov, 2026 =
+* Elegant Icons are now written egi-arrow-up rather than arrow_up, and Essential Icons esi-add rather than essentialicon-add, the same in every HashThemes theme and plugin. Icons already chosen in your carts are renamed automatically when the plugin updates
+* Font Awesome updated to 7.3.1 (with the Font Awesome 4 names built in) and Material Design Icons to 7.4.47
+* Each icon font loads under the same stylesheet handle as in the other HashThemes themes and plugins, so it loads only once
+* The icon picker lists match the icon fonts exactly, with the newer IcoFont brand icons (X, TikTok, Discord, Figma and more)
+* Google Fonts list updated to 1,980 fonts
+
 = 1.3.5 - 2 Oct, 2026 =
 * Compatibility test with WordPress version 7.1 and WooCommerce 11.1
 * Declared compatibility with WooCommerce HPOS and the Cart and Checkout blocks

@@ -34,15 +34,15 @@ $majc_display = isset($majc_settings['display']) ? $majc_settings['display'] : n
             <div class="majc-text-check-box">
                 <label>
                     <input type="checkbox" value="desktop" name="majc_settings[display][hide_screen][]" <?php echo in_array('desktop', $majc_display['hide_screen']) ? 'checked' : ''; ?> />
-                    <span><i class="icon_desktop"></i><?php esc_html_e('Desktop', 'mini-ajax-cart'); ?></span>
+                    <span><i class="egi-icon-desktop"></i><?php esc_html_e('Desktop', 'mini-ajax-cart'); ?></span>
                 </label>
                 <label>
                     <input type="checkbox" value="tablet" name="majc_settings[display][hide_screen][]" <?php echo in_array('tablet', $majc_display['hide_screen']) ? 'checked' : ''; ?> />
-                    <span><i class="icon_tablet"></i><?php esc_html_e('Tablet', 'mini-ajax-cart'); ?></span>
+                    <span><i class="egi-icon-tablet"></i><?php esc_html_e('Tablet', 'mini-ajax-cart'); ?></span>
                 </label>
                 <label>
                     <input type="checkbox" value="mobile" name="majc_settings[display][hide_screen][]" <?php echo in_array('mobile', $majc_display['hide_screen']) ? 'checked' : ''; ?> />
-                    <span><i class="icon_mobile"></i><?php esc_html_e('Mobile', 'mini-ajax-cart'); ?></span>
+                    <span><i class="egi-icon-mobile"></i><?php esc_html_e('Mobile', 'mini-ajax-cart'); ?></span>
                 </label>
             </div>
         </div>
