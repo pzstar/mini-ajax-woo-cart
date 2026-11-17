@@ -86,7 +86,6 @@ foreach (MAJC_Enqueue::enabled_carts() as $majc_post_id => $majc_settings) {
         // Custom Settings
         $majc_custom = isset($majc_settings['custom']) ? $majc_settings['custom'] : null;
 
-        // Display Settings
         $majc_specific_pages = isset($majc_settings['display']['specific_pages']) && !empty($majc_settings['display']['specific_pages']) ? $majc_settings['display']['specific_pages'] : array();
         $majc_display_condition = isset($majc_settings['display']['display_condition']) ? $majc_settings['display']['display_condition'] : null;
         $majc_front_pages = isset($majc_settings['display']['front_pages']) ? $majc_settings['display']['front_pages'] : 'off';

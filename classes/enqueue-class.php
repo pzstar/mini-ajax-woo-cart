@@ -99,7 +99,7 @@ if (!class_exists('MAJC_Enqueue')) {
                 return;
             }
 
-            // The template's fixed icons come from a small subset; full sets only load for icons picked in the settings.
+            // The template's fixed icons come from a small subset; full sets load only for picked icons.
             $icon_sets = $animations = array();
             foreach ($carts as $settings) {
                 $basket = isset($settings['cart_basket']) ? $settings['cart_basket'] : array();
@@ -124,7 +124,7 @@ if (!class_exists('MAJC_Enqueue')) {
             wp_enqueue_script('wc-cart-fragments');
 
             wp_enqueue_style('majc-cart-icons', MAJC_BACKEND_CSS_DIR . 'icons/majc-cart-icons.css', array(), MAJC_VERSION);
-            // Each icon set loads under its shared, versioned handle (the same in every HashThemes product), so it loads once.
+            // Shared, versioned handles, so each icon font loads once.
             $icon_files = array(
                 'icofont-1.0.1' => 'icofont.css',
                 'materialdesignicons-7.4.47' => 'materialdesignicons.css',
@@ -138,7 +138,7 @@ if (!class_exists('MAJC_Enqueue')) {
                 }
             }
 
-            // Effects offered in the settings are in a small subset; anything else (e.g. saved by the Pro plugin) needs the full library.
+            // Effects offered here are in a small subset; others (e.g. saved by Pro) need the full library.
             if ($animations) {
                 $offered = array();
                 $all_animations = $this->majc_animations();

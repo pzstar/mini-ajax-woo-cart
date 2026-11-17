@@ -1,4 +1,4 @@
-/* Only the glyphs the cart template always uses. Full icon sets load when a cart picks an icon from them. */
+/* Only the glyphs the cart template always uses; full sets load when a cart picks from them. */
 
 @font-face {
     font-family: 'ElegantIcons';

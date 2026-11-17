@@ -55,7 +55,7 @@
 
         majcRefreshFragments();
 
-        // Block product grids and the block cart change the cart through the Store API, which skips the classic fragment refresh.
+        // Block grids and the block cart use the Store API, which skips the classic fragment refresh.
         $(document.body).on('wc-blocks_added_to_cart wc-blocks_removed_from_cart', majcRefreshFragments);
 
         $('body').find(".majc-body").mCustomScrollbar({
