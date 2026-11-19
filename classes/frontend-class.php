@@ -146,7 +146,9 @@ if (!class_exists('MAJC_Frontend')) {
                                         </div>
 
                                         <div class="majc-item-qty">
-                                            <span class="majc-qty-minus majc-qty-chng egi-icon-minus-06"></span>
+                                            <?php if (!$majc_product->is_sold_individually()) { ?>
+                                                <span class="majc-qty-minus majc-qty-chng egi-icon-minus-06"></span>
+                                            <?php } ?>
                                             <?php
                                             if ($majc_product->is_sold_individually()) {
                                                 $majc_product_quantity = sprintf('1 <input type="hidden" name="cart[%s][qty]" value="1" />', esc_attr($majc_item_key));
@@ -161,7 +163,9 @@ if (!class_exists('MAJC_Frontend')) {
                                             }
                                             echo apply_filters('woocommerce_cart_item_quantity', $majc_product_quantity, $majc_item_key, $majc_item_val); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped where built
                                             ?>
-                                            <span class="majc-qty-plus majc-qty-chng egi-icon-plus"></span>
+                                            <?php if (!$majc_product->is_sold_individually()) { ?>
+                                                <span class="majc-qty-plus majc-qty-chng egi-icon-plus"></span>
+                                            <?php } ?>
                                         </div>
                                     </div> <!-- majc-item-desc -->
                                 </div> <!-- majc-cart-items-inner -->
@@ -193,10 +197,11 @@ if (!class_exists('MAJC_Frontend')) {
             return ob_get_clean();
         }
 
-        // Cart subtotal after discounts.
+        // Cart total minus discount, on the same tax basis as those two rows.
         public static function subtotal_html() {
-            $majc_totals = WC()->cart->get_totals();
-            return '<div class="majc-subtotal-amount">' . wc_price($majc_totals['subtotal'] - $majc_totals['discount_total']) . '</div>';
+            $majc_cart = WC()->cart;
+            $majc_amount = ($majc_cart->get_subtotal() + $majc_cart->get_subtotal_tax()) - ($majc_cart->get_cart_discount_total() + $majc_cart->get_cart_discount_tax_total());
+            return '<div class="majc-subtotal-amount">' . wc_price($majc_amount) . '</div>';
         }
 
         public static function cart_total_html() {
@@ -270,7 +275,7 @@ if (!class_exists('MAJC_Frontend')) {
                     if ($majc_front == 'on' && ('front' == $majc_current_archive)) {
                         $majc_show = true;
                     }
-                    if ($majc_blog == 'on' && ('front' == $majc_current_archive)) {
+                    if ($majc_blog == 'on' && is_home()) {
                         $majc_show = true;
                     }
                     if ($majc_error == 'on' && is_404()) {
@@ -280,9 +285,6 @@ if (!class_exists('MAJC_Frontend')) {
                         $majc_show = true;
                     }
                     if ($majc_archive == 'on' && is_archive()) {
-                        $majc_show = true;
-                    }
-                    if ($majc_archive == 'on' && ('post' == $majc_current_archive && !is_singular())) {
                         $majc_show = true;
                     }
                     if (!is_singular() && in_array($majc_current_archive, $majc_specific_archive)) {
@@ -301,7 +303,7 @@ if (!class_exists('MAJC_Frontend')) {
                     if ($majc_front == 'on' && ('front' == $majc_current_archive)) {
                         $majc_show = false;
                     }
-                    if ($majc_blog == 'on' && ('front' == $majc_current_archive)) {
+                    if ($majc_blog == 'on' && is_home()) {
                         $majc_show = false;
                     }
                     if ($majc_error == 'on' && is_404()) {
@@ -310,7 +312,7 @@ if (!class_exists('MAJC_Frontend')) {
                     if ($majc_search == 'on' && is_search()) {
                         $majc_show = false;
                     }
-                    if ($majc_archive == 'on' && ('post' == $majc_current_archive && !is_singular())) {
+                    if ($majc_archive == 'on' && is_archive()) {
                         $majc_show = false;
                     }
                     if (!is_singular() && in_array($majc_current_archive, $majc_specific_archive)) {

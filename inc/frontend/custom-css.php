@@ -66,7 +66,7 @@ defined('ABSPATH') || exit;
     }
 
     if (isset($majc_custom['qty_change_border_color']) && !empty($majc_custom['qty_change_border_color'])) {
-        $majc_custom_css .= "{$majc_custom_id} .majc-item-qty, {$majc_custom_id} .majc-item-qty .majc-qty[type=number]{border-color:{$majc_custom['qty_change_border_color']}}";
+        $majc_custom_css .= "{$majc_custom_id} .majc-item-qty, {$majc_custom_id} .majc-item-qty input[name=majc-qty-input]{border-color:{$majc_custom['qty_change_border_color']}}";
     }
 
     if (isset($majc_custom['coupon_btn_bg_color']) && !empty($majc_custom['coupon_btn_bg_color'])) {

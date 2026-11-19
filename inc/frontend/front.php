@@ -9,10 +9,12 @@ $majc_current_page_id = is_front_page() || empty($post) ? null : $post->ID;
 
 if (is_shop()) {
     $majc_current_page_id = wc_get_page_id('shop');
-} else if ((is_single() || is_front_page()) && !empty($post)) {
+} else if ((is_single() || (is_front_page() && !is_home())) && !empty($post)) {
     $majc_current_page_id = $post->ID;
-} else if (is_archive() || is_home()) {
+} else if (is_home()) {
     $majc_current_page_id = get_queried_object_id();
+} else if (is_archive() || is_search()) {
+    $majc_current_page_id = null; // a term id or a search result must not match a page chosen under Specific Page
 }
 
 if (is_front_page()) {
@@ -54,11 +56,11 @@ foreach (MAJC_Enqueue::enabled_carts() as $majc_post_id => $majc_settings) {
         $majc_show_view_cart = isset($majc_buttons['show_view_cart']) ? $majc_buttons['show_view_cart'] : 'off';
         $majc_show_checkout = isset($majc_buttons['show_checkout']) ? $majc_buttons['show_checkout'] : 'off';
         $majc_show_continue_shopping = isset($majc_buttons['show_continue_shopping']) ? $majc_buttons['show_continue_shopping'] : 'off';
-        $majc_continue_shopping_link = isset($majc_buttons['continue_shopping_link']) ? $majc_buttons['continue_shopping_link'] : '#';
+        $majc_continue_shopping_link = !empty($majc_buttons['continue_shopping_link']) ? $majc_buttons['continue_shopping_link'] : wc_get_page_permalink('shop'); // empty link goes to the shop instead of reloading the page
         $majc_view_cart_text = isset($majc_buttons['view_cart_label']) ? $majc_buttons['view_cart_label'] : esc_html__('View Cart', 'mini-ajax-cart');
         $majc_checkout_text = isset($majc_buttons['checkout_label']) ? $majc_buttons['checkout_label'] : esc_html__('View Checkout', 'mini-ajax-cart');
         $majc_continue_shopping_text = isset($majc_buttons['continue_shopping_label']) ? $majc_buttons['continue_shopping_label'] : esc_html__('Continue Shopping', 'mini-ajax-cart');
-        $majc_shipping_text = isset($majc_buttons['shipping_text']) ? $majc_buttons['shipping_text'] : esc_html__('To find out your shipping cost , Please proceed to checkout.', 'mini-ajax-cart');
+        $majc_shipping_text = isset($majc_buttons['shipping_text']) ? $majc_buttons['shipping_text'] : esc_html__('To find out your shipping cost, please proceed to checkout.', 'mini-ajax-cart');
 
         // Coupon Settings
         $majc_coupon = isset($majc_settings['coupon']) ? $majc_settings['coupon'] : null;
@@ -109,7 +111,7 @@ foreach (MAJC_Enqueue::enabled_carts() as $majc_post_id => $majc_settings) {
             continue;
         }
 
-        $majc_content_width = isset($majc_settings['content_width']) ? $majc_settings['content_width'] : 400;
+        $majc_content_width = !empty($majc_settings['content_width']) ? absint($majc_settings['content_width']) : 400; // a cleared field saves as 0
 
         $majc_wrapper_class = array(
             'majc-main-wrapper',

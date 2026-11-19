@@ -93,13 +93,23 @@
             }
         });
 
+        // Clicking the overlay or pressing Esc closes an open cart.
+        $('body').on('click', '.majc-cartbasket-open .majc-main-wrapper-bg', function () {
+            $(this).closest('.majc-main-wrapper').find('.majc-cartbasket-toggle-btn').trigger('click');
+        });
+        $(document).on('keydown', function (e) {
+            if (e.key === 'Escape') {
+                $('.majc-main-wrapper.majc-cartbasket-open .majc-cartbasket-toggle-btn').trigger('click');
+            }
+        });
+
         $('body').find(".majc-cart-close").on('click', function () {
             var $popup = $(this).closest('.majc-main-inner-wrapper');
             $popup.find(".majc-cartbasket-toggle-btn").trigger('click');
         });
 
         $(document).on('click', '.add_to_cart_button:not(.product_type_variable)', function () {
-            var cart = $('body').find('.majc-toggle-open-btn');
+            var cart = $('body').find('.majc-toggle-open-btn').filter(':visible').first(); // a cart hidden on this screen has no position
 
             var imgtodrag = $(this).closest('.product').find("img").eq(0);
 
@@ -175,6 +185,14 @@
             e.preventDefault();
             $(this).closest('.majc-body').addClass('majc-loader');
             majcRemoveItem($(this).attr('data-cart_item_key'));
+        });
+
+        // Enter in the code box applies the coupon, like the button.
+        $('body').on('keydown', '.majc-coupon-code', function (e) {
+            if (e.key === 'Enter' && !(e.originalEvent && e.originalEvent.isComposing)) {
+                e.preventDefault();
+                $(this).next('.majc-coupon-submit').trigger('click');
+            }
         });
 
         // Apply Discount Coupons

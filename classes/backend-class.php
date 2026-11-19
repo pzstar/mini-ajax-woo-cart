@@ -72,7 +72,7 @@ if (!class_exists('MAJC_Backend')) {
                 'new_item' => esc_html__('New Cart', 'mini-ajax-cart'),
                 'edit_item' => esc_html__('Edit Cart', 'mini-ajax-cart'),
                 'view_item' => esc_html__('View Cart', 'mini-ajax-cart'),
-                'all_items' => esc_html__('All Cart', 'mini-ajax-cart'),
+                'all_items' => esc_html__('All Carts', 'mini-ajax-cart'),
                 'search_items' => esc_html__('Search Cart', 'mini-ajax-cart'),
                 'parent_item_colon' => esc_html__('Parent Cart:', 'mini-ajax-cart'),
                 'not_found' => esc_html__('No Cart found.', 'mini-ajax-cart'),
@@ -260,7 +260,7 @@ if (!class_exists('MAJC_Backend')) {
 
         function add_external_doc_submenu() {
             global $submenu;
-            $permalink = 'https://hashthemes.com/how-to-add-a-mini-floating-cart-to-your-onlinestore/';
+            $permalink = 'https://hashthemes.com/documentation/mini-ajax-cart-documentation/';
             $submenu['edit.php?post_type=ultimate-woo-cart'][] = array(
                 esc_html__('Documentation', 'mini-ajax-cart'),
                 'manage_woocommerce',
@@ -272,7 +272,7 @@ if (!class_exists('MAJC_Backend')) {
             ?>
             <script type="text/javascript">
                 jQuery(function ($) {
-                    $("ul#adminmenu a[href$='https://hashthemes.com/how-to-add-a-mini-floating-cart-to-your-onlinestore/']").attr('target', '_blank');
+                    $("ul#adminmenu a[href$='https://hashthemes.com/documentation/mini-ajax-cart-documentation/']").attr('target', '_blank');
                 });
             </script>
             <?php

@@ -18,7 +18,7 @@ When a shopper has to load the cart page to see what they picked, some of them n
 
 The cart is fast and light. It loads about 11 KB of CSS on your storefront, and nothing at all on pages where no cart is enabled. It works with WooCommerce HPOS and the Cart and Checkout blocks, updates itself when products are added from WooCommerce blocks, and supports RTL languages.
 
-👉 [Test the dashboard settings without installing](https://demo.tastewp.com/mini-ajax-woo-cart) | [View Pro demos](https://demo.hashthemes.com/ultimate-woocommerce-carts/) | [Documentation](https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/) | [**Get Pro**](https://1.envato.market/2rKYB0)
+👉 [Test the dashboard settings without installing](https://demo.tastewp.com/mini-ajax-woo-cart) | [View Pro demos](https://demo.hashthemes.com/ultimate-woocommerce-carts/) | [Documentation](https://hashthemes.com/documentation/mini-ajax-cart-documentation/) | [**Get Pro**](https://1.envato.market/2rKYB0)
 
 = Free Features =
 

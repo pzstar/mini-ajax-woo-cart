@@ -304,7 +304,7 @@ $majc_text_decorations = majc_get_text_decoration_choices();
 
                             <div class="majc-typography-input-field majc-range-slider-wrap">
                                 <div class="majc-range-slider"></div>
-                                <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($majc_custom['header_title_line_height']); ?>" name="majc_settings[custom][header_title_line_height]" /> px
+                                <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($majc_custom['header_title_line_height']); ?>" name="majc_settings[custom][header_title_line_height]" />
                             </div>
                         </li>
 
@@ -462,7 +462,7 @@ $majc_text_decorations = majc_get_text_decoration_choices();
 
                             <div class="majc-typography-input-field majc-range-slider-wrap">
                                 <div class="majc-range-slider"></div>
-                                <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($majc_custom['content_line_height']); ?>" name="majc_settings[custom][content_line_height]" /> px
+                                <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($majc_custom['content_line_height']); ?>" name="majc_settings[custom][content_line_height]" />
                             </div>
                         </li>
 
@@ -621,7 +621,7 @@ $majc_text_decorations = majc_get_text_decoration_choices();
 
                             <div class="majc-typography-input-field majc-range-slider-wrap">
                                 <div class="majc-range-slider"></div>
-                                <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($majc_custom['product_title_line_height']); ?>" name="majc_settings[custom][product_title_line_height]" /> px
+                                <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($majc_custom['product_title_line_height']); ?>" name="majc_settings[custom][product_title_line_height]" />
                             </div>
                         </li>
 
@@ -778,7 +778,7 @@ $majc_text_decorations = majc_get_text_decoration_choices();
 
                             <div class="majc-typography-input-field majc-range-slider-wrap">
                                 <div class="majc-range-slider"></div>
-                                <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($majc_custom['button_text_line_height']); ?>" name="majc_settings[custom][button_text_line_height]" /> px
+                                <input class="majc-range-input-selector" type="number" min="0.5" max="5" step="0.1" value="<?php echo esc_attr($majc_custom['button_text_line_height']); ?>" name="majc_settings[custom][button_text_line_height]" />
                             </div>
                         </li>
 
