@@ -3,7 +3,7 @@ Contributors: hashthemes
 Tags: woocommerce cart, cart, slidein cart, floating cart, ajax cart
 Requires at least: 6.3
 Tested up to: 7.1
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -163,6 +163,17 @@ Get more sales from every cart with cart rewards, special offers, a countdown ti
 [Get Ultimate WooCommerce Cart](https://1.envato.market/2rKYB0) | [Demo Site](https://demo.hashthemes.com/ultimate-woocommerce-carts/) | [Documentation](https://hashthemes.com/documentation/ultimate-woocommerce-cart-documentation/)
 
 == Changelog ==
+= 1.4.1 - 22 Nov, 2026 =
+* Black Friday and Christmas & New Year sale on Ultimate WooCommerce Cart: while a sale is on, a cart button on the Mini Ajax Cart screens opens a side cart with the deal (it can be hidden until the next sale), plus a Sale badge on Free vs Pro and a link on the Plugins screen
+* The cart closes when the overlay is clicked or Escape is pressed
+* Pressing Enter in the coupon field applies the coupon
+* Products sold individually no longer show the quantity plus and minus buttons
+* The subtotal includes tax on the products and on the discount
+* The Blog Page and Archive display options now match the blog page and every archive
+* The quantity border color applies again, and the content width shows its 400px default
+* The added-to-cart animation flies to the cart button shown on the screen when another cart is hidden there
+* The Documentation menu link goes to the documentation page
+
 = 1.4.0 - 16 Nov, 2026 =
 * Elegant Icons are now written egi-arrow-up rather than arrow_up, and Essential Icons esi-add rather than essentialicon-add, the same in every HashThemes theme and plugin. Icons already chosen in your carts are renamed automatically when the plugin updates
 * Font Awesome updated to 7.3.1 (with the Font Awesome 4 names built in) and Material Design Icons to 7.4.47

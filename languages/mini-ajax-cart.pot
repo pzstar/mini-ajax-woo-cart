@@ -1,864 +1,1437 @@
-#, fuzzy
+# Copyright (C) 2026 HashThemes
+# This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Mini Ajax Cart for WooCommerce\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-25 05:55+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Project-Id-Version: Mini Ajax Cart for WooCommerce 1.4.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mini-ajax-woo-cart\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: \n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.3; wp-6.1.1\n"
-"X-Domain: mini-ajax-cart"
-
-#. Placeholders: %1$s and %2$s are <strong> tags. %3$s and %4$s are <a> tags
-#: mini-ajax-cart.php:87
-#, php-format
-msgid ""
-"%1$sMini Ajax Cart for WooCommerce %2$s requires WooCommerce Plugin. Please "
-"install and activate %3$sWooCommerce%4$s."
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:99
-msgid "404 Page"
-msgstr ""
-
-#: classes/backend-class.php:44
-msgid "Add New Mini Ajax Cart"
-msgstr ""
-
-#: classes/backend-class.php:42
-msgctxt "add new on admin bar"
-msgid "Mini Ajax Cart"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:83
-msgid "Added to Cart Product Section"
-msgstr ""
-
-#: classes/backend-class.php:41
-msgctxt "admin menu"
-msgid "Mini Ajax Cart"
-msgstr ""
-
-#. Description of the plugin
-msgid "Ajax, Floating, Slide In, Popup Cart For WordPress with WooCommerce"
-msgstr ""
-
-#: classes/backend-class.php:48
-msgid "All Cart"
-msgstr ""
-
-#: inc/backend/settings/cart-panel.php:28
-msgid "Animation"
-msgstr ""
-
-#: inc/frontend/front.php:71
-msgid "Apply Coupon"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:130
-msgid "Apply Coupon Button Label"
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:90
-msgid "Archive Page"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:42
-#: inc/backend/settings/cart-button.php:20
-msgid "Available Icon"
-msgstr ""
-
-#: inc/backend/settings/cart-panel.php:85
-msgid "Background behind the cart panel when it is opened"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:24
-#: inc/backend/settings/design-settings.php:91
-#: inc/backend/settings/design-settings.php:805
-#: inc/backend/settings/design-settings.php:843
-#: inc/backend/settings/design-settings.php:894
-#: inc/backend/settings/design-settings.php:946
-msgid "Background Color"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:31
-#: inc/backend/settings/design-settings.php:812
-#: inc/backend/settings/design-settings.php:850
-#: inc/backend/settings/design-settings.php:901
-msgid "Background Color (Hover)"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:73
-msgid "Background Type"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:129
-#: inc/backend/settings/design-settings.php:871
-#: inc/backend/settings/design-settings.php:922
-msgid "Border Color"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:878
-#: inc/backend/settings/design-settings.php:929
-msgid "Border Color (Hover)"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:113
-msgid "Button Position"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:90
-msgid "Button Shape"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:650
-msgid "Button Typography"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:13
-#: inc/backend/settings/cart-content.php:8
-msgid "Buttons"
-msgstr ""
-
-#: google-fonts-list.php:181
-msgid "Capitalize"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:18
-msgid "Cart Basket/Button"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:20
-msgid "Cart Basket/Button Colors"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:2
-msgid "Cart Basket/Button Settings"
-msgstr ""
-
-#: inc/backend/settings.php:20 inc/backend/settings/design-settings.php:11
-#: inc/backend/settings/cart-content.php:150
-msgid "Cart Button"
-msgstr ""
-
-#: inc/backend/settings.php:22 inc/backend/settings/design-settings.php:70
-msgid "Cart Content"
-msgstr ""
-
-#: inc/backend/settings.php:21 inc/backend/settings/design-settings.php:12
-msgid "Cart Panel"
-msgstr ""
-
-#: inc/backend/settings/cart-panel.php:2
-msgid "Cart Panel Settings"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:6
-msgid "Cart Products"
-msgstr ""
-
-#: mini-ajax-cart.php:94
-msgid "Cart Settings"
-msgstr ""
-
-#: inc/frontend/front.php:311
-msgid "Cart Total"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:890
-msgid "Cart/CheckOut Button"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:150
-msgid "Center Bottom (Pro)"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:174
-msgid "Checkout Button"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:40
-msgid "Choose Close Icon"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:80
-msgid "Choose Color"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:52
-msgid "Choose Header Icon"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:32
-msgid "Choose Open Icon"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:143
-msgid "Close Background Color"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:136
-msgid "Close Icon Color"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:117
-msgid "Color Settings"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:2
-msgid "Configure Cart Content"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:331
-msgid "Content Typography"
-msgstr ""
-
-#: inc/backend/settings/cart-panel.php:71
-msgid "Content Width"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:198
-msgid "Continue Button"
-msgstr ""
-
-#: inc/frontend/front.php:65 inc/backend/settings/cart-content.php:215
-msgid "Continue Shopping"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:839
-msgid "Continue Shopping Button"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:219
-msgid "Continue Shopping Link"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:52
-msgid "Counter Background Color"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:59
-msgid "Counter Text Color"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:7
-msgid "Coupon"
-msgstr ""
-
-#: classes/frontend-class.php:139
-msgid "Coupon Applied Successfully."
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:801
-msgid "Coupon Button"
-msgstr ""
-
-#: classes/frontend-class.php:121
-msgid "Coupon Code Already Applied."
-msgstr ""
-
-#: classes/frontend-class.php:105
-msgid "Coupon Code Field is Empty!"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:115
-msgid "Coupon Code Section"
-msgstr ""
-
-#: classes/frontend-class.php:72
-msgid "Coupon Removed Successfully."
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:47
-#: inc/backend/settings/cart-button.php:25
-msgid "Custom Icon"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:85
-msgid "Custom Image Background"
-msgstr ""
-
-#: google-fonts-list.php:177 google-fonts-list.php:187
-#: inc/backend/settings/cart-panel.php:34
-#: inc/backend/settings/cart-panel.php:51
-msgid "Default"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:37
-#: inc/backend/settings/cart-button.php:15
-msgid "Default Icon"
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:63
-msgid "Default WordPress Pages"
-msgstr ""
-
-#: inc/backend/settings.php:23
-msgid "Design"
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:35
-msgid "Desktop"
-msgstr ""
-
-#: inc/frontend/front.php:318
-msgid "Discount"
-msgstr ""
-
-#: classes/backend-class.php:216
-msgid "Dismiss this notice."
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:23
-msgid "Display Ajax Cart?"
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:27
-msgid "Display Settings"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:183
-msgid "Displays at the side of Basket/Button"
-msgstr ""
-
-#: classes/backend-class.php:232
-msgid "Documentation"
-msgstr ""
-
-#: classes/backend-class.php:46
-msgid "Edit Cart"
-msgstr ""
-
-#: classes/backend-class.php:93
-msgid "Elegant Icon"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:118
-msgid "Enable Coupon Field"
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:16
-msgid "Enable Mini Ajax Cart"
-msgstr ""
-
-#: inc/backend/settings/cart-panel.php:78
-msgid "Enable Overlay"
-msgstr ""
-
-#: inc/frontend/front.php:72
-msgid "Enter your promo code"
-msgstr ""
-
-#: classes/backend-class.php:91
-msgid "Essential Icon"
-msgstr ""
-
-#: inc/backend/settings/cart-panel.php:17
-msgid "Floating (Available in Pro)"
-msgstr ""
-
-#: classes/backend-class.php:90
-msgid "Font Awesome"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:178
-#: inc/backend/settings/design-settings.php:335
-#: inc/backend/settings/design-settings.php:493
-#: inc/backend/settings/design-settings.php:654
-msgid "Font Family"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:292
-#: inc/backend/settings/design-settings.php:449
-#: inc/backend/settings/design-settings.php:608
-#: inc/backend/settings/design-settings.php:765
-msgid "Font Size"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:220
-#: inc/backend/settings/design-settings.php:377
-#: inc/backend/settings/design-settings.php:535
-#: inc/backend/settings/design-settings.php:697
-msgid "Font Style"
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:72
-msgid "Front Page"
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:13
-msgid "General Settings"
-msgstr ""
-
-#. %1$s is link start tag, %2$s is link end tag.
-#: classes/backend-class.php:190
-#, php-format
-msgid ""
-"Great to see that you have been using Mini Ajax Cart for some time. We hope "
-"you love it, and we would really appreciate it if you would %1$sgive us a 5 "
-"stars rating%2$s and spread your words to the world."
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:97
-msgid "Grid"
-msgstr ""
-
-#. Author of the plugin
-msgid "HashThemes"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:5
-msgid "Header"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:23
-msgid "Header Icon Type"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:13
-msgid "Header Section"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:16
-msgid "Header Title Text"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:174
-msgid "Header Title Typography"
-msgstr ""
-
-#: inc/backend/settings/cart-panel.php:49
-msgid "Hide Animation"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:235
-msgid "Hide Cart Total"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:246
-msgid "Hide Discount"
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:55
-msgid "Hide in All Pages"
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:30
-msgid "Hide in Screens"
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:57
-msgid "Hide in Selected Pages"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:257
-msgid "Hide Subtotal"
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:81
-msgid "Home/Blog Page"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:156
-msgid "Hover Animation"
-msgstr ""
-
-#. Author URI of the plugin
-msgid "http://hashthemes.com"
-msgstr ""
-
-#. URI of the plugin
-msgid "https://github.com/pzstar/mini-ajax-woo-cart"
-msgstr ""
-
-#: classes/backend-class.php:195
-msgid "I have already rated"
-msgstr ""
-
-#: classes/backend-class.php:89
-msgid "Ico Font"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:4
-msgid "Icon"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:38
-msgid "Icon Color"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:45
-msgid "Icon Color (Hover)"
-msgstr ""
-
-#: classes/frontend-class.php:129
-msgid "Invalid code entered. Please try again."
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:230
-msgid "It will appear just above buttons."
-msgstr ""
-
-#: classes/frontend-class.php:250 inc/frontend/front.php:203
-msgid "Items: "
-msgstr ""
-
-#: inc/backend/settings/cart-panel.php:5
-msgid "Layout"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:135
-msgid "Left Bottom (Pro)"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:120
-msgid "Left Middle"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:130
-msgid "Left Top (Pro)"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:311
-#: inc/backend/settings/design-settings.php:469
-#: inc/backend/settings/design-settings.php:628
-#: inc/backend/settings/design-settings.php:785
-msgid "Letter Spacing"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:301
-#: inc/backend/settings/design-settings.php:459
-#: inc/backend/settings/design-settings.php:618
-#: inc/backend/settings/design-settings.php:775
-msgid "Line Height"
-msgstr ""
-
-#: google-fonts-list.php:190
-msgid "Line-through"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:92
-msgid "List"
-msgstr ""
-
-#: google-fonts-list.php:180
-msgid "Lowercase"
-msgstr ""
-
-#: inc/backend/settings.php:19
-msgid "Main Settings"
-msgstr ""
-
-#: classes/backend-class.php:92
-msgid "Material Icon"
-msgstr ""
-
-#: classes/backend-class.php:20
-msgid "Mini Ajax Cart"
-msgstr ""
-
-#: classes/backend-class.php:43
-msgctxt "Mini Ajax Cart"
-msgid "Add New"
-msgstr ""
-
-#. Name of the plugin
+"POT-Creation-Date: 2026-11-22T11:21:08+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: mini-ajax-cart\n"
+
+#. Plugin Name of the plugin
+#: mini-ajax-cart.php
 msgid "Mini Ajax Cart for WooCommerce"
 msgstr ""
 
-#: inc/backend/settings/main-settings.php:43
-msgid "Mobile"
+#. Plugin URI of the plugin
+#: mini-ajax-cart.php
+msgid "https://github.com/pzstar/mini-ajax-woo-cart"
 msgstr ""
 
-#: classes/backend-class.php:45
-msgid "New Cart"
+#. Description of the plugin
+#: mini-ajax-cart.php
+msgid "Ajax, Floating, Slide In, Popup Cart For WordPress with WooCommerce"
 msgstr ""
 
-#: classes/backend-class.php:52
-msgid "No Cart found in Trash."
+#. Author of the plugin
+#: mini-ajax-cart.php
+msgid "HashThemes"
 msgstr ""
 
-#: classes/backend-class.php:51
-msgid "No Cart found."
+#. Author URI of the plugin
+#: mini-ajax-cart.php
+msgid "http://hashthemes.com"
 msgstr ""
 
-#: inc/frontend/front.php:272
-msgid "No Product in the Cart!"
+#: classes/backend-class.php:21
+msgid "Mini Ajax Cart"
 msgstr ""
 
-#: google-fonts-list.php:178 google-fonts-list.php:188
-#: inc/backend/settings/cart-content.php:32
-#: inc/backend/settings/cart-button.php:159
-msgid "None"
-msgstr ""
-
-#: google-fonts-list.php:191
-msgid "Overline"
-msgstr ""
-
-#: classes/backend-class.php:50
-msgid "Parent Cart:"
-msgstr ""
-
-#: inc/backend/settings/cart-panel.php:22
-msgid "Popup (Available in Pro)"
-msgstr ""
-
-#: classes/backend-class.php:39
+#: classes/backend-class.php:66
 msgctxt "post type general name"
 msgid "Mini Ajax Cart"
 msgstr ""
 
-#: classes/backend-class.php:40
+#: classes/backend-class.php:67
 msgctxt "post type singular name"
 msgid "Mini Ajax Cart"
 msgstr ""
 
-#: inc/backend/settings/design-settings.php:489
-msgid "Product Title Typography"
+#: classes/backend-class.php:68
+msgctxt "admin menu"
+msgid "Mini Ajax Cart"
 msgstr ""
 
-#: inc/backend/settings/cart-content.php:85
-msgid "Products Layout"
+#: classes/backend-class.php:69
+msgctxt "add new on admin bar"
+msgid "Mini Ajax Cart"
 msgstr ""
 
-#: inc/backend/settings/cart-content.php:138
-msgid "Promo Code Placeholder"
+#: classes/backend-class.php:70
+msgctxt "Mini Ajax Cart"
+msgid "Add New"
 msgstr ""
 
-#: inc/backend/settings/design-settings.php:150
-msgid "Quantity +/- Background Color"
+#: classes/backend-class.php:71
+msgid "Add New Mini Ajax Cart"
 msgstr ""
 
-#: inc/backend/settings/design-settings.php:164
-msgid "Quantity +/- Border Color"
+#: classes/backend-class.php:72
+msgid "New Cart"
 msgstr ""
 
-#: inc/backend/settings/design-settings.php:157
-msgid "Quantity +/- Icon Color"
+#: classes/backend-class.php:73
+msgid "Edit Cart"
 msgstr ""
 
-#: classes/frontend-class.php:249 inc/frontend/front.php:202
-msgid "Quantity: "
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:107
-#: inc/backend/settings/cart-content.php:69
-#: inc/backend/settings/cart-button.php:61
-#: inc/backend/settings/cart-button.php:77
-msgid "Remove"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:942
-msgid "Remove Product Button (Grid Layout)"
-msgstr ""
-
-#: classes/frontend-class.php:176 inc/frontend/front.php:231
-msgid "Remove this item"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:145
-msgid "Right Bottom (Pro)"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:125
-msgid "Right Middle"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:140
-msgid "Right Top (Pro)"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:97
-msgid "Round"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:107
-msgid "Rounded Square"
-msgstr ""
-
-#: classes/backend-class.php:49
-msgid "Search Cart"
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:108
-msgid "Search Page"
-msgstr ""
-
-#: mini-ajax-cart.php:94
-msgid "Settings"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:227
-msgid "Shipping Text Label"
-msgstr ""
-
-#: inc/backend/settings/cart-panel.php:32
-msgid "Show Animation"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:103
-msgid "Show Cart Quantity & Items"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:179
-msgid "Show Checkout Button"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:203
-msgid "Show Continue Shopping Button"
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:54
-msgid "Show in All Pages"
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:56
-msgid "Show in Selected Pages"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:176
-msgid "Show Product Counter"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:155
-msgid "Show View Cart Button"
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:50
-msgid "Show/Hide in Pages"
-msgstr ""
-
-#: inc/backend/settings/cart-panel.php:12
-msgid "Slide In"
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:172
-msgid "Specific "
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:102
-msgid "Square"
-msgstr ""
-
-#: inc/frontend/front.php:331
-msgid "Subtotal"
-msgstr ""
-
-#: inc/backend/settings/main-settings.php:39
-msgid "Tablet"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:122
-#: inc/backend/settings/design-settings.php:320
-#: inc/backend/settings/design-settings.php:478
-#: inc/backend/settings/design-settings.php:637
-#: inc/backend/settings/design-settings.php:819
-#: inc/backend/settings/design-settings.php:857
-#: inc/backend/settings/design-settings.php:908
-#: inc/backend/settings/design-settings.php:953
-msgid "Text Color"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:826
-#: inc/backend/settings/design-settings.php:864
-#: inc/backend/settings/design-settings.php:915
-msgid "Text Color (Hover)"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:269
-#: inc/backend/settings/design-settings.php:426
-#: inc/backend/settings/design-settings.php:584
-#: inc/backend/settings/design-settings.php:742
-msgid "Text Decoration"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:246
-#: inc/backend/settings/design-settings.php:403
-#: inc/backend/settings/design-settings.php:561
-#: inc/backend/settings/design-settings.php:719
-msgid "Text Transform"
-msgstr ""
-
-#: inc/frontend/front.php:263
-msgid "The Cart is Empty"
-msgstr ""
-
-#: inc/frontend/front.php:66
-msgid "To find out your shipping cost , Please proceed to checkout."
-msgstr ""
-
-#: classes/backend-class.php:95
-msgid "Type to filter"
-msgstr ""
-
-#: google-fonts-list.php:189
-msgid "Underline"
-msgstr ""
-
-#: inc/backend/settings.php:24
-msgid "Upgrade To Pro"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:110
-#: inc/backend/settings/cart-content.php:72
-#: inc/backend/settings/cart-button.php:64
-#: inc/backend/settings/cart-button.php:79
-msgid "Upload"
-msgstr ""
-
-#: inc/backend/settings/design-settings.php:98
-msgid "Upload Background Image"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:69
-msgid "Upload Close Icon"
-msgstr ""
-
-#: inc/backend/settings/cart-content.php:61
-msgid "Upload Header Icon"
-msgstr ""
-
-#: inc/backend/settings/cart-button.php:53
-msgid "Upload Open Icon"
-msgstr ""
-
-#: google-fonts-list.php:179
-msgid "Uppercase"
-msgstr ""
-
-#: classes/backend-class.php:47 inc/frontend/front.php:63
-#: inc/backend/settings/cart-content.php:167
+#: classes/backend-class.php:74
+#: inc/backend/settings/cart-content.php:170
+#: inc/frontend/front.php:60
 msgid "View Cart"
 msgstr ""
 
-#: inc/backend/settings/cart-content.php:166
-msgid "View Cart Label"
+#: classes/backend-class.php:75
+msgid "All Carts"
 msgstr ""
 
-#: inc/backend/settings/cart-content.php:147
+#: classes/backend-class.php:76
+msgid "Search Cart"
+msgstr ""
+
+#: classes/backend-class.php:77
+msgid "Parent Cart:"
+msgstr ""
+
+#: classes/backend-class.php:78
+msgid "No Cart found."
+msgstr ""
+
+#: classes/backend-class.php:79
+msgid "No Cart found in Trash."
+msgstr ""
+
+#: classes/backend-class.php:119
+msgid "Ico Font"
+msgstr ""
+
+#: classes/backend-class.php:120
+msgid "Font Awesome"
+msgstr ""
+
+#: classes/backend-class.php:121
+msgid "Essential Icon"
+msgstr ""
+
+#: classes/backend-class.php:122
+msgid "Material Icon"
+msgstr ""
+
+#: classes/backend-class.php:123
+msgid "Elegant Icon"
+msgstr ""
+
+#: classes/backend-class.php:125
+msgid "Type to filter"
+msgstr ""
+
+#. translators: %1$s is link start tag, %2$s is link end tag.
+#: classes/backend-class.php:223
+msgid "Great to see that you have been using Mini Ajax Cart for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world."
+msgstr ""
+
+#: classes/backend-class.php:227
+msgid "Yes, of course"
+msgstr ""
+
+#: classes/backend-class.php:228
+msgid "I have already rated"
+msgstr ""
+
+#: classes/backend-class.php:249
+msgid "Dismiss this notice."
+msgstr ""
+
+#: classes/backend-class.php:265
+msgid "Documentation"
+msgstr ""
+
+#: classes/free-vs-pro.php:20
+msgid "Free vs Pro"
+msgstr ""
+
+#: classes/free-vs-pro.php:27
+msgid "Demo"
+msgstr ""
+
+#: classes/free-vs-pro.php:67
+msgid "Yes"
+msgstr ""
+
+#: classes/free-vs-pro.php:68
+msgid "No"
+msgstr ""
+
+#: classes/free-vs-pro.php:76
+msgid "Mini Ajax Cart vs Ultimate WooCommerce Cart"
+msgstr ""
+
+#: classes/free-vs-pro.php:77
+msgid "Ultimate WooCommerce Cart is the Pro version of Mini Ajax Cart. It adds more cart layouts and designs, plus tools that grow every order: cart rewards, special offers, a countdown timer, an Added to Cart popup and analytics."
+msgstr ""
+
+#: classes/free-vs-pro.php:78
+msgid "Pro uses the same carts, so the carts you build here carry over when you upgrade."
+msgstr ""
+
+#: classes/free-vs-pro.php:81
+#: classes/free-vs-pro.php:165
+msgid "Get Pro"
+msgstr ""
+
+#: classes/free-vs-pro.php:82
+#: classes/free-vs-pro.php:164
+msgid "View Demos"
+msgstr ""
+
+#: classes/free-vs-pro.php:90
+msgid "Feature"
+msgstr ""
+
+#: classes/free-vs-pro.php:91
+#: classes/free-vs-pro.php:159
+msgid "Free"
+msgstr ""
+
+#: classes/free-vs-pro.php:92
+msgid "Pro"
+msgstr ""
+
+#: classes/free-vs-pro.php:97
+msgid "Cart Layouts & Templates"
+msgstr ""
+
+#: classes/free-vs-pro.php:98
+msgid "Cart Layouts"
+msgstr ""
+
+#: classes/free-vs-pro.php:98
+msgid "Slide In opens from the side, Floating opens beside the button and Popup opens in the middle of the screen."
+msgstr ""
+
+#: classes/free-vs-pro.php:98
+#: inc/backend/settings/cart-panel.php:15
+msgid "Slide In"
+msgstr ""
+
+#: classes/free-vs-pro.php:98
+msgid "Slide In, Floating & Popup"
+msgstr ""
+
+#: classes/free-vs-pro.php:99
+msgid "Ready-Made Templates"
+msgstr ""
+
+#: classes/free-vs-pro.php:99
+msgid "Complete cart designs, imported in one click."
+msgstr ""
+
+#: classes/free-vs-pro.php:99
+msgid "15 templates"
+msgstr ""
+
+#: classes/free-vs-pro.php:100
+msgid "Design the Cart with Elementor"
+msgstr ""
+
+#: classes/free-vs-pro.php:100
+msgid "Build the cart content in Elementor with dedicated cart widgets."
+msgstr ""
+
+#: classes/free-vs-pro.php:100
+msgid "17 cart widgets"
+msgstr ""
+
+#: classes/free-vs-pro.php:101
+msgid "Multiple Carts"
+msgstr ""
+
+#: classes/free-vs-pro.php:101
+msgid "Create different carts for different pages or devices."
+msgstr ""
+
+#: classes/free-vs-pro.php:102
+msgid "Import & Export Settings"
+msgstr ""
+
+#: classes/free-vs-pro.php:102
+msgid "Copy a cart's settings to another cart or another site."
+msgstr ""
+
+#: classes/free-vs-pro.php:104
+#: inc/backend/settings.php:22
+#: inc/backend/settings/cart-content.php:153
+#: inc/backend/settings/design-settings.php:13
+msgid "Cart Button"
+msgstr ""
+
+#: classes/free-vs-pro.php:105
+msgid "Button Icon"
+msgstr ""
+
+#: classes/free-vs-pro.php:105
+msgid "The default icon, an icon from 5 icon libraries, or your own image."
+msgstr ""
+
+#: classes/free-vs-pro.php:106
+msgid "Button Shapes"
+msgstr ""
+
+#: classes/free-vs-pro.php:106
+msgid "Pro adds triangle, oval, star, rhombus, pentagon, hexagon, rabbet and an animated blob."
+msgstr ""
+
+#: classes/free-vs-pro.php:106
+msgid "3 shapes"
+msgstr ""
+
+#: classes/free-vs-pro.php:106
+msgid "11 shapes"
+msgstr ""
+
+#: classes/free-vs-pro.php:107
+msgid "Button Positions"
+msgstr ""
+
+#: classes/free-vs-pro.php:107
+msgid "Pro places the button in any corner, the middle of either side or the bottom center, with custom offsets."
+msgstr ""
+
+#: classes/free-vs-pro.php:107
+msgid "Left or right middle"
+msgstr ""
+
+#: classes/free-vs-pro.php:107
+msgid "7 positions + offsets"
+msgstr ""
+
+#: classes/free-vs-pro.php:108
+msgid "Hover Animations"
+msgstr ""
+
+#: classes/free-vs-pro.php:108
+msgid "3 animations"
+msgstr ""
+
+#: classes/free-vs-pro.php:108
+msgid "29 animations"
+msgstr ""
+
+#: classes/free-vs-pro.php:109
+msgid "Idle Animations"
+msgstr ""
+
+#: classes/free-vs-pro.php:109
+msgid "A repeating animation that draws the eye to the button."
+msgstr ""
+
+#: classes/free-vs-pro.php:109
+msgid "9 animations"
+msgstr ""
+
+#: classes/free-vs-pro.php:110
+msgid "Item Count Badge"
+msgstr ""
+
+#: classes/free-vs-pro.php:111
+msgid "Hide the Button When the Cart Is Empty"
+msgstr ""
+
+#: classes/free-vs-pro.php:112
+msgid "Open the Cart from Any Link"
+msgstr ""
+
+#: classes/free-vs-pro.php:112
+msgid "Add a class to a menu item, button or icon to open the cart from it."
+msgstr ""
+
+#: classes/free-vs-pro.php:113
+msgid "Glassmorphism Background"
+msgstr ""
+
+#: classes/free-vs-pro.php:113
+msgid "A frosted glass look for the button and the cart."
+msgstr ""
+
+#: classes/free-vs-pro.php:115
+#: inc/backend/settings.php:23
+#: inc/backend/settings/design-settings.php:14
+msgid "Cart Panel"
+msgstr ""
+
+#: classes/free-vs-pro.php:116
+msgid "Open & Close Animations"
+msgstr ""
+
+#: classes/free-vs-pro.php:116
+msgid "5 each"
+msgstr ""
+
+#: classes/free-vs-pro.php:116
+msgid "37 each"
+msgstr ""
+
+#: classes/free-vs-pro.php:117
+msgid "Content Width & Overlay"
+msgstr ""
+
+#: classes/free-vs-pro.php:118
+msgid "Open the Cart When a Product Is Added"
+msgstr ""
+
+#: classes/free-vs-pro.php:119
+msgid "Lock Page Scroll"
+msgstr ""
+
+#: classes/free-vs-pro.php:119
+msgid "The page behind stays still while the cart is open."
+msgstr ""
+
+#: classes/free-vs-pro.php:120
+msgid "Cart Shortcode"
+msgstr ""
+
+#: classes/free-vs-pro.php:120
+msgid "Place the cart anywhere, or only its contents in a sidebar."
+msgstr ""
+
+#: classes/free-vs-pro.php:121
+msgid "RTL Languages"
+msgstr ""
+
+#: classes/free-vs-pro.php:123
+#: inc/backend/settings.php:24
+#: inc/backend/settings/design-settings.php:72
+msgid "Cart Content"
+msgstr ""
+
+#: classes/free-vs-pro.php:124
+msgid "Header, Products, Coupon & Buttons"
+msgstr ""
+
+#: classes/free-vs-pro.php:124
+msgid "Change quantities, remove items, apply coupons, and the View Cart, Checkout and Continue Shopping buttons."
+msgstr ""
+
+#: classes/free-vs-pro.php:125
+msgid "Products as a List or Grid"
+msgstr ""
+
+#: classes/free-vs-pro.php:125
+msgid "Yes, with grid columns"
+msgstr ""
+
+#: classes/free-vs-pro.php:126
+msgid "Reorder & Turn Off Sections"
+msgstr ""
+
+#: classes/free-vs-pro.php:126
+msgid "Drag the cart sections into any order."
+msgstr ""
+
+#: classes/free-vs-pro.php:127
+msgid "Available Coupons List"
+msgstr ""
+
+#: classes/free-vs-pro.php:127
+msgid "Shows the coupons any shopper can use, next to the coupon field."
+msgstr ""
+
+#: classes/free-vs-pro.php:128
+msgid "Suggested Products"
+msgstr ""
+
+#: classes/free-vs-pro.php:128
+msgid "A carousel of cross-sells, upsells, related or hand-picked products."
+msgstr ""
+
+#: classes/free-vs-pro.php:129
+msgid "Free Shipping Bar"
+msgstr ""
+
+#: classes/free-vs-pro.php:129
+msgid "Shows how much more to spend for free shipping, with a progress bar."
+msgstr ""
+
+#: classes/free-vs-pro.php:130
+msgid "Shipping Methods & Order Note"
+msgstr ""
+
+#: classes/free-vs-pro.php:130
+msgid "Shoppers pick a shipping method and add a note without leaving the cart."
+msgstr ""
+
+#: classes/free-vs-pro.php:131
+msgid "Checkout Inside the Cart"
+msgstr ""
+
+#: classes/free-vs-pro.php:131
+msgid "Shoppers fill in their details and place the order right in the cart."
+msgstr ""
+
+#: classes/free-vs-pro.php:132
+msgid "Change Options in the Cart"
+msgstr ""
+
+#: classes/free-vs-pro.php:132
+msgid "Switch a product's size or color from the cart."
+msgstr ""
+
+#: classes/free-vs-pro.php:133
+msgid "Save for Later"
+msgstr ""
+
+#: classes/free-vs-pro.php:133
+msgid "Move items out of the cart into a saved list, and back."
+msgstr ""
+
+#: classes/free-vs-pro.php:134
+msgid "Remove All Button"
+msgstr ""
+
+#: classes/free-vs-pro.php:134
+msgid "Empties the cart in one click."
+msgstr ""
+
+#: classes/free-vs-pro.php:135
+msgid "Empty Cart Message"
+msgstr ""
+
+#: classes/free-vs-pro.php:135
+msgid "What the cart shows when it has no products."
+msgstr ""
+
+#: classes/free-vs-pro.php:135
+msgid "Fixed text & icon"
+msgstr ""
+
+#: classes/free-vs-pro.php:135
+msgid "Your own text & icon"
+msgstr ""
+
+#: classes/free-vs-pro.php:137
+msgid "Grow Your Sales"
+msgstr ""
+
+#: classes/free-vs-pro.php:138
+msgid "Cart Rewards"
+msgstr ""
+
+#: classes/free-vs-pro.php:138
+msgid "A progress bar that unlocks free shipping, discounts and free gifts as the cart grows."
+msgstr ""
+
+#: classes/free-vs-pro.php:139
+msgid "Cart Offers"
+msgstr ""
+
+#: classes/free-vs-pro.php:139
+msgid "Hand-picked products at a special price inside the cart, added in one click."
+msgstr ""
+
+#: classes/free-vs-pro.php:140
+msgid "Cart Timer & Low Stock Notice"
+msgstr ""
+
+#: classes/free-vs-pro.php:140
+msgid "A countdown in the cart, and a notice when an item is running low."
+msgstr ""
+
+#: classes/free-vs-pro.php:141
+msgid "Added to Cart Popup"
+msgstr ""
+
+#: classes/free-vs-pro.php:141
+msgid "Shows the added product with suggested products, rewards and offers."
+msgstr ""
+
+#: classes/free-vs-pro.php:142
+msgid "Popup Animations"
+msgstr ""
+
+#: classes/free-vs-pro.php:142
+msgid "37 each, in & out"
+msgstr ""
+
+#: classes/free-vs-pro.php:143
+msgid "Sticky Add to Cart Bar"
+msgstr ""
+
+#: classes/free-vs-pro.php:143
+msgid "Keeps the Add to Cart button in view on product pages."
+msgstr ""
+
+#: classes/free-vs-pro.php:144
+msgid "Cart Analytics"
+msgstr ""
+
+#: classes/free-vs-pro.php:144
+msgid "See the revenue your offers and rewards bring in."
+msgstr ""
+
+#: classes/free-vs-pro.php:146
+msgid "Display & Store Settings"
+msgstr ""
+
+#: classes/free-vs-pro.php:147
+msgid "Hide on Desktop, Tablet or Mobile"
+msgstr ""
+
+#: classes/free-vs-pro.php:148
+msgid "Show or Hide on Chosen Pages"
+msgstr ""
+
+#: classes/free-vs-pro.php:149
+msgid "Show to Chosen Users"
+msgstr ""
+
+#: classes/free-vs-pro.php:149
+msgid "Everyone, logged-in customers, guests or chosen user roles."
+msgstr ""
+
+#: classes/free-vs-pro.php:150
+msgid "Ajax Add to Cart on Product Pages"
+msgstr ""
+
+#: classes/free-vs-pro.php:150
+msgid "Add to cart from a product page without the page reloading."
+msgstr ""
+
+#: classes/free-vs-pro.php:151
+msgid "Open from the Mini-Cart Block"
+msgstr ""
+
+#: classes/free-vs-pro.php:151
+msgid "For block themes: the header Mini-Cart block opens this cart."
+msgstr ""
+
+#: classes/free-vs-pro.php:152
+msgid "Colors & Typography"
+msgstr ""
+
+#: classes/free-vs-pro.php:153
+msgid "Load Google Fonts Locally"
+msgstr ""
+
+#: classes/free-vs-pro.php:153
+msgid "Serves the fonts from your own site instead of Google's, which helps with GDPR."
+msgstr ""
+
+#: classes/free-vs-pro.php:154
+msgid "Custom CSS"
+msgstr ""
+
+#: classes/free-vs-pro.php:156
+msgid "Updates & Support"
+msgstr ""
+
+#: classes/free-vs-pro.php:157
+msgid "Updates"
+msgstr ""
+
+#: classes/free-vs-pro.php:157
+msgid "One click, from WordPress.org"
+msgstr ""
+
+#: classes/free-vs-pro.php:157
+msgid "One click, once your license is activated"
+msgstr ""
+
+#: classes/free-vs-pro.php:158
+msgid "Support"
+msgstr ""
+
+#: classes/free-vs-pro.php:158
+msgid "WordPress.org forum"
+msgstr ""
+
+#: classes/free-vs-pro.php:158
+msgid "Direct support from us"
+msgstr ""
+
+#: classes/free-vs-pro.php:159
+msgid "Price"
+msgstr ""
+
+#: classes/free-vs-pro.php:159
+msgid "One-time payment"
+msgstr ""
+
+#: classes/frontend-class.php:35
+msgid "Your session has expired. Please reload the page."
+msgstr ""
+
+#: classes/frontend-class.php:84
+msgid "Coupon Removed Successfully."
+msgstr ""
+
+#: classes/frontend-class.php:93
+msgid "Coupon Code Field is Empty!"
+msgstr ""
+
+#: classes/frontend-class.php:97
+msgid "Coupon Code Already Applied."
+msgstr ""
+
+#: classes/frontend-class.php:105
+msgid "Invalid code entered. Please try again."
+msgstr ""
+
+#: classes/frontend-class.php:109
+msgid "Coupon Applied Successfully."
+msgstr ""
+
+#: classes/frontend-class.php:136
+msgid "Remove this item"
+msgstr ""
+
+#: classes/frontend-class.php:224
+#: inc/frontend/front.php:191
+msgid "Quantity: "
+msgstr ""
+
+#: classes/frontend-class.php:225
+#: inc/frontend/front.php:192
+msgid "Items: "
+msgstr ""
+
+#: inc/backend/settings.php:21
+msgid "Main Settings"
+msgstr ""
+
+#: inc/backend/settings.php:25
+msgid "Design"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:5
+msgid "Cart Basket/Button Settings"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:7
+msgid "Icon"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:18
+#: inc/backend/settings/cart-content.php:40
+msgid "Default Icon"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:23
+#: inc/backend/settings/cart-content.php:45
+msgid "Available Icon"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:28
+#: inc/backend/settings/cart-content.php:50
+msgid "Custom Icon"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:35
+msgid "Choose Open Icon"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:43
+msgid "Choose Close Icon"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:56
+msgid "Upload Open Icon"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:64
+#: inc/backend/settings/cart-button.php:80
+#: inc/backend/settings/cart-content.php:72
+#: inc/backend/settings/design-settings.php:109
+msgid "Remove"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:67
+#: inc/backend/settings/cart-button.php:82
+#: inc/backend/settings/cart-content.php:75
+#: inc/backend/settings/design-settings.php:112
+msgid "Upload"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:72
+msgid "Upload Close Icon"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:93
+msgid "Button Shape"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:100
+msgid "Round"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:105
+msgid "Square"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:110
+msgid "Rounded Square"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:116
+msgid "Button Position"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:123
+msgid "Left Middle"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:128
+msgid "Right Middle"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:133
+msgid "Left Top (Pro)"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:138
+msgid "Left Bottom (Pro)"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:143
+msgid "Right Top (Pro)"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:148
+msgid "Right Bottom (Pro)"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:153
+msgid "Center Bottom (Pro)"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:159
+msgid "Hover Animation"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:162
+#: inc/backend/settings/cart-content.php:35
+#: inc/google-fonts-list.php:180
+#: inc/google-fonts-list.php:190
+msgid "None"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:179
+msgid "Show Product Counter"
+msgstr ""
+
+#: inc/backend/settings/cart-button.php:186
+msgid "Displays at the side of Basket/Button"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:5
+msgid "Configure Cart Content"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:8
+msgid "Header"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:9
+msgid "Cart Products"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:10
+msgid "Coupon"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:11
+#: inc/backend/settings/design-settings.php:15
+msgid "Buttons"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:16
+msgid "Header Section"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:19
+msgid "Header Title Text"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:26
+msgid "Header Icon Type"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:55
+msgid "Choose Header Icon"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:64
+msgid "Upload Header Icon"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:86
+msgid "Added to Cart Product Section"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:88
+msgid "Products Layout"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:95
+msgid "List"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:100
+msgid "Grid"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:106
+msgid "Show Cart Quantity & Items"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:118
+msgid "Coupon Code Section"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:121
+msgid "Enable Coupon Field"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:133
+msgid "Apply Coupon Button Label"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:141
+msgid "Promo Code Placeholder"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:150
 msgid "View Cart, Checkout & Continue Shopping Buttons"
 msgstr ""
 
-#: inc/frontend/front.php:64 inc/backend/settings/cart-content.php:191
-msgid "View Checkout"
+#: inc/backend/settings/cart-content.php:158
+msgid "Show View Cart Button"
 msgstr ""
 
-#: inc/backend/settings/cart-content.php:190
+#: inc/backend/settings/cart-content.php:169
+msgid "View Cart Label"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:177
+msgid "Checkout Button"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:182
+msgid "Show Checkout Button"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:193
 msgid "View Checkout Label"
 msgstr ""
 
-#: inc/backend/settings/cart-content.php:214
+#: inc/backend/settings/cart-content.php:194
+#: inc/frontend/front.php:61
+msgid "View Checkout"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:201
+msgid "Continue Button"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:206
+msgid "Show Continue Shopping Button"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:217
 msgid "View Continue Shopping Label"
 msgstr ""
 
-#: classes/backend-class.php:194
-msgid "Yes, of course"
+#: inc/backend/settings/cart-content.php:218
+#: inc/frontend/front.php:62
+msgid "Continue Shopping"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:222
+msgid "Continue Shopping Link"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:230
+msgid "Shipping Text Label"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:233
+msgid "It will appear just above buttons."
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:238
+msgid "Hide Cart Total"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:249
+msgid "Hide Discount"
+msgstr ""
+
+#: inc/backend/settings/cart-content.php:260
+msgid "Hide Subtotal"
+msgstr ""
+
+#: inc/backend/settings/cart-panel.php:5
+msgid "Cart Panel Settings"
+msgstr ""
+
+#: inc/backend/settings/cart-panel.php:8
+msgid "Layout"
+msgstr ""
+
+#: inc/backend/settings/cart-panel.php:20
+msgid "Floating (Available in Pro)"
+msgstr ""
+
+#: inc/backend/settings/cart-panel.php:25
+msgid "Popup (Available in Pro)"
+msgstr ""
+
+#: inc/backend/settings/cart-panel.php:31
+msgid "Animation"
+msgstr ""
+
+#: inc/backend/settings/cart-panel.php:35
+msgid "Show Animation"
+msgstr ""
+
+#: inc/backend/settings/cart-panel.php:37
+#: inc/backend/settings/cart-panel.php:54
+#: inc/google-fonts-list.php:179
+#: inc/google-fonts-list.php:189
+msgid "Default"
+msgstr ""
+
+#: inc/backend/settings/cart-panel.php:52
+msgid "Hide Animation"
+msgstr ""
+
+#: inc/backend/settings/cart-panel.php:74
+msgid "Content Width"
+msgstr ""
+
+#: inc/backend/settings/cart-panel.php:81
+msgid "Enable Overlay"
+msgstr ""
+
+#: inc/backend/settings/cart-panel.php:88
+msgid "Background behind the cart panel when it is opened"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:20
+msgid "Cart Basket/Button"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:22
+msgid "Cart Basket/Button Colors"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:26
+#: inc/backend/settings/design-settings.php:93
+#: inc/backend/settings/design-settings.php:807
+#: inc/backend/settings/design-settings.php:845
+#: inc/backend/settings/design-settings.php:896
+#: inc/backend/settings/design-settings.php:948
+msgid "Background Color"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:33
+#: inc/backend/settings/design-settings.php:814
+#: inc/backend/settings/design-settings.php:852
+#: inc/backend/settings/design-settings.php:903
+msgid "Background Color (Hover)"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:40
+msgid "Icon Color"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:47
+msgid "Icon Color (Hover)"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:54
+msgid "Counter Background Color"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:61
+msgid "Counter Text Color"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:75
+msgid "Background Type"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:82
+msgid "Choose Color"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:87
+msgid "Custom Image Background"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:100
+msgid "Upload Background Image"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:119
+msgid "Color Settings"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:124
+#: inc/backend/settings/design-settings.php:322
+#: inc/backend/settings/design-settings.php:480
+#: inc/backend/settings/design-settings.php:639
+#: inc/backend/settings/design-settings.php:821
+#: inc/backend/settings/design-settings.php:859
+#: inc/backend/settings/design-settings.php:910
+#: inc/backend/settings/design-settings.php:955
+msgid "Text Color"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:131
+#: inc/backend/settings/design-settings.php:873
+#: inc/backend/settings/design-settings.php:924
+msgid "Border Color"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:138
+msgid "Close Icon Color"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:145
+msgid "Close Background Color"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:152
+msgid "Quantity +/- Background Color"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:159
+msgid "Quantity +/- Icon Color"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:166
+msgid "Quantity +/- Border Color"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:176
+msgid "Header Title Typography"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:180
+#: inc/backend/settings/design-settings.php:337
+#: inc/backend/settings/design-settings.php:495
+#: inc/backend/settings/design-settings.php:656
+msgid "Font Family"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:222
+#: inc/backend/settings/design-settings.php:379
+#: inc/backend/settings/design-settings.php:537
+#: inc/backend/settings/design-settings.php:699
+msgid "Font Style"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:248
+#: inc/backend/settings/design-settings.php:405
+#: inc/backend/settings/design-settings.php:563
+#: inc/backend/settings/design-settings.php:721
+msgid "Text Transform"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:271
+#: inc/backend/settings/design-settings.php:428
+#: inc/backend/settings/design-settings.php:586
+#: inc/backend/settings/design-settings.php:744
+msgid "Text Decoration"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:294
+#: inc/backend/settings/design-settings.php:451
+#: inc/backend/settings/design-settings.php:610
+#: inc/backend/settings/design-settings.php:767
+msgid "Font Size"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:303
+#: inc/backend/settings/design-settings.php:461
+#: inc/backend/settings/design-settings.php:620
+#: inc/backend/settings/design-settings.php:777
+msgid "Line Height"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:313
+#: inc/backend/settings/design-settings.php:471
+#: inc/backend/settings/design-settings.php:630
+#: inc/backend/settings/design-settings.php:787
+msgid "Letter Spacing"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:333
+msgid "Content Typography"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:491
+msgid "Product Title Typography"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:652
+msgid "Button Typography"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:803
+msgid "Coupon Button"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:828
+#: inc/backend/settings/design-settings.php:866
+#: inc/backend/settings/design-settings.php:917
+msgid "Text Color (Hover)"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:841
+msgid "Continue Shopping Button"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:880
+#: inc/backend/settings/design-settings.php:931
+msgid "Border Color (Hover)"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:892
+msgid "Cart/CheckOut Button"
+msgstr ""
+
+#: inc/backend/settings/design-settings.php:944
+msgid "Remove Product Button (Grid Layout)"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:15
+msgid "General Settings"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:18
+msgid "Enable Mini Ajax Cart"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:25
+msgid "Display Ajax Cart?"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:29
+msgid "Display Settings"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:32
+msgid "Hide in Screens"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:37
+msgid "Desktop"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:41
+msgid "Tablet"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:45
+msgid "Mobile"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:52
+msgid "Show/Hide in Pages"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:56
+msgid "Show in All Pages"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:57
+msgid "Hide in All Pages"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:58
+msgid "Show in Selected Pages"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:59
+msgid "Hide in Selected Pages"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:65
+msgid "Default WordPress Pages"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:74
+msgid "Front Page"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:83
+msgid "Home/Blog Page"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:92
+msgid "Archive Page"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:101
+msgid "404 Page"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:110
+msgid "Search Page"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:143
+msgid "Specific Archive Page"
+msgstr ""
+
+#: inc/backend/settings/main-settings.php:174
+msgid "Specific "
+msgstr ""
+
+#: inc/frontend/front.php:63
+msgid "To find out your shipping cost, please proceed to checkout."
+msgstr ""
+
+#: inc/frontend/front.php:68
+msgid "Apply Coupon"
+msgstr ""
+
+#: inc/frontend/front.php:69
+msgid "Enter your promo code"
+msgstr ""
+
+#: inc/frontend/front.php:205
+msgid "No Product in the Cart!"
+msgstr ""
+
+#: inc/frontend/front.php:228
+msgid "Cart Total"
+msgstr ""
+
+#: inc/frontend/front.php:235
+msgid "Discount"
+msgstr ""
+
+#: inc/frontend/front.php:242
+msgid "Subtotal"
+msgstr ""
+
+#: inc/google-fonts-list.php:181
+msgid "Uppercase"
+msgstr ""
+
+#: inc/google-fonts-list.php:182
+msgid "Lowercase"
+msgstr ""
+
+#: inc/google-fonts-list.php:183
+msgid "Capitalize"
+msgstr ""
+
+#: inc/google-fonts-list.php:191
+msgid "Underline"
+msgstr ""
+
+#: inc/google-fonts-list.php:192
+msgid "Line-through"
+msgstr ""
+
+#: inc/google-fonts-list.php:193
+msgid "Overline"
+msgstr ""
+
+#. Translators: To add an additional character subset specific to your language, translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
+#: inc/google-fonts-list.php:294
+msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
+msgid "no-subset"
+msgstr ""
+
+#: inc/sale.php:30
+msgid "Black Friday"
+msgstr ""
+
+#: inc/sale.php:31
+msgid "Checkout the Black Friday deal"
+msgstr ""
+
+#: inc/sale.php:38
+msgid "Holiday Sale"
+msgstr ""
+
+#: inc/sale.php:39
+msgid "Checkout the holiday deal"
+msgstr ""
+
+#. translators: %d: discount percentage
+#: inc/sale.php:66
+msgid "%d%% OFF"
+msgstr ""
+
+#: inc/sale.php:121
+msgid "Sale"
+msgstr ""
+
+#: inc/sale.php:139
+msgid "15 ready-made cart templates"
+msgstr ""
+
+#: inc/sale.php:140
+msgid "Cart rewards, offers and a countdown timer"
+msgstr ""
+
+#: inc/sale.php:141
+msgid "Checkout inside the cart"
+msgstr ""
+
+#: inc/sale.php:142
+msgid "Free shipping bar and suggested products"
+msgstr ""
+
+#: inc/sale.php:159
+msgid "Your cart"
+msgstr ""
+
+#: inc/sale.php:160
+msgid "Close"
+msgstr ""
+
+#. translators: %s: discount, e.g. 40% OFF
+#: inc/sale.php:166
+msgid "%s unlocked"
+msgstr ""
+
+#: inc/sale.php:174
+msgid "Ultimate WooCommerce Cart"
+msgstr ""
+
+#: inc/sale.php:175
+msgid "The Pro version of Mini Ajax Cart"
+msgstr ""
+
+#: inc/sale.php:191
+msgid "Special price for a limited time. Your carts carry over when you upgrade."
+msgstr ""
+
+#: inc/sale.php:193
+msgid "Hide until the next sale"
+msgstr ""
+
+#. translators: Placeholders: %1$s and %2$s are <strong> tags. %3$s and %4$s are <a> tags
+#: mini-ajax-cart.php:107
+msgid "%1$sMini Ajax Cart for WooCommerce %2$s requires WooCommerce Plugin. Please install and activate %3$sWooCommerce%4$s."
+msgstr ""
+
+#: mini-ajax-cart.php:114
+msgid "Cart Settings"
+msgstr ""
+
+#: mini-ajax-cart.php:114
+msgid "Settings"
 msgstr ""
